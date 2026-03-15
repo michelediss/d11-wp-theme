@@ -1,34 +1,83 @@
 # D11 WP Theme
 
-Public monorepo for the D11 WordPress theme and public custom plugins.
+D11 e un block theme Gutenberg per WordPress pensato per costruire interfacce come sistemi compositivi, non come layout rigidi.
 
-## Contents
+Il cuore del progetto e un concept preciso: `D11` richiama le 11 dimensioni della M-theory, l'idea che la realta emerga da strutture fondamentali invisibili che vibrano, si organizzano e diventano materia e universo osservabile. Applicato a WordPress, significa trattare il tema come un motore generativo in cui il design emerge da componenti fondamentali combinabili.
 
-- `wp-content/themes/d11`
-- `wp-content/plugins/d11-maintenance`
-- `wp-content/plugins/cf7-sync`
-- `wp-content/plugins/simple-cookie-consent`
+## Concept di D11
 
-`d11-engine` is intentionally not part of this repository. It lives in a separate private repository and is installed as a normal WordPress plugin at `wp-content/plugins/d11-engine` in target environments.
+D11 e un block theme generativo per WordPress in cui l'interfaccia emerge da un sistema di strutture fondamentali.
 
-## Branches
+- i token definiti in `theme.json` rappresentano il livello piu profondo del sistema
+- i blocchi sono le unita fondamentali di composizione
+- pattern e template parts nascono dalla combinazione di queste unita
+- template e pagine complete sono il livello osservabile del sito
 
-- `dev`: default branch for active development
-- `master`: stable branch that triggers release packaging
+In pratica:
 
-## Releases
+- il design non si disegna, si genera
+- i componenti non si assemblano manualmente, si compongono
+- le pagine non si costruiscono, emergono dal sistema
 
-Every push or merge to `master` triggers automated packaging and GitHub Releases for each installable component in this repository:
+## Gerarchia concettuale
+
+| Livello fisico | Sistema D11 |
+| --- | --- |
+| dimensioni fondamentali | motore del tema |
+| stringhe | token in `theme.json` |
+| particelle | blocchi |
+| strutture | pattern e template parts |
+| universo osservabile | template e pagine |
+
+## Gutenberg-first
+
+D11 nasce per lavorare con Gutenberg in modo nativo:
+
+- usa blocchi come unita base di tutto il sistema
+- tratta pattern e template parts come strutture riutilizzabili
+- usa `theme.json` come sorgente dei token e delle regole compositive
+- mantiene il tema orientato alla Site Editor experience, non a layout PHP monolitici
+
+Il risultato e un tema pensato per essere coerente sia per editor umani sia per sistemi automatici di composizione.
+
+## Progettato anche per LLM
+
+D11 e progettato per essere usato anche tramite LLM e workflow AI-assisted.
+
+L'obiettivo non e chiedere a un modello di "disegnare una pagina", ma di comporre strutture usando:
+
+- token
+- blocchi consentiti
+- pattern
+- template parts
+- regole strutturali del tema
+
+In questo modo un prompt o una specifica funzionale puo diventare una pagina WordPress coerente con il sistema, invece di generare markup arbitrario o incoerente.
+
+## Visione
+
+D11 trasforma WordPress in un sistema compositivo guidato da AI, dove design system, blocchi e layout non sono elementi separati ma manifestazioni diverse dello stesso modello strutturale.
+
+In breve:
+
+`D11 e un motore di composizione in cui l'interfaccia del sito emerge da strutture fondamentali.`
+
+## Pacchetti installabili
+
+Da questa distribuzione vengono pubblicati pacchetti installabili in WordPress:
 
 - `d11.zip`
 - `d11-maintenance.zip`
 - `cf7-sync.zip`
 - `simple-cookie-consent.zip`
 
-The workflow reads version numbers from the theme and plugin headers. Bump the version in the relevant component before merging to `master`.
+## Componenti inclusi
 
-## Notes
+Questa distribuzione include:
 
-- This repository does not include WordPress core.
-- This repository does not include third-party plugins.
-- Installable ZIPs are intended for WordPress admin upload/install flows.
+- il tema `d11`
+- il plugin `d11-maintenance`
+- il plugin `cf7-sync`
+- il plugin `simple-cookie-consent`
+
+Il plugin `d11-engine` esiste come componente separato e riservato ai workflow AI-assisted.
