@@ -1,0 +1,14 @@
+name: theme-docs-context
+description: Use this skill when a task depends on the canonical Markdown documentation of d11. It must include and rely on all files in docs/: docs/theme-overview.md, docs/block-availability-system.md, docs/block-composition-guide.md, docs/custom-blocks.md, and docs/skill-sync.md.
+context:
+  platform: wordpress
+  theme: d11
+  workspace_root: /home/miche/docker/wp-sites/thelogicaltheme/wp
+  theme_root: /home/miche/docker/wp-sites/thelogicaltheme/wp/wp-content/themes/d11
+runtime_notes:
+  preferred_files:
+    - docs/theme-overview.md
+    - docs/block-availability-system.md
+    - docs/block-composition-guide.md
+    - docs/custom-blocks.md
+    - docs/skill-sync.md

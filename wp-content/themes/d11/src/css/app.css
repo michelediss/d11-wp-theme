@@ -1,0 +1,7 @@
+@import './base.css';
+@import './blocks/simple-cookie-consent-banner.css';
+@import './utilities.css';
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;

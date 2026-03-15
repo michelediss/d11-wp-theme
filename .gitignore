@@ -1,0 +1,15 @@
+.DS_Store
+.idea/
+.vscode/
+dist/
+tmp/
+*.log
+*.swp
+*.swo
+**/node_modules/
+**/.vite/
+**/.vite-temp/
+**/coverage/
+**/playwright-report/
+**/test-results/
+**/.DS_Store

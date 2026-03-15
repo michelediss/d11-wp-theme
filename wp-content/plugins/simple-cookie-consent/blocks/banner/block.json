@@ -1,0 +1,15 @@
+{
+  "apiVersion": 3,
+  "name": "simple-cookie-consent/banner",
+  "title": "Cookie Banner",
+  "textdomain": "simple-cookie-consent",
+  "category": "widgets",
+  "icon": "shield",
+  "description": "Displays the cookie consent banner managed by the plugin.",
+  "keywords": ["cookie", "privacy", "consent"],
+  "supports": {
+    "html": false,
+    "multiple": false
+  },
+  "attributes": {}
+}

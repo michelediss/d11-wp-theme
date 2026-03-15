@@ -1,0 +1,29 @@
+{
+  "name": "d11",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "i18n:pot": "wp i18n make-pot . languages/d11.pot --slug=d11 --domain=d11 --exclude=.agents,.artifacts,assets,cf7-forms",
+    "i18n:po": "wp i18n update-po languages/d11.pot languages",
+    "i18n:mo": "wp i18n make-mo languages",
+    "i18n:json": "wp i18n make-json languages languages --domain=d11 --pretty-print --no-purge --use-map=languages/script-translations-map.json",
+    "i18n:build": "npm run i18n:pot && npm run i18n:po && npm run i18n:mo && npm run i18n:json"
+  },
+  "dependencies": {
+    "gsap": "^3.13.0",
+    "swiper": "^11.2.6"
+  },
+  "devDependencies": {
+    "autoprefixer": "^10.4.21",
+    "chrome-launcher": "^1.2.1",
+    "lighthouse": "^12.8.2",
+    "playwright": "^1.53.2",
+    "postcss": "^8.5.6",
+    "tailwindcss": "^3.4.17",
+    "vite": "^7.1.3"
+  }
+}

@@ -1,0 +1,26 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "apiVersion": 3,
+  "name": "custom/breadcrumbs",
+  "version": "0.1.0",
+  "title": "Breadcrumbs",
+  "category": "widgets",
+  "icon": "ellipsis",
+  "description": "Contextual navigation trail for the current view.",
+  "textdomain": "d11",
+  "attributes": {
+    "showCurrent": {
+      "type": "boolean",
+      "default": true
+    },
+    "separator": {
+      "type": "string",
+      "default": "/"
+    }
+  },
+  "supports": {
+    "html": false
+  },
+  "style": "d11-blocks-style",
+  "editorScript": "d11-blocks-editor"
+}
