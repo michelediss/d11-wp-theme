@@ -26,10 +26,10 @@ wp-content/plugins/d11-engine/scripts/sync-codex-skill.sh
 ## Default Paths
 
 - source root: `wp-content/plugins/d11-engine/.agents/skills` for AI workflow skills in the private `d11-engine` repository
-- source root: `wp-content/themes/d11/.agents/skills` for `theme-docs-context`
+- source root: `wp-content/themes/d11/.agents/skills` for the theme-local `d11-engine` skill
 - target roots: `~/.codex/skills`, `~/.kimi/skills`
 
-Because these are defaults, the script works out of the box for plugin-local workflow skills and still resolves `theme-docs-context` from the theme in one run.
+Because these are defaults, the script works out of the box for plugin-local workflow skills and still resolves the theme-local `d11-engine` skill from the theme in one run.
 
 ## Usage
 
@@ -45,10 +45,10 @@ Sync a specific workflow skill:
 wp-content/plugins/d11-engine/scripts/sync-codex-skill.sh --skill d11-generate-page
 ```
 
-Sync `theme-docs-context`:
+Sync the theme-local `d11-engine` skill:
 
 ```bash
-wp-content/plugins/d11-engine/scripts/sync-codex-skill.sh --skill theme-docs-context
+wp-content/plugins/d11-engine/scripts/sync-codex-skill.sh --skill d11-engine
 ```
 
 Sync all local skills:
@@ -73,5 +73,5 @@ wp-content/plugins/d11-engine/scripts/sync-codex-skill.sh \
 - If a skill is not visible in Codex or Kimi but exists in the repository, check whether the global copy is missing or outdated.
 - The script syncs one skill at a time on purpose, so changes remain explicit and reviewable.
 - `--skill all` is available when you intentionally want to sync every local skill in one run.
-- When `theme-docs-context` changes, sync the whole skill directory so `SKILL.md`, `skill.yaml`, and any future bundled files stay aligned across repository-local and global copies.
+- When the theme-local `d11-engine` skill changes, sync the whole skill directory so `SKILL.md`, `skill.yaml`, and any future bundled files stay aligned across repository-local and global copies.
 - Apply the same whole-directory sync rule to repository-local workflow skills such as `d11-generate-page`, `d11-review-page`, and `d11-optimize-lighthouse`.

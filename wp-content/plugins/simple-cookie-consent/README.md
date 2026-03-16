@@ -1,33 +1,33 @@
 # D11 Cookie Consent
 
-`simple-cookie-consent` e il plugin che gestisce banner consenso, blocchi Gutenberg e registro cookie in modo integrato con il sistema D11.
+`simple-cookie-consent` is the plugin that handles consent banners, Gutenberg blocks, and cookie registry management in a way that stays aligned with the D11 system.
 
-## Obiettivo
+## Goal
 
-Il consenso cookie non deve essere un elemento estraneo incollato sopra il sito. In D11 deve essere parte della stessa logica compositiva:
+Cookie consent should not feel like a foreign widget glued on top of the site. In D11 it should behave like part of the same compositional logic:
 
-- controllato da blocchi
-- integrato con il tema
-- coerente con il design system
-- gestibile in Gutenberg
+- controlled through blocks
+- integrated with the theme
+- consistent with the design system
+- manageable inside Gutenberg
 
-## Cosa include
+## What it includes
 
-- banner consenso
-- blocchi Gutenberg dedicati
-- gestione del registro cookie
-- supporto per contenuti bloccati fino all'accettazione
+- a consent banner
+- dedicated Gutenberg blocks
+- cookie registry management
+- support for blocked content until consent is granted
 
-## Perche e coerente con D11
+## Why it fits D11
 
-D11 tratta l'interfaccia come qualcosa che emerge da strutture fondamentali combinabili. Anche il layer di consenso deve quindi comportarsi come una struttura del sistema, non come un widget esterno disallineato.
+D11 treats the interface as something that emerges from fundamental combinable structures. The consent layer should therefore behave like part of the system, not like an external overlay with its own unrelated rules.
 
-Questo plugin permette di:
+This plugin makes it possible to:
 
-- mantenere il consenso dentro il flusso editoriale del sito
-- usare componenti riutilizzabili
-- far convivere compliance, design e composizione
+- keep consent inside the editorial flow of the site
+- use reusable interface components
+- make compliance, design, and composition work together
 
-## Risultato
+## Result
 
-Il consenso cookie diventa parte del motore di interfaccia del sito, invece di essere un'eccezione tecnica separata.
+Cookie consent becomes part of the site's interface engine instead of a separate technical exception.

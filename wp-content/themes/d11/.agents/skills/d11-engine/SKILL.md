@@ -1,9 +1,9 @@
 ---
-name: theme-docs-context
-description: "Use this skill when a task depends on the canonical Markdown documentation of `d11`. It loads and relies on every file in `docs/`: `docs/theme-overview.md`, `docs/block-availability-system.md`, `docs/block-composition-guide.md`, `docs/custom-blocks.md`, and `docs/skill-sync.md`."
+name: d11-engine
+description: "Use this skill when a task depends on the canonical Markdown documentation of `d11` and its AI-assisted composition model. It loads and relies on every file in `docs/`: `docs/theme-overview.md`, `docs/block-availability-system.md`, `docs/block-composition-guide.md`, `docs/custom-blocks.md`, and `docs/skill-sync.md`."
 ---
 
-# Theme Docs Context
+# D11 Engine
 
 Use this skill when the task must be grounded in the canonical theme documentation stored in `docs/`.
 

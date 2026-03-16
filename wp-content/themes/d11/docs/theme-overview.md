@@ -33,7 +33,7 @@
 - `partials/block-availability/utility/`: export utilities that regenerate the derived block reference files in `docs/block/`, including `block-registry.json` and `whitelisted-blocks.md`.
 - `partials/theme-options.php`: Settings admin screen for theme-owned runtime options such as frontend jQuery disable, comments disable, and image upload restrictions.
 - `partials/privacy-controller-data.php`: Settings admin screen for the global `privacy_controller_data` option and the `[privacy key="..."]` shortcode used in policy pages.
-- `.agents/skills/theme-docs-context/`: theme-local documentation skill that keeps Codex aligned with the canonical theme docs.
+- `.agents/skills/d11-engine/`: theme-local documentation skill that keeps Codex aligned with the canonical theme docs and the D11 AI-assisted composition model.
 - `d11-engine` lives in a separate private repository and is installed in runtime environments as `wp-content/plugins/d11-engine`.
 - The private `d11-engine` repository contains the repository-local workflow skills and deterministic prep, screenshot, ingest, and skill-sync tooling for Figma Make to WordPress workflows.
 - `tailwind.config.js`: token bridge that maps WordPress CSS variables into Tailwind utilities for theme-authored CSS and markup.
@@ -87,4 +87,4 @@
 - When updating tokens or layout defaults, change `theme.json` first and let Tailwind keep consuming the generated CSS variables rather than redefining the values in `tailwind.config.js`.
 - Keep Contact Form 7 manifests under `wp-content/themes/d11/cf7-forms` so they are versioned with the theme; the local `cf7-sync` WP-CLI command reads from that path by default.
 - When adding a new custom block, update both `docs/custom-blocks.md` and `docs/block-composition-guide.md` if the block should be available to AI-assisted template generation.
-- `theme-docs-context` should read `docs/` when theme documentation is required, while page workflow skills provided by the separate private `d11-engine` repository must still derive runtime facts for blocks, tokens, screenshots, and audits from concrete theme code plus workflow artifacts.
+- `d11-engine` should read `docs/` when theme documentation is required, while page workflow skills provided by the separate private `d11-engine` repository must still derive runtime facts for blocks, tokens, screenshots, and audits from concrete theme code plus workflow artifacts.

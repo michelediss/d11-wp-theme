@@ -1,39 +1,39 @@
 # D11 Maintenance
 
-`d11-maintenance` e il plugin che gestisce una modalita manutenzione coerente con il sito, usando il contenuto Gutenberg della pagina di manutenzione invece di una schermata tecnica separata.
+`d11-maintenance` is the plugin that provides a maintenance mode consistent with the site itself, reusing Gutenberg content instead of switching to a disconnected technical placeholder page.
 
-## Idea
+## Core idea
 
-Anche durante la manutenzione, D11 evita di uscire dal proprio modello compositivo.
+Even during maintenance, D11 stays inside its own compositional model.
 
-Invece di mostrare una pagina esterna e scollegata dal tema:
+Instead of showing an external maintenance screen:
 
-- usa una normale pagina WordPress
-- ne riutilizza il contenuto Gutenberg
-- mantiene coerenza visiva e strutturale con il resto del sito
+- it uses a normal WordPress page
+- it reuses that page's Gutenberg content
+- it keeps visual and structural continuity with the rest of the site
 
-## Cosa fa
+## What it does
 
-- attiva una risposta di manutenzione site-wide
-- mostra il contenuto della pagina con slug `maintenance`
-- restituisce HTTP `503` per le richieste pubbliche
-- permette l'accesso amministrativo e un bypass controllato
+- enables a site-wide maintenance response
+- renders the content of the page with slug `maintenance`
+- returns HTTP `503` for public requests
+- supports administrator access and a controlled bypass flow
 
-## Quando usarlo
+## When it is useful
 
-E utile quando vuoi:
+Use it when you want to:
 
-- mettere il sito in manutenzione senza rompere l'identita visiva
-- far gestire il messaggio di manutenzione a chi lavora in Gutenberg
-- evitare template ad hoc separati dalla struttura del progetto
+- put a site into maintenance mode without breaking its visual identity
+- let editors manage the maintenance message directly in Gutenberg
+- avoid a separate hard-coded maintenance template outside the system
 
-## In linea con D11
+## Why it fits D11
 
-In D11 anche una pagina di manutenzione e vista come una manifestazione del sistema:
+In D11, even a maintenance page is treated as part of the observable output of the system:
 
-- blocchi
-- contenuti
-- struttura
-- composizione
+- blocks
+- content
+- structure
+- composition
 
-Non una schermata tecnica scollegata, ma una parte coerente dell'universo osservabile del sito.
+It is not an isolated technical exception. It remains part of the same compositional universe as the rest of the site.

@@ -1,83 +1,83 @@
 # D11 WP Theme
 
-D11 e un block theme Gutenberg per WordPress pensato per costruire interfacce come sistemi compositivi, non come layout rigidi.
+D11 is a Gutenberg block theme for WordPress built to create interfaces as compositional systems rather than fixed layouts.
 
-Il cuore del progetto e un concept preciso: `D11` richiama le 11 dimensioni della M-theory, l'idea che la realta emerga da strutture fondamentali invisibili che vibrano, si organizzano e diventano materia e universo osservabile. Applicato a WordPress, significa trattare il tema come un motore generativo in cui il design emerge da componenti fondamentali combinabili.
+At the center of the project there is a clear concept: `D11` directly references the 11 dimensions of M-theory, the idea that reality emerges from invisible fundamental structures that vibrate, organize, and eventually become matter and the observable universe. Applied to WordPress, this means treating the theme as a generative engine where design emerges from combinable foundational components.
 
-## Concept di D11
+## The D11 concept
 
-D11 e un block theme generativo per WordPress in cui l'interfaccia emerge da un sistema di strutture fondamentali.
+D11 is a generative block theme for WordPress in which the interface emerges from a system of fundamental structures.
 
-- i token definiti in `theme.json` rappresentano il livello piu profondo del sistema
-- i blocchi sono le unita fondamentali di composizione
-- pattern e template parts nascono dalla combinazione di queste unita
-- template e pagine complete sono il livello osservabile del sito
+- the tokens defined in `theme.json` represent the deepest layer of the system
+- blocks are the fundamental compositional units
+- patterns and template parts emerge from the combination of those units
+- templates and complete pages become the observable layer of the site
 
-In pratica:
+In practice:
 
-- il design non si disegna, si genera
-- i componenti non si assemblano manualmente, si compongono
-- le pagine non si costruiscono, emergono dal sistema
+- design is not drawn, it is generated
+- components are not manually assembled, they are composed
+- pages are not built step by step, they emerge from the system
 
-## Gerarchia concettuale
+## Conceptual hierarchy
 
-| Livello fisico | Sistema D11 |
+| Physical level | D11 system |
 | --- | --- |
-| dimensioni fondamentali | motore del tema |
-| stringhe | token in `theme.json` |
-| particelle | blocchi |
-| strutture | pattern e template parts |
-| universo osservabile | template e pagine |
+| fundamental dimensions | theme engine |
+| strings | `theme.json` tokens |
+| particles | blocks |
+| structures | patterns and template parts |
+| observable universe | templates and pages |
 
 ## Gutenberg-first
 
-D11 nasce per lavorare con Gutenberg in modo nativo:
+D11 is designed to work natively with Gutenberg:
 
-- usa blocchi come unita base di tutto il sistema
-- tratta pattern e template parts come strutture riutilizzabili
-- usa `theme.json` come sorgente dei token e delle regole compositive
-- mantiene il tema orientato alla Site Editor experience, non a layout PHP monolitici
+- blocks are the base unit of the whole system
+- patterns and template parts are treated as reusable structures
+- `theme.json` acts as the source of truth for tokens and compositional rules
+- the theme is built for the Site Editor experience rather than monolithic PHP layout logic
 
-Il risultato e un tema pensato per essere coerente sia per editor umani sia per sistemi automatici di composizione.
+The result is a theme that stays coherent for both human editors and automated compositional workflows.
 
-## Progettato anche per LLM
+## Designed for LLM-assisted use
 
-D11 e progettato per essere usato anche tramite LLM e workflow AI-assisted.
+D11 is also designed to work with LLM and AI-assisted workflows.
 
-L'obiettivo non e chiedere a un modello di "disegnare una pagina", ma di comporre strutture usando:
+The goal is not to ask a model to "design a page" from scratch, but to compose structures using:
 
-- token
-- blocchi consentiti
-- pattern
+- tokens
+- allowed blocks
+- patterns
 - template parts
-- regole strutturali del tema
+- structural rules defined by the theme
 
-In questo modo un prompt o una specifica funzionale puo diventare una pagina WordPress coerente con il sistema, invece di generare markup arbitrario o incoerente.
+This makes it possible to turn a prompt or a functional specification into a WordPress page that remains consistent with the system, instead of generating arbitrary or unstable markup.
 
-## Visione
+## Vision
 
-D11 trasforma WordPress in un sistema compositivo guidato da AI, dove design system, blocchi e layout non sono elementi separati ma manifestazioni diverse dello stesso modello strutturale.
+D11 turns WordPress into an AI-guided compositional system where the design system, blocks, and layouts are not separate layers, but different manifestations of the same structural model.
 
-In breve:
+In short:
 
-`D11 e un motore di composizione in cui l'interfaccia del sito emerge da strutture fondamentali.`
+`D11 is a composition engine in which the site interface emerges from fundamental structures.`
 
-## Pacchetti installabili
+## Installable packages
 
-Da questa distribuzione vengono pubblicati pacchetti installabili in WordPress:
+This distribution publishes installable WordPress packages:
 
 - `d11.zip`
 - `d11-maintenance.zip`
 - `cf7-sync.zip`
 - `simple-cookie-consent.zip`
 
-## Componenti inclusi
+## Included components
 
-Questa distribuzione include:
+This distribution includes:
 
-- il tema `d11`
-- il plugin `d11-maintenance`
-- il plugin `cf7-sync`
-- il plugin `simple-cookie-consent`
+- the `d11` theme
+- the `d11-maintenance` plugin
+- the `cf7-sync` plugin
+- the `simple-cookie-consent` plugin
 
-Il plugin `d11-engine` esiste come componente separato e riservato ai workflow AI-assisted.
+`D11 Engine - Figma` is distributed separately as the AI-assisted workflow component of the system.

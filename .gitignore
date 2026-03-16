@@ -6,6 +6,8 @@ tmp/
 *.log
 *.swp
 *.swo
+figma.json
+**/figma.json
 **/node_modules/
 **/.vite/
 **/.vite-temp/

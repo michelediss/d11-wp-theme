@@ -6,3 +6,4 @@ assets/css/*.map
 assets/js/*.map
 .DS_Store
 cf7-forms/
+figma.json

@@ -1,61 +1,61 @@
 # D11 CF7 Sync
 
-`cf7-sync` e il plugin che permette di trattare i form di Contact Form 7 come configurazione versionata, invece che come contenuto mantenuto solo nel pannello WordPress.
+`cf7-sync` is the plugin that allows Contact Form 7 forms to be treated as versioned configuration instead of content maintained only through the WordPress admin.
 
-## A cosa serve
+## What it is for
 
-Questo plugin e utile quando vuoi:
+This plugin is useful when you want to:
 
-- mantenere i form nel progetto
-- sincronizzarli in modo ripetibile tra ambienti
-- evitare modifiche manuali non tracciate
-- lavorare con un tema compositivo dove anche i form fanno parte del sistema
+- keep forms inside the project
+- sync them predictably across environments
+- avoid untracked manual changes
+- keep forms aligned with a compositional theme workflow
 
-In D11 i form non sono un elemento isolato: fanno parte della struttura osservabile del sito e devono restare coerenti con il modello del tema.
+In D11, forms are not an isolated detail. They are part of the observable structure of the site and should remain consistent with the rest of the system.
 
-## Come funziona
+## How it works
 
-Il plugin legge manifest JSON versionati e li sincronizza con Contact Form 7 tramite WP-CLI.
+The plugin reads versioned JSON manifests and synchronizes them with Contact Form 7 through WP-CLI.
 
-Flusso tipico:
+Typical flow:
 
-1. definisci o aggiorni un manifest JSON
-2. esegui il comando di sync
-3. il plugin crea o aggiorna il form corrispondente
-4. se non ci sono differenze, non tocca nulla
+1. define or update a JSON manifest
+2. run the sync command
+3. the plugin creates or updates the matching form
+4. if nothing changed, it leaves the existing form untouched
 
-## Comando disponibile
+## Available command
 
 ```bash
 wp cf7 sync
 ```
 
-Opzioni principali:
+Main options:
 
-- `--dir=<path>` per indicare la directory dei manifest
-- `--slug=<slug>` per sincronizzare un solo form
-- `--dry-run` per vedere cosa cambierebbe senza scrivere nel database
+- `--dir=<path>` to specify the manifest directory
+- `--slug=<slug>` to sync only one form
+- `--dry-run` to preview changes without writing to the database
 
-Esempi:
+Examples:
 
 ```bash
 wp cf7 sync --dir=wp-content/themes/d11/cf7-forms
 wp cf7 sync --slug=contatti --dry-run
 ```
 
-Se non specifichi `--dir`, il plugin usa per default:
+If `--dir` is omitted, the plugin uses this default location:
 
 ```text
 wp-content/themes/d11/cf7-forms
 ```
 
-## Perche e utile in D11
+## Why it fits D11
 
-D11 tratta il sito come un sistema emergente composto da strutture fondamentali combinabili. Anche i form, in questo approccio, devono poter essere:
+D11 treats the site as an emergent system made of combinable foundational structures. In that model, forms should also be:
 
-- descritti
-- versionati
-- sincronizzati
-- riutilizzati
+- described
+- versioned
+- synchronized
+- reused
 
-`cf7-sync` rende questa parte del sistema piu affidabile e piu adatta a workflow compositivi e AI-assisted.
+`cf7-sync` makes that part of the system more reliable and better suited for compositional and AI-assisted workflows.
