@@ -4,6 +4,13 @@ D11 is a Gutenberg block theme for WordPress built to create interfaces as compo
 
 At the center of the project there is a clear concept: `D11` directly references the 11 dimensions of M-theory, the idea that reality emerges from invisible fundamental structures that vibrate, organize, and eventually become matter and the observable universe. Applied to WordPress, this means treating the theme as a generative engine where design emerges from combinable foundational components.
 
+Just as M-theory is compelling because it attempts to hold together general relativity and quantum physics inside one deeper framework, D11 is built to hold together two approaches that are often treated as separate:
+
+- a human-based block approach, rooted in Gutenberg editing and compositional control
+- an AI-driven approach, where prompts and specifications can generate coherent structures from the same system
+
+In D11, these are not competing modes. They are two ways of interacting with the same underlying model.
+
 ## The D11 concept
 
 D11 is a generative block theme for WordPress in which the interface emerges from a system of fundamental structures.
@@ -57,6 +64,8 @@ This makes it possible to turn a prompt or a functional specification into a Wor
 ## Vision
 
 D11 turns WordPress into an AI-guided compositional system where the design system, blocks, and layouts are not separate layers, but different manifestations of the same structural model.
+
+Like M-theory holding together general relativity and quantum mechanics, D11 is meant to hold together human-based block composition and AI-driven generation inside one shared framework.
 
 In short:
 
