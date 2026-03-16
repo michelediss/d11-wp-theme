@@ -2,7 +2,7 @@
 /**
  * Plugin Name: D11 CF7 Sync
  * Description: Sync Contact Form 7 forms from versioned JSON manifests via WP-CLI.
- * Version: 0.1.0
+ * Version: 0.1.1
  * Plugin URI: https://github.com/michelediss/d11-wp-theme
  * Author: Michele Paolino
  * Author URI: https://michelepaolino.com
@@ -16,7 +16,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 if ( ! class_exists( 'CF7_Sync_Plugin' ) ) {
 	final class CF7_Sync_Plugin {
-		const VERSION           = '0.1.0';
+		const VERSION           = '0.1.1';
 		const FORM_META_SLUG    = '_cf7_sync_slug';
 		const DEFAULT_FORMS_DIR = 'wp-content/themes/d11/cf7-forms';
 		const TEXT_DOMAIN       = 'cf7-sync';

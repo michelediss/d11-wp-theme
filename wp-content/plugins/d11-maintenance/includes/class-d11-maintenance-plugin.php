@@ -8,7 +8,7 @@ if (! defined('ABSPATH')) {
 
 final class D11_Maintenance_Plugin
 {
-    public const VERSION = '0.1.0';
+    public const VERSION = '0.1.1';
     public const OPTION_NAME = 'd11_maintenance_settings';
     public const TEXT_DOMAIN = 'd11-maintenance';
     public const QUERY_ARG = 'd11_maintenance_bypass';

@@ -8,7 +8,7 @@ if (! defined('ABSPATH')) {
 
 final class Simple_Cookie_Consent_Plugin
 {
-    public const VERSION = '0.2.0';
+    public const VERSION = '0.2.1';
     public const REGISTRY_OPTION = 'simple_cookie_consent_registry';
     public const CONSENT_COOKIE = 'simple_cookie_consent';
     public const REST_NAMESPACE = 'simple-cookie-consent/v1';

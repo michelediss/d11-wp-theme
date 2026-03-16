@@ -2,7 +2,7 @@
 /**
  * Plugin Name: D11 Cookie Consent
  * Description: Cookie consent banner, Gutenberg blocks, and cookie registry management.
- * Version: 0.2.0
+ * Version: 0.2.1
  * Plugin URI: https://github.com/michelediss/d11-wp-theme
  * Author: Michele Paolino
  * Author URI: https://michelepaolino.com

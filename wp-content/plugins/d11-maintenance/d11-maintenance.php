@@ -2,7 +2,7 @@
 /**
  * Plugin Name: D11 Maintenance
  * Description: Maintenance mode powered by the Gutenberg content of the fixed Maintenance page.
- * Version: 0.1.0
+ * Version: 0.1.1
  * Plugin URI: https://github.com/michelediss/d11-wp-theme
  * Author: Michele Paolino
  * Author URI: https://michelepaolino.com

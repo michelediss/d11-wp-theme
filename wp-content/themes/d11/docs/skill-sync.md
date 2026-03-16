@@ -10,10 +10,10 @@ This repository provides a sync utility so the repository version of a skill can
 
 ## Script
 
-The sync script lives in the separate private `d11-engine` repository and is typically used from an environment where that plugin repository is available alongside this theme:
+The sync script lives in the separate private `d11-engine-figma` repository and is typically used from an environment where that plugin repository is available alongside this theme:
 
 ```text
-wp-content/plugins/d11-engine/scripts/sync-codex-skill.sh
+wp-content/plugins/d11-engine-figma/scripts/sync-codex-skill.sh
 ```
 
 ## What It Does
@@ -25,7 +25,7 @@ wp-content/plugins/d11-engine/scripts/sync-codex-skill.sh
 
 ## Default Paths
 
-- source root: `wp-content/plugins/d11-engine/.agents/skills` for AI workflow skills in the private `d11-engine` repository
+- source root: `wp-content/plugins/d11-engine-figma/.agents/skills` for AI workflow skills in the private `d11-engine-figma` repository
 - source root: `wp-content/themes/d11/.agents/skills` for the theme-local `d11-engine` skill
 - target roots: `~/.codex/skills`, `~/.kimi/skills`
 
@@ -36,31 +36,31 @@ Because these are defaults, the script works out of the box for plugin-local wor
 List available local skills:
 
 ```bash
-wp-content/plugins/d11-engine/scripts/sync-codex-skill.sh --list
+wp-content/plugins/d11-engine-figma/scripts/sync-codex-skill.sh --list
 ```
 
 Sync a specific workflow skill:
 
 ```bash
-wp-content/plugins/d11-engine/scripts/sync-codex-skill.sh --skill d11-generate-page
+wp-content/plugins/d11-engine-figma/scripts/sync-codex-skill.sh --skill d11-generate-page
 ```
 
 Sync the theme-local `d11-engine` skill:
 
 ```bash
-wp-content/plugins/d11-engine/scripts/sync-codex-skill.sh --skill d11-engine
+wp-content/plugins/d11-engine-figma/scripts/sync-codex-skill.sh --skill d11-engine
 ```
 
 Sync all local skills:
 
 ```bash
-wp-content/plugins/d11-engine/scripts/sync-codex-skill.sh --skill all
+wp-content/plugins/d11-engine-figma/scripts/sync-codex-skill.sh --skill all
 ```
 
 Use custom roots:
 
 ```bash
-wp-content/plugins/d11-engine/scripts/sync-codex-skill.sh \
+wp-content/plugins/d11-engine-figma/scripts/sync-codex-skill.sh \
   --skill my-skill \
   --source-root /path/to/.agents/skills \
   --target-root /path/to/.codex/skills
