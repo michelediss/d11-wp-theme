@@ -11,7 +11,11 @@
     "i18n:po": "wp i18n update-po languages/d11.pot languages",
     "i18n:mo": "wp i18n make-mo languages",
     "i18n:json": "wp i18n make-json languages languages --domain=d11 --pretty-print --no-purge --use-map=languages/script-translations-map.json",
-    "i18n:build": "npm run i18n:pot && npm run i18n:po && npm run i18n:mo && npm run i18n:json"
+    "i18n:build": "npm run i18n:pot && npm run i18n:po && npm run i18n:mo && npm run i18n:json",
+    "ai:init-manifest": "node ../../plugins/d11-engine-figma/scripts/init-manifest.mjs",
+    "ai:ingest-figma": "node ../../plugins/d11-engine-figma/scripts/ingest-figma.mjs",
+    "ai:figma-screenshots": "node ../../plugins/d11-engine-figma/scripts/figma-screenshots.mjs",
+    "ai:prepare": "node ../../plugins/d11-engine-figma/scripts/ai-ingest-figma.mjs"
   },
   "dependencies": {
     "gsap": "^3.13.0",

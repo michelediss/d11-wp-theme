@@ -3,8 +3,8 @@ description: Use this skill when a task depends on the canonical Markdown docume
 context:
   platform: wordpress
   theme: d11
-  workspace_root: /home/miche/docker/wp-sites/thelogicaltheme/wp
-  theme_root: /home/miche/docker/wp-sites/thelogicaltheme/wp/wp-content/themes/d11
+  workspace_root: /home/miche/docker/wp-sites/d11/wp
+  theme_root: /home/miche/docker/wp-sites/d11/wp/wp-content/themes/d11
 runtime_notes:
   preferred_files:
     - docs/theme-overview.md
