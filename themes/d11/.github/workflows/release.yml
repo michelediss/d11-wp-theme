@@ -1,0 +1,209 @@
+name: Release Packages
+
+on:
+  push:
+    branches:
+      - master
+  workflow_dispatch:
+    inputs:
+      mode:
+        description: "single = un tag specifico, all = tutte le release con versione 0.1.X"
+        required: true
+        default: "all"
+        type: choice
+        options:
+          - all
+          - single
+      tag:
+        description: "Richiesto solo con mode=single (es: plugin-cf7-sync-v1.4.0)"
+        required: false
+        type: string
+      seq:
+        description: "Opzionale con mode=all. Se vuoto usa il numero progressivo run."
+        required: false
+        type: string
+
+permissions:
+  contents: write
+
+jobs:
+  resolve-tags:
+    runs-on: ubuntu-latest
+    outputs:
+      matrix: ${{ steps.out.outputs.matrix }}
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 1
+
+      - name: Resolve tags list
+        id: out
+        shell: bash
+        run: |
+          set -euo pipefail
+
+          if [ "${{ github.event_name }}" = "workflow_dispatch" ] && [ "${{ inputs.mode }}" = "single" ]; then
+            if [ -z "${{ inputs.tag }}" ]; then
+              echo "Con mode=single devi compilare input tag" >&2
+              exit 1
+            fi
+            TAGS=("${{ inputs.tag }}")
+          else
+            if [ "${{ github.event_name }}" = "workflow_dispatch" ] && [ -n "${{ inputs.seq }}" ]; then
+              SEQ="${{ inputs.seq }}"
+            else
+              SEQ="${GITHUB_RUN_NUMBER}"
+            fi
+
+            BASE_VERSION="0.1.${SEQ}"
+
+            TAGS=(
+              "theme-d11-v${BASE_VERSION}"
+              "plugin-simple-cookie-consent-v${BASE_VERSION}"
+              "plugin-d11-default-featured-image-v${BASE_VERSION}"
+              "plugin-d11-design-system-v${BASE_VERSION}"
+              "plugin-d11-design-system-preview-v${BASE_VERSION}"
+              "plugin-d11-seo-toolbox-v${BASE_VERSION}"
+              "plugin-d11-social-share-v${BASE_VERSION}"
+              "plugin-cf7-sync-v${BASE_VERSION}"
+              "plugin-turnstile-wp-v${BASE_VERSION}"
+            )
+          fi
+
+          printf 'Tags risolti:\n%s\n' "${TAGS[@]}"
+
+          json="["
+          for tag in "${TAGS[@]}"; do
+            [ -n "$tag" ] || continue
+            json="${json}\"${tag}\","
+          done
+          json="${json%,}]"
+          echo "matrix=$json" >> "$GITHUB_OUTPUT"
+
+  release:
+    needs: resolve-tags
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        tag: ${{ fromJson(needs.resolve-tags.outputs.matrix) }}
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Resolve Tag
+        id: resolve_tag
+        shell: bash
+        run: |
+          set -euo pipefail
+          TAG="${{ matrix.tag }}"
+          echo "tag=$TAG" >> "$GITHUB_OUTPUT"
+
+      - name: Validate and map component
+        id: meta
+        shell: bash
+        run: |
+          set -euo pipefail
+          TAG="${{ steps.resolve_tag.outputs.tag }}"
+
+          case "$TAG" in
+            theme-d11-v*)
+              SLUG="d11"
+              TYPE="theme"
+              VERSION="${TAG#theme-d11-v}"
+              SOURCE_PATH="wp-content/themes/d11"
+              ;;
+            plugin-simple-cookie-consent-v*)
+              SLUG="simple-cookie-consent"
+              TYPE="plugin"
+              VERSION="${TAG#plugin-simple-cookie-consent-v}"
+              SOURCE_PATH="wp-content/plugins/simple-cookie-consent"
+              ;;
+            plugin-d11-default-featured-image-v*)
+              SLUG="d11-default-featured-image"
+              TYPE="plugin"
+              VERSION="${TAG#plugin-d11-default-featured-image-v}"
+              SOURCE_PATH="wp-content/plugins/d11-default-featured-image"
+              ;;
+            plugin-d11-design-system-v*)
+              SLUG="d11-design-system"
+              TYPE="plugin"
+              VERSION="${TAG#plugin-d11-design-system-v}"
+              SOURCE_PATH="wp-content/plugins/d11-design-system"
+              ;;
+            plugin-d11-design-system-preview-v*)
+              SLUG="d11-design-system-preview"
+              TYPE="plugin"
+              VERSION="${TAG#plugin-d11-design-system-preview-v}"
+              SOURCE_PATH="wp-content/plugins/d11-design-system-preview"
+              ;;
+            plugin-d11-seo-toolbox-v*)
+              SLUG="d11-seo-toolbox"
+              TYPE="plugin"
+              VERSION="${TAG#plugin-d11-seo-toolbox-v}"
+              SOURCE_PATH="wp-content/plugins/d11-seo-toolbox"
+              ;;
+            plugin-d11-social-share-v*)
+              SLUG="d11-social-share"
+              TYPE="plugin"
+              VERSION="${TAG#plugin-d11-social-share-v}"
+              SOURCE_PATH="wp-content/plugins/d11-social-share"
+              ;;
+            plugin-cf7-sync-v*)
+              SLUG="cf7-sync"
+              TYPE="plugin"
+              VERSION="${TAG#plugin-cf7-sync-v}"
+              SOURCE_PATH="wp-content/plugins/cf7-sync"
+              ;;
+            plugin-turnstile-wp-v*)
+              SLUG="turnstile-wp"
+              TYPE="plugin"
+              VERSION="${TAG#plugin-turnstile-wp-v}"
+              SOURCE_PATH="wp-content/plugins/turnstile-wp"
+              ;;
+            *)
+              echo "Tag non supportato: $TAG" >&2
+              exit 1
+              ;;
+          esac
+
+          [ -d "$SOURCE_PATH" ] || { echo "Percorso mancante: $SOURCE_PATH" >&2; exit 1; }
+
+          echo "tag=$TAG" >> "$GITHUB_OUTPUT"
+          echo "slug=$SLUG" >> "$GITHUB_OUTPUT"
+          echo "type=$TYPE" >> "$GITHUB_OUTPUT"
+          echo "version=$VERSION" >> "$GITHUB_OUTPUT"
+          echo "source_path=$SOURCE_PATH" >> "$GITHUB_OUTPUT"
+
+      - name: Create package zip
+        id: package
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p dist/tmp
+
+          SLUG="${{ steps.meta.outputs.slug }}"
+          VERSION="${{ steps.meta.outputs.version }}"
+          SOURCE_PATH="${{ steps.meta.outputs.source_path }}"
+
+          cp -R "$SOURCE_PATH" "dist/tmp/$SLUG"
+          cd dist/tmp
+          zip -r "../${SLUG}-${VERSION}.zip" "$SLUG"
+          cd -
+
+          echo "asset_path=dist/${SLUG}-${VERSION}.zip" >> "$GITHUB_OUTPUT"
+
+      - name: Publish GitHub Release
+        uses: softprops/action-gh-release@v2
+        with:
+          tag_name: ${{ steps.meta.outputs.tag }}
+          name: ${{ steps.meta.outputs.type }} ${{ steps.meta.outputs.slug }} v${{ steps.meta.outputs.version }}
+          body: |
+            Automated release package for `${{ steps.meta.outputs.slug }}`.
+            - Type: `${{ steps.meta.outputs.type }}`
+            - Version: `${{ steps.meta.outputs.version }}`
+          files: ${{ steps.package.outputs.asset_path }}
+          fail_on_unmatched_files: true
