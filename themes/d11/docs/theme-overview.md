@@ -1,6 +1,6 @@
 # Theme Summary
 
-This scaffolded theme is a block-first WordPress theme with a small PHP bootstrap layer and a Vite-based front-end pipeline.
+This scaffolded theme is a block-first WordPress theme with a small PHP bootstrap layer and a Vite-based front-end pipeline that compiles Tailwind-authored CSS from tokens defined in `theme.json`.
 
 ## Architecture
 
@@ -10,8 +10,8 @@ This scaffolded theme is a block-first WordPress theme with a small PHP bootstra
 - `inc/patterns.php` registers the custom block pattern category, while WordPress auto-discovers native pattern files from `patterns/`.
 - `templates/` and `parts/` contain the block theme HTML templates used by the Site Editor.
 - `parts/cookie-banner.html` mounts the plugin-owned `simple-cookie-consent/banner` block so cookie consent layout is controlled from the Site Editor instead of plugin PHP hooks.
-- `src/js/` and `src/css/` contain the authored source files, including theme-owned admin assets; built output is written to `assets/`.
-- `theme.json` defines the source-of-truth design tokens and editorial defaults that Gutenberg must know natively, while a generated Tailwind bridge consumes those same tokens instead of defining a second design system.
+- `src/js/` and `src/css/` contain the authored source files, including theme-owned admin assets and the Tailwind stylesheet entrypoints; built output is written to `assets/`.
+- `theme.json` defines the source-of-truth design tokens and editorial defaults that Gutenberg must know natively, while a generated Tailwind bridge under `scripts/generated/` consumes those same tokens instead of defining a second design system.
 
 ## Naming Conventions
 
@@ -24,7 +24,7 @@ This scaffolded theme is a block-first WordPress theme with a small PHP bootstra
 ## Important Files
 
 - `functions.php`: theme bootstrap and core hooks.
-- `inc/assets.php`: Vite integration and asset registration.
+- `inc/assets.php`: Vite integration, asset registration, and dev-server/manifest switching.
 - `inc/blocks.php`: custom block discovery and registration.
 - `inc/block-styles.php`: theme-owned Gutenberg block style registrations such as the `Card` style for `core/group`.
 - `inc/patterns.php`: custom block pattern category registration.
@@ -34,13 +34,14 @@ This scaffolded theme is a block-first WordPress theme with a small PHP bootstra
 - `partials/block-availability/utility/`: export utilities that regenerate the derived block reference files in `docs/block/`, including `block-registry.json` and `whitelisted-blocks.md`.
 - `partials/theme-options.php`: Settings admin screen for theme-owned runtime options such as frontend jQuery disable, comments disable, and image upload restrictions.
 - `partials/privacy-controller-data.php`: Settings admin screen for the global `privacy_controller_data` option and the `[privacy key="..."]` shortcode used in policy pages.
-- `.agents/skills/ai-engine/`: theme-local documentation skill that keeps Codex aligned with the canonical theme docs and the AI-assisted composition model used by this theme.
-- `d11-engine-figma` lives in a separate private repository and is installed in runtime environments as `wp-content/plugins/d11-engine-figma`.
-- The private `d11-engine-figma` repository contains the repository-local workflow skills and deterministic prep, screenshot, ingest, and skill-sync tooling for Figma Make to WordPress workflows.
+- `wp-content/plugins/d11-pages/.agents/skills/ai-engine/`: repository-local documentation skill that keeps agents aligned with the canonical theme docs and the AI-assisted composition model used by this theme.
+- Some AI-assisted page workflow tooling may live outside the theme repository and be installed separately in runtime environments.
+- External workflow tooling is responsible for deterministic prep, screenshot, ingest, and other automation flows that are not owned by the theme itself.
 - `tailwind.config.js`: stable Tailwind shell that imports generated token mappings instead of hardcoding primitive theme tokens.
 - `scripts/generate-tailwind-config.js`: generator that reads `theme.json` and writes the derived Tailwind token bridge plus debug metadata.
 - `scripts/generated/tailwind-theme.generated.js`: generated Tailwind `theme.extend` partial derived from `theme.json`. Do not edit it manually.
 - `src/js/app.js`: front-end bootstrap entrypoint.
+- `src/css/app.css`: main Tailwind-aware stylesheet entrypoint; it imports local CSS layers and expands `@tailwind` directives during the Vite build.
 - `src/js/blocks/editor.js`: shared editor entry for custom blocks.
 - `src/js/blocks/view.js`: shared front-end entry for custom block behavior.
 - `docs/block/block-availability-system.md`: documentation of the runtime block availability system, category model, and allowlist behavior.
@@ -66,13 +67,15 @@ This scaffolded theme is a block-first WordPress theme with a small PHP bootstra
 
 - In development, `inc/assets.php` checks whether the local Vite dev server is available and, if so, enqueues source entries such as `src/js/app.js` directly from `http://localhost:5173`.
 - In production, Vite builds the source files into `assets/` and writes `assets/.vite/manifest.json`. WordPress resolves the final bundle filenames from that manifest before enqueueing them.
-- The main front-end entrypoint is `src/js/app.js`. Additional entries exist for block editor scripts, block view scripts, SEO editor utilities, admin-only settings screens, and CSS bundles as defined in `vite.config.js`.
+- The main front-end entrypoints are `src/js/app.js` for JavaScript and `src/css/app.css` for styles. The CSS entry imports local layers and expands Tailwind directives during the Vite build.
+- Additional entries exist for block editor scripts, block view scripts, SEO editor utilities, admin-only settings screens, and CSS bundles as defined in `vite.config.js`.
 - When JavaScript or CSS files under `src/` change, run `npm run build` so the production bundles in `assets/` stay aligned with the source.
 
 ## Design System Contract
 
 - `theme.json` is the source of truth for stable global tokens and Gutenberg-facing defaults such as palette, typography presets, spacing scale, layout widths, and shared radius values.
 - `theme.json` is the only source of primitive design tokens. Tailwind must consume those tokens through the generated bridge under `scripts/generated/`; it must not become a parallel token registry with divergent colors, spacing values, or widths.
+- `src/css/app.css` should remain the main place where Tailwind layers are assembled. Theme CSS can use `@apply` and custom selectors, but primitive token values should still resolve from the WordPress CSS variables emitted from `theme.json`.
 - `tailwind.config.js` should remain a thin shell for content scanning, plugins, and derived ergonomic aliases such as component radius or shadow names. Primitive colors, font families, spacing, and layout widths must come from the generated bridge.
 - Keep `settings.layout` in `theme.json` so the editor, front-end styles, and AI generation flows share the same `contentSize` and `wideSize` baseline.
 - Avoid using `theme.json` to impose broad layout behavior on neutral containers. Section spacing and composition should usually live in patterns, templates, block supports, or scoped CSS instead of global `core/group` padding.
@@ -91,4 +94,4 @@ This scaffolded theme is a block-first WordPress theme with a small PHP bootstra
 - When updating tokens or layout defaults, change `theme.json` first, then regenerate the Tailwind bridge with `npm run tokens:generate`. `npm run build` will enforce that the generated files are current through `npm run tokens:check`.
 - Keep Contact Form 7 manifests under the active theme root in `cf7-forms/` so they are versioned with the theme; the local `cf7-sync` WP-CLI command reads from that path by default.
 - When adding a new custom block, update both `docs/block/custom-blocks.md` and `docs/block/block-composition-guide.md` if the block should be available to AI-assisted template generation.
-- The theme-local documentation skill should read `docs/` when theme documentation is required, while page workflow skills provided by the separate private `d11-engine-figma` repository must still derive runtime facts for blocks, tokens, screenshots, and audits from concrete theme code plus workflow artifacts.
+- The repository-local documentation skill should read `docs/` when theme documentation is required, while any external page workflow skills must still derive runtime facts for blocks, tokens, screenshots, and audits from concrete theme code plus workflow artifacts.

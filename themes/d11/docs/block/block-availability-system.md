@@ -11,7 +11,7 @@ It is the conceptual reference for the availability system. The runtime source o
 - `partials/block-availability/utility/export-block-registry.php` exports the full registered block registry enriched with current allowlist state.
 - `partials/block-availability/utility/export-whitelisted-blocks-md.php` generates a Markdown reference for the blocks currently in whitelist.
 - `inc/blocks.php` discovers custom theme blocks from `blocks/*/block.json`.
-- `wp-content/plugins/d11-engine-figma/.agents/skills/d11-generate-page/` and related review/optimization skills should consume the exported whitelist artifacts plus runtime outputs instead of maintaining their own block catalog.
+- External generation, review, and optimization skills should consume the exported whitelist artifacts plus runtime outputs instead of maintaining their own block catalog.
 
 For AI-assisted generation, the export script should be treated as the primary machine-readable source for which blocks are currently available.
 
