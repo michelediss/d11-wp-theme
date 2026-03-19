@@ -14,8 +14,8 @@
 
 <!-- wp:column {"width":"50%"} -->
 <div class="wp-block-column" style="flex-basis:50%">
-<!-- wp:heading {"style":{"color":{"text":"#F5F0E8"},"typography":{"fontSize":"clamp(1.75rem, 3vw, 3rem)","lineHeight":"1.1","fontWeight":"700"}},"fontFamily":"space-grotesk"} -->
-<h2 class="wp-block-heading has-text-color has-space-grotesk-font-family" style="color:#F5F0E8;font-size:clamp(1.75rem, 3vw, 3rem);line-height:1.1"><strong>Iscriviti alla newsletter</strong></h2>
+<!-- wp:heading {"style":{"color":{"text":"#F5F0E8"},"typography":{"fontSize":"clamp(1.75rem, 3vw, 3rem)","lineHeight":"1.1","fontWeight":"700"}},"fontFamily":"heading"} -->
+<h2 class="wp-block-heading has-text-color has-heading-font-family" style="color:#F5F0E8;font-size:clamp(1.75rem, 3vw, 3rem);line-height:1.1"><strong>Iscriviti alla newsletter</strong></h2>
 <!-- /wp:heading -->
 <!-- wp:paragraph {"style":{"color":{"text":"#F5F0E8/90"},"typography":{"fontSize":"1rem"}}} -->
 <p class="has-text-color" style="color:#F5F0E8/90;font-size:1rem">Rimani aggiornato sulle novit&agrave; di Sputnik Press.</p>

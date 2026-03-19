@@ -9,8 +9,8 @@
 <!-- wp:group {"layout":{"type":"constrained","wideSize":"90rem"},"style":{"color":{"background":"#0A0A0A"},"spacing":{"padding":{"top":"6rem","bottom":"6rem"}}},"className":"sputnik-authors"} -->
 <div class="wp-block-group has-background sputnik-authors" id="autori" style="background-color:#0A0A0A;padding-top:6rem;padding-bottom:6rem">
 
-<!-- wp:heading {"style":{"color":{"text":"#F5F0E8"},"typography":{"fontSize":"clamp(2.5rem, 5vw, 4.5rem)","lineHeight":"0.92","letterSpacing":"-0.02em","textTransform":"uppercase","fontWeight":"700"}},"fontFamily":"space-grotesk"} -->
-<h2 class="wp-block-heading has-text-color has-space-grotesk-font-family" style="color:#F5F0E8;letter-spacing:-0.02em;line-height:0.92;text-transform:uppercase"><strong>I Nostri<br><span style="color:#F57C20">Autor*</span></strong></h2>
+<!-- wp:heading {"style":{"color":{"text":"#F5F0E8"},"typography":{"fontSize":"clamp(2.5rem, 5vw, 4.5rem)","lineHeight":"0.92","letterSpacing":"-0.02em","textTransform":"uppercase","fontWeight":"700"}},"fontFamily":"heading"} -->
+<h2 class="wp-block-heading has-text-color has-heading-font-family" style="color:#F5F0E8;letter-spacing:-0.02em;line-height:0.92;text-transform:uppercase"><strong>I Nostri<br><span style="color:#F57C20">Autor*</span></strong></h2>
 <!-- /wp:heading -->
 
 <!-- wp:group {"style":{"spacing":{"margin":{"top":"3rem"}}},"layout":{"type":"grid","columnCount":2,"minimumColumnWidth":"20rem"}} -->

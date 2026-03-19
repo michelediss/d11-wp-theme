@@ -7,7 +7,12 @@ const { Fragment, createElement } = element;
 const { __ } = i18n;
 const ServerSideRender = serverSideRender;
 
-const PRESET_VALUES = ['', 'accent', 'foreground', 'muted', 'canvas'];
+const PRESET_VALUES = ['', 'white', 'black', 'light', 'primary', 'accent'];
+const LEGACY_TO_CURRENT = {
+  foreground: 'black',
+  muted: 'white',
+  canvas: 'light',
+};
 
 registerBlockType('custom/social-share', {
   title: __('Social Share', 'd11'),
@@ -23,8 +28,9 @@ registerBlockType('custom/social-share', {
   edit({ attributes, setAttributes }) {
     const blockProps = useBlockProps();
     const color = attributes.color || '';
-    const isPresetColor = PRESET_VALUES.includes(color);
-    const selectedValue = isPresetColor ? color : '__custom__';
+    const normalizedColor = LEGACY_TO_CURRENT[color] || color;
+    const isPresetColor = PRESET_VALUES.includes(normalizedColor);
+    const selectedValue = isPresetColor ? normalizedColor : '__custom__';
 
     return createElement(
       Fragment,
@@ -43,15 +49,16 @@ registerBlockType('custom/social-share', {
             value: selectedValue,
             options: [
               { label: __('Default', 'd11'), value: '' },
+              { label: __('White', 'd11'), value: 'white' },
+              { label: __('Black', 'd11'), value: 'black' },
+              { label: __('Light', 'd11'), value: 'light' },
+              { label: __('Primary', 'd11'), value: 'primary' },
               { label: __('Accent', 'd11'), value: 'accent' },
-              { label: __('Foreground', 'd11'), value: 'foreground' },
-              { label: __('Muted', 'd11'), value: 'muted' },
-              { label: __('Canvas', 'd11'), value: 'canvas' },
               { label: __('Custom hex color', 'd11'), value: '__custom__' },
             ],
             onChange(value) {
               if (value === '__custom__') {
-                setAttributes({ color: !isPresetColor && color ? color : '#b85c38' });
+                setAttributes({ color: !isPresetColor && color ? color : '#e5232f' });
                 return;
               }
 

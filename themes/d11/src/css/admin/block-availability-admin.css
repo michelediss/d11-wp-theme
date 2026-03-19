@@ -219,20 +219,3 @@
         min-height: 0;
     }
 }
-
-@media (min-width: 783px) {
-    .tlt-block-availability-grid {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-    }
-}
-
-@media (min-width: 1280px) {
-    .tlt-block-availability-grid {
-        grid-template-columns: repeat(3, minmax(0, 1fr));
-    }
-}
-
-#submit {
-    border-radius: 1000px;
-    margin-top: 1.5rem;
-}

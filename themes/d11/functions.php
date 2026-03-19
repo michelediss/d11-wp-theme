@@ -14,6 +14,7 @@ const D11_VERSION = '0.1.1';
 
 require_once get_theme_file_path('inc/assets.php');
 require_once get_theme_file_path('inc/blocks.php');
+require_once get_theme_file_path('inc/block-styles.php');
 require_once get_theme_file_path('inc/patterns.php');
 
 foreach (glob(get_theme_file_path('partials/*.php')) ?: [] as $partial_file) {
@@ -32,7 +33,7 @@ function d11_setup(): void
     add_theme_support('editor-styles');
     add_theme_support('automatic-feed-links');
     add_theme_support('post-thumbnails');
-    add_editor_style('assets/css/editor.css');
+    add_editor_style(d11_get_theme_style_relative_path('src/css/editor.css'));
 
     register_nav_menus([
         'primary' => __('Primary Navigation', 'd11'),
@@ -80,10 +81,26 @@ add_action('wp_enqueue_scripts', 'd11_enqueue_assets');
  */
 function d11_enqueue_editor_assets(): void
 {
-    $editor_css = get_theme_file_uri('assets/css/editor.css');
-    $editor_path = get_theme_file_path('assets/css/editor.css');
-    $version = file_exists($editor_path) ? (string) filemtime($editor_path) : D11_VERSION;
+    d11_register_vite_style('d11-editor', 'src/css/editor.css');
+    wp_enqueue_style('d11-editor');
 
-    wp_enqueue_style('d11-editor', $editor_css, [], $version);
+    if (d11_should_use_vite_dev_server()) {
+        $server = untrailingslashit(d11_get_vite_dev_server());
+
+        wp_enqueue_script('d11-vite-client', $server . '/@vite/client', [], null, true);
+        wp_enqueue_style('d11-editor-theme', $server . '/src/css/app.css', ['d11-editor'], null);
+        return;
+    }
+
+    $theme_css_path = d11_get_theme_style_path('src/css/app.css');
+
+    if (! file_exists($theme_css_path)) {
+        return;
+    }
+
+    $theme_css_uri = d11_get_theme_style_uri('src/css/app.css');
+    $theme_css_version = (string) filemtime($theme_css_path);
+
+    wp_enqueue_style('d11-editor-theme', $theme_css_uri, ['d11-editor'], $theme_css_version);
 }
 add_action('enqueue_block_editor_assets', 'd11_enqueue_editor_assets');

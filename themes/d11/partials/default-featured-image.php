@@ -100,18 +100,15 @@ function d11_enqueue_default_featured_image_assets(string $hook_suffix): void
         return;
     }
 
-    $script_path = get_theme_file_path('assets/js/default-featured-image-admin.js');
-    $style_path = get_theme_file_path('assets/css/admin/default-featured-image-admin.css');
-    $script_version = file_exists($script_path) ? (string) filemtime($script_path) : D11_VERSION;
-    $style_version = file_exists($style_path) ? (string) filemtime($style_path) : D11_VERSION;
-
     wp_enqueue_media();
-    wp_enqueue_script(
+    d11_register_vite_script(
         'd11-default-featured-image-admin',
-        get_theme_file_uri('assets/js/default-featured-image-admin.js'),
-        ['jquery'],
-        $script_version,
-        true
+        'src/js/admin/default-featured-image-admin.js',
+        ['jquery']
+    );
+    d11_register_vite_style(
+        'd11-default-featured-image-admin',
+        'src/css/admin/default-featured-image-admin.css'
     );
     wp_localize_script(
         'd11-default-featured-image-admin',
@@ -123,13 +120,8 @@ function d11_enqueue_default_featured_image_assets(string $hook_suffix): void
             'placeholderText' => __('No image selected', 'd11'),
         ]
     );
-
-    wp_enqueue_style(
-        'd11-default-featured-image-admin',
-        get_theme_file_uri('assets/css/admin/default-featured-image-admin.css'),
-        [],
-        $style_version
-    );
+    wp_enqueue_script('d11-default-featured-image-admin');
+    wp_enqueue_style('d11-default-featured-image-admin');
 }
 add_action('admin_enqueue_scripts', 'd11_enqueue_default_featured_image_assets');
 

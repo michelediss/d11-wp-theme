@@ -30,6 +30,13 @@ function shouldSkipLink(link) {
   return NAVIGATION_EXCLUDE_PREFIXES.some((prefix) => url.pathname.startsWith(prefix));
 }
 
+function resetShellState(shell) {
+  gsap.killTweensOf(shell);
+  shell.classList.remove('is-page-transitioning');
+  delete shell.dataset.transitionIntent;
+  gsap.set(shell, { clearProps: 'opacity,visibility,transform' });
+}
+
 export function initPageTransitions() {
   const shell = document.querySelector('body');
 
@@ -41,16 +48,12 @@ export function initPageTransitions() {
   let isTransitioning = false;
   const reducedMotion = prefersReducedMotion();
 
-  gsap.fromTo(
-    shell,
-    { autoAlpha: 0 },
-    {
-      autoAlpha: 1,
-      duration: reducedMotion ? 0.01 : 0.35,
-      ease: 'power1.out',
-      clearProps: 'opacity,visibility',
-    }
-  );
+  resetShellState(shell);
+
+  window.addEventListener('pageshow', () => {
+    isTransitioning = false;
+    resetShellState(shell);
+  });
 
   document.addEventListener('click', (event) => {
     if (!(event.target instanceof Element)) {

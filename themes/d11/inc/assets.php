@@ -119,6 +119,20 @@ function d11_get_theme_style_path(string $entry): string
 }
 
 /**
+ * Resolves a style entry to a path relative to the theme root for add_editor_style().
+ */
+function d11_get_theme_style_relative_path(string $entry): string
+{
+    $manifest = d11_get_vite_manifest();
+
+    if (isset($manifest[$entry]['file'])) {
+        return 'assets/' . $manifest[$entry]['file'];
+    }
+
+    return ltrim($entry, '/');
+}
+
+/**
  * Registers a Vite-driven script handle for later enqueueing.
  */
 function d11_register_vite_script(string $handle, string $entry, array $dependencies = []): void

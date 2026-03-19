@@ -50,17 +50,13 @@ function d11_enqueue_block_availability_assets(string $hook_suffix): void
         return;
     }
 
-    $script_path = get_theme_file_path('assets/js/block-availability-admin.js');
-    $style_path = get_theme_file_path('assets/css/admin/block-availability-admin.css');
-    $script_version = file_exists($script_path) ? (string) filemtime($script_path) : D11_VERSION;
-    $style_version = file_exists($style_path) ? (string) filemtime($style_path) : D11_VERSION;
-
-    wp_enqueue_script(
+    d11_register_vite_script(
         'd11-block-availability-admin',
-        get_theme_file_uri('assets/js/block-availability-admin.js'),
-        [],
-        $script_version,
-        true
+        'src/js/admin/block-availability-admin.js'
+    );
+    d11_register_vite_style(
+        'd11-block-availability-admin',
+        'src/css/admin/block-availability-admin.css'
     );
     wp_add_inline_script(
         'd11-block-availability-admin',
@@ -69,13 +65,8 @@ function d11_enqueue_block_availability_assets(string $hook_suffix): void
         ]) . ';',
         'before'
     );
-
-    wp_enqueue_style(
-        'd11-block-availability-admin',
-        get_theme_file_uri('assets/css/admin/block-availability-admin.css'),
-        [],
-        $style_version
-    );
+    wp_enqueue_script('d11-block-availability-admin');
+    wp_enqueue_style('d11-block-availability-admin');
 }
 add_action('admin_enqueue_scripts', 'd11_enqueue_block_availability_assets');
 

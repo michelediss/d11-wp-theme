@@ -14,8 +14,8 @@
 
 <!-- wp:column {"width":"66.66%"} -->
 <div class="wp-block-column" style="flex-basis:66.66%">
-<!-- wp:heading {"style":{"color":{"text":"#0A0A0A"},"typography":{"fontSize":"clamp(2.5rem, 5vw, 4.5rem)","lineHeight":"0.92","letterSpacing":"-0.02em","textTransform":"uppercase","fontWeight":"700"}},"fontFamily":"space-grotesk"} -->
-<h2 class="wp-block-heading has-text-color has-space-grotesk-font-family" style="color:#0A0A0A;letter-spacing:-0.02em;line-height:0.92;text-transform:uppercase"><strong>Ultime<br><span style="color:#E8132A">Pubblicazioni</span></strong></h2>
+<!-- wp:heading {"style":{"color":{"text":"#0A0A0A"},"typography":{"fontSize":"clamp(2.5rem, 5vw, 4.5rem)","lineHeight":"0.92","letterSpacing":"-0.02em","textTransform":"uppercase","fontWeight":"700"}},"fontFamily":"heading"} -->
+<h2 class="wp-block-heading has-text-color has-heading-font-family" style="color:#0A0A0A;letter-spacing:-0.02em;line-height:0.92;text-transform:uppercase"><strong>Ultime<br><span style="color:#E8132A">Pubblicazioni</span></strong></h2>
 <!-- /wp:heading -->
 </div>
 <!-- /wp:column -->

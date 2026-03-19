@@ -4,7 +4,7 @@
   }
 
   body {
-    @apply bg-canvas text-foreground antialiased;
+    @apply bg-light text-black antialiased;
   }
 
   main {

@@ -1,5 +1,5 @@
 .wp-block-custom-breadcrumbs {
-  color: color-mix(in srgb, var(--wp--preset--color--foreground) 72%, transparent);
+  color: color-mix(in srgb, var(--wp--preset--color--black) 72%, transparent);
   font-size: var(--wp--preset--font-size--sm);
 }
 
@@ -31,15 +31,15 @@
 
 .wp-block-custom-breadcrumbs .breadcrumbs__link:hover,
 .wp-block-custom-breadcrumbs .breadcrumbs__link:focus-visible {
-  color: var(--wp--preset--color--accent);
+  color: var(--wp--preset--color--primary);
   text-decoration: underline;
   outline: none;
 }
 
 .wp-block-custom-breadcrumbs .breadcrumbs__current {
-  color: var(--wp--preset--color--foreground);
+  color: var(--wp--preset--color--black);
 }
 
 .wp-block-custom-breadcrumbs .breadcrumbs__separator {
-  color: color-mix(in srgb, var(--wp--preset--color--foreground) 32%, transparent);
+  color: color-mix(in srgb, var(--wp--preset--color--black) 32%, transparent);
 }

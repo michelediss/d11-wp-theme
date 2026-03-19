@@ -12,10 +12,14 @@ if (isset($attributes['color']) && is_string($attributes['color'])) {
 
 $style_value = '';
 $allowed_palette = [
+    'white' => 'var(--wp--preset--color--white)',
+    'black' => 'var(--wp--preset--color--black)',
+    'light' => 'var(--wp--preset--color--light)',
+    'primary' => 'var(--wp--preset--color--primary)',
     'accent' => 'var(--wp--preset--color--accent)',
-    'foreground' => 'var(--wp--preset--color--foreground)',
-    'muted' => 'var(--wp--preset--color--muted)',
-    'canvas' => 'var(--wp--preset--color--canvas)',
+    'foreground' => 'var(--wp--preset--color--black)',
+    'muted' => 'var(--wp--preset--color--white)',
+    'canvas' => 'var(--wp--preset--color--light)',
 ];
 
 if ($color !== '') {

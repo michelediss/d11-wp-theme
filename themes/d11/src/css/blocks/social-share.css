@@ -1,5 +1,5 @@
 .wp-block-custom-social-share {
-  --social-share-color: var(--wp--preset--color--foreground);
+  --social-share-color: var(--wp--preset--color--black);
 }
 
 .wp-block-custom-social-share .social-share__buttons {

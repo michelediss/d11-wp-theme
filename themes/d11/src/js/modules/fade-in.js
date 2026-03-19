@@ -4,7 +4,7 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger';
 gsap.registerPlugin(ScrollTrigger);
 
 const FADE_READY_ATTR = 'data-fade-in-ready';
-const FADE_IN_SELECTOR = 'main > *:not(.no-fadein), main [data-fade-in]:not(.no-fadein)';
+const FADE_IN_SELECTOR = '[data-fade-in]:not(.no-fadein)';
 
 function prefersReducedMotion() {
   return window.matchMedia('(prefers-reduced-motion: reduce)').matches;

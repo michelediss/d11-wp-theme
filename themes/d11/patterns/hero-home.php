@@ -12,8 +12,8 @@
 <img class="wp-block-cover__image-background" alt="" src="<?php echo esc_url( get_theme_file_uri( 'assets/images/hero-ink-bg.png' ) ); ?>" data-object-fit="cover" />
 <div class="wp-block-cover__inner-container">
 
-<!-- wp:heading {"level":1,"style":{"color":{"text":"#F5F0E8"},"typography":{"fontSize":"clamp(4rem, 9vw, 8rem)","fontWeight":"700","lineHeight":"0.88","letterSpacing":"-0.03em","textTransform":"uppercase"}},"fontFamily":"space-grotesk"} -->
-<h1 class="wp-block-heading has-text-color has-space-grotesk-font-family" style="color:#F5F0E8;letter-spacing:-0.03em;line-height:0.88;text-transform:uppercase"><strong>DOOMED<br><span style="color:#E8132A">UNO</span></strong></h1>
+<!-- wp:heading {"level":1,"style":{"color":{"text":"#F5F0E8"},"typography":{"fontSize":"clamp(4rem, 9vw, 8rem)","fontWeight":"700","lineHeight":"0.88","letterSpacing":"-0.03em","textTransform":"uppercase"}},"fontFamily":"heading"} -->
+<h1 class="wp-block-heading has-text-color has-heading-font-family" style="color:#F5F0E8;letter-spacing:-0.03em;line-height:0.88;text-transform:uppercase"><strong>DOOMED<br><span style="color:#E8132A">UNO</span></strong></h1>
 <!-- /wp:heading -->
 
 <!-- wp:buttons {"style":{"spacing":{"margin":{"top":"1.5rem"}}}} -->

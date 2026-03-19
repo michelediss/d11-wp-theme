@@ -12,11 +12,11 @@
   max-height: min(42rem, calc(100dvh - (var(--wp--preset--spacing--sm, 1rem) * 2)));
   display: grid;
   grid-template-rows: auto minmax(0, 1fr) auto;
-  background: var(--wp--preset--color--canvas, #f6f3ec);
-  color: var(--wp--preset--color--foreground, #1c1917);
-  border: 1px solid color-mix(in srgb, var(--wp--preset--color--foreground, #1c1917) 12%, transparent);
+  background: var(--wp--preset--color--light, #f6f3ec);
+  color: var(--wp--preset--color--black, #1c1917);
+  border: 1px solid color-mix(in srgb, var(--wp--preset--color--black, #1c1917) 12%, transparent);
   border-radius: var(--wp--custom--radius--lg, 1.5rem);
-  box-shadow: 0 24px 60px color-mix(in srgb, var(--wp--preset--color--foreground, #1c1917) 18%, transparent);
+  box-shadow: 0 24px 60px color-mix(in srgb, var(--wp--preset--color--black, #1c1917) 18%, transparent);
   pointer-events: auto;
   overflow: hidden;
   will-change: transform, opacity;
@@ -26,15 +26,15 @@
 .scc-banner__header {
   padding: var(--wp--preset--spacing--md, 1.5rem) var(--wp--preset--spacing--md, 1.5rem) var(--wp--preset--spacing--sm, 1rem);
   background:
-    linear-gradient(135deg, color-mix(in srgb, var(--wp--preset--color--accent, #b85c38) 14%, transparent), transparent 55%),
-    linear-gradient(180deg, color-mix(in srgb, var(--wp--preset--color--muted, #d9d1c5) 62%, transparent), transparent);
-  border-bottom: 1px solid color-mix(in srgb, var(--wp--preset--color--foreground, #1c1917) 10%, transparent);
+    linear-gradient(135deg, color-mix(in srgb, var(--wp--preset--color--primary, #b85c38) 14%, transparent), transparent 55%),
+    linear-gradient(180deg, color-mix(in srgb, var(--wp--preset--color--white, #d9d1c5) 62%, transparent), transparent);
+  border-bottom: 1px solid color-mix(in srgb, var(--wp--preset--color--black, #1c1917) 10%, transparent);
 }
 
 .scc-banner__eyebrow {
   margin-bottom: 0.5rem;
-  color: color-mix(in srgb, var(--wp--preset--color--foreground, #1c1917) 72%, transparent);
-  font-family: var(--wp--preset--font-family--sans, sans-serif);
+  color: color-mix(in srgb, var(--wp--preset--color--black, #1c1917) 72%, transparent);
+  font-family: var(--wp--preset--font-family--paragraph, sans-serif);
   font-size: var(--wp--preset--font-size--sm, 0.875rem);
   font-weight: 700;
   letter-spacing: 0.08em;
@@ -43,7 +43,7 @@
 
 .scc-banner__title {
   margin: 0;
-  font-family: var(--wp--preset--font-family--display, serif);
+  font-family: var(--wp--preset--font-family--heading, serif);
   font-size: clamp(1.75rem, 2vw, 2.35rem);
   line-height: 1.05;
 }
@@ -53,7 +53,7 @@
   overflow-y: auto;
   padding: var(--wp--preset--spacing--sm, 1rem) var(--wp--preset--spacing--md, 1.5rem) 0;
   scrollbar-width: thin;
-  scrollbar-color: color-mix(in srgb, var(--wp--preset--color--accent, #b85c38) 55%, transparent) transparent;
+  scrollbar-color: color-mix(in srgb, var(--wp--preset--color--primary, #b85c38) 55%, transparent) transparent;
 }
 
 .scc-banner__description {
@@ -66,7 +66,7 @@
 }
 
 .scc-banner__description a {
-  color: var(--wp--preset--color--accent, #b85c38);
+  color: var(--wp--preset--color--primary, #b85c38);
   text-decoration: underline;
   text-underline-offset: 0.18em;
 }
@@ -78,8 +78,8 @@
 .scc-banner__footer {
   padding: var(--wp--preset--spacing--sm, 1rem) var(--wp--preset--spacing--md, 1.5rem) var(--wp--preset--spacing--md, 1.5rem);
   background:
-    linear-gradient(180deg, color-mix(in srgb, var(--wp--preset--color--canvas, #f6f3ec) 32%, transparent), var(--wp--preset--color--canvas, #f6f3ec) 32%);
-  border-top: 1px solid color-mix(in srgb, var(--wp--preset--color--foreground, #1c1917) 10%, transparent);
+    linear-gradient(180deg, color-mix(in srgb, var(--wp--preset--color--light, #f6f3ec) 32%, transparent), var(--wp--preset--color--light, #f6f3ec) 32%);
+  border-top: 1px solid color-mix(in srgb, var(--wp--preset--color--black, #1c1917) 10%, transparent);
   backdrop-filter: blur(8px);
 }
 
@@ -91,10 +91,10 @@
 
 .scc-button {
   appearance: none;
-  border: 1px solid var(--wp--preset--color--foreground, #1c1917);
+  border: 1px solid var(--wp--preset--color--black, #1c1917);
   border-radius: 999px;
   padding: 0.75rem 1rem;
-  font-family: var(--wp--preset--font-family--sans, sans-serif);
+  font-family: var(--wp--preset--font-family--paragraph, sans-serif);
   font-size: var(--wp--preset--font-size--sm, 0.875rem);
   font-weight: 600;
   line-height: 1.1;
@@ -103,27 +103,27 @@
 }
 
 .scc-button--primary {
-  background: var(--wp--preset--color--foreground, #1c1917);
-  color: var(--wp--preset--color--canvas, #f6f3ec);
+  background: var(--wp--preset--color--black, #1c1917);
+  color: var(--wp--preset--color--light, #f6f3ec);
 }
 
 .scc-button--secondary,
 .scc-button--ghost {
   background: transparent;
-  color: var(--wp--preset--color--foreground, #1c1917);
+  color: var(--wp--preset--color--black, #1c1917);
 }
 
 .scc-button:hover,
 .scc-button:focus-visible {
-  background: var(--wp--preset--color--accent, #b85c38);
-  border-color: var(--wp--preset--color--accent, #b85c38);
-  color: var(--wp--preset--color--canvas, #f6f3ec);
+  background: var(--wp--preset--color--primary, #b85c38);
+  border-color: var(--wp--preset--color--primary, #b85c38);
+  color: var(--wp--preset--color--light, #f6f3ec);
   transform: translateY(-1px);
 }
 
 .scc-button:focus-visible,
 .scc-banner__toggle-button:focus-visible {
-  outline: 2px solid var(--wp--preset--color--accent, #b85c38);
+  outline: 2px solid var(--wp--preset--color--primary, #b85c38);
   outline-offset: 2px;
 }
 
@@ -131,7 +131,7 @@
   overflow: hidden;
   margin-top: var(--wp--preset--spacing--md, 1.5rem);
   padding-top: var(--wp--preset--spacing--sm, 1rem);
-  border-top: 1px solid color-mix(in srgb, var(--wp--preset--color--foreground, #1c1917) 10%, transparent);
+  border-top: 1px solid color-mix(in srgb, var(--wp--preset--color--black, #1c1917) 10%, transparent);
   max-height: 100rem;
   opacity: 1;
   transform: translateY(0);
@@ -159,7 +159,7 @@
   margin-bottom: var(--wp--preset--spacing--sm, 1rem);
   padding: var(--wp--preset--spacing--sm, 1rem);
   border-radius: var(--wp--custom--radius--md, 0.75rem);
-  background: color-mix(in srgb, var(--wp--preset--color--muted, #d9d1c5) 65%, transparent);
+  background: color-mix(in srgb, var(--wp--preset--color--white, #d9d1c5) 65%, transparent);
 }
 
 .scc-banner__settings-intro p {
@@ -173,25 +173,25 @@
   gap: var(--wp--preset--spacing--xs, 0.5rem);
   align-items: start;
   padding: var(--wp--preset--spacing--sm, 1rem) 0;
-  border-bottom: 1px solid color-mix(in srgb, var(--wp--preset--color--foreground, #1c1917) 8%, transparent);
+  border-bottom: 1px solid color-mix(in srgb, var(--wp--preset--color--black, #1c1917) 8%, transparent);
 }
 
 .scc-banner__toggle-button {
   width: 2rem;
   height: 2rem;
   margin-top: 0.125rem;
-  border: 1px solid color-mix(in srgb, var(--wp--preset--color--foreground, #1c1917) 16%, transparent);
+  border: 1px solid color-mix(in srgb, var(--wp--preset--color--black, #1c1917) 16%, transparent);
   border-radius: 999px;
   background: transparent;
-  color: var(--wp--preset--color--foreground, #1c1917);
+  color: var(--wp--preset--color--black, #1c1917);
   cursor: pointer;
   transition: transform 0.22s ease, background-color 0.22s ease, border-color 0.22s ease;
 }
 
 .scc-banner__toggle-button.is-open {
   transform: rotate(45deg);
-  border-color: var(--wp--preset--color--accent, #b85c38);
-  background: color-mix(in srgb, var(--wp--preset--color--accent, #b85c38) 12%, transparent);
+  border-color: var(--wp--preset--color--primary, #b85c38);
+  background: color-mix(in srgb, var(--wp--preset--color--primary, #b85c38) 12%, transparent);
 }
 
 .scc-banner__setting-main {
@@ -212,13 +212,13 @@
 
 .scc-banner__setting-caption {
   font-size: var(--wp--preset--font-size--sm, 0.875rem);
-  color: color-mix(in srgb, var(--wp--preset--color--foreground, #1c1917) 72%, transparent);
+  color: color-mix(in srgb, var(--wp--preset--color--black, #1c1917) 72%, transparent);
 }
 
 .scc-banner__setting-main input[type="checkbox"] {
   inline-size: 2.75rem;
   block-size: 1.5rem;
-  accent-color: var(--wp--preset--color--accent, #b85c38);
+  accent-color: var(--wp--preset--color--primary, #b85c38);
   flex: 0 0 auto;
 }
 
@@ -236,7 +236,7 @@
   bottom: 0;
   margin-top: var(--wp--preset--spacing--sm, 1rem);
   padding-top: var(--wp--preset--spacing--sm, 1rem);
-  background: linear-gradient(180deg, color-mix(in srgb, var(--wp--preset--color--canvas, #f6f3ec) 35%, transparent), var(--wp--preset--color--canvas, #f6f3ec) 35%);
+  background: linear-gradient(180deg, color-mix(in srgb, var(--wp--preset--color--light, #f6f3ec) 35%, transparent), var(--wp--preset--color--light, #f6f3ec) 35%);
 }
 
 .scc-banner__actions--settings {
