@@ -47,6 +47,7 @@ This scaffolded theme is a block-first WordPress theme with a small PHP bootstra
 - `docs/block/block-availability-system.md`: documentation of the runtime block availability system, category model, and allowlist behavior.
 - `docs/block/block-composition-guide.md`: AI-facing guide to block usage and composition patterns.
 - `docs/block/custom-blocks.md`: development rules for future custom blocks.
+- `docs/skill-sync.md`: operational guide for syncing repository-local skills to the global Codex and OpenCode skill directories.
 - `style.css`: theme registration metadata required by WordPress.
 - `vite.config.js` and `tailwind.config.js`: build pipeline configuration.
 
@@ -95,3 +96,4 @@ This scaffolded theme is a block-first WordPress theme with a small PHP bootstra
 - Keep Contact Form 7 manifests under the active theme root in `cf7-forms/` so they are versioned with the theme; the local `cf7-sync` WP-CLI command reads from that path by default.
 - When adding a new custom block, update both `docs/block/custom-blocks.md` and `docs/block/block-composition-guide.md` if the block should be available to AI-assisted template generation.
 - The repository-local documentation skill should read `docs/` when theme documentation is required, while any external page workflow skills must still derive runtime facts for blocks, tokens, screenshots, and audits from concrete theme code plus workflow artifacts.
+- After changing a repository-local skill that should also be available globally, run the sync workflow documented in `docs/skill-sync.md`.
