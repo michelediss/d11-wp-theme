@@ -1,0 +1,22 @@
+name: d11-create-custom-block
+description: Create one d11 custom block using the canonical theme block rules, shared block entrypoints, required documentation updates, and final build verification.
+context:
+  platform: wordpress
+  owner: d11-theme
+  theme: d11
+runtime_notes:
+  preferred_files:
+    - docs/ai-workflows.md
+    - docs/theme-overview.md
+    - docs/block/custom-blocks.md
+    - docs/block/block-composition-guide.md
+    - docs/block/whitelisted-blocks-summary.md
+    - docs/block/block-availability-system.md
+    - docs/block/whitelisted-blocks.md
+    - docs/skill-sync.md
+  resolution_rules:
+    - Use this skill for one custom block at a time when the goal is implementation, not review or Lighthouse work.
+    - Keep shared rules in docs/ai-workflows.md instead of duplicating them in this skill.
+    - Follow docs/block/custom-blocks.md as the canonical implementation standard for file structure, metadata, editor behavior, and registration.
+    - Update docs/block/block-composition-guide.md only when the new custom block should be intentionally available to AI-assisted composition.
+    - Do not manually extend the runtime allowlist unless runtime code requires an explicit exception.
