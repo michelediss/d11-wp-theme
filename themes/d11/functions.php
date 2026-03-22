@@ -77,6 +77,58 @@ function d11_enqueue_assets(): void
 add_action('wp_enqueue_scripts', 'd11_enqueue_assets');
 
 /**
+ * Returns the first image URL from the current front-page content, when available.
+ */
+function d11_get_front_page_lcp_image_url(): ?string
+{
+    if (! is_front_page()) {
+        return null;
+    }
+
+    $post = get_queried_object();
+
+    if (! ($post instanceof WP_Post) || ! is_string($post->post_content) || $post->post_content === '') {
+        return null;
+    }
+
+    if (! preg_match('/<img[^>]+src=["\']([^"\']+)["\']/i', $post->post_content, $matches)) {
+        return null;
+    }
+
+    $image_url = $matches[1] ?? '';
+
+    return is_string($image_url) && $image_url !== '' ? $image_url : null;
+}
+
+/**
+ * Adds resource hints for the front-page LCP image when it is sourced remotely.
+ */
+function d11_print_front_page_resource_hints(): void
+{
+    $image_url = d11_get_front_page_lcp_image_url();
+
+    if (! $image_url) {
+        return;
+    }
+
+    $image_host = wp_parse_url($image_url, PHP_URL_HOST);
+    $site_host = wp_parse_url(home_url('/'), PHP_URL_HOST);
+
+    if (is_string($image_host) && $image_host !== '' && $image_host !== $site_host) {
+        printf(
+            "<link rel=\"preconnect\" href=\"%s\" crossorigin>\n",
+            esc_url('https://' . $image_host)
+        );
+    }
+
+    printf(
+        "<link rel=\"preload\" as=\"image\" href=\"%s\">\n",
+        esc_url($image_url)
+    );
+}
+add_action('wp_head', 'd11_print_front_page_resource_hints', 1);
+
+/**
  * Loads editor-only styles so the block editor stays aligned with the front end.
  */
 function d11_enqueue_editor_assets(): void

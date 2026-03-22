@@ -35,8 +35,17 @@ export function renderTerminalReport(result) {
     speedIndexMs: { value: 3400, smallerIsBetter: true, badge: '🟡' },
   };
 
-  lines.push(`URL: ${meta.url}`);
+  lines.push(`Audit URL: ${meta.auditUrl ?? meta.url}`);
+  if (meta.canonicalUrl && meta.canonicalUrl !== (meta.auditUrl ?? meta.url)) {
+    lines.push(`Canonical URL: ${meta.canonicalUrl}`);
+  }
+  if (meta.execution?.runnerType) {
+    lines.push(`Runner: ${meta.execution.runnerType}`);
+  }
   lines.push(`Device: ${meta.device} | Runs: ${meta.runs} | WaitUntil: ${meta.waitUntil}`);
+  if (meta.execution?.note) {
+    lines.push(`Execution: ${meta.execution.note}`);
+  }
   lines.push('');
   lines.push(`Performance: ${formatScore(aggregate.scores.performance)}`);
   lines.push(`Accessibility: ${formatScore(aggregate.scores.accessibility)}`);

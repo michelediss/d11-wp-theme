@@ -34,7 +34,7 @@ function getThrottlingSettings(options) {
 }
 
 export async function runLighthouseAudit({
-  url,
+  auditUrl,
   remoteDebuggingPort,
   device,
   timeout,
@@ -68,13 +68,13 @@ export async function runLighthouseAudit({
   };
 
   logger.debug('Running Lighthouse', {
-    url,
+    auditUrl,
     port: remoteDebuggingPort,
     device,
     throttling,
   });
 
-  const runnerResult = await lighthouse(url, flags, getLighthouseConfig(device));
+  const runnerResult = await lighthouse(auditUrl, flags, getLighthouseConfig(device));
   if (!runnerResult?.lhr) {
     throw new Error('Lighthouse did not return an LHR payload.');
   }

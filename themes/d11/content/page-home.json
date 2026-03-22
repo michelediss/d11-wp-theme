@@ -235,9 +235,9 @@
                                                         "className": "photo-frame min-h-[26rem]"
                                                     },
                                                     "innerBlocks": [],
-                                                    "innerHTML": "\n<figure class=\"wp-block-image size-full photo-frame min-h-[26rem]\"><img src=\"https://picsum.photos/id/1060/1200/1400\" alt=\"Creative team planning a digital product launch\"/></figure>\n",
+                                                    "innerHTML": "\n<figure class=\"wp-block-image size-full photo-frame min-h-[26rem]\"><img src=\"https://picsum.photos/id/1060/960/1120\" alt=\"Creative team planning a digital product launch\" width=\"960\" height=\"1120\" loading=\"eager\" fetchpriority=\"high\" decoding=\"async\"/></figure>\n",
                                                     "innerContent": [
-                                                        "\n<figure class=\"wp-block-image size-full photo-frame min-h-[26rem]\"><img src=\"https://picsum.photos/id/1060/1200/1400\" alt=\"Creative team planning a digital product launch\"/></figure>\n"
+                                                        "\n<figure class=\"wp-block-image size-full photo-frame min-h-[26rem]\"><img src=\"https://picsum.photos/id/1060/960/1120\" alt=\"Creative team planning a digital product launch\" width=\"960\" height=\"1120\" loading=\"eager\" fetchpriority=\"high\" decoding=\"async\"/></figure>\n"
                                                     ]
                                                 },
                                                 {
@@ -260,9 +260,9 @@
                                                                         "className": "photo-frame h-full min-h-[13rem]"
                                                                     },
                                                                     "innerBlocks": [],
-                                                                    "innerHTML": "\n<figure class=\"wp-block-image size-full photo-frame h-full min-h-[13rem]\"><img src=\"https://picsum.photos/id/1035/900/700\" alt=\"Close-up product workspace with notebooks and laptop\"/></figure>\n",
+                                                                    "innerHTML": "\n<figure class=\"wp-block-image size-full photo-frame h-full min-h-[13rem]\"><img src=\"https://picsum.photos/id/1035/720/560\" alt=\"Close-up product workspace with notebooks and laptop\" width=\"720\" height=\"560\" loading=\"lazy\" decoding=\"async\"/></figure>\n",
                                                                     "innerContent": [
-                                                                        "\n<figure class=\"wp-block-image size-full photo-frame h-full min-h-[13rem]\"><img src=\"https://picsum.photos/id/1035/900/700\" alt=\"Close-up product workspace with notebooks and laptop\"/></figure>\n"
+                                                                        "\n<figure class=\"wp-block-image size-full photo-frame h-full min-h-[13rem]\"><img src=\"https://picsum.photos/id/1035/720/560\" alt=\"Close-up product workspace with notebooks and laptop\" width=\"720\" height=\"560\" loading=\"lazy\" decoding=\"async\"/></figure>\n"
                                                                     ]
                                                                 }
                                                             ],
@@ -604,9 +604,9 @@
                                                 "className": "photo-frame min-h-[34rem]"
                                             },
                                             "innerBlocks": [],
-                                            "innerHTML": "\n<figure class=\"wp-block-image size-full photo-frame min-h-[34rem]\"><img src=\"https://picsum.photos/id/1040/1000/1400\" alt=\"Person working in a bright studio environment\"/></figure>\n",
+                                            "innerHTML": "\n<figure class=\"wp-block-image size-full photo-frame min-h-[34rem]\"><img src=\"https://picsum.photos/id/1040/760/1064\" alt=\"Person working in a bright studio environment\" width=\"760\" height=\"1064\" loading=\"lazy\" decoding=\"async\"/></figure>\n",
                                             "innerContent": [
-                                                "\n<figure class=\"wp-block-image size-full photo-frame min-h-[34rem]\"><img src=\"https://picsum.photos/id/1040/1000/1400\" alt=\"Person working in a bright studio environment\"/></figure>\n"
+                                                "\n<figure class=\"wp-block-image size-full photo-frame min-h-[34rem]\"><img src=\"https://picsum.photos/id/1040/760/1064\" alt=\"Person working in a bright studio environment\" width=\"760\" height=\"1064\" loading=\"lazy\" decoding=\"async\"/></figure>\n"
                                             ]
                                         }
                                     ],
@@ -961,9 +961,9 @@
                                                 "className": "photo-frame min-h-[30rem]"
                                             },
                                             "innerBlocks": [],
-                                            "innerHTML": "\n<figure class=\"wp-block-image size-full photo-frame min-h-[30rem]\"><img src=\"https://picsum.photos/id/1025/1000/1300\" alt=\"Portrait of a focused person working on a digital project\"/></figure>\n",
+                                            "innerHTML": "\n<figure class=\"wp-block-image size-full photo-frame min-h-[30rem]\"><img src=\"https://picsum.photos/id/1025/760/988\" alt=\"Portrait of a focused person working on a digital project\" width=\"760\" height=\"988\" loading=\"lazy\" decoding=\"async\"/></figure>\n",
                                             "innerContent": [
-                                                "\n<figure class=\"wp-block-image size-full photo-frame min-h-[30rem]\"><img src=\"https://picsum.photos/id/1025/1000/1300\" alt=\"Portrait of a focused person working on a digital project\"/></figure>\n"
+                                                "\n<figure class=\"wp-block-image size-full photo-frame min-h-[30rem]\"><img src=\"https://picsum.photos/id/1025/760/988\" alt=\"Portrait of a focused person working on a digital project\" width=\"760\" height=\"988\" loading=\"lazy\" decoding=\"async\"/></figure>\n"
                                             ]
                                         }
                                     ],
@@ -1100,9 +1100,9 @@
                                                         "className": "quote-card-media h-48"
                                                     },
                                                     "innerBlocks": [],
-                                                    "innerHTML": "\n<figure class=\"wp-block-image size-full quote-card-media h-48\"><img src=\"https://picsum.photos/id/1005/800/600\" alt=\"Portrait of a team member smiling in a modern office\"/></figure>\n",
+                                                    "innerHTML": "\n<figure class=\"wp-block-image size-full quote-card-media h-48\"><img src=\"https://picsum.photos/id/1005/640/480\" alt=\"Portrait of a team member smiling in a modern office\" width=\"640\" height=\"480\" loading=\"lazy\" decoding=\"async\"/></figure>\n",
                                                     "innerContent": [
-                                                        "\n<figure class=\"wp-block-image size-full quote-card-media h-48\"><img src=\"https://picsum.photos/id/1005/800/600\" alt=\"Portrait of a team member smiling in a modern office\"/></figure>\n"
+                                                        "\n<figure class=\"wp-block-image size-full quote-card-media h-48\"><img src=\"https://picsum.photos/id/1005/640/480\" alt=\"Portrait of a team member smiling in a modern office\" width=\"640\" height=\"480\" loading=\"lazy\" decoding=\"async\"/></figure>\n"
                                                     ]
                                                 },
                                                 {
@@ -1168,9 +1168,9 @@
                                                         "className": "quote-card-media h-48"
                                                     },
                                                     "innerBlocks": [],
-                                                    "innerHTML": "\n<figure class=\"wp-block-image size-full quote-card-media h-48\"><img src=\"https://picsum.photos/id/1011/800/600\" alt=\"Design details on a desk near a laptop and notebook\"/></figure>\n",
+                                                    "innerHTML": "\n<figure class=\"wp-block-image size-full quote-card-media h-48\"><img src=\"https://picsum.photos/id/1011/640/480\" alt=\"Design details on a desk near a laptop and notebook\" width=\"640\" height=\"480\" loading=\"lazy\" decoding=\"async\"/></figure>\n",
                                                     "innerContent": [
-                                                        "\n<figure class=\"wp-block-image size-full quote-card-media h-48\"><img src=\"https://picsum.photos/id/1011/800/600\" alt=\"Design details on a desk near a laptop and notebook\"/></figure>\n"
+                                                        "\n<figure class=\"wp-block-image size-full quote-card-media h-48\"><img src=\"https://picsum.photos/id/1011/640/480\" alt=\"Design details on a desk near a laptop and notebook\" width=\"640\" height=\"480\" loading=\"lazy\" decoding=\"async\"/></figure>\n"
                                                     ]
                                                 },
                                                 {
@@ -1236,9 +1236,9 @@
                                                         "className": "quote-card-media h-48"
                                                     },
                                                     "innerBlocks": [],
-                                                    "innerHTML": "\n<figure class=\"wp-block-image size-full quote-card-media h-48\"><img src=\"https://picsum.photos/id/1019/800/600\" alt=\"Team conversation around a table during planning\"/></figure>\n",
+                                                    "innerHTML": "\n<figure class=\"wp-block-image size-full quote-card-media h-48\"><img src=\"https://picsum.photos/id/1019/640/480\" alt=\"Team conversation around a table during planning\" width=\"640\" height=\"480\" loading=\"lazy\" decoding=\"async\"/></figure>\n",
                                                     "innerContent": [
-                                                        "\n<figure class=\"wp-block-image size-full quote-card-media h-48\"><img src=\"https://picsum.photos/id/1019/800/600\" alt=\"Team conversation around a table during planning\"/></figure>\n"
+                                                        "\n<figure class=\"wp-block-image size-full quote-card-media h-48\"><img src=\"https://picsum.photos/id/1019/640/480\" alt=\"Team conversation around a table during planning\" width=\"640\" height=\"480\" loading=\"lazy\" decoding=\"async\"/></figure>\n"
                                                     ]
                                                 },
                                                 {

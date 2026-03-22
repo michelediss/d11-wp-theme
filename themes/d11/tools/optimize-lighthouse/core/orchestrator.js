@@ -9,11 +9,12 @@ import { renderTerminalReport } from '../utils/formatters.js';
 
 export async function runOrchestrator(options, logger) {
   const session = await startBrowserSession({
-    url: options.url,
+    auditUrl: options.auditUrl || options.url,
     device: options.device,
     waitUntil: options.waitUntil,
     timeout: options.timeout,
     headless: options.headless,
+    hostMap: options.executionMeta?.hostMap ?? null,
     logger,
   });
 
@@ -24,7 +25,7 @@ export async function runOrchestrator(options, logger) {
     for (let index = 0; index < options.runs; index += 1) {
       logger.info(`Starting Lighthouse run ${index + 1}/${options.runs}`);
       const runnerResult = await runLighthouseAudit({
-        url: options.url,
+        auditUrl: options.auditUrl || options.url,
         remoteDebuggingPort: session.remoteDebuggingPort,
         device: options.device,
         timeout: options.timeout,
@@ -75,13 +76,16 @@ export async function runOrchestrator(options, logger) {
 
     const result = {
       meta: {
-        url: options.url,
+        url: options.auditUrl || options.url,
+        auditUrl: options.auditUrl || options.url,
+        canonicalUrl: options.canonicalUrl || options.url,
         device: options.device,
         runs: options.runs,
         waitUntil: options.waitUntil,
         throttling: options.throttling,
         cpuSlowdown: options.cpuSlowdown,
         timestamp: new Date().toISOString(),
+        execution: options.executionMeta ?? null,
       },
       aggregate,
       runs: extractedRuns,

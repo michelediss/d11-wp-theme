@@ -43,18 +43,25 @@ function getViewport(device) {
 }
 
 export async function startBrowserSession({
-  url,
+  auditUrl,
   device,
   waitUntil,
   timeout,
   headless,
+  hostMap,
   logger,
 }) {
   const remoteDebuggingPort = await getAvailablePort();
   const viewport = getViewport(device);
+  const browserArgs = [`--remote-debugging-port=${remoteDebuggingPort}`];
+
+  if (hostMap?.host && hostMap?.ip) {
+    browserArgs.push(`--host-resolver-rules=MAP ${hostMap.host} ${hostMap.ip}`);
+  }
+
   const browser = await chromium.launch({
     headless,
-    args: [`--remote-debugging-port=${remoteDebuggingPort}`],
+    args: browserArgs,
   });
 
   const context = await browser.newContext({
@@ -71,8 +78,8 @@ export async function startBrowserSession({
   context.setDefaultTimeout(timeout);
 
   const page = await context.newPage();
-  logger.info('Navigating with Playwright', { url, device, waitUntil });
-  await page.goto(url, { waitUntil, timeout });
+  logger.info('Navigating with Playwright', { auditUrl, device, waitUntil });
+  await page.goto(auditUrl, { waitUntil, timeout });
   await page.waitForLoadState('networkidle', { timeout });
 
   return {

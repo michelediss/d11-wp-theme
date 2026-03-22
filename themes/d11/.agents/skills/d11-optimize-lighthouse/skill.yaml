@@ -14,6 +14,9 @@ runtime_notes:
     - tools/optimize-lighthouse/core/orchestrator.js
   resolution_rules:
     - Use this skill only after the page already has a stable visual baseline.
+    - Let the CLI complete its environment preflight before treating the audit as failed.
+    - In the d11 Docker workspace, prefer the automatic D11-first runner selection over manual URL or host rewrites.
     - Run optimize-lighthouse for one page at a time.
+    - Treat the default dev-lighthouse page directory as replaceable output; each new run clears the previous reports for that page.
     - Keep the analyzer payload filtered and minimal; do not forward the full Lighthouse report.
     - Treat compare mode as an optional baseline delta, not as the main optimization signal.

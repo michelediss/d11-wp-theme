@@ -1,9 +1,17 @@
 #!/usr/bin/env node
 
+import fs from 'node:fs/promises';
 import path from 'node:path';
 import process from 'node:process';
 
 import { runOrchestrator } from '../core/orchestrator.js';
+import {
+  delegateToDocker,
+  getExecutionMeta,
+  parseRunner,
+  resolveExecutionPlan,
+  resolvePreflightContext,
+} from '../utils/preflight.js';
 import { createLogger } from '../utils/logger.js';
 
 const DEFAULTS = {
@@ -20,7 +28,77 @@ const DEFAULTS = {
   aiAdapter: 'deterministic',
   outFile: '',
   compareFile: '',
+  runner: 'auto',
+  auditUrl: '',
+  canonicalUrl: '',
+  hostMap: '',
 };
+
+function sanitizeSegment(value) {
+  return value
+    .toLowerCase()
+    .replace(/\.[a-z0-9]+$/i, '')
+    .replace(/[^a-z0-9]+/g, '-')
+    .replace(/^-+|-+$/g, '') || 'page';
+}
+
+function derivePageNameFromUrl(urlString) {
+  const url = new URL(urlString);
+  const pathname = url.pathname.replace(/\/+$/, '');
+
+  if (!pathname) {
+    return 'home';
+  }
+
+  const segments = pathname.split('/').filter(Boolean);
+  return sanitizeSegment(segments.at(-1) || 'home');
+}
+
+function buildDefaultOutFilePath(urlString, device) {
+  const pageName = derivePageNameFromUrl(urlString);
+  return path.join(
+    'wp-content',
+    'uploads',
+    'dev-lighthouse',
+    pageName,
+    `${device}-${Date.now()}.json`
+  );
+}
+
+function buildDefaultPageOutputDir(urlString) {
+  return path.join(
+    'wp-content',
+    'uploads',
+    'dev-lighthouse',
+    derivePageNameFromUrl(urlString)
+  );
+}
+
+function isPathInsideDirectory(targetPath, directoryPath) {
+  const relativePath = path.relative(directoryPath, targetPath);
+  return relativePath !== '' && !relativePath.startsWith('..') && !path.isAbsolute(relativePath);
+}
+
+async function cleanupPageReports({ pageOutputDir, compareFile }) {
+  const absolutePageOutputDir = path.resolve(process.cwd(), pageOutputDir);
+
+  if (compareFile) {
+    const absoluteCompareFile = path.resolve(process.cwd(), compareFile);
+    if (absoluteCompareFile === absolutePageOutputDir || isPathInsideDirectory(absoluteCompareFile, absolutePageOutputDir)) {
+      throw new Error(
+        [
+          'The compare baseline is inside the page report directory that will be cleaned before the new run.',
+          'Move the baseline JSON outside wp-content/uploads/dev-lighthouse/<page-name>/ or rerun without --compare.',
+        ].join(' ')
+      );
+    }
+  }
+
+  await fs.rm(absolutePageOutputDir, {
+    recursive: true,
+    force: true,
+  });
+}
 
 function parseBoolean(value) {
   if (value === 'true') {
@@ -65,10 +143,14 @@ function printHelp() {
 
 Options:
   --device=mobile|desktop
+  --runner=auto|local|docker
   --runs=<n>
   --output=terminal|json|both
   --out-file=<path>
   --compare=<baseline.json>
+  --audit-url=<url>
+  --canonical-url=<url>
+  --host-map=<host:ip>
   --timeout=<ms>
   --wait-until=load|domcontentloaded|networkidle
   --throttling=default|off|custom
@@ -112,6 +194,9 @@ function parseArgs(argv) {
         }
         options.device = value;
         break;
+      case '--runner':
+        options.runner = parseRunner(value);
+        break;
       case '--runs':
         options.runs = Number.parseInt(value, 10);
         if (!Number.isInteger(options.runs) || options.runs < 1) {
@@ -129,6 +214,15 @@ function parseArgs(argv) {
         break;
       case '--compare':
         options.compareFile = value;
+        break;
+      case '--audit-url':
+        options.auditUrl = value;
+        break;
+      case '--canonical-url':
+        options.canonicalUrl = value;
+        break;
+      case '--host-map':
+        options.hostMap = value;
         break;
       case '--timeout':
         options.timeout = Number.parseInt(value, 10);
@@ -171,15 +265,13 @@ function parseArgs(argv) {
 
   if (!options.help) {
     new URL(options.url);
-  }
+    if (options.auditUrl) {
+      new URL(options.auditUrl);
+    }
 
-  if (options.output !== 'terminal' && !options.outFile && options.output !== 'json') {
-    options.outFile = path.join(
-      'wp-content',
-      'uploads',
-      'dev-lighthouse',
-      `${options.device}-${Date.now()}.json`
-    );
+    if (options.canonicalUrl) {
+      new URL(options.canonicalUrl);
+    }
   }
 
   options.networkProfile = getNetworkProfile(options.networkProfile);
@@ -196,6 +288,47 @@ async function main() {
   const logger = createLogger({
     level: options.quiet ? 'error' : 'info',
     quiet: options.quiet,
+  });
+
+  const preflightContext = resolvePreflightContext({
+    argv: process.argv.slice(2),
+    logger,
+  });
+
+  const executionPlan = resolveExecutionPlan({
+    options,
+    context: preflightContext,
+    logger,
+  });
+
+  logger.info('Resolved optimize-lighthouse execution plan', getExecutionMeta(executionPlan));
+
+  if (executionPlan.runnerType === 'docker-delegate') {
+    delegateToDocker(executionPlan, {
+      cwd: preflightContext.workspaceRoot,
+      logger,
+    });
+    return;
+  }
+
+  options.auditUrl = executionPlan.auditUrl;
+  options.canonicalUrl = executionPlan.canonicalUrl;
+  options.executionMeta = getExecutionMeta(executionPlan);
+
+  if (options.output !== 'terminal' && !options.outFile && options.output !== 'json') {
+    options.outFile = buildDefaultOutFilePath(
+      options.canonicalUrl || options.auditUrl || options.url,
+      options.device
+    );
+  }
+
+  const pageOutputDir = buildDefaultPageOutputDir(
+    options.canonicalUrl || options.auditUrl || options.url
+  );
+
+  await cleanupPageReports({
+    pageOutputDir,
+    compareFile: options.compareFile,
   });
 
   await runOrchestrator(options, logger);

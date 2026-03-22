@@ -3,20 +3,51 @@
  * used across block templates and patterns.
  */
 
-import { initFadeIn } from './modules/fade-in';
 import { initMenuReveal } from './modules/menu';
-import { initPageTransitions } from './modules/page-transitions';
-import { initSimpleCookieConsentBanner } from './modules/simple-cookie-consent-banner';
-import { initSwipers } from './modules/swiper';
 import { initPatternHooks } from './patterns/index';
 
+function scheduleNonCriticalTask(task) {
+  const runTask = () => {
+    void task();
+  };
+
+  if (typeof window.requestIdleCallback === 'function') {
+    window.requestIdleCallback(runTask, { timeout: 1500 });
+    return;
+  }
+
+  window.setTimeout(runTask, 1);
+}
+
 function bootstrap() {
-  initFadeIn();
   initMenuReveal();
-  initPageTransitions();
-  initSimpleCookieConsentBanner();
-  initSwipers();
   initPatternHooks();
+
+  if (document.querySelector('[data-fade-in]:not(.no-fadein)')) {
+    scheduleNonCriticalTask(async () => {
+      const { initFadeIn } = await import('./modules/fade-in');
+      initFadeIn();
+    });
+  }
+
+  if (document.querySelector('[data-swiper]')) {
+    scheduleNonCriticalTask(async () => {
+      const { initSwipers } = await import('./modules/swiper');
+      initSwipers();
+    });
+  }
+
+  if (document.getElementById('simple-cookie-consent-banner')) {
+    scheduleNonCriticalTask(async () => {
+      const { initSimpleCookieConsentBanner } = await import('./modules/simple-cookie-consent-banner');
+      initSimpleCookieConsentBanner();
+    });
+  }
+
+  scheduleNonCriticalTask(async () => {
+    const { initPageTransitions } = await import('./modules/page-transitions');
+    initPageTransitions();
+  });
 }
 
 if (document.readyState === 'loading') {
