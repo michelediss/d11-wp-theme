@@ -8,12 +8,6 @@
   "icon": "share",
   "description": "Social sharing buttons for the current content.",
   "textdomain": "d11",
-  "attributes": {
-    "color": {
-      "type": "string",
-      "default": ""
-    }
-  },
   "supports": {
     "html": false
   },

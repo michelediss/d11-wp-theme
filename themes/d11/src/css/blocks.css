@@ -1,2 +1,55 @@
 @import './blocks/breadcrumbs.css';
 @import './blocks/social-share.css';
+
+.site-nav {
+  @apply text-xs font-semibold uppercase tracking-brand text-light;
+}
+
+.site-nav .wp-block-navigation-item__content,
+.site-nav .wp-block-navigation-submenu__toggle {
+  @apply transition-colors duration-200;
+}
+
+.site-nav .wp-block-navigation-item__content:hover,
+.site-nav .wp-block-navigation-item__content:focus-visible,
+.site-nav .wp-block-navigation-submenu__toggle:hover,
+.site-nav .wp-block-navigation-submenu__toggle:focus-visible {
+  @apply text-primary outline-none;
+}
+
+.footer-nav {
+  @apply text-xs text-light/60;
+}
+
+.footer-nav .wp-block-navigation-item__content,
+.footer-nav .wp-block-navigation-submenu__toggle {
+  @apply transition-colors duration-200;
+}
+
+.footer-nav .wp-block-navigation-item__content:hover,
+.footer-nav .wp-block-navigation-item__content:focus-visible,
+.footer-nav .wp-block-navigation-submenu__toggle:hover,
+.footer-nav .wp-block-navigation-submenu__toggle:focus-visible {
+  @apply text-primary outline-none;
+}
+
+.site-button .wp-block-button__link {
+  @apply rounded-md border border-primary bg-primary px-8 py-4 text-xs font-bold uppercase tracking-wide text-white no-underline;
+}
+
+.site-button--dark .wp-block-button__link {
+  @apply border-black bg-black text-light;
+}
+
+.site-button .wp-block-button__link:hover,
+.site-button .wp-block-button__link:focus-visible {
+  @apply -translate-y-px brightness-95 outline-none;
+}
+
+.sputnik-hero .wp-block-cover__background {
+  @apply bg-black/85;
+}
+
+.sputnik-newsletter-form input[type='email'] {
+  @apply min-w-0 flex-1 rounded-md border border-transparent bg-light px-4 py-3.5 text-sm text-black placeholder:text-black/45 focus:border-black/20 focus:outline-none;
+}

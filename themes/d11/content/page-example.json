@@ -1,0 +1,49 @@
+{
+  "version": 1,
+  "postType": "page",
+  "slug": "example",
+  "path": "example",
+  "postId": 0,
+  "updatedAtGmt": "2026-03-19 00:00:00",
+  "contentHash": "954ae0aed6c0bd5d20f790779aa980626768099f234f48ad0f9a985815ae3e18",
+  "blocks": [
+    {
+      "blockName": "core/group",
+      "attrs": {
+        "layout": {
+          "type": "constrained"
+        }
+      },
+      "innerBlocks": [
+        {
+          "blockName": "core/heading",
+          "attrs": {
+            "level": 2
+          },
+          "innerBlocks": [],
+          "innerHTML": "<h2>Example Page</h2>",
+          "innerContent": [
+            "<h2>Example Page</h2>"
+          ]
+        },
+        {
+          "blockName": "core/paragraph",
+          "attrs": [],
+          "innerBlocks": [],
+          "innerHTML": "<p>This page is managed from JSON.</p>",
+          "innerContent": [
+            "<p>This page is managed from JSON.</p>"
+          ]
+        }
+      ],
+      "innerHTML": "\n<h2>Example Page</h2>\n\n<p>This page is managed from JSON.</p>\n",
+      "innerContent": [
+        "\n",
+        null,
+        "\n\n",
+        null,
+        "\n"
+      ]
+    }
+  ]
+}

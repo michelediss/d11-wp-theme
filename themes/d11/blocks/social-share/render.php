@@ -4,32 +4,6 @@ if (! defined('ABSPATH')) {
     exit;
 }
 
-$color = '';
-
-if (isset($attributes['color']) && is_string($attributes['color'])) {
-    $color = trim($attributes['color']);
-}
-
-$style_value = '';
-$allowed_palette = [
-    'white' => 'var(--wp--preset--color--white)',
-    'black' => 'var(--wp--preset--color--black)',
-    'light' => 'var(--wp--preset--color--light)',
-    'primary' => 'var(--wp--preset--color--primary)',
-    'accent' => 'var(--wp--preset--color--accent)',
-    'foreground' => 'var(--wp--preset--color--black)',
-    'muted' => 'var(--wp--preset--color--white)',
-    'canvas' => 'var(--wp--preset--color--light)',
-];
-
-if ($color !== '') {
-    if (isset($allowed_palette[$color])) {
-        $style_value = $allowed_palette[$color];
-    } elseif (preg_match('/^#([A-Fa-f0-9]{3}|[A-Fa-f0-9]{6}|[A-Fa-f0-9]{8})$/', $color)) {
-        $style_value = $color;
-    }
-}
-
 $post_id = $block instanceof WP_Block && ! empty($block->context['postId'])
     ? (int) $block->context['postId']
     : get_the_ID();
@@ -81,7 +55,6 @@ $links = [
 
 $wrapper_attributes = get_block_wrapper_attributes([
     'class' => 'social-share',
-    'style' => $style_value !== '' ? '--social-share-color: ' . $style_value . ';' : null,
 ]);
 ?>
 <div <?php echo $wrapper_attributes; ?>>

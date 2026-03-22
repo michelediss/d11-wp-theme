@@ -9,7 +9,8 @@ This theme registers custom blocks from `blocks/*/block.json` and uses shared as
 - `block.json` is the source of truth for block metadata.
 - If the block is dynamic, it must include `render.php` in the same directory.
 - The block must use namespaced CSS classes with a block-specific prefix, for example `.wp-block-custom-social-share` and `.social-share__button`.
-- The block must use theme tokens defined in `theme.json` for colors, spacing, typography, and radius.
+- Visual styling must come from Tailwind tokens and utilities, not from Gutenberg color, typography, border, or shadow presets.
+- Keep block attributes focused on content and behavior. Do not add editor-facing design controls unless the requirement is explicitly content-driven.
 - Do not use Bootstrap classes or legacy utilities in block markup.
 - Do not register theme-owned custom blocks inside plugins.
 
@@ -52,6 +53,7 @@ src/css/blocks.css
 - Block attributes must be declared in `block.json`.
 - Editor JS may redefine metadata useful at runtime, but the slug must match `block.json`.
 - Prefer `window.wp.*` in editor modules, consistently with the theme's current pipeline.
+- Editor controls should avoid exposing arbitrary visual choices. Prefer a fixed preview plus content-oriented settings.
 - Any user-facing label, description, help text, or placeholder in block metadata, editor JS, render PHP, or front-end JS must be wrapped with the text domain declared in `style.css` so it can be extracted into `languages/`. In this repository that value is `d11`.
 - If a front-end block script uses `wp.i18n`, ensure its registered script handle receives `wp_set_script_translations()`.
 

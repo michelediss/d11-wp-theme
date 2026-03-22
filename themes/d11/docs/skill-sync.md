@@ -13,7 +13,7 @@ This workspace provides a sync utility so the repository version of each skill r
 The sync script is:
 
 ```text
-wp-content/plugins/d11-engine-figma/scripts/sync-codex-skill.sh
+wp-content/themes/d11/scripts/sync-codex-skill.sh
 ```
 
 ## What It Does
@@ -26,43 +26,35 @@ wp-content/plugins/d11-engine-figma/scripts/sync-codex-skill.sh
 
 ## Default Paths
 
-- source root: `wp-content/plugins/d11-engine-figma/.agents/skills` for workflow skills such as `d11-generate-page`, `d11-review-page`, and `d11-optimize-lighthouse`
-- source root: `wp-content/plugins/d11-pages/.agents/skills` for `ai-engine`
-- compatibility fallback: `wp-content/themes/d11/.agents/skills` is still checked for `ai-engine` if the plugin-local copy is not present
+- source root: `wp-content/themes/d11/.agents/skills` for theme-local skills such as `ai-engine`
 - target roots: `~/.codex/skills`, `~/.opencode/skills`
 
-Because these are defaults, the script works out of the box for the plugin-local workflow skills and for the repository-local `ai-engine` documentation skill.
+Because these are defaults, the script works out of the box for the theme-local `ai-engine` documentation skill.
 
 ## Usage
 
 List available local skills:
 
 ```bash
-wp-content/plugins/d11-engine-figma/scripts/sync-codex-skill.sh --list
+wp-content/themes/d11/scripts/sync-codex-skill.sh --list
 ```
 
-Sync a specific workflow skill:
+Sync a specific theme-local skill:
 
 ```bash
-wp-content/plugins/d11-engine-figma/scripts/sync-codex-skill.sh --skill d11-generate-page
-```
-
-Sync the repository-local `ai-engine` skill:
-
-```bash
-wp-content/plugins/d11-engine-figma/scripts/sync-codex-skill.sh --skill ai-engine
+wp-content/themes/d11/scripts/sync-codex-skill.sh --skill ai-engine
 ```
 
 Sync all local skills:
 
 ```bash
-wp-content/plugins/d11-engine-figma/scripts/sync-codex-skill.sh --skill all
+wp-content/themes/d11/scripts/sync-codex-skill.sh --skill all
 ```
 
 Use custom roots:
 
 ```bash
-wp-content/plugins/d11-engine-figma/scripts/sync-codex-skill.sh \
+wp-content/themes/d11/scripts/sync-codex-skill.sh \
   --skill my-skill \
   --source-root /path/to/.agents/skills \
   --target-root /path/to/.codex/skills

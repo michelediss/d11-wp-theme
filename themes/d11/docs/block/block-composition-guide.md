@@ -12,8 +12,10 @@ To know which blocks are currently available, use the runtime export described i
 - Use dynamic blocks only when the content must come from WordPress data such as the current post, query results, site identity, or navigation.
 - Do not invent blocks outside the runtime export plus the custom theme blocks discovered from `blocks/*/block.json`.
 - Use `columns` only when content clearly benefits from side-by-side layout.
-- Use `spacer` sparingly; prefer clean grouping and natural spacing from theme styles.
+- Use `spacer` sparingly; prefer clean grouping and macro spacing from layout blocks.
 - Use `template-part`, navigation, and site identity blocks only in theme-level areas such as header, footer, hero, or shared page sections.
+- In theme-authored patterns and parts, put visual decisions in Tailwind classes on block `className` values instead of Gutenberg color or typography attributes.
+- Treat Gutenberg as content/layout tooling. Avoid inline block styles for palette, font family, font size, tracking, radius, borders, and shadows unless a block API leaves no practical alternative.
 
 ## Content Blocks
 
@@ -91,7 +93,7 @@ Custom blocks are discovered dynamically from `blocks/*/block.json`. A custom bl
 
 ## Recommended Composition Patterns
 
-- Simple page section: `group` + `heading` + `paragraph` + optional `buttons`.
+- Simple page section: `group` + `heading` + `paragraph` + optional `buttons`, with Tailwind utility classes on the wrapper and content blocks.
 - Media section: `media-text` or `columns` with `image` plus text content.
 - FAQ section: `group` + `heading` + `accordion`.
 - Archive grid: `query` + `post-template` + `post-featured-image` + `post-title` + `post-excerpt` + `query-pagination`.

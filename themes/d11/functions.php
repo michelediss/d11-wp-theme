@@ -14,7 +14,7 @@ const D11_VERSION = '0.1.1';
 
 require_once get_theme_file_path('inc/assets.php');
 require_once get_theme_file_path('inc/blocks.php');
-require_once get_theme_file_path('inc/block-styles.php');
+require_once get_theme_file_path('inc/content-sync/bootstrap.php');
 require_once get_theme_file_path('inc/patterns.php');
 
 foreach (glob(get_theme_file_path('partials/*.php')) ?: [] as $partial_file) {

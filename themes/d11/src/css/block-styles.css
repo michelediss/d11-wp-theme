@@ -1,6 +1,0 @@
-@layer components {
-  .wp-block-group.is-style-card {
-    @apply rounded-card border bg-white p-6 shadow-card;
-    border-color: color-mix(in srgb, var(--wp--preset--color--black) 10%, transparent);
-  }
-}
