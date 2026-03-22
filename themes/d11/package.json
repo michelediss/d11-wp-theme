@@ -3,10 +3,15 @@
   "version": "0.1.1",
   "private": true,
   "type": "module",
+  "bin": {
+    "optimize-lighthouse": "./tools/optimize-lighthouse/cli/index.js"
+  },
   "scripts": {
     "dev": "vite",
     "build": "vite build",
     "preview": "vite preview",
+    "screenshots": "node tools/review-screenshot/index.js",
+    "optimize:lighthouse": "node tools/optimize-lighthouse/cli/index.js",
     "i18n:pot": "wp i18n make-pot . languages/d11.pot --slug=d11 --domain=d11 --exclude=.agents,.artifacts,assets,cf7-forms",
     "i18n:po": "wp i18n update-po languages/d11.pot languages",
     "i18n:mo": "wp i18n make-mo languages",
@@ -15,6 +20,7 @@
   },
   "dependencies": {
     "gsap": "^3.13.0",
+    "sharp": "^0.34.5",
     "swiper": "^11.2.6"
   },
   "devDependencies": {

@@ -1,0 +1,25 @@
+name: d11-review-page
+description: Review one d11 page with a controlled correction pass and explicit baseline plus verify screenshot comparison.
+context:
+  platform: wordpress
+  owner: d11-theme
+  theme: d11
+runtime_notes:
+  preferred_files:
+    - docs/ai-workflows.md
+    - docs/theme-overview.md
+    - docs/block/block-composition-guide.md
+    - docs/block/whitelisted-blocks-summary.md
+    - docs/block/block-availability-system.md
+    - docs/block/whitelisted-blocks.md
+    - docs/content-sync.md
+    - docs/screenshot-validation.md
+  resolution_rules:
+    - Use this skill for one page at a time when the goal is iterative review, not initial generation.
+    - Use docs/block/whitelisted-blocks-summary.md as the compact source for currently allowed blocks.
+    - Use docs/block/whitelisted-blocks.md only when a specific block needs deeper metadata or constraints.
+    - Capture a baseline screenshot set before applying corrections.
+    - Use direct Playwright MCP inspection only as a scoped fallback when screenshots do not explain the defect clearly enough.
+    - Avoid full-page DOM dumps and broad CSS dumps; inspect only the selector or subtree needed to explain the issue.
+    - Capture a verify screenshot set after one controlled correction pass.
+    - Keep shared rules in docs/ai-workflows.md instead of duplicating them in this skill.

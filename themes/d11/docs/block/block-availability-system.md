@@ -9,7 +9,7 @@ It is the conceptual reference for the availability system. The runtime source o
 - `partials/block-availability/runtime.php` defines curated categories, runtime catalog building, default enabled categories, and block availability normalization.
 - `partials/block-availability.php` is the theme bootstrap entrypoint for the availability system.
 - `partials/block-availability/utility/export-block-registry.php` exports the full registered block registry enriched with current allowlist state.
-- `partials/block-availability/utility/export-whitelisted-blocks-md.php` generates a Markdown reference for the blocks currently in whitelist.
+- `partials/block-availability/utility/export-whitelisted-blocks-md.php` generates both a compact Markdown reference and an extended Markdown reference for the blocks currently in whitelist.
 - `inc/blocks.php` discovers custom theme blocks from `blocks/*/block.json`.
 - External generation, review, and optimization skills should consume the exported whitelist artifacts plus runtime outputs instead of maintaining their own block catalog.
 
@@ -61,6 +61,7 @@ Because of this distinction, do not use a Markdown list as the authority for cur
 When the Block Availability admin page is saved, the theme also regenerates:
 
 - `docs/block/block-registry.json`
+- `docs/block/whitelisted-blocks-summary.md`
 - `docs/block/whitelisted-blocks.md`
 
 These derived files are convenience exports for human review and AI-assisted workflows. Runtime behavior still comes from the live PHP catalog and saved settings.
@@ -86,6 +87,7 @@ The utility export under `partials/block-availability/utility/` adds a second la
 
 - full registered block metadata from `WP_Block_Type_Registry`
 - current allowlist state for each registered block
+- a derived compact Markdown reference containing only the currently whitelisted block names
 - a derived Markdown reference containing only whitelisted blocks
 
 ## Documentation Boundary

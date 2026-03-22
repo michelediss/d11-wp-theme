@@ -9,6 +9,11 @@ function d11_block_availability_utility_whitelist_output_path(): string
     return d11_block_availability_utility_output_dir() . '/whitelisted-blocks.md';
 }
 
+function d11_block_availability_utility_whitelist_summary_output_path(): string
+{
+    return d11_block_availability_utility_output_dir() . '/whitelisted-blocks-summary.md';
+}
+
 function d11_block_availability_md_scalar($value): string
 {
     if ($value === null || $value === '') {
@@ -202,6 +207,101 @@ function d11_export_whitelisted_blocks_markdown(?string $inputPath = null, ?stri
         $lines[] = is_array($block['custom_metadata'] ?? null) && $block['custom_metadata'] !== []
             ? '```json' . PHP_EOL . json_encode($block['custom_metadata'], JSON_PRETTY_PRINT | JSON_UNESCAPED_SLASHES) . PHP_EOL . '```'
             : '- None';
+        $lines[] = '';
+    }
+
+    $outputDir = dirname($outputPath);
+
+    if (! is_dir($outputDir) && ! mkdir($outputDir, 0775, true) && ! is_dir($outputDir)) {
+        throw new RuntimeException("Unable to create output directory: {$outputDir}");
+    }
+
+    if (! is_writable($outputDir)) {
+        throw new RuntimeException("Output directory is not writable: {$outputDir}");
+    }
+
+    if (file_exists($outputPath) && ! is_writable($outputPath)) {
+        if (! unlink($outputPath)) {
+            throw new RuntimeException("Existing output file is not writable and could not be replaced: {$outputPath}");
+        }
+    }
+
+    if (file_put_contents($outputPath, implode(PHP_EOL, $lines) . PHP_EOL) === false) {
+        throw new RuntimeException("Unable to write Markdown output: {$outputPath}");
+    }
+
+    @chmod($outputPath, 0666);
+
+    d11_export_whitelisted_blocks_summary_markdown($inputPath);
+
+    return $outputPath;
+}
+
+function d11_export_whitelisted_blocks_summary_markdown(?string $inputPath = null, ?string $outputPath = null): string
+{
+    $inputPath = $inputPath ?: d11_block_availability_utility_registry_output_path();
+    $outputPath = $outputPath ?: d11_block_availability_utility_whitelist_summary_output_path();
+
+    if (! file_exists($inputPath)) {
+        throw new RuntimeException("Input JSON not found: {$inputPath}");
+    }
+
+    $decoded = json_decode((string) file_get_contents($inputPath), true);
+
+    if (! is_array($decoded) || ! isset($decoded['blocks']) || ! is_array($decoded['blocks'])) {
+        throw new RuntimeException('Invalid block registry JSON.');
+    }
+
+    $groupedBlocks = [];
+
+    foreach ($decoded['blocks'] as $block) {
+        if (! is_array($block) || empty($block['currently_allowed']) || empty($block['name'])) {
+            continue;
+        }
+
+        $bucket = is_string($block['category_bucket'] ?? null) && $block['category_bucket'] !== ''
+            ? $block['category_bucket']
+            : 'unclassified';
+
+        $groupedBlocks[$bucket][] = (string) $block['name'];
+    }
+
+    ksort($groupedBlocks);
+
+    foreach ($groupedBlocks as $bucket => $blocks) {
+        sort($blocks);
+        $groupedBlocks[$bucket] = array_values(array_unique($blocks));
+    }
+
+    $totalBlocks = array_sum(array_map('count', $groupedBlocks));
+
+    $lines = [
+        '# Whitelisted Blocks Summary',
+        '',
+        'This file is generated from `docs/block/block-registry.json`.',
+        '',
+        'It contains only the names of the blocks currently marked as allowed by the theme block availability system.',
+        '',
+        'Use this file as the compact operational reference for which blocks are currently allowed.',
+        'Use `docs/block/whitelisted-blocks.md` only when you need extended metadata for a specific block.',
+        '',
+        '## Source',
+        '',
+        '- Input JSON: `' . $inputPath . '`',
+        '- Output file: `' . $outputPath . '`',
+        '- Generated at UTC: ' . d11_block_availability_md_scalar(gmdate('c')),
+        '- Whitelisted blocks: ' . d11_block_availability_md_scalar($totalBlocks),
+        '',
+    ];
+
+    foreach ($groupedBlocks as $bucket => $blocks) {
+        $lines[] = '## ' . ucfirst(str_replace('_', ' ', $bucket));
+        $lines[] = '';
+
+        foreach ($blocks as $blockName) {
+            $lines[] = '- `' . $blockName . '`';
+        }
+
         $lines[] = '';
     }
 

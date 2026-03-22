@@ -1,9 +1,5 @@
 const MENU_READY_ATTR = 'data-menu-ready';
 
-function isElementVisible(element) {
-  return Boolean(element) && !element.hidden && window.getComputedStyle(element).display !== 'none';
-}
-
 function isNavigationOpen(navigation) {
   const openButton = navigation.querySelector('.wp-block-navigation__responsive-container-open');
   const responsiveContainer = navigation.querySelector('.wp-block-navigation__responsive-container');
@@ -24,7 +20,7 @@ function isNavigationOpen(navigation) {
     return true;
   }
 
-  return isElementVisible(responsiveContainer) && responsiveContainer.querySelector('.wp-block-navigation__responsive-container-close');
+  return false;
 }
 
 export function initMenuReveal() {

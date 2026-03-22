@@ -2,14 +2,14 @@
 # This file is distributed under the GNU General Public License v2 or later.
 msgid ""
 msgstr ""
-"Project-Id-Version: D11 0.1.0\n"
+"Project-Id-Version: D11 0.1.1\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/theme/d11\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2026-03-09T16:18:26+00:00\n"
+"POT-Creation-Date: 2026-03-22T04:12:04+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.12.0\n"
 "X-Domain: d11\n"
@@ -23,7 +23,7 @@ msgstr ""
 
 #. Theme URI of the theme
 #: style.css
-msgid "https://example.com/d11"
+msgid "https://github.com/michelediss/d11-wp-theme"
 msgstr ""
 
 #. Description of the theme
@@ -59,50 +59,50 @@ msgstr ""
 msgid "Breadcrumb"
 msgstr ""
 
-#: blocks/social-share/render.php:54
+#: blocks/social-share/render.php:32
 msgid "Share on Facebook"
 msgstr ""
 
-#: blocks/social-share/render.php:59
+#: blocks/social-share/render.php:37
 msgid "Share on X"
 msgstr ""
 
-#: blocks/social-share/render.php:64
+#: blocks/social-share/render.php:42
 msgid "Share on WhatsApp"
 msgstr ""
 
-#: blocks/social-share/render.php:69
+#: blocks/social-share/render.php:47
 msgid "Share on Telegram"
 msgstr ""
 
-#: blocks/social-share/render.php:74
+#: blocks/social-share/render.php:52
 msgid "Share on LinkedIn"
 msgstr ""
 
-#: blocks/social-share/render.php:104
-#: blocks/social-share/render.php:105
+#: blocks/social-share/render.php:81
+#: blocks/social-share/render.php:82
 msgid "Share on Mastodon"
 msgstr ""
 
-#: blocks/social-share/render.php:112
+#: blocks/social-share/render.php:89
 msgid "Take a look at this:"
 msgstr ""
 
-#: blocks/social-share/render.php:113
-#: blocks/social-share/render.php:114
+#: blocks/social-share/render.php:90
+#: blocks/social-share/render.php:91
 msgid "Share by email"
 msgstr ""
 
-#: blocks/social-share/render.php:124
-#: blocks/social-share/render.php:125
+#: blocks/social-share/render.php:101
+#: blocks/social-share/render.php:102
 msgid "Copy link"
 msgstr ""
 
-#: functions.php:38
+#: functions.php:39
 msgid "Primary Navigation"
 msgstr ""
 
-#: functions.php:39
+#: functions.php:40
 msgid "Footer Navigation"
 msgstr ""
 
@@ -161,67 +161,77 @@ msgstr ""
 msgid "Block Availability"
 msgstr ""
 
-#: partials/block-availability/admin.php:68
+#: partials/block-availability/admin.php:64
 msgid "active"
 msgstr ""
 
 #. translators: 1: active blocks count, 2: total blocks count
-#: partials/block-availability/admin.php:141
+#: partials/block-availability/admin.php:199
 #, php-format
 msgid "%1$d / %2$d active"
 msgstr ""
 
-#: partials/block-availability/admin.php:156
+#: partials/block-availability/admin.php:214
 msgid "Enable category"
 msgstr ""
 
-#: partials/block-availability/admin.php:159
+#: partials/block-availability/admin.php:217
 msgid "Always on"
 msgstr ""
 
-#: partials/block-availability/admin.php:161
+#: partials/block-availability/admin.php:219
 msgid "Plugin detected"
 msgstr ""
 
-#: partials/block-availability/admin.php:163
+#: partials/block-availability/admin.php:221
+msgid "Plugin blocks"
+msgstr ""
+
+#: partials/block-availability/admin.php:223
 msgid "Separate area"
 msgstr ""
 
 #. translators: %s: category label
-#: partials/block-availability/admin.php:174
+#: partials/block-availability/admin.php:234
 #, php-format
 msgid "Filter %s blocks"
 msgstr ""
 
-#: partials/block-availability/admin.php:181
+#: partials/block-availability/admin.php:241
 msgid "Filter blocks…"
 msgstr ""
 
-#: partials/block-availability/admin.php:208
+#: partials/block-availability/admin.php:268
 msgid "No blocks match this filter."
 msgstr ""
 
-#: partials/block-availability/admin.php:231
+#: partials/block-availability/admin.php:291
 msgid "Block availability updated."
 msgstr ""
 
-#: partials/block-availability/admin.php:240
+#. translators: %s: export error message
+#: partials/block-availability/admin.php:304
+#, php-format
+msgid "Block export failed: %s"
+msgstr ""
+
+#: partials/block-availability/admin.php:319
 msgid "Block availability"
 msgstr ""
 
-#: partials/block-availability/admin.php:242
-msgid "Control which core, blog, WooCommerce, and custom blocks remain available in the editor without mixing categories."
+#: partials/block-availability/admin.php:321
+msgid "Control which core, blog, WooCommerce, third-party, and custom blocks remain available in the editor without mixing categories."
 msgstr ""
 
-#: partials/block-availability/admin.php:244
+#: partials/block-availability/admin.php:323
 msgid "Save block availability"
 msgstr ""
 
-#: partials/block-availability/admin.php:248
+#: partials/block-availability/admin.php:326
 msgid "Core always enabled"
 msgstr ""
 
-#: partials/block-availability/admin.php:250
+#: partials/block-availability/admin.php:328
 msgid "WooCommerce not installed"
 msgstr ""
 
@@ -246,10 +256,18 @@ msgid "Commerce-specific blocks available only when WooCommerce is active."
 msgstr ""
 
 #: partials/block-availability/runtime.php:89
-msgid "Custom"
+msgid "Third-Party"
 msgstr ""
 
 #: partials/block-availability/runtime.php:90
+msgid "Blocks registered by installed plugins or external code outside the theme-managed categories."
+msgstr ""
+
+#: partials/block-availability/runtime.php:94
+msgid "Custom"
+msgstr ""
+
+#: partials/block-availability/runtime.php:95
 msgid "Theme custom blocks managed separately from the curated core categories."
 msgstr ""
 
@@ -258,40 +276,40 @@ msgstr ""
 msgid "Default Featured Image"
 msgstr ""
 
-#: partials/default-featured-image.php:120
+#: partials/default-featured-image.php:117
 msgid "Select the default featured image"
 msgstr ""
 
-#: partials/default-featured-image.php:121
+#: partials/default-featured-image.php:118
 msgid "Use this image"
 msgstr ""
 
-#: partials/default-featured-image.php:122
+#: partials/default-featured-image.php:119
 msgid "Remove the default featured image?"
 msgstr ""
 
-#: partials/default-featured-image.php:123
-#: partials/default-featured-image.php:160
+#: partials/default-featured-image.php:120
+#: partials/default-featured-image.php:152
 msgid "No image selected"
 msgstr ""
 
-#: partials/default-featured-image.php:148
+#: partials/default-featured-image.php:140
 msgid "Default featured image"
 msgstr ""
 
-#: partials/default-featured-image.php:149
+#: partials/default-featured-image.php:141
 msgid "Used automatically for posts and pages that are saved without a featured image."
 msgstr ""
 
-#: partials/default-featured-image.php:176
+#: partials/default-featured-image.php:168
 msgid "Choose from media library"
 msgstr ""
 
-#: partials/default-featured-image.php:179
+#: partials/default-featured-image.php:171
 msgid "Remove"
 msgstr ""
 
-#: partials/default-featured-image.php:185
+#: partials/default-featured-image.php:177
 msgid "Save image"
 msgstr ""
 
@@ -516,292 +534,281 @@ msgstr ""
 
 #: patterns/cta-band.php
 msgctxt "Pattern title"
-msgid "CTA Band"
+msgid "D11 CTA Band"
 msgstr ""
 
 #: patterns/cta-band.php
 msgctxt "Pattern description"
-msgid "Simple full-width call to action."
+msgid "Banda finale con call to action per il sito di presentazione D11."
 msgstr ""
 
-#: patterns/cta-band.php:11
-msgid "Ready for your next section or conversion moment."
-msgstr ""
-
-#: patterns/cta-band.php:15
-msgid "Drop this band between editorial sections to create rhythm and directional intent."
-msgstr ""
-
-#: patterns/cta-band.php:20
+#: patterns/cta-band.php:18
 msgid "Call to action"
 msgstr ""
 
+#: patterns/cta-band.php:21
+msgid "Serve un tema WordPress che faccia meno caos e più sistema?"
+msgstr ""
+
+#: patterns/cta-band.php:24
+msgid "D11 nasce per impostare limiti utili: design tokens chiari, blocchi governati, pattern riusabili e una homepage che può essere adattata senza ripartire ogni volta da zero."
+msgstr ""
+
+#: patterns/cta-band.php:33
+msgid "Rivedi il sistema"
+msgstr ""
+
+#: patterns/cta-band.php:38
+msgid "Usa questa homepage come base del sito di presentazione del tema e poi rifinisci menu, logo e contenuti nel Site Editor."
+msgstr ""
+
 #: patterns/faq-section.php
 msgctxt "Pattern title"
-msgid "FAQ Section"
+msgid "D11 FAQ Section"
 msgstr ""
 
 #: patterns/faq-section.php
 msgctxt "Pattern description"
-msgid "Starter FAQ layout using headings and paragraphs."
+msgid "FAQ di presentazione per il tema D11."
 msgstr ""
 
-#: patterns/faq-section.php:11
-msgid "Frequently asked questions"
-msgstr ""
-
-#: patterns/faq-section.php:15
-msgid "How should this evolve?"
+#: patterns/faq-section.php:16
+msgid "FAQ"
 msgstr ""
 
 #: patterns/faq-section.php:19
-msgid "Add or remove entries as needed, or replace this with a richer future block pattern."
-msgstr ""
-
-#: patterns/faq-section.php:23
-msgid "Why keep it simple?"
+msgid "Domande tipiche prima di adottare D11."
 msgstr ""
 
 #: patterns/faq-section.php:27
-msgid "The boilerplate should model structure and rhythm without locking final UX decisions too early."
+#: patterns/faq-section.php:28
+msgid "D11 è un tema generalista?"
+msgstr ""
+
+#: patterns/faq-section.php:29
+msgid "No. È un tema opinionated: limita le opzioni dell’editor per aumentare la qualità media del risultato e la prevedibilità del lavoro."
+msgstr ""
+
+#: patterns/faq-section.php:33
+#: patterns/faq-section.php:34
+msgid "Perché usare Tailwind invece delle preset Gutenberg?"
+msgstr ""
+
+#: patterns/faq-section.php:35
+msgid "Perché i token vivono in un’unica sorgente di verità e il front-end resta consistente tra template, pattern, blocchi custom e stili editoriali."
+msgstr ""
+
+#: patterns/faq-section.php:39
+#: patterns/faq-section.php:40
+msgid "L’AI può generare pagine senza rompere il tema?"
+msgstr ""
+
+#: patterns/faq-section.php:41
+msgid "Sì, se segue whitelist blocchi, guide di composizione e pattern registrati. Il tema è stato impostato proprio per ridurre le libertà che producono markup fragile."
 msgstr ""
 
 #: patterns/feature-grid.php
 msgctxt "Pattern title"
-msgid "Feature Grid"
+msgid "D11 Feature Grid"
 msgstr ""
 
 #: patterns/feature-grid.php
 msgctxt "Pattern description"
-msgid "Three-column feature overview."
+msgid "Griglia che presenta i pilastri del design system di D11."
 msgstr ""
 
-#: patterns/feature-grid.php:11
-msgid "Feature grid"
+#: patterns/feature-grid.php:14
+msgid "Il sistema"
 msgstr ""
 
 #: patterns/feature-grid.php:17
-msgid "Composable"
+msgid "Quattro regole chiare per costruire pagine riconoscibili e manutenibili."
 msgstr ""
 
-#: patterns/feature-grid.php:21
-msgid "Build sections with patterns and keep structure editorially flexible."
-msgstr ""
-
-#: patterns/feature-grid.php:27
-msgid "Lean"
+#: patterns/feature-grid.php:20
+msgid "D11 non lascia il design all’editor casuale: imposta direzione, restringe le scelte e rende il risultato più coerente per designer, editor e sviluppatori."
 msgstr ""
 
 #: patterns/feature-grid.php:31
-msgid "Use minimal glue code and keep frontend logic modular."
+msgid "Colori"
+msgstr ""
+
+#: patterns/feature-grid.php:34
+msgid "Palette editoriale calda"
 msgstr ""
 
 #: patterns/feature-grid.php:37
-msgid "Extendable"
+msgid "Superfici carta, testo inchiostro, accenti ember e sun: pochi token forti invece di decine di varianti deboli."
 msgstr ""
 
-#: patterns/feature-grid.php:41
-msgid "Add more patterns or JS modules without changing the theme core."
+#: patterns/feature-grid.php:47
+msgid "Tipografia"
 msgstr ""
 
-#: patterns/hero.php
+#: patterns/feature-grid.php:50
+msgid "Gerarchie compatte e leggibili"
+msgstr ""
+
+#: patterns/feature-grid.php:53
+msgid "Headings geometrici, corpo chiaro e label monospaziate permettono di distinguere subito struttura, contenuto e metadata."
+msgstr ""
+
+#: patterns/feature-grid.php:63
+msgid "Composizione"
+msgstr ""
+
+#: patterns/feature-grid.php:66
+msgid "Pattern prima, template dopo"
+msgstr ""
+
+#: patterns/feature-grid.php:69
+msgid "La homepage vive in pattern PHP traducibili, mentre i template HTML assemblano struttura condivisa senza copy hardcoded."
+msgstr ""
+
+#: patterns/feature-grid.php:79
+msgid "Workflow"
+msgstr ""
+
+#: patterns/feature-grid.php:82
+msgid "AI guidata da regole concrete"
+msgstr ""
+
+#: patterns/feature-grid.php:85
+msgid "Whitelist runtime, docs canoniche e componenti limitati riducono rumore, regressioni visive e HTML improvvisato."
+msgstr ""
+
+#: patterns/hero-home.php
 msgctxt "Pattern title"
-msgid "Hero"
+msgid "D11 Hero Home"
 msgstr ""
 
-#: patterns/hero.php
+#: patterns/hero-home.php
 msgctxt "Pattern description"
-msgid "Intro section with heading, copy, and primary CTA."
+msgid "Hero di presentazione per il tema WordPress D11."
 msgstr ""
 
-#: patterns/hero.php:13
-msgid "Starter label"
+#: patterns/hero-home.php:26
+msgid "Block-first. Tailwind-native. AI-ready."
 msgstr ""
 
-#: patterns/hero.php:17
-msgid "Use this hero as a clean starting point."
+#: patterns/hero-home.php:30
+msgid "D11 trasforma WordPress in un sistema editoriale nitido, veloce e controllabile."
 msgstr ""
 
-#: patterns/hero.php:21
-msgid "Replace content and media, keep the section rhythm and block structure."
+#: patterns/hero-home.php:34
+msgid "Un tema block-first pensato per team che vogliono comporre pagine in Gutenberg senza perdere direzione visiva, qualità front-end e coerenza operativa."
 msgstr ""
 
-#: patterns/hero.php:26
-msgid "Primary action"
+#: patterns/hero-home.php:40
+msgid "Esplora il sistema"
+msgstr ""
+
+#: patterns/hero-home.php:44
+msgid "Guarda la homepage"
+msgstr ""
+
+#: patterns/hero-home.php:56
+msgid "Design system"
+msgstr ""
+
+#: patterns/hero-home.php:62
+msgid "Palette calda, tipografia netta e componenti composti per pattern, non per override occasionali."
+msgstr ""
+
+#: patterns/hero-home.php:69
+msgid "Whitelist blocchi"
+msgstr ""
+
+#: patterns/hero-home.php:72
+msgid "Pattern PHP traducibili"
+msgstr ""
+
+#: patterns/hero-home.php:75
+msgid "Vite + Tailwind"
 msgstr ""
 
 #: patterns/logo-cloud.php
 msgctxt "Pattern title"
-msgid "Logo Cloud"
+msgid "D11 Logo Cloud"
 msgstr ""
 
 #: patterns/logo-cloud.php
 msgctxt "Pattern description"
-msgid "Simple logo placeholder row."
+msgid "Fascia di proof points per il sito di presentazione D11."
 msgstr ""
 
-#: patterns/logo-cloud.php:11
-msgid "Trusted by teams, studios, or partners."
+#: patterns/logo-cloud.php:14
+msgid "Proof points"
 msgstr ""
 
 #: patterns/logo-cloud.php:17
-msgid "Logo One"
+msgid "Costruito per scenari reali, non per demo astratte."
 msgstr ""
 
-#: patterns/logo-cloud.php:23
-msgid "Logo Two"
+#: patterns/logo-cloud.php:24
+msgid "Landing page di prodotto"
 msgstr ""
 
-#: patterns/logo-cloud.php:29
-msgid "Logo Three"
+#: patterns/logo-cloud.php:27
+msgid "Siti editoriali"
 msgstr ""
 
-#: patterns/logo-cloud.php:35
-msgid "Logo Four"
+#: patterns/logo-cloud.php:30
+msgid "Micrositi di campagna"
+msgstr ""
+
+#: patterns/logo-cloud.php:33
+msgid "Pattern library gestite"
+msgstr ""
+
+#: patterns/logo-cloud.php:36
+msgid "Workflow AI assistiti"
+msgstr ""
+
+#: patterns/logo-cloud.php:39
+msgid "Governance editoriale"
 msgstr ""
 
 #: patterns/media-content.php
 msgctxt "Pattern title"
-msgid "Media Content"
+msgid "D11 Media Content"
 msgstr ""
 
 #: patterns/media-content.php
 msgctxt "Pattern description"
-msgid "Text and media split layout."
+msgid "Sezione editoriale che racconta il posizionamento di D11."
 msgstr ""
 
-#: patterns/media-content.php:19
-msgid "Pair media with a clear content block."
+#: patterns/media-content.php:18
+msgid "Per chi costruisce"
 msgstr ""
 
-#: patterns/media-content.php:23
-msgid "Use this starter for editorial storytelling, product content, or feature callouts."
+#: patterns/media-content.php:21
+msgid "Un tema pensato per agenzie, product team e publisher che vogliono governare Gutenberg."
 msgstr ""
 
-#: patterns/media-content.php:27
-msgid "Keep copy short"
+#: patterns/media-content.php:24
+msgid "D11 elimina l’illusione del “tutto è possibile” e sostituisce la libertà caotica con una griglia di scelte intenzionali: blocchi permessi, pattern composti, spacing controllato e styling centralizzato in Tailwind."
 msgstr ""
 
-#: patterns/media-content.php:27
-msgid "Let imagery support hierarchy"
+#: patterns/media-content.php:34
+msgid "Principi"
 msgstr ""
 
-#: patterns/media-content.php:27
-msgid "Prefer block-native controls"
+#: patterns/media-content.php:38
+msgid "Il design system vive nei token, non nei settaggi occasionali del singolo blocco."
 msgstr ""
 
-#: patterns/page-heading.php
-msgctxt "Pattern title"
-msgid "Page Heading"
+#: patterns/media-content.php:39
+msgid "Le sezioni riusabili devono diventare pattern, non markup duplicato in più template."
 msgstr ""
 
-#: patterns/page-heading.php
-msgctxt "Pattern description"
-msgid "Intro heading section for generic pages."
+#: patterns/media-content.php:40
+msgid "L’AI compone meglio quando i vincoli sono espliciti e i blocchi consentiti sono pochi ma sufficienti."
 msgstr ""
 
-#: patterns/page-heading.php:11
-msgid "Section label"
-msgstr ""
-
-#: patterns/page-heading.php:15
-msgid "Page heading starter"
-msgstr ""
-
-#: patterns/page-heading.php:19
-msgid "Use this at the top of pages that need a lightweight intro block before the main content."
-msgstr ""
-
-#: patterns/site-footer.php
-msgctxt "Pattern title"
-msgid "Site Footer"
-msgstr ""
-
-#: patterns/site-footer.php
-msgctxt "Pattern description"
-msgid "Footer layout with site title, supporting copy, and navigation."
-msgstr ""
-
-#: patterns/site-footer.php:15
-msgid "Minimal footer starter for future navigation, legal copy, or contact details."
-msgstr ""
-
-#: patterns/site-hero-part.php
-msgctxt "Pattern title"
-msgid "Site Hero Part"
-msgstr ""
-
-#: patterns/site-hero-part.php
-msgctxt "Pattern description"
-msgid "Shared hero template part with translatable starter copy."
-msgstr ""
-
-#: patterns/site-hero-part.php:14
-msgid "Starter boilerplate"
-msgstr ""
-
-#: patterns/site-hero-part.php:18
-msgid "Build landing pages with core blocks, patterns, and a lean frontend pipeline."
-msgstr ""
-
-#: patterns/site-hero-part.php:22
-msgid "This hero stays generic on purpose: it defines structure, not branding."
-msgstr ""
-
-#: patterns/site-hero-part.php:27
-msgid "Explore sections"
-msgstr ""
-
-#: patterns/site-hero-part.php:35
-msgid "Reserved visual slot for future imagery, motion, or editorial messaging."
-msgstr ""
-
-#: patterns/template-404.php
-msgctxt "Pattern title"
-msgid "404 Content"
-msgstr ""
-
-#: patterns/template-404.php
-msgctxt "Pattern description"
-msgid "Not found template content with CTA and search."
-msgstr ""
-
-#: patterns/template-404.php:12
-msgid "Page not found"
-msgstr ""
-
-#: patterns/template-404.php:16
-msgid "The page you requested could not be found. Try searching or continue browsing from the homepage."
-msgstr ""
-
-#: patterns/template-404.php:21
-msgid "Back home"
-msgstr ""
-
-#: patterns/testimonial-section.php
-msgctxt "Pattern title"
-msgid "Testimonial Section"
-msgstr ""
-
-#: patterns/testimonial-section.php
-msgctxt "Pattern description"
-msgid "Minimal quote-led social proof section."
-msgstr ""
-
-#: patterns/testimonial-section.php:11
-msgid "What people say"
-msgstr ""
-
-#: patterns/testimonial-section.php:17
-msgid "\"Keep testimonials brief, direct, and easy to swap.\""
-msgstr ""
-
-#: patterns/testimonial-section.php:21
-msgid "Person name, role"
-msgstr ""
-
-#: patterns/testimonial-section.php:27
-msgid "Add a second quote or replace this column with metrics, logos, or additional context."
+#: patterns/media-content.php:41
+msgid "Il front-end resta leggero perché la struttura è nativa Gutenberg e il polish visuale è nel layer Tailwind."
 msgstr ""
 
 #: src/js/blocks/breadcrumbs/editor.js:11
@@ -813,7 +820,6 @@ msgid "Contextual navigation trail for the current view."
 msgstr ""
 
 #: src/js/blocks/breadcrumbs/editor.js:37
-#: src/js/blocks/social-share/editor.js:38
 msgid "Settings"
 msgstr ""
 
@@ -825,48 +831,12 @@ msgstr ""
 msgid "Separator"
 msgstr ""
 
-#: src/js/blocks/social-share/editor.js:13
+#: src/js/blocks/social-share/editor.js:10
 msgid "Social Share"
 msgstr ""
 
-#: src/js/blocks/social-share/editor.js:14
+#: src/js/blocks/social-share/editor.js:11
 msgid "Social sharing buttons for the current content."
-msgstr ""
-
-#: src/js/blocks/social-share/editor.js:42
-msgid "Color"
-msgstr ""
-
-#: src/js/blocks/social-share/editor.js:45
-msgid "Default"
-msgstr ""
-
-#: src/js/blocks/social-share/editor.js:46
-msgid "Accent"
-msgstr ""
-
-#: src/js/blocks/social-share/editor.js:47
-msgid "Foreground"
-msgstr ""
-
-#: src/js/blocks/social-share/editor.js:48
-msgid "Muted"
-msgstr ""
-
-#: src/js/blocks/social-share/editor.js:49
-msgid "Canvas"
-msgstr ""
-
-#: src/js/blocks/social-share/editor.js:50
-msgid "Custom hex color"
-msgstr ""
-
-#: src/js/blocks/social-share/editor.js:63
-msgid "Hex color"
-msgstr ""
-
-#: src/js/blocks/social-share/editor.js:64
-msgid "Use values like #b85c38 or #11223344."
 msgstr ""
 
 #: src/js/blocks/social-share/view.js:5
@@ -934,26 +904,6 @@ msgid "Social sharing buttons for the current content."
 msgstr ""
 
 #: theme.json
-msgctxt "Color name"
-msgid "Canvas"
-msgstr ""
-
-#: theme.json
-msgctxt "Color name"
-msgid "Foreground"
-msgstr ""
-
-#: theme.json
-msgctxt "Color name"
-msgid "Accent"
-msgstr ""
-
-#: theme.json
-msgctxt "Color name"
-msgid "Muted"
-msgstr ""
-
-#: theme.json
 msgctxt "Space size name"
 msgid "XS"
 msgstr ""
@@ -979,33 +929,13 @@ msgid "XL"
 msgstr ""
 
 #: theme.json
-msgctxt "Font family name"
-msgid "Sans"
+msgctxt "Space size name"
+msgid "2XL"
 msgstr ""
 
 #: theme.json
-msgctxt "Font family name"
-msgid "Display"
-msgstr ""
-
-#: theme.json
-msgctxt "Font size name"
-msgid "Small"
-msgstr ""
-
-#: theme.json
-msgctxt "Font size name"
-msgid "Base"
-msgstr ""
-
-#: theme.json
-msgctxt "Font size name"
-msgid "Large"
-msgstr ""
-
-#: theme.json
-msgctxt "Font size name"
-msgid "XL"
+msgctxt "Space size name"
+msgid "3XL"
 msgstr ""
 
 #: theme.json

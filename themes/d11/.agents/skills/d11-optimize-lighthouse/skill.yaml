@@ -1,0 +1,19 @@
+name: d11-optimize-lighthouse
+description: Audit one stable d11 page with the local optimize-lighthouse CLI, prioritize Lighthouse findings, and produce concrete frontend optimization guidance.
+context:
+  platform: wordpress
+  owner: d11-theme
+  theme: d11
+runtime_notes:
+  preferred_files:
+    - docs/ai-workflows.md
+    - docs/theme-overview.md
+    - docs/block/whitelisted-blocks-summary.md
+    - docs/content-sync.md
+    - tools/optimize-lighthouse/cli/index.js
+    - tools/optimize-lighthouse/core/orchestrator.js
+  resolution_rules:
+    - Use this skill only after the page already has a stable visual baseline.
+    - Run optimize-lighthouse for one page at a time.
+    - Keep the analyzer payload filtered and minimal; do not forward the full Lighthouse report.
+    - Treat compare mode as an optional baseline delta, not as the main optimization signal.

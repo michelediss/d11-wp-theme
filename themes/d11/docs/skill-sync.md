@@ -26,10 +26,10 @@ wp-content/themes/d11/scripts/sync-codex-skill.sh
 
 ## Default Paths
 
-- source root: `wp-content/themes/d11/.agents/skills` for theme-local skills such as `ai-engine`
+- source root: `wp-content/themes/d11/.agents/skills` for theme-local skills such as `d11-generate-page`, `d11-review-page`, and `d11-optimize-lighthouse`
 - target roots: `~/.codex/skills`, `~/.opencode/skills`
 
-Because these are defaults, the script works out of the box for the theme-local `ai-engine` documentation skill.
+Because these are defaults, the script works out of the box for the theme-local `d11-*` workflow skills.
 
 ## Usage
 
@@ -42,7 +42,7 @@ wp-content/themes/d11/scripts/sync-codex-skill.sh --list
 Sync a specific theme-local skill:
 
 ```bash
-wp-content/themes/d11/scripts/sync-codex-skill.sh --skill ai-engine
+wp-content/themes/d11/scripts/sync-codex-skill.sh --skill d11-generate-page
 ```
 
 Sync all local skills:
@@ -68,3 +68,4 @@ wp-content/themes/d11/scripts/sync-codex-skill.sh \
 - The script syncs one skill at a time on purpose, so changes remain explicit and reviewable.
 - `--skill all` is available when you intentionally want to sync every local skill in one run.
 - Sync the whole skill directory so `SKILL.md`, `skill.yaml`, `README.md`, and any future bundled files stay aligned across repository-local and global copies.
+- When a skill workflow depends on theme-local tools such as `tools/review-screenshot/` or `tools/optimize-lighthouse/`, keep the skill docs aligned with the real tool entrypoints before syncing the skill globally.

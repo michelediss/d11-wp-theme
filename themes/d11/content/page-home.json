@@ -1,0 +1,1579 @@
+{
+    "version": 1,
+    "postType": "page",
+    "slug": "home",
+    "path": "home",
+    "postId": 39,
+    "updatedAtGmt": "2026-03-22 13:25:24",
+    "contentHash": "1753fe409fcfdca5e6aa0f8ddff864c6f7c4ca22ace5da1ca095ea46ea10f4a8",
+    "blocks": [
+        {
+            "blockName": "core/group",
+            "attrs": {
+                "align": "full",
+                "layout": {
+                    "type": "constrained",
+                    "wideSize": "80rem"
+                },
+                "className": "px-6 pb-12 pt-8 md:px-8 md:pb-16 md:pt-12"
+            },
+            "innerBlocks": [
+                {
+                    "blockName": "core/group",
+                    "attrs": {
+                        "layout": {
+                            "type": "constrained",
+                            "contentSize": "1120px"
+                        },
+                        "className": "hero-surface relative overflow-hidden rounded-[2rem] border border-white/75 px-6 py-8 shadow-panel backdrop-blur-xl md:px-10 md:py-12"
+                    },
+                    "innerBlocks": [
+                        {
+                            "blockName": "core/group",
+                            "attrs": {
+                                "layout": {
+                                    "type": "default"
+                                },
+                                "className": "absolute left-[-4rem] top-[-3rem] h-40 w-40 rounded-full bg-sun/20 blur-3xl"
+                            },
+                            "innerBlocks": [],
+                            "innerHTML": "\n<div class=\"wp-block-group absolute left-[-4rem] top-[-3rem] h-40 w-40 rounded-full bg-sun/20 blur-3xl\"></div>\n",
+                            "innerContent": [
+                                "\n<div class=\"wp-block-group absolute left-[-4rem] top-[-3rem] h-40 w-40 rounded-full bg-sun/20 blur-3xl\"></div>\n"
+                            ]
+                        },
+                        {
+                            "blockName": "core/group",
+                            "attrs": {
+                                "layout": {
+                                    "type": "default"
+                                },
+                                "className": "absolute bottom-[-6rem] right-[-2rem] h-48 w-48 rounded-full bg-primary/12 blur-3xl"
+                            },
+                            "innerBlocks": [],
+                            "innerHTML": "\n<div class=\"wp-block-group absolute bottom-[-6rem] right-[-2rem] h-48 w-48 rounded-full bg-primary/12 blur-3xl\"></div>\n",
+                            "innerContent": [
+                                "\n<div class=\"wp-block-group absolute bottom-[-6rem] right-[-2rem] h-48 w-48 rounded-full bg-primary/12 blur-3xl\"></div>\n"
+                            ]
+                        },
+                        {
+                            "blockName": "core/columns",
+                            "attrs": {
+                                "verticalAlignment": "center",
+                                "className": "relative z-10 gap-8 md:gap-12"
+                            },
+                            "innerBlocks": [
+                                {
+                                    "blockName": "core/column",
+                                    "attrs": {
+                                        "width": "50%"
+                                    },
+                                    "innerBlocks": [
+                                        {
+                                            "blockName": "core/paragraph",
+                                            "attrs": {
+                                                "className": "brand-kicker mb-5"
+                                            },
+                                            "innerBlocks": [],
+                                            "innerHTML": "\n<p class=\"brand-kicker mb-5\">Product storytelling with real imagery.</p>\n",
+                                            "innerContent": [
+                                                "\n<p class=\"brand-kicker mb-5\">Product storytelling with real imagery.</p>\n"
+                                            ]
+                                        },
+                                        {
+                                            "blockName": "core/heading",
+                                            "attrs": {
+                                                "level": 1,
+                                                "className": "max-w-3xl font-heading text-[clamp(2.9rem,8vw,5rem)] font-bold tracking-tightest leading-[0.92] text-ink"
+                                            },
+                                            "innerBlocks": [],
+                                            "innerHTML": "\n<h1 class=\"wp-block-heading max-w-3xl font-heading text-[clamp(2.9rem,8vw,5rem)] font-bold tracking-tightest leading-[0.92] text-ink\">Build a homepage that looks like a living product brand.</h1>\n",
+                                            "innerContent": [
+                                                "\n<h1 class=\"wp-block-heading max-w-3xl font-heading text-[clamp(2.9rem,8vw,5rem)] font-bold tracking-tightest leading-[0.92] text-ink\">Build a homepage that looks like a living product brand.</h1>\n"
+                                            ]
+                                        },
+                                        {
+                                            "blockName": "core/paragraph",
+                                            "attrs": {
+                                                "className": "mt-5 max-w-2xl text-[1.05rem] leading-body text-cinder/76 md:text-lead"
+                                            },
+                                            "innerBlocks": [],
+                                            "innerHTML": "\n<p class=\"mt-5 max-w-2xl text-[1.05rem] leading-body text-cinder/76 md:text-lead\">This iteration shifts the design from abstract SaaS surfaces to a more editorial rhythm: real photography, stronger emotional cues, and clearer story beats across the page.</p>\n",
+                                            "innerContent": [
+                                                "\n<p class=\"mt-5 max-w-2xl text-[1.05rem] leading-body text-cinder/76 md:text-lead\">This iteration shifts the design from abstract SaaS surfaces to a more editorial rhythm: real photography, stronger emotional cues, and clearer story beats across the page.</p>\n"
+                                            ]
+                                        },
+                                        {
+                                            "blockName": "core/buttons",
+                                            "attrs": {
+                                                "className": "mt-8"
+                                            },
+                                            "innerBlocks": [
+                                                {
+                                                    "blockName": "core/button",
+                                                    "attrs": {
+                                                        "className": "site-button"
+                                                    },
+                                                    "innerBlocks": [],
+                                                    "innerHTML": "\n<div class=\"wp-block-button site-button\"><a class=\"wp-block-button__link wp-element-button\" href=\"/contact\">Start the redesign</a></div>\n",
+                                                    "innerContent": [
+                                                        "\n<div class=\"wp-block-button site-button\"><a class=\"wp-block-button__link wp-element-button\" href=\"/contact\">Start the redesign</a></div>\n"
+                                                    ]
+                                                },
+                                                {
+                                                    "blockName": "core/button",
+                                                    "attrs": {
+                                                        "className": "site-button site-button--ghost"
+                                                    },
+                                                    "innerBlocks": [],
+                                                    "innerHTML": "\n<div class=\"wp-block-button site-button site-button--ghost\"><a class=\"wp-block-button__link wp-element-button\" href=\"#story\">See the story flow</a></div>\n",
+                                                    "innerContent": [
+                                                        "\n<div class=\"wp-block-button site-button site-button--ghost\"><a class=\"wp-block-button__link wp-element-button\" href=\"#story\">See the story flow</a></div>\n"
+                                                    ]
+                                                }
+                                            ],
+                                            "innerHTML": "\n<div class=\"wp-block-buttons mt-8\">\n\n\n\n</div>\n",
+                                            "innerContent": [
+                                                "\n<div class=\"wp-block-buttons mt-8\">\n",
+                                                null,
+                                                "\n\n",
+                                                null,
+                                                "\n</div>\n"
+                                            ]
+                                        },
+                                        {
+                                            "blockName": "core/group",
+                                            "attrs": {
+                                                "layout": {
+                                                    "type": "flex",
+                                                    "flexWrap": "wrap"
+                                                },
+                                                "className": "mt-8 gap-3"
+                                            },
+                                            "innerBlocks": [
+                                                {
+                                                    "blockName": "core/paragraph",
+                                                    "attrs": {
+                                                        "className": "metric-chip"
+                                                    },
+                                                    "innerBlocks": [],
+                                                    "innerHTML": "\n<p class=\"metric-chip\">Real photo surfaces</p>\n",
+                                                    "innerContent": [
+                                                        "\n<p class=\"metric-chip\">Real photo surfaces</p>\n"
+                                                    ]
+                                                },
+                                                {
+                                                    "blockName": "core/paragraph",
+                                                    "attrs": {
+                                                        "className": "metric-chip"
+                                                    },
+                                                    "innerBlocks": [],
+                                                    "innerHTML": "\n<p class=\"metric-chip\">Cleaner message flow</p>\n",
+                                                    "innerContent": [
+                                                        "\n<p class=\"metric-chip\">Cleaner message flow</p>\n"
+                                                    ]
+                                                },
+                                                {
+                                                    "blockName": "core/paragraph",
+                                                    "attrs": {
+                                                        "className": "metric-chip"
+                                                    },
+                                                    "innerBlocks": [],
+                                                    "innerHTML": "\n<p class=\"metric-chip\">Still fully block-based</p>\n",
+                                                    "innerContent": [
+                                                        "\n<p class=\"metric-chip\">Still fully block-based</p>\n"
+                                                    ]
+                                                }
+                                            ],
+                                            "innerHTML": "\n<div class=\"wp-block-group mt-8 gap-3\">\n\n\n\n\n\n</div>\n",
+                                            "innerContent": [
+                                                "\n<div class=\"wp-block-group mt-8 gap-3\">\n",
+                                                null,
+                                                "\n\n",
+                                                null,
+                                                "\n\n",
+                                                null,
+                                                "\n</div>\n"
+                                            ]
+                                        }
+                                    ],
+                                    "innerHTML": "\n<div class=\"wp-block-column\" style=\"flex-basis:50%\">\n\n\n\n\n\n\n\n\n\n</div>\n",
+                                    "innerContent": [
+                                        "\n<div class=\"wp-block-column\" style=\"flex-basis:50%\">\n",
+                                        null,
+                                        "\n\n",
+                                        null,
+                                        "\n\n",
+                                        null,
+                                        "\n\n",
+                                        null,
+                                        "\n\n",
+                                        null,
+                                        "\n</div>\n"
+                                    ]
+                                },
+                                {
+                                    "blockName": "core/column",
+                                    "attrs": {
+                                        "width": "50%"
+                                    },
+                                    "innerBlocks": [
+                                        {
+                                            "blockName": "core/group",
+                                            "attrs": {
+                                                "layout": {
+                                                    "type": "constrained"
+                                                },
+                                                "className": "space-y-4"
+                                            },
+                                            "innerBlocks": [
+                                                {
+                                                    "blockName": "core/image",
+                                                    "attrs": {
+                                                        "sizeSlug": "full",
+                                                        "linkDestination": "none",
+                                                        "className": "photo-frame min-h-[26rem]"
+                                                    },
+                                                    "innerBlocks": [],
+                                                    "innerHTML": "\n<figure class=\"wp-block-image size-full photo-frame min-h-[26rem]\"><img src=\"https://picsum.photos/id/1060/1200/1400\" alt=\"Creative team planning a digital product launch\"/></figure>\n",
+                                                    "innerContent": [
+                                                        "\n<figure class=\"wp-block-image size-full photo-frame min-h-[26rem]\"><img src=\"https://picsum.photos/id/1060/1200/1400\" alt=\"Creative team planning a digital product launch\"/></figure>\n"
+                                                    ]
+                                                },
+                                                {
+                                                    "blockName": "core/columns",
+                                                    "attrs": {
+                                                        "className": "gap-4"
+                                                    },
+                                                    "innerBlocks": [
+                                                        {
+                                                            "blockName": "core/column",
+                                                            "attrs": {
+                                                                "width": "56%"
+                                                            },
+                                                            "innerBlocks": [
+                                                                {
+                                                                    "blockName": "core/image",
+                                                                    "attrs": {
+                                                                        "sizeSlug": "full",
+                                                                        "linkDestination": "none",
+                                                                        "className": "photo-frame h-full min-h-[13rem]"
+                                                                    },
+                                                                    "innerBlocks": [],
+                                                                    "innerHTML": "\n<figure class=\"wp-block-image size-full photo-frame h-full min-h-[13rem]\"><img src=\"https://picsum.photos/id/1035/900/700\" alt=\"Close-up product workspace with notebooks and laptop\"/></figure>\n",
+                                                                    "innerContent": [
+                                                                        "\n<figure class=\"wp-block-image size-full photo-frame h-full min-h-[13rem]\"><img src=\"https://picsum.photos/id/1035/900/700\" alt=\"Close-up product workspace with notebooks and laptop\"/></figure>\n"
+                                                                    ]
+                                                                }
+                                                            ],
+                                                            "innerHTML": "\n<div class=\"wp-block-column\" style=\"flex-basis:56%\">\n\n</div>\n",
+                                                            "innerContent": [
+                                                                "\n<div class=\"wp-block-column\" style=\"flex-basis:56%\">\n",
+                                                                null,
+                                                                "\n</div>\n"
+                                                            ]
+                                                        },
+                                                        {
+                                                            "blockName": "core/column",
+                                                            "attrs": {
+                                                                "width": "44%"
+                                                            },
+                                                            "innerBlocks": [
+                                                                {
+                                                                    "blockName": "core/group",
+                                                                    "attrs": {
+                                                                        "layout": {
+                                                                            "type": "constrained"
+                                                                        },
+                                                                        "className": "dark-panel rounded-[1.5rem] p-5 text-paper shadow-float"
+                                                                    },
+                                                                    "innerBlocks": [
+                                                                        {
+                                                                            "blockName": "core/paragraph",
+                                                                            "attrs": {
+                                                                                "className": "font-mono text-kicker font-semibold uppercase tracking-kicker text-paper/55"
+                                                                            },
+                                                                            "innerBlocks": [],
+                                                                            "innerHTML": "\n<p class=\"font-mono text-kicker font-semibold uppercase tracking-kicker text-paper/55\">Visual direction</p>\n",
+                                                                            "innerContent": [
+                                                                                "\n<p class=\"font-mono text-kicker font-semibold uppercase tracking-kicker text-paper/55\">Visual direction</p>\n"
+                                                                            ]
+                                                                        },
+                                                                        {
+                                                                            "blockName": "core/paragraph",
+                                                                            "attrs": {
+                                                                                "className": "mt-3 font-heading text-2xl font-bold tracking-tightest text-paper"
+                                                                            },
+                                                                            "innerBlocks": [],
+                                                                            "innerHTML": "\n<p class=\"mt-3 font-heading text-2xl font-bold tracking-tightest text-paper\">Calm, bright, human.</p>\n",
+                                                                            "innerContent": [
+                                                                                "\n<p class=\"mt-3 font-heading text-2xl font-bold tracking-tightest text-paper\">Calm, bright, human.</p>\n"
+                                                                            ]
+                                                                        },
+                                                                        {
+                                                                            "blockName": "core/paragraph",
+                                                                            "attrs": {
+                                                                                "className": "mt-3 text-sm leading-body text-paper/70"
+                                                                            },
+                                                                            "innerBlocks": [],
+                                                                            "innerHTML": "\n<p class=\"mt-3 text-sm leading-body text-paper/70\">Less abstract UI theater, more product confidence with imagery that suggests real teams and real work.</p>\n",
+                                                                            "innerContent": [
+                                                                                "\n<p class=\"mt-3 text-sm leading-body text-paper/70\">Less abstract UI theater, more product confidence with imagery that suggests real teams and real work.</p>\n"
+                                                                            ]
+                                                                        }
+                                                                    ],
+                                                                    "innerHTML": "\n<div class=\"wp-block-group dark-panel rounded-[1.5rem] p-5 text-paper shadow-float\">\n\n\n\n\n\n</div>\n",
+                                                                    "innerContent": [
+                                                                        "\n<div class=\"wp-block-group dark-panel rounded-[1.5rem] p-5 text-paper shadow-float\">\n",
+                                                                        null,
+                                                                        "\n\n",
+                                                                        null,
+                                                                        "\n\n",
+                                                                        null,
+                                                                        "\n</div>\n"
+                                                                    ]
+                                                                }
+                                                            ],
+                                                            "innerHTML": "\n<div class=\"wp-block-column\" style=\"flex-basis:44%\">\n\n</div>\n",
+                                                            "innerContent": [
+                                                                "\n<div class=\"wp-block-column\" style=\"flex-basis:44%\">\n",
+                                                                null,
+                                                                "\n</div>\n"
+                                                            ]
+                                                        }
+                                                    ],
+                                                    "innerHTML": "\n<div class=\"wp-block-columns gap-4\">\n\n\n\n</div>\n",
+                                                    "innerContent": [
+                                                        "\n<div class=\"wp-block-columns gap-4\">\n",
+                                                        null,
+                                                        "\n\n",
+                                                        null,
+                                                        "\n</div>\n"
+                                                    ]
+                                                }
+                                            ],
+                                            "innerHTML": "\n<div class=\"wp-block-group space-y-4\">\n\n\n\n</div>\n",
+                                            "innerContent": [
+                                                "\n<div class=\"wp-block-group space-y-4\">\n",
+                                                null,
+                                                "\n\n",
+                                                null,
+                                                "\n</div>\n"
+                                            ]
+                                        }
+                                    ],
+                                    "innerHTML": "\n<div class=\"wp-block-column\" style=\"flex-basis:50%\">\n\n</div>\n",
+                                    "innerContent": [
+                                        "\n<div class=\"wp-block-column\" style=\"flex-basis:50%\">\n",
+                                        null,
+                                        "\n</div>\n"
+                                    ]
+                                }
+                            ],
+                            "innerHTML": "\n<div class=\"wp-block-columns are-vertically-aligned-center relative z-10 gap-8 md:gap-12\">\n\n\n\n</div>\n",
+                            "innerContent": [
+                                "\n<div class=\"wp-block-columns are-vertically-aligned-center relative z-10 gap-8 md:gap-12\">\n",
+                                null,
+                                "\n\n",
+                                null,
+                                "\n</div>\n"
+                            ]
+                        }
+                    ],
+                    "innerHTML": "\n<div class=\"wp-block-group hero-surface relative overflow-hidden rounded-[2rem] border border-white/75 px-6 py-8 shadow-panel backdrop-blur-xl md:px-10 md:py-12\">\n\n\n\n\n\n</div>\n",
+                    "innerContent": [
+                        "\n<div class=\"wp-block-group hero-surface relative overflow-hidden rounded-[2rem] border border-white/75 px-6 py-8 shadow-panel backdrop-blur-xl md:px-10 md:py-12\">\n",
+                        null,
+                        "\n\n",
+                        null,
+                        "\n\n",
+                        null,
+                        "\n</div>\n"
+                    ]
+                }
+            ],
+            "innerHTML": "\n<div class=\"wp-block-group alignfull px-6 pb-12 pt-8 md:px-8 md:pb-16 md:pt-12\">\n\n</div>\n",
+            "innerContent": [
+                "\n<div class=\"wp-block-group alignfull px-6 pb-12 pt-8 md:px-8 md:pb-16 md:pt-12\">\n",
+                null,
+                "\n</div>\n"
+            ]
+        },
+        {
+            "blockName": null,
+            "attrs": [],
+            "innerBlocks": [],
+            "innerHTML": "\n\n",
+            "innerContent": [
+                "\n\n"
+            ]
+        },
+        {
+            "blockName": "core/group",
+            "attrs": {
+                "align": "full",
+                "layout": {
+                    "type": "constrained",
+                    "wideSize": "80rem"
+                },
+                "className": "px-6 pb-10 md:px-8 md:pb-14"
+            },
+            "innerBlocks": [
+                {
+                    "blockName": "core/group",
+                    "attrs": {
+                        "layout": {
+                            "type": "flex",
+                            "flexWrap": "wrap",
+                            "justifyContent": "center"
+                        },
+                        "className": "gap-3 md:gap-4"
+                    },
+                    "innerBlocks": [
+                        {
+                            "blockName": "core/paragraph",
+                            "attrs": {
+                                "className": "logo-marquee"
+                            },
+                            "innerBlocks": [],
+                            "innerHTML": "\n<p class=\"logo-marquee\">Product launches</p>\n",
+                            "innerContent": [
+                                "\n<p class=\"logo-marquee\">Product launches</p>\n"
+                            ]
+                        },
+                        {
+                            "blockName": "core/paragraph",
+                            "attrs": {
+                                "className": "logo-marquee"
+                            },
+                            "innerBlocks": [],
+                            "innerHTML": "\n<p class=\"logo-marquee\">B2B teams</p>\n",
+                            "innerContent": [
+                                "\n<p class=\"logo-marquee\">B2B teams</p>\n"
+                            ]
+                        },
+                        {
+                            "blockName": "core/paragraph",
+                            "attrs": {
+                                "className": "logo-marquee"
+                            },
+                            "innerBlocks": [],
+                            "innerHTML": "\n<p class=\"logo-marquee\">Editorial rhythm</p>\n",
+                            "innerContent": [
+                                "\n<p class=\"logo-marquee\">Editorial rhythm</p>\n"
+                            ]
+                        },
+                        {
+                            "blockName": "core/paragraph",
+                            "attrs": {
+                                "className": "logo-marquee"
+                            },
+                            "innerBlocks": [],
+                            "innerHTML": "\n<p class=\"logo-marquee\">Modern block workflow</p>\n",
+                            "innerContent": [
+                                "\n<p class=\"logo-marquee\">Modern block workflow</p>\n"
+                            ]
+                        }
+                    ],
+                    "innerHTML": "\n<div class=\"wp-block-group gap-3 md:gap-4\">\n\n\n\n\n\n\n\n</div>\n",
+                    "innerContent": [
+                        "\n<div class=\"wp-block-group gap-3 md:gap-4\">\n",
+                        null,
+                        "\n\n",
+                        null,
+                        "\n\n",
+                        null,
+                        "\n\n",
+                        null,
+                        "\n</div>\n"
+                    ]
+                }
+            ],
+            "innerHTML": "\n<div class=\"wp-block-group alignfull px-6 pb-10 md:px-8 md:pb-14\">\n\n</div>\n",
+            "innerContent": [
+                "\n<div class=\"wp-block-group alignfull px-6 pb-10 md:px-8 md:pb-14\">\n",
+                null,
+                "\n</div>\n"
+            ]
+        },
+        {
+            "blockName": null,
+            "attrs": [],
+            "innerBlocks": [],
+            "innerHTML": "\n\n",
+            "innerContent": [
+                "\n\n"
+            ]
+        },
+        {
+            "blockName": "core/group",
+            "attrs": {
+                "align": "full",
+                "anchor": "story",
+                "layout": {
+                    "type": "constrained",
+                    "wideSize": "80rem"
+                },
+                "className": "px-6 py-12 md:px-8 md:py-18"
+            },
+            "innerBlocks": [
+                {
+                    "blockName": "core/group",
+                    "attrs": {
+                        "layout": {
+                            "type": "constrained",
+                            "contentSize": "1120px"
+                        },
+                        "className": "space-y-8"
+                    },
+                    "innerBlocks": [
+                        {
+                            "blockName": "core/group",
+                            "attrs": {
+                                "layout": {
+                                    "type": "constrained",
+                                    "contentSize": "760px"
+                                },
+                                "className": "space-y-4"
+                            },
+                            "innerBlocks": [
+                                {
+                                    "blockName": "core/paragraph",
+                                    "attrs": {
+                                        "className": "section-kicker"
+                                    },
+                                    "innerBlocks": [],
+                                    "innerHTML": "\n<p class=\"section-kicker\">Story flow</p>\n",
+                                    "innerContent": [
+                                        "\n<p class=\"section-kicker\">Story flow</p>\n"
+                                    ]
+                                },
+                                {
+                                    "blockName": "core/heading",
+                                    "attrs": {
+                                        "level": 2,
+                                        "className": "font-heading text-section-title font-bold tracking-tightest text-ink"
+                                    },
+                                    "innerBlocks": [],
+                                    "innerHTML": "\n<h2 class=\"wp-block-heading font-heading text-section-title font-bold tracking-tightest text-ink\">The homepage now moves between product clarity and human context.</h2>\n",
+                                    "innerContent": [
+                                        "\n<h2 class=\"wp-block-heading font-heading text-section-title font-bold tracking-tightest text-ink\">The homepage now moves between product clarity and human context.</h2>\n"
+                                    ]
+                                },
+                                {
+                                    "blockName": "core/paragraph",
+                                    "attrs": {
+                                        "className": "max-w-2xl text-base leading-body text-cinder/78 md:text-lg"
+                                    },
+                                    "innerBlocks": [],
+                                    "innerHTML": "\n<p class=\"max-w-2xl text-base leading-body text-cinder/78 md:text-lg\">Images from Picsum give the page more warmth and depth. Instead of relying only on cards and gradients, the content now feels anchored in real scenes and real people.</p>\n",
+                                    "innerContent": [
+                                        "\n<p class=\"max-w-2xl text-base leading-body text-cinder/78 md:text-lg\">Images from Picsum give the page more warmth and depth. Instead of relying only on cards and gradients, the content now feels anchored in real scenes and real people.</p>\n"
+                                    ]
+                                }
+                            ],
+                            "innerHTML": "\n<div class=\"wp-block-group space-y-4\">\n\n\n\n\n\n</div>\n",
+                            "innerContent": [
+                                "\n<div class=\"wp-block-group space-y-4\">\n",
+                                null,
+                                "\n\n",
+                                null,
+                                "\n\n",
+                                null,
+                                "\n</div>\n"
+                            ]
+                        },
+                        {
+                            "blockName": "core/columns",
+                            "attrs": {
+                                "verticalAlignment": "center",
+                                "className": "gap-6 md:gap-8"
+                            },
+                            "innerBlocks": [
+                                {
+                                    "blockName": "core/column",
+                                    "attrs": {
+                                        "width": "46%"
+                                    },
+                                    "innerBlocks": [
+                                        {
+                                            "blockName": "core/image",
+                                            "attrs": {
+                                                "sizeSlug": "full",
+                                                "linkDestination": "none",
+                                                "className": "photo-frame min-h-[34rem]"
+                                            },
+                                            "innerBlocks": [],
+                                            "innerHTML": "\n<figure class=\"wp-block-image size-full photo-frame min-h-[34rem]\"><img src=\"https://picsum.photos/id/1040/1000/1400\" alt=\"Person working in a bright studio environment\"/></figure>\n",
+                                            "innerContent": [
+                                                "\n<figure class=\"wp-block-image size-full photo-frame min-h-[34rem]\"><img src=\"https://picsum.photos/id/1040/1000/1400\" alt=\"Person working in a bright studio environment\"/></figure>\n"
+                                            ]
+                                        }
+                                    ],
+                                    "innerHTML": "\n<div class=\"wp-block-column\" style=\"flex-basis:46%\">\n\n</div>\n",
+                                    "innerContent": [
+                                        "\n<div class=\"wp-block-column\" style=\"flex-basis:46%\">\n",
+                                        null,
+                                        "\n</div>\n"
+                                    ]
+                                },
+                                {
+                                    "blockName": "core/column",
+                                    "attrs": {
+                                        "width": "54%"
+                                    },
+                                    "innerBlocks": [
+                                        {
+                                            "blockName": "core/group",
+                                            "attrs": {
+                                                "layout": {
+                                                    "type": "constrained"
+                                                },
+                                                "className": "space-y-5"
+                                            },
+                                            "innerBlocks": [
+                                                {
+                                                    "blockName": "core/group",
+                                                    "attrs": {
+                                                        "layout": {
+                                                            "type": "constrained"
+                                                        },
+                                                        "className": "editorial-card"
+                                                    },
+                                                    "innerBlocks": [
+                                                        {
+                                                            "blockName": "core/paragraph",
+                                                            "attrs": {
+                                                                "className": "section-kicker mb-3"
+                                                            },
+                                                            "innerBlocks": [],
+                                                            "innerHTML": "\n<p class=\"section-kicker mb-3\">01</p>\n",
+                                                            "innerContent": [
+                                                                "\n<p class=\"section-kicker mb-3\">01</p>\n"
+                                                            ]
+                                                        },
+                                                        {
+                                                            "blockName": "core/heading",
+                                                            "attrs": {
+                                                                "level": 3,
+                                                                "className": "font-heading text-2xl font-bold tracking-tightest text-ink"
+                                                            },
+                                                            "innerBlocks": [],
+                                                            "innerHTML": "\n<h3 class=\"wp-block-heading font-heading text-2xl font-bold tracking-tightest text-ink\">More atmosphere in the first minutes.</h3>\n",
+                                                            "innerContent": [
+                                                                "\n<h3 class=\"wp-block-heading font-heading text-2xl font-bold tracking-tightest text-ink\">More atmosphere in the first minutes.</h3>\n"
+                                                            ]
+                                                        },
+                                                        {
+                                                            "blockName": "core/paragraph",
+                                                            "attrs": {
+                                                                "className": "mt-3 text-base leading-body text-cinder/78"
+                                                            },
+                                                            "innerBlocks": [],
+                                                            "innerHTML": "\n<p class=\"mt-3 text-base leading-body text-cinder/78\">Photography gives the interface something abstract gradients cannot: a sense of real-world ambition, energy, and focus.</p>\n",
+                                                            "innerContent": [
+                                                                "\n<p class=\"mt-3 text-base leading-body text-cinder/78\">Photography gives the interface something abstract gradients cannot: a sense of real-world ambition, energy, and focus.</p>\n"
+                                                            ]
+                                                        }
+                                                    ],
+                                                    "innerHTML": "\n<div class=\"wp-block-group editorial-card\">\n\n\n\n\n\n</div>\n",
+                                                    "innerContent": [
+                                                        "\n<div class=\"wp-block-group editorial-card\">\n",
+                                                        null,
+                                                        "\n\n",
+                                                        null,
+                                                        "\n\n",
+                                                        null,
+                                                        "\n</div>\n"
+                                                    ]
+                                                },
+                                                {
+                                                    "blockName": "core/group",
+                                                    "attrs": {
+                                                        "layout": {
+                                                            "type": "constrained"
+                                                        },
+                                                        "className": "editorial-card"
+                                                    },
+                                                    "innerBlocks": [
+                                                        {
+                                                            "blockName": "core/paragraph",
+                                                            "attrs": {
+                                                                "className": "section-kicker mb-3"
+                                                            },
+                                                            "innerBlocks": [],
+                                                            "innerHTML": "\n<p class=\"section-kicker mb-3\">02</p>\n",
+                                                            "innerContent": [
+                                                                "\n<p class=\"section-kicker mb-3\">02</p>\n"
+                                                            ]
+                                                        },
+                                                        {
+                                                            "blockName": "core/heading",
+                                                            "attrs": {
+                                                                "level": 3,
+                                                                "className": "font-heading text-2xl font-bold tracking-tightest text-ink"
+                                                            },
+                                                            "innerBlocks": [],
+                                                            "innerHTML": "\n<h3 class=\"wp-block-heading font-heading text-2xl font-bold tracking-tightest text-ink\">Still disciplined in structure.</h3>\n",
+                                                            "innerContent": [
+                                                                "\n<h3 class=\"wp-block-heading font-heading text-2xl font-bold tracking-tightest text-ink\">Still disciplined in structure.</h3>\n"
+                                                            ]
+                                                        },
+                                                        {
+                                                            "blockName": "core/paragraph",
+                                                            "attrs": {
+                                                                "className": "mt-3 text-base leading-body text-cinder/78"
+                                                            },
+                                                            "innerBlocks": [],
+                                                            "innerHTML": "\n<p class=\"mt-3 text-base leading-body text-cinder/78\">The new visuals live inside the same content-sync model, so the page remains block-based, editor-visible, and easy to iterate on later.</p>\n",
+                                                            "innerContent": [
+                                                                "\n<p class=\"mt-3 text-base leading-body text-cinder/78\">The new visuals live inside the same content-sync model, so the page remains block-based, editor-visible, and easy to iterate on later.</p>\n"
+                                                            ]
+                                                        }
+                                                    ],
+                                                    "innerHTML": "\n<div class=\"wp-block-group editorial-card\">\n\n\n\n\n\n</div>\n",
+                                                    "innerContent": [
+                                                        "\n<div class=\"wp-block-group editorial-card\">\n",
+                                                        null,
+                                                        "\n\n",
+                                                        null,
+                                                        "\n\n",
+                                                        null,
+                                                        "\n</div>\n"
+                                                    ]
+                                                },
+                                                {
+                                                    "blockName": "core/group",
+                                                    "attrs": {
+                                                        "layout": {
+                                                            "type": "constrained"
+                                                        },
+                                                        "className": "editorial-card"
+                                                    },
+                                                    "innerBlocks": [
+                                                        {
+                                                            "blockName": "core/paragraph",
+                                                            "attrs": {
+                                                                "className": "section-kicker mb-3"
+                                                            },
+                                                            "innerBlocks": [],
+                                                            "innerHTML": "\n<p class=\"section-kicker mb-3\">03</p>\n",
+                                                            "innerContent": [
+                                                                "\n<p class=\"section-kicker mb-3\">03</p>\n"
+                                                            ]
+                                                        },
+                                                        {
+                                                            "blockName": "core/heading",
+                                                            "attrs": {
+                                                                "level": 3,
+                                                                "className": "font-heading text-2xl font-bold tracking-tightest text-ink"
+                                                            },
+                                                            "innerBlocks": [],
+                                                            "innerHTML": "\n<h3 class=\"wp-block-heading font-heading text-2xl font-bold tracking-tightest text-ink\">A better mix of precision and warmth.</h3>\n",
+                                                            "innerContent": [
+                                                                "\n<h3 class=\"wp-block-heading font-heading text-2xl font-bold tracking-tightest text-ink\">A better mix of precision and warmth.</h3>\n"
+                                                            ]
+                                                        },
+                                                        {
+                                                            "blockName": "core/paragraph",
+                                                            "attrs": {
+                                                                "className": "mt-3 text-base leading-body text-cinder/78"
+                                                            },
+                                                            "innerBlocks": [],
+                                                            "innerHTML": "\n<p class=\"mt-3 text-base leading-body text-cinder/78\">The layout keeps the crisp typography and product tone, but the page now feels less synthetic and more premium.</p>\n",
+                                                            "innerContent": [
+                                                                "\n<p class=\"mt-3 text-base leading-body text-cinder/78\">The layout keeps the crisp typography and product tone, but the page now feels less synthetic and more premium.</p>\n"
+                                                            ]
+                                                        }
+                                                    ],
+                                                    "innerHTML": "\n<div class=\"wp-block-group editorial-card\">\n\n\n\n\n\n</div>\n",
+                                                    "innerContent": [
+                                                        "\n<div class=\"wp-block-group editorial-card\">\n",
+                                                        null,
+                                                        "\n\n",
+                                                        null,
+                                                        "\n\n",
+                                                        null,
+                                                        "\n</div>\n"
+                                                    ]
+                                                }
+                                            ],
+                                            "innerHTML": "\n<div class=\"wp-block-group space-y-5\">\n\n\n\n\n\n</div>\n",
+                                            "innerContent": [
+                                                "\n<div class=\"wp-block-group space-y-5\">\n",
+                                                null,
+                                                "\n\n",
+                                                null,
+                                                "\n\n",
+                                                null,
+                                                "\n</div>\n"
+                                            ]
+                                        }
+                                    ],
+                                    "innerHTML": "\n<div class=\"wp-block-column\" style=\"flex-basis:54%\">\n\n</div>\n",
+                                    "innerContent": [
+                                        "\n<div class=\"wp-block-column\" style=\"flex-basis:54%\">\n",
+                                        null,
+                                        "\n</div>\n"
+                                    ]
+                                }
+                            ],
+                            "innerHTML": "\n<div class=\"wp-block-columns are-vertically-aligned-center gap-6 md:gap-8\">\n\n\n\n</div>\n",
+                            "innerContent": [
+                                "\n<div class=\"wp-block-columns are-vertically-aligned-center gap-6 md:gap-8\">\n",
+                                null,
+                                "\n\n",
+                                null,
+                                "\n</div>\n"
+                            ]
+                        }
+                    ],
+                    "innerHTML": "\n<div class=\"wp-block-group space-y-8\">\n\n\n\n</div>\n",
+                    "innerContent": [
+                        "\n<div class=\"wp-block-group space-y-8\">\n",
+                        null,
+                        "\n\n",
+                        null,
+                        "\n</div>\n"
+                    ]
+                }
+            ],
+            "innerHTML": "\n<div id=\"story\" class=\"wp-block-group alignfull px-6 py-12 md:px-8 md:py-18\">\n\n</div>\n",
+            "innerContent": [
+                "\n<div id=\"story\" class=\"wp-block-group alignfull px-6 py-12 md:px-8 md:py-18\">\n",
+                null,
+                "\n</div>\n"
+            ]
+        },
+        {
+            "blockName": null,
+            "attrs": [],
+            "innerBlocks": [],
+            "innerHTML": "\n\n",
+            "innerContent": [
+                "\n\n"
+            ]
+        },
+        {
+            "blockName": "core/group",
+            "attrs": {
+                "align": "full",
+                "layout": {
+                    "type": "constrained",
+                    "wideSize": "80rem"
+                },
+                "className": "px-6 py-12 md:px-8 md:py-18"
+            },
+            "innerBlocks": [
+                {
+                    "blockName": "core/group",
+                    "attrs": {
+                        "layout": {
+                            "type": "constrained",
+                            "contentSize": "1120px"
+                        },
+                        "className": "rounded-[2rem] border border-line/70 bg-white/78 px-6 py-8 shadow-card backdrop-blur-sm md:px-10 md:py-10"
+                    },
+                    "innerBlocks": [
+                        {
+                            "blockName": "core/columns",
+                            "attrs": {
+                                "verticalAlignment": "center",
+                                "className": "gap-8 md:gap-12"
+                            },
+                            "innerBlocks": [
+                                {
+                                    "blockName": "core/column",
+                                    "attrs": {
+                                        "width": "52%"
+                                    },
+                                    "innerBlocks": [
+                                        {
+                                            "blockName": "core/paragraph",
+                                            "attrs": {
+                                                "className": "section-kicker"
+                                            },
+                                            "innerBlocks": [],
+                                            "innerHTML": "\n<p class=\"section-kicker\">Editorial system</p>\n",
+                                            "innerContent": [
+                                                "\n<p class=\"section-kicker\">Editorial system</p>\n"
+                                            ]
+                                        },
+                                        {
+                                            "blockName": "core/heading",
+                                            "attrs": {
+                                                "level": 2,
+                                                "className": "mt-4 font-heading text-section-title font-bold tracking-tightest text-ink"
+                                            },
+                                            "innerBlocks": [],
+                                            "innerHTML": "\n<h2 class=\"wp-block-heading mt-4 font-heading text-section-title font-bold tracking-tightest text-ink\">Images are not decoration here. They help pace the message.</h2>\n",
+                                            "innerContent": [
+                                                "\n<h2 class=\"wp-block-heading mt-4 font-heading text-section-title font-bold tracking-tightest text-ink\">Images are not decoration here. They help pace the message.</h2>\n"
+                                            ]
+                                        },
+                                        {
+                                            "blockName": "core/paragraph",
+                                            "attrs": {
+                                                "className": "mt-4 max-w-xl text-base leading-body text-cinder/78 md:text-lg"
+                                            },
+                                            "innerBlocks": [],
+                                            "innerHTML": "\n<p class=\"mt-4 max-w-xl text-base leading-body text-cinder/78 md:text-lg\">A visual rhythm based on photos, white space, and dark accents helps the content breathe. That makes the copy easier to trust and the CTA path easier to follow.</p>\n",
+                                            "innerContent": [
+                                                "\n<p class=\"mt-4 max-w-xl text-base leading-body text-cinder/78 md:text-lg\">A visual rhythm based on photos, white space, and dark accents helps the content breathe. That makes the copy easier to trust and the CTA path easier to follow.</p>\n"
+                                            ]
+                                        },
+                                        {
+                                            "blockName": "core/list",
+                                            "attrs": {
+                                                "className": "mt-6 space-y-3 text-base leading-body text-cinder/78"
+                                            },
+                                            "innerBlocks": [],
+                                            "innerHTML": "\n<ul class=\"wp-block-list mt-6 space-y-3 text-base leading-body text-cinder/78\"><li>Large photos create natural pauses between content blocks.</li><li>Supporting cards stay shorter because imagery now carries part of the storytelling.</li><li>The page feels more premium without leaving the core block system.</li></ul>\n",
+                                            "innerContent": [
+                                                "\n<ul class=\"wp-block-list mt-6 space-y-3 text-base leading-body text-cinder/78\"><li>Large photos create natural pauses between content blocks.</li><li>Supporting cards stay shorter because imagery now carries part of the storytelling.</li><li>The page feels more premium without leaving the core block system.</li></ul>\n"
+                                            ]
+                                        }
+                                    ],
+                                    "innerHTML": "\n<div class=\"wp-block-column\" style=\"flex-basis:52%\">\n\n\n\n\n\n\n\n</div>\n",
+                                    "innerContent": [
+                                        "\n<div class=\"wp-block-column\" style=\"flex-basis:52%\">\n",
+                                        null,
+                                        "\n\n",
+                                        null,
+                                        "\n\n",
+                                        null,
+                                        "\n\n",
+                                        null,
+                                        "\n</div>\n"
+                                    ]
+                                },
+                                {
+                                    "blockName": "core/column",
+                                    "attrs": {
+                                        "width": "48%"
+                                    },
+                                    "innerBlocks": [
+                                        {
+                                            "blockName": "core/image",
+                                            "attrs": {
+                                                "sizeSlug": "full",
+                                                "linkDestination": "none",
+                                                "className": "photo-frame min-h-[30rem]"
+                                            },
+                                            "innerBlocks": [],
+                                            "innerHTML": "\n<figure class=\"wp-block-image size-full photo-frame min-h-[30rem]\"><img src=\"https://picsum.photos/id/1025/1000/1300\" alt=\"Portrait of a focused person working on a digital project\"/></figure>\n",
+                                            "innerContent": [
+                                                "\n<figure class=\"wp-block-image size-full photo-frame min-h-[30rem]\"><img src=\"https://picsum.photos/id/1025/1000/1300\" alt=\"Portrait of a focused person working on a digital project\"/></figure>\n"
+                                            ]
+                                        }
+                                    ],
+                                    "innerHTML": "\n<div class=\"wp-block-column\" style=\"flex-basis:48%\">\n\n</div>\n",
+                                    "innerContent": [
+                                        "\n<div class=\"wp-block-column\" style=\"flex-basis:48%\">\n",
+                                        null,
+                                        "\n</div>\n"
+                                    ]
+                                }
+                            ],
+                            "innerHTML": "\n<div class=\"wp-block-columns are-vertically-aligned-center gap-8 md:gap-12\">\n\n\n\n</div>\n",
+                            "innerContent": [
+                                "\n<div class=\"wp-block-columns are-vertically-aligned-center gap-8 md:gap-12\">\n",
+                                null,
+                                "\n\n",
+                                null,
+                                "\n</div>\n"
+                            ]
+                        }
+                    ],
+                    "innerHTML": "\n<div class=\"wp-block-group rounded-[2rem] border border-line/70 bg-white/78 px-6 py-8 shadow-card backdrop-blur-sm md:px-10 md:py-10\">\n\n</div>\n",
+                    "innerContent": [
+                        "\n<div class=\"wp-block-group rounded-[2rem] border border-line/70 bg-white/78 px-6 py-8 shadow-card backdrop-blur-sm md:px-10 md:py-10\">\n",
+                        null,
+                        "\n</div>\n"
+                    ]
+                }
+            ],
+            "innerHTML": "\n<div class=\"wp-block-group alignfull px-6 py-12 md:px-8 md:py-18\">\n\n</div>\n",
+            "innerContent": [
+                "\n<div class=\"wp-block-group alignfull px-6 py-12 md:px-8 md:py-18\">\n",
+                null,
+                "\n</div>\n"
+            ]
+        },
+        {
+            "blockName": null,
+            "attrs": [],
+            "innerBlocks": [],
+            "innerHTML": "\n\n",
+            "innerContent": [
+                "\n\n"
+            ]
+        },
+        {
+            "blockName": "core/group",
+            "attrs": {
+                "align": "full",
+                "layout": {
+                    "type": "constrained",
+                    "wideSize": "80rem"
+                },
+                "className": "px-6 py-12 md:px-8 md:py-18"
+            },
+            "innerBlocks": [
+                {
+                    "blockName": "core/group",
+                    "attrs": {
+                        "layout": {
+                            "type": "constrained",
+                            "contentSize": "1120px"
+                        },
+                        "className": "space-y-8"
+                    },
+                    "innerBlocks": [
+                        {
+                            "blockName": "core/group",
+                            "attrs": {
+                                "layout": {
+                                    "type": "constrained",
+                                    "contentSize": "700px"
+                                },
+                                "className": "space-y-4"
+                            },
+                            "innerBlocks": [
+                                {
+                                    "blockName": "core/paragraph",
+                                    "attrs": {
+                                        "className": "section-kicker"
+                                    },
+                                    "innerBlocks": [],
+                                    "innerHTML": "\n<p class=\"section-kicker\">Proof</p>\n",
+                                    "innerContent": [
+                                        "\n<p class=\"section-kicker\">Proof</p>\n"
+                                    ]
+                                },
+                                {
+                                    "blockName": "core/heading",
+                                    "attrs": {
+                                        "level": 2,
+                                        "className": "font-heading text-section-title font-bold tracking-tightest text-ink"
+                                    },
+                                    "innerBlocks": [],
+                                    "innerHTML": "\n<h2 class=\"wp-block-heading font-heading text-section-title font-bold tracking-tightest text-ink\">The page now feels like it belongs to a living brand, not just a layout system.</h2>\n",
+                                    "innerContent": [
+                                        "\n<h2 class=\"wp-block-heading font-heading text-section-title font-bold tracking-tightest text-ink\">The page now feels like it belongs to a living brand, not just a layout system.</h2>\n"
+                                    ]
+                                }
+                            ],
+                            "innerHTML": "\n<div class=\"wp-block-group space-y-4\">\n\n\n\n</div>\n",
+                            "innerContent": [
+                                "\n<div class=\"wp-block-group space-y-4\">\n",
+                                null,
+                                "\n\n",
+                                null,
+                                "\n</div>\n"
+                            ]
+                        },
+                        {
+                            "blockName": "core/columns",
+                            "attrs": {
+                                "className": "gap-5 md:gap-6"
+                            },
+                            "innerBlocks": [
+                                {
+                                    "blockName": "core/column",
+                                    "attrs": [],
+                                    "innerBlocks": [
+                                        {
+                                            "blockName": "core/group",
+                                            "attrs": {
+                                                "layout": {
+                                                    "type": "constrained"
+                                                },
+                                                "className": "quote-card"
+                                            },
+                                            "innerBlocks": [
+                                                {
+                                                    "blockName": "core/image",
+                                                    "attrs": {
+                                                        "sizeSlug": "full",
+                                                        "linkDestination": "none",
+                                                        "className": "quote-card-media h-48"
+                                                    },
+                                                    "innerBlocks": [],
+                                                    "innerHTML": "\n<figure class=\"wp-block-image size-full quote-card-media h-48\"><img src=\"https://picsum.photos/id/1005/800/600\" alt=\"Portrait of a team member smiling in a modern office\"/></figure>\n",
+                                                    "innerContent": [
+                                                        "\n<figure class=\"wp-block-image size-full quote-card-media h-48\"><img src=\"https://picsum.photos/id/1005/800/600\" alt=\"Portrait of a team member smiling in a modern office\"/></figure>\n"
+                                                    ]
+                                                },
+                                                {
+                                                    "blockName": "core/paragraph",
+                                                    "attrs": {
+                                                        "className": "font-heading text-xl font-bold tracking-tightest text-ink"
+                                                    },
+                                                    "innerBlocks": [],
+                                                    "innerHTML": "\n<p class=\"font-heading text-xl font-bold tracking-tightest text-ink\">“The homepage finally feels confident, not only well-organized.”</p>\n",
+                                                    "innerContent": [
+                                                        "\n<p class=\"font-heading text-xl font-bold tracking-tightest text-ink\">“The homepage finally feels confident, not only well-organized.”</p>\n"
+                                                    ]
+                                                },
+                                                {
+                                                    "blockName": "core/paragraph",
+                                                    "attrs": {
+                                                        "className": "mt-4 font-mono text-kicker font-semibold uppercase tracking-kicker text-clay"
+                                                    },
+                                                    "innerBlocks": [],
+                                                    "innerHTML": "\n<p class=\"mt-4 font-mono text-kicker font-semibold uppercase tracking-kicker text-clay\">Growth team review</p>\n",
+                                                    "innerContent": [
+                                                        "\n<p class=\"mt-4 font-mono text-kicker font-semibold uppercase tracking-kicker text-clay\">Growth team review</p>\n"
+                                                    ]
+                                                }
+                                            ],
+                                            "innerHTML": "\n<div class=\"wp-block-group quote-card\">\n\n\n\n\n\n</div>\n",
+                                            "innerContent": [
+                                                "\n<div class=\"wp-block-group quote-card\">\n",
+                                                null,
+                                                "\n\n",
+                                                null,
+                                                "\n\n",
+                                                null,
+                                                "\n</div>\n"
+                                            ]
+                                        }
+                                    ],
+                                    "innerHTML": "\n<div class=\"wp-block-column\">\n\n</div>\n",
+                                    "innerContent": [
+                                        "\n<div class=\"wp-block-column\">\n",
+                                        null,
+                                        "\n</div>\n"
+                                    ]
+                                },
+                                {
+                                    "blockName": "core/column",
+                                    "attrs": [],
+                                    "innerBlocks": [
+                                        {
+                                            "blockName": "core/group",
+                                            "attrs": {
+                                                "layout": {
+                                                    "type": "constrained"
+                                                },
+                                                "className": "quote-card"
+                                            },
+                                            "innerBlocks": [
+                                                {
+                                                    "blockName": "core/image",
+                                                    "attrs": {
+                                                        "sizeSlug": "full",
+                                                        "linkDestination": "none",
+                                                        "className": "quote-card-media h-48"
+                                                    },
+                                                    "innerBlocks": [],
+                                                    "innerHTML": "\n<figure class=\"wp-block-image size-full quote-card-media h-48\"><img src=\"https://picsum.photos/id/1011/800/600\" alt=\"Design details on a desk near a laptop and notebook\"/></figure>\n",
+                                                    "innerContent": [
+                                                        "\n<figure class=\"wp-block-image size-full quote-card-media h-48\"><img src=\"https://picsum.photos/id/1011/800/600\" alt=\"Design details on a desk near a laptop and notebook\"/></figure>\n"
+                                                    ]
+                                                },
+                                                {
+                                                    "blockName": "core/paragraph",
+                                                    "attrs": {
+                                                        "className": "font-heading text-xl font-bold tracking-tightest text-ink"
+                                                    },
+                                                    "innerBlocks": [],
+                                                    "innerHTML": "\n<p class=\"font-heading text-xl font-bold tracking-tightest text-ink\">“Adding photography made the product story easier to feel, not just easier to read.”</p>\n",
+                                                    "innerContent": [
+                                                        "\n<p class=\"font-heading text-xl font-bold tracking-tightest text-ink\">“Adding photography made the product story easier to feel, not just easier to read.”</p>\n"
+                                                    ]
+                                                },
+                                                {
+                                                    "blockName": "core/paragraph",
+                                                    "attrs": {
+                                                        "className": "mt-4 font-mono text-kicker font-semibold uppercase tracking-kicker text-clay"
+                                                    },
+                                                    "innerBlocks": [],
+                                                    "innerHTML": "\n<p class=\"mt-4 font-mono text-kicker font-semibold uppercase tracking-kicker text-clay\">Editorial feedback</p>\n",
+                                                    "innerContent": [
+                                                        "\n<p class=\"mt-4 font-mono text-kicker font-semibold uppercase tracking-kicker text-clay\">Editorial feedback</p>\n"
+                                                    ]
+                                                }
+                                            ],
+                                            "innerHTML": "\n<div class=\"wp-block-group quote-card\">\n\n\n\n\n\n</div>\n",
+                                            "innerContent": [
+                                                "\n<div class=\"wp-block-group quote-card\">\n",
+                                                null,
+                                                "\n\n",
+                                                null,
+                                                "\n\n",
+                                                null,
+                                                "\n</div>\n"
+                                            ]
+                                        }
+                                    ],
+                                    "innerHTML": "\n<div class=\"wp-block-column\">\n\n</div>\n",
+                                    "innerContent": [
+                                        "\n<div class=\"wp-block-column\">\n",
+                                        null,
+                                        "\n</div>\n"
+                                    ]
+                                },
+                                {
+                                    "blockName": "core/column",
+                                    "attrs": [],
+                                    "innerBlocks": [
+                                        {
+                                            "blockName": "core/group",
+                                            "attrs": {
+                                                "layout": {
+                                                    "type": "constrained"
+                                                },
+                                                "className": "quote-card"
+                                            },
+                                            "innerBlocks": [
+                                                {
+                                                    "blockName": "core/image",
+                                                    "attrs": {
+                                                        "sizeSlug": "full",
+                                                        "linkDestination": "none",
+                                                        "className": "quote-card-media h-48"
+                                                    },
+                                                    "innerBlocks": [],
+                                                    "innerHTML": "\n<figure class=\"wp-block-image size-full quote-card-media h-48\"><img src=\"https://picsum.photos/id/1019/800/600\" alt=\"Team conversation around a table during planning\"/></figure>\n",
+                                                    "innerContent": [
+                                                        "\n<figure class=\"wp-block-image size-full quote-card-media h-48\"><img src=\"https://picsum.photos/id/1019/800/600\" alt=\"Team conversation around a table during planning\"/></figure>\n"
+                                                    ]
+                                                },
+                                                {
+                                                    "blockName": "core/paragraph",
+                                                    "attrs": {
+                                                        "className": "font-heading text-xl font-bold tracking-tightest text-ink"
+                                                    },
+                                                    "innerBlocks": [],
+                                                    "innerHTML": "\n<p class=\"font-heading text-xl font-bold tracking-tightest text-ink\">“It still behaves like a disciplined block theme, but the page now has far more presence.”</p>\n",
+                                                    "innerContent": [
+                                                        "\n<p class=\"font-heading text-xl font-bold tracking-tightest text-ink\">“It still behaves like a disciplined block theme, but the page now has far more presence.”</p>\n"
+                                                    ]
+                                                },
+                                                {
+                                                    "blockName": "core/paragraph",
+                                                    "attrs": {
+                                                        "className": "mt-4 font-mono text-kicker font-semibold uppercase tracking-kicker text-clay"
+                                                    },
+                                                    "innerBlocks": [],
+                                                    "innerHTML": "\n<p class=\"mt-4 font-mono text-kicker font-semibold uppercase tracking-kicker text-clay\">Product marketing</p>\n",
+                                                    "innerContent": [
+                                                        "\n<p class=\"mt-4 font-mono text-kicker font-semibold uppercase tracking-kicker text-clay\">Product marketing</p>\n"
+                                                    ]
+                                                }
+                                            ],
+                                            "innerHTML": "\n<div class=\"wp-block-group quote-card\">\n\n\n\n\n\n</div>\n",
+                                            "innerContent": [
+                                                "\n<div class=\"wp-block-group quote-card\">\n",
+                                                null,
+                                                "\n\n",
+                                                null,
+                                                "\n\n",
+                                                null,
+                                                "\n</div>\n"
+                                            ]
+                                        }
+                                    ],
+                                    "innerHTML": "\n<div class=\"wp-block-column\">\n\n</div>\n",
+                                    "innerContent": [
+                                        "\n<div class=\"wp-block-column\">\n",
+                                        null,
+                                        "\n</div>\n"
+                                    ]
+                                }
+                            ],
+                            "innerHTML": "\n<div class=\"wp-block-columns gap-5 md:gap-6\">\n\n\n\n\n\n</div>\n",
+                            "innerContent": [
+                                "\n<div class=\"wp-block-columns gap-5 md:gap-6\">\n",
+                                null,
+                                "\n\n",
+                                null,
+                                "\n\n",
+                                null,
+                                "\n</div>\n"
+                            ]
+                        }
+                    ],
+                    "innerHTML": "\n<div class=\"wp-block-group space-y-8\">\n\n\n\n</div>\n",
+                    "innerContent": [
+                        "\n<div class=\"wp-block-group space-y-8\">\n",
+                        null,
+                        "\n\n",
+                        null,
+                        "\n</div>\n"
+                    ]
+                }
+            ],
+            "innerHTML": "\n<div class=\"wp-block-group alignfull px-6 py-12 md:px-8 md:py-18\">\n\n</div>\n",
+            "innerContent": [
+                "\n<div class=\"wp-block-group alignfull px-6 py-12 md:px-8 md:py-18\">\n",
+                null,
+                "\n</div>\n"
+            ]
+        },
+        {
+            "blockName": null,
+            "attrs": [],
+            "innerBlocks": [],
+            "innerHTML": "\n\n",
+            "innerContent": [
+                "\n\n"
+            ]
+        },
+        {
+            "blockName": "core/group",
+            "attrs": {
+                "align": "full",
+                "anchor": "faq",
+                "layout": {
+                    "type": "constrained",
+                    "wideSize": "80rem"
+                },
+                "className": "px-6 pb-12 pt-8 md:px-8 md:pb-18 md:pt-12"
+            },
+            "innerBlocks": [
+                {
+                    "blockName": "core/group",
+                    "attrs": {
+                        "layout": {
+                            "type": "constrained",
+                            "contentSize": "1120px"
+                        },
+                        "className": "space-y-6 rounded-[2rem] border border-line/70 bg-white/80 px-6 py-8 shadow-card backdrop-blur-sm md:px-10 md:py-10"
+                    },
+                    "innerBlocks": [
+                        {
+                            "blockName": "core/group",
+                            "attrs": {
+                                "layout": {
+                                    "type": "constrained",
+                                    "contentSize": "720px"
+                                },
+                                "className": "space-y-4"
+                            },
+                            "innerBlocks": [
+                                {
+                                    "blockName": "core/paragraph",
+                                    "attrs": {
+                                        "className": "section-kicker"
+                                    },
+                                    "innerBlocks": [],
+                                    "innerHTML": "\n<p class=\"section-kicker\">FAQ</p>\n",
+                                    "innerContent": [
+                                        "\n<p class=\"section-kicker\">FAQ</p>\n"
+                                    ]
+                                },
+                                {
+                                    "blockName": "core/heading",
+                                    "attrs": {
+                                        "level": 2,
+                                        "className": "font-heading text-section-title font-bold tracking-tightest text-ink"
+                                    },
+                                    "innerBlocks": [],
+                                    "innerHTML": "\n<h2 class=\"wp-block-heading font-heading text-section-title font-bold tracking-tightest text-ink\">Questions after adding photo-led storytelling to the homepage.</h2>\n",
+                                    "innerContent": [
+                                        "\n<h2 class=\"wp-block-heading font-heading text-section-title font-bold tracking-tightest text-ink\">Questions after adding photo-led storytelling to the homepage.</h2>\n"
+                                    ]
+                                }
+                            ],
+                            "innerHTML": "\n<div class=\"wp-block-group space-y-4\">\n\n\n\n</div>\n",
+                            "innerContent": [
+                                "\n<div class=\"wp-block-group space-y-4\">\n",
+                                null,
+                                "\n\n",
+                                null,
+                                "\n</div>\n"
+                            ]
+                        },
+                        {
+                            "blockName": "core/details",
+                            "attrs": {
+                                "className": "faq-panel"
+                            },
+                            "innerBlocks": [
+                                {
+                                    "blockName": "core/paragraph",
+                                    "attrs": [],
+                                    "innerBlocks": [],
+                                    "innerHTML": "\n<p>Yes. They act as visual stand-ins so the page can be designed around real photo proportions and editorial pacing before final assets are selected.</p>\n",
+                                    "innerContent": [
+                                        "\n<p>Yes. They act as visual stand-ins so the page can be designed around real photo proportions and editorial pacing before final assets are selected.</p>\n"
+                                    ]
+                                }
+                            ],
+                            "innerHTML": "\n<details class=\"wp-block-details faq-panel\"><summary>Are these picsum.photos images just placeholders?</summary></details>\n",
+                            "innerContent": [
+                                "\n<details class=\"wp-block-details faq-panel\"><summary>Are these picsum.photos images just placeholders?</summary>",
+                                null,
+                                "</details>\n"
+                            ]
+                        },
+                        {
+                            "blockName": "core/details",
+                            "attrs": {
+                                "className": "faq-panel"
+                            },
+                            "innerBlocks": [
+                                {
+                                    "blockName": "core/paragraph",
+                                    "attrs": [],
+                                    "innerBlocks": [],
+                                    "innerHTML": "\n<p>Yes. The entire homepage still lives in real Gutenberg blocks under theme content sync, including the image blocks and their URLs.</p>\n",
+                                    "innerContent": [
+                                        "\n<p>Yes. The entire homepage still lives in real Gutenberg blocks under theme content sync, including the image blocks and their URLs.</p>\n"
+                                    ]
+                                }
+                            ],
+                            "innerHTML": "\n<details class=\"wp-block-details faq-panel\"><summary>Does the page still stay editor-visible?</summary></details>\n",
+                            "innerContent": [
+                                "\n<details class=\"wp-block-details faq-panel\"><summary>Does the page still stay editor-visible?</summary>",
+                                null,
+                                "</details>\n"
+                            ]
+                        },
+                        {
+                            "blockName": "core/details",
+                            "attrs": {
+                                "className": "faq-panel"
+                            },
+                            "innerBlocks": [
+                                {
+                                    "blockName": "core/paragraph",
+                                    "attrs": [],
+                                    "innerBlocks": [],
+                                    "innerHTML": "\n<p>Absolutely. The Picsum URLs are just content values inside the image blocks, so swapping them later does not require rebuilding the layout.</p>\n",
+                                    "innerContent": [
+                                        "\n<p>Absolutely. The Picsum URLs are just content values inside the image blocks, so swapping them later does not require rebuilding the layout.</p>\n"
+                                    ]
+                                }
+                            ],
+                            "innerHTML": "\n<details class=\"wp-block-details faq-panel\"><summary>Can the placeholders be replaced later with real brand photography?</summary></details>\n",
+                            "innerContent": [
+                                "\n<details class=\"wp-block-details faq-panel\"><summary>Can the placeholders be replaced later with real brand photography?</summary>",
+                                null,
+                                "</details>\n"
+                            ]
+                        },
+                        {
+                            "blockName": "core/group",
+                            "attrs": {
+                                "layout": {
+                                    "type": "constrained"
+                                },
+                                "className": "cta-band overflow-hidden rounded-[1.75rem] px-6 py-8 text-paper md:px-8 md:py-10"
+                            },
+                            "innerBlocks": [
+                                {
+                                    "blockName": "core/paragraph",
+                                    "attrs": {
+                                        "className": "font-mono text-kicker font-semibold uppercase tracking-kicker text-paper/70"
+                                    },
+                                    "innerBlocks": [],
+                                    "innerHTML": "\n<p class=\"font-mono text-kicker font-semibold uppercase tracking-kicker text-paper/70\">Next step</p>\n",
+                                    "innerContent": [
+                                        "\n<p class=\"font-mono text-kicker font-semibold uppercase tracking-kicker text-paper/70\">Next step</p>\n"
+                                    ]
+                                },
+                                {
+                                    "blockName": "core/heading",
+                                    "attrs": {
+                                        "level": 2,
+                                        "className": "mt-4 font-heading text-section-title font-bold tracking-tightest text-paper"
+                                    },
+                                    "innerBlocks": [],
+                                    "innerHTML": "\n<h2 class=\"wp-block-heading mt-4 font-heading text-section-title font-bold tracking-tightest text-paper\">If the site needs more presence, photography is now part of the system instead of an afterthought.</h2>\n",
+                                    "innerContent": [
+                                        "\n<h2 class=\"wp-block-heading mt-4 font-heading text-section-title font-bold tracking-tightest text-paper\">If the site needs more presence, photography is now part of the system instead of an afterthought.</h2>\n"
+                                    ]
+                                },
+                                {
+                                    "blockName": "core/paragraph",
+                                    "attrs": {
+                                        "className": "mt-4 max-w-2xl text-base leading-body text-paper/78 md:text-lg"
+                                    },
+                                    "innerBlocks": [],
+                                    "innerHTML": "\n<p class=\"mt-4 max-w-2xl text-base leading-body text-paper/78 md:text-lg\">The homepage keeps its disciplined block structure, but the photos make the brand feel more tangible and the narrative easier to trust.</p>\n",
+                                    "innerContent": [
+                                        "\n<p class=\"mt-4 max-w-2xl text-base leading-body text-paper/78 md:text-lg\">The homepage keeps its disciplined block structure, but the photos make the brand feel more tangible and the narrative easier to trust.</p>\n"
+                                    ]
+                                },
+                                {
+                                    "blockName": "core/buttons",
+                                    "attrs": {
+                                        "className": "mt-6"
+                                    },
+                                    "innerBlocks": [
+                                        {
+                                            "blockName": "core/button",
+                                            "attrs": {
+                                                "className": "site-button"
+                                            },
+                                            "innerBlocks": [],
+                                            "innerHTML": "\n<div class=\"wp-block-button site-button\"><a class=\"wp-block-button__link wp-element-button\" href=\"/contact\">Discuss the next iteration</a></div>\n",
+                                            "innerContent": [
+                                                "\n<div class=\"wp-block-button site-button\"><a class=\"wp-block-button__link wp-element-button\" href=\"/contact\">Discuss the next iteration</a></div>\n"
+                                            ]
+                                        },
+                                        {
+                                            "blockName": "core/button",
+                                            "attrs": {
+                                                "className": "site-button site-button--ghost"
+                                            },
+                                            "innerBlocks": [],
+                                            "innerHTML": "\n<div class=\"wp-block-button site-button site-button--ghost\"><a class=\"wp-block-button__link wp-element-button\" href=\"/about\">Review the approach</a></div>\n",
+                                            "innerContent": [
+                                                "\n<div class=\"wp-block-button site-button site-button--ghost\"><a class=\"wp-block-button__link wp-element-button\" href=\"/about\">Review the approach</a></div>\n"
+                                            ]
+                                        }
+                                    ],
+                                    "innerHTML": "\n<div class=\"wp-block-buttons mt-6\">\n\n\n\n</div>\n",
+                                    "innerContent": [
+                                        "\n<div class=\"wp-block-buttons mt-6\">\n",
+                                        null,
+                                        "\n\n",
+                                        null,
+                                        "\n</div>\n"
+                                    ]
+                                }
+                            ],
+                            "innerHTML": "\n<div class=\"wp-block-group cta-band overflow-hidden rounded-[1.75rem] px-6 py-8 text-paper md:px-8 md:py-10\">\n\n\n\n\n\n\n\n</div>\n",
+                            "innerContent": [
+                                "\n<div class=\"wp-block-group cta-band overflow-hidden rounded-[1.75rem] px-6 py-8 text-paper md:px-8 md:py-10\">\n",
+                                null,
+                                "\n\n",
+                                null,
+                                "\n\n",
+                                null,
+                                "\n\n",
+                                null,
+                                "\n</div>\n"
+                            ]
+                        }
+                    ],
+                    "innerHTML": "\n<div class=\"wp-block-group space-y-6 rounded-[2rem] border border-line/70 bg-white/80 px-6 py-8 shadow-card backdrop-blur-sm md:px-10 md:py-10\">\n\n\n\n\n\n\n\n\n\n</div>\n",
+                    "innerContent": [
+                        "\n<div class=\"wp-block-group space-y-6 rounded-[2rem] border border-line/70 bg-white/80 px-6 py-8 shadow-card backdrop-blur-sm md:px-10 md:py-10\">\n",
+                        null,
+                        "\n\n",
+                        null,
+                        "\n\n",
+                        null,
+                        "\n\n",
+                        null,
+                        "\n\n",
+                        null,
+                        "\n</div>\n"
+                    ]
+                }
+            ],
+            "innerHTML": "\n<div id=\"faq\" class=\"wp-block-group alignfull px-6 pb-12 pt-8 md:px-8 md:pb-18 md:pt-12\">\n\n</div>\n",
+            "innerContent": [
+                "\n<div id=\"faq\" class=\"wp-block-group alignfull px-6 pb-12 pt-8 md:px-8 md:pb-18 md:pt-12\">\n",
+                null,
+                "\n</div>\n"
+            ]
+        }
+    ]
+}

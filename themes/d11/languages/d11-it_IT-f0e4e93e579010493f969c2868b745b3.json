@@ -30,33 +30,6 @@
             ],
             "Social sharing buttons for the current content.": [
                 "Pulsanti di condivisione social per il contenuto corrente."
-            ],
-            "Color": [
-                "Colore"
-            ],
-            "Default": [
-                "Predefinito"
-            ],
-            "Accent": [
-                "Accento"
-            ],
-            "Foreground": [
-                "Primo piano"
-            ],
-            "Muted": [
-                "Attenuato"
-            ],
-            "Canvas": [
-                "Sfondo"
-            ],
-            "Custom hex color": [
-                "Colore hex personalizzato"
-            ],
-            "Hex color": [
-                "Colore hex"
-            ],
-            "Use values like #b85c38 or #11223344.": [
-                "Usa valori come #b85c38 o #11223344."
             ]
         }
     }

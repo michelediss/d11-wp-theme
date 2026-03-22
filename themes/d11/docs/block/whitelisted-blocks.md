@@ -6,9 +6,9 @@ It contains only the blocks currently marked as allowed by the theme block avail
 
 ## Source
 
-- Input JSON: `/var/www/html/wp-content/themes/d11/docs/block/block-registry.json`
-- Output file: `/var/www/html/wp-content/themes/d11/docs/block/whitelisted-blocks.md`
-- Generated at UTC: `2026-03-10T02:02:25+00:00`
+- Input JSON: `wp-content/themes/d11/docs/block/block-registry.json`
+- Output file: `/home/miche/docker/wp-sites/d11/wp/wp-content/themes/d11/docs/block/whitelisted-blocks.md`
+- Generated at UTC: `2026-03-22T16:49:47+00:00`
 - Whitelisted blocks: `79`
 
 ## Content (`core/post-content`)

@@ -32,10 +32,13 @@ This file documents the theme-owned content sync subsystem used to synchronize G
 - v1 supports `page` post type only.
 - JSON filenames are deterministic and based on post type plus page path.
 - The filesystem is the default source of truth when sync is intentionally enabled.
+- When a page should be editor-visible and content-driven, prefer storing its block tree in `content/<post-type>-<path>.json` and render it via `post-content` in the corresponding template instead of hardcoding the page body in `templates/*.html`.
 - Theme architecture and block composition rules remain documented under `docs/`.
+- Visual review of rendered page results is documented separately in `docs/screenshot-validation.md`; use that workflow after synced content changes affect front-end output.
 - The content sync subsystem is theme-owned, but must remain conceptually separate from `.agents/` tooling.
 
 ## Maintenance Rules
 
 - Update this file when sync behavior, CLI semantics, config keys, or JSON conventions change.
 - Keep `content/` as a theme-level project asset, not as agent tooling.
+- When content-sync-driven page changes require visual verification, keep the screenshot validation workflow documented in `docs/screenshot-validation.md` aligned with the actual tooling under `tools/review-screenshot/`.

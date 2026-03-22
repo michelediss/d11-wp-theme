@@ -8,8 +8,9 @@ This scaffolded theme is a block-first WordPress theme with a small PHP bootstra
 - `inc/assets.php` switches between the local Vite dev server and the production manifest in `assets/.vite/manifest.json`.
 - `inc/blocks.php` discovers and registers custom theme blocks from `blocks/*/block.json`.
 - `inc/content-sync/` contains the theme-owned content sync subsystem for versioned Gutenberg page JSON, CLI import/export, and optional runtime override.
-- `inc/patterns.php` registers the custom block pattern category, while WordPress auto-discovers native pattern files from `patterns/`.
+- `inc/patterns.php` registers the custom block pattern category and loads theme-owned PHP block patterns from `patterns/`.
 - `templates/` and `parts/` contain the block theme HTML templates used by the Site Editor.
+- `templates/front-page.html` should remain a thin shell that mounts the shared header/footer and renders the assigned front page content through `post-content`.
 - `parts/cookie-banner.html` mounts the plugin-owned `simple-cookie-consent/banner` block so cookie consent layout is controlled from the Site Editor instead of plugin PHP hooks.
 - `src/js/` and `src/css/` contain the authored source files, including theme-owned admin assets and the Tailwind stylesheet entrypoints; built output is written to `assets/`.
 - `theme.json` exists only to keep Gutenberg useful for content entry and macro layout controls such as constrained widths, wide widths, and spacing presets.
@@ -27,17 +28,22 @@ This scaffolded theme is a block-first WordPress theme with a small PHP bootstra
 - `functions.php`: theme bootstrap and core hooks.
 - `inc/assets.php`: Vite integration, asset registration, and dev-server/manifest switching.
 - `inc/blocks.php`: custom block discovery and registration.
-- `inc/patterns.php`: custom block pattern category registration.
+- `inc/patterns.php`: custom block pattern category and PHP pattern registration.
 - `cf7-forms/`: versioned Contact Form 7 JSON manifests owned by the theme and synced with the local `cf7-sync` WP-CLI plugin.
 - `content/`: versioned Gutenberg page JSON payloads owned by the integrated theme content sync subsystem.
 - `theme.json`: minimal Gutenberg configuration for layout and editor controls.
 - `partials/block-availability.php`: block availability bootstrap that loads `partials/block-availability/runtime.php` for the runtime whitelist logic across core, blog, WooCommerce, third-party plugin blocks, and theme custom blocks, plus `partials/block-availability/admin.php` for the related Appearance admin UI.
-- `partials/block-availability/utility/`: export utilities that regenerate the derived block reference files in `docs/block/`, including `block-registry.json` and `whitelisted-blocks.md`.
+- `partials/block-availability/utility/`: export utilities that regenerate the derived block reference files in `docs/block/`, including `block-registry.json`, `whitelisted-blocks-summary.md`, and `whitelisted-blocks.md`.
 - `partials/theme-options.php`: Settings admin screen for theme-owned runtime options such as frontend jQuery disable, comments disable, and image upload restrictions.
 - `partials/privacy-controller-data.php`: Settings admin screen for the global `privacy_controller_data` option and the `[privacy key="..."]` shortcode used in policy pages.
-- `.agents/skills/ai-engine/`: repository-local documentation skill that keeps agents aligned with the canonical theme docs and the integrated content sync model used by this theme.
+- `docs/ai-workflows.md`: shared foundation document for repository-local AI workflows, including source-of-truth boundaries, content sync constraints, and screenshot workflow semantics.
+- `.agents/skills/d11-generate-page/`: repository-local skill for initial page generation and draft implementation.
+- `.agents/skills/d11-review-page/`: repository-local skill for iterative page review using a `baseline` plus `verify` screenshot pass.
+- `.agents/skills/d11-optimize-lighthouse/`: repository-local skill for Lighthouse-driven optimization after the page already has a stable visual baseline.
 - Some AI-assisted page workflow tooling may live outside the theme repository and be installed separately in runtime environments.
-- External workflow tooling is responsible for deterministic prep, screenshot, ingest, and other automation flows that are not owned by the theme itself.
+- `tools/review-screenshot/`: local Playwright plus `sharp` screenshot tool used to capture stitched full-page validation images for desktop, tablet, and mobile.
+- `tools/optimize-lighthouse/`: local Node.js CLI for Lighthouse-based auditing, metric extraction, prioritization, and optimization guidance.
+- External workflow tooling may still own prep, ingest, or other automation flows that are not part of the theme-local screenshot and documentation workflows.
 - `tailwind.config.js`: canonical source of theme colors, typography, radius, shadows, and ergonomic utility aliases.
 - `src/js/app.js`: front-end bootstrap entrypoint.
 - `src/css/app.css`: main Tailwind-aware stylesheet entrypoint; it imports local CSS layers and expands `@tailwind` directives during the Vite build.
@@ -45,9 +51,14 @@ This scaffolded theme is a block-first WordPress theme with a small PHP bootstra
 - `src/js/blocks/view.js`: shared front-end entry for custom block behavior.
 - `docs/block/block-availability-system.md`: documentation of the runtime block availability system, category model, and allowlist behavior.
 - `docs/block/block-composition-guide.md`: AI-facing guide to block usage and composition patterns.
+- `docs/block/whitelisted-blocks-summary.md`: compact operational list of currently allowed blocks for AI-assisted workflows.
 - `docs/block/custom-blocks.md`: development rules for future custom blocks.
 - `docs/content-sync.md`: operational reference for the theme-owned DB ↔ filesystem content sync subsystem.
+- `docs/ai-workflows.md`: shared workflow rules for repository-local AI skills.
+- `docs/screenshot-validation.md`: operational reference for the local screenshot capture and review workflow used to validate front-end pages.
 - `docs/skill-sync.md`: operational guide for syncing repository-local skills to the global Codex and OpenCode skill directories.
+- `tools/review-screenshot/index.js`: local CLI entrypoint for screenshot-based review validation.
+- `tools/optimize-lighthouse/cli/index.js`: local CLI entrypoint for multi-run Lighthouse audits and optimization reporting.
 - `style.css`: theme registration metadata required by WordPress.
 - `vite.config.js` and `tailwind.config.js`: build pipeline configuration.
 
@@ -75,6 +86,11 @@ This scaffolded theme is a block-first WordPress theme with a small PHP bootstra
 ## Design System Contract
 
 - `tailwind.config.js` is the source of truth for colors, typography, radius, shadows, and other visual tokens.
+- The current presentation-site direction for D11 uses a cool SaaS-oriented palette: `paper` and `sand` for bright product surfaces, `ink` and `cinder` for interface text and contrast, `primary` or `ember` for core actions, and `accent` or `sun` for product highlights.
+- The current typography pairing uses `Space Grotesk` for headings, `Inter` for body copy, and `IBM Plex Mono` for compact labels, metadata, and system-style kickers.
+- Reusable component-level classes that express the D11 presentation language should live in `src/css/blocks.css`, while one-off section styling should stay in block markup through Tailwind utility classes.
+- Homepage presentation copy should live in PHP pattern files under `patterns/`, not in `templates/front-page.html` or shared `parts/*.html`.
+- For the D11 presentation site homepage, the page body is owned by `content/page-home.json` and imported into the `Home` page, while the front-page template only frames it with header and footer.
 - `theme.json` must stay intentionally narrow: layout widths, spacing presets used by Gutenberg, and disabling editor UI that would reintroduce ad-hoc styling.
 - `src/css/app.css` remains the place where Tailwind layers are assembled. Theme CSS may use `@apply`, but should resolve to Tailwind tokens instead of WordPress preset variables.
 - Theme-authored patterns, parts, templates, and custom block markup should prefer Tailwind utility classes directly in block `className` values.
@@ -94,6 +110,9 @@ This scaffolded theme is a block-first WordPress theme with a small PHP bootstra
 - When updating visual tokens, change `tailwind.config.js` first. When updating editor layout behavior, change `theme.json`.
 - Keep Contact Form 7 manifests under the active theme root in `cf7-forms/` so they are versioned with the theme; the local `cf7-sync` WP-CLI command reads from that path by default.
 - Keep synced page JSON payloads under `content/` at the theme root so they are versioned with the active theme and remain clearly separate from `.agents/` tooling.
+- When page-oriented AI workflows change front-end output, validate the rendered result with the local screenshot CLI and review the generated images before declaring the task complete.
+- Keep shared workflow rules in `docs/ai-workflows.md` and keep task-specific skill behavior inside the relevant repository-local skill.
+- Use the local `optimize-lighthouse` CLI only after the page already has an acceptable visual baseline; it is not a replacement for screenshot-based review.
 - When adding a new custom block, update both `docs/block/custom-blocks.md` and `docs/block/block-composition-guide.md` if the block should be available to AI-assisted template generation.
-- The repository-local documentation skill should read `docs/` when theme documentation is required, while any external page workflow skills must still derive runtime facts for blocks, tokens, screenshots, and audits from concrete theme code plus workflow artifacts.
+- Repository-local page workflow skills should read `docs/ai-workflows.md` together with the canonical theme docs in `docs/`, while any external page workflow skills must still derive runtime facts for blocks, tokens, screenshots, and audits from concrete theme code plus workflow artifacts.
 - After changing a repository-local skill that should also be available globally, run the sync workflow documented in `docs/skill-sync.md`.

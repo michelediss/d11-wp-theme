@@ -4,7 +4,13 @@ This file describes how AI-assisted workflows should compose layouts with the bl
 
 It is a usage guide, not the source of truth for the current allowlist.
 
-To know which blocks are currently available, use the runtime export described in `docs/block/block-availability-system.md`.
+To know which blocks are currently available, use:
+
+- `docs/block/whitelisted-blocks-summary.md` for the compact operational list
+- `docs/block/whitelisted-blocks.md` for extended block metadata when needed
+- `docs/block/block-availability-system.md` to understand how the runtime allowlist is determined
+
+The block lists below are composition examples and commonly used block groups, not a complete or authoritative catalog of everything currently allowed.
 
 ## General Rules
 
@@ -17,7 +23,7 @@ To know which blocks are currently available, use the runtime export described i
 - In theme-authored patterns and parts, put visual decisions in Tailwind classes on block `className` values instead of Gutenberg color or typography attributes.
 - Treat Gutenberg as content/layout tooling. Avoid inline block styles for palette, font family, font size, tracking, radius, borders, and shadows unless a block API leaves no practical alternative.
 
-## Content Blocks
+## Common Content Blocks
 
 | Block | Usage guidance |
 | --- | --- |
@@ -46,7 +52,7 @@ To know which blocks are currently available, use the runtime export described i
 | `core/social-link` | One social profile inside `social-links`. |
 | `core/search` | Use when the page should expose site search directly to the user. |
 
-## Theme And Site Blocks
+## Common Theme And Site Blocks
 
 | Block | Usage guidance |
 | --- | --- |
@@ -59,7 +65,7 @@ To know which blocks are currently available, use the runtime export described i
 | `core/site-title` | Use when the site title should come from WordPress settings. |
 | `core/site-tagline` | Use when the site tagline should come from WordPress settings. |
 
-## Dynamic And Post Data Blocks
+## Common Dynamic And Post Data Blocks
 
 | Block | Usage guidance |
 | --- | --- |
@@ -80,16 +86,16 @@ To know which blocks are currently available, use the runtime export described i
 | `core/post-terms` | Use to show categories, tags, or taxonomy terms attached to the post. |
 | `core/post-navigation-link` | Use on single post layouts to link to the previous or next post. |
 
-## Custom Theme Blocks
+## Common Custom Theme Blocks
 
-The theme currently documents these custom blocks for AI-assisted composition:
+The theme currently documents these custom blocks for AI-assisted composition when they are present in the whitelist:
 
 | Block | Usage guidance |
 | --- | --- |
 | `custom/social-share` | Use for contextual share actions on single content views, article endings, or post meta areas. Avoid using it in global header or footer areas. |
 | `custom/breadcrumbs` | Use near the top of pages, single posts, archives, or taxonomy views when the layout benefits from navigational context. |
 
-Custom blocks are discovered dynamically from `blocks/*/block.json`. A custom block can exist in the runtime catalog even if this guide has not been updated yet.
+Custom blocks are discovered dynamically from `blocks/*/block.json`. The current whitelist remains the operational source of truth.
 
 ## Recommended Composition Patterns
 
