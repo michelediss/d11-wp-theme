@@ -64,6 +64,24 @@ When the task involves page content synced by the integrated theme subsystem, ap
 - Treat conflict detection, validation, and runtime override as theme-owned behavior within a dedicated subsystem, not as generic theme rendering logic.
 - When a task touches synced page content and theme composition at the same time, use theme docs for both design constraints and storage/sync/runtime constraints.
 
+## New Page Workflow
+
+When the task is to create a page from zero, follow this workflow in order:
+
+1. Sync the target page from the database to the filesystem-backed `content/` store using the theme-owned content sync workflow before composing the new page structure.
+2. Create the page-specific reusable building blocks under theme artifacts first:
+   - create `patterns/` entries for the page sections
+   - create `parts/` entries when the page needs shared structural regions that should be reused as template parts
+3. Build the page itself by assembling only the newly created or existing `pattern` and `template-part` references.
+4. Persist the resulting page structure back through the theme-owned content sync boundary instead of treating raw `post_content` editing as the primary workflow.
+
+For page-from-scratch tasks, these constraints are mandatory:
+
+- Do not build the page with free blocks placed directly in the page body.
+- The page content must be composed only from theme `pattern` and `template-part` references.
+- If a section is needed and no suitable pattern or part exists yet, create the missing pattern or part first, then use it from the page.
+- Keep user-facing copy in patterns, not in parts or templates, unless the content is purely structural.
+
 ## When this skill applies
 
 Use it for tasks such as:
