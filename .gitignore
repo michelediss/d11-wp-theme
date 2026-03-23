@@ -11,6 +11,7 @@
 !/plugins/cf7-sync/
 !/plugins/simple-cookie-consent/
 !/plugins/site-maintenance/
+/plugins/undraw-wp/
 
 /themes/*
 !/themes/d11/
