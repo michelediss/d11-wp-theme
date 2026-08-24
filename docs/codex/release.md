@@ -16,7 +16,7 @@ Sono inoltre esclusi generazione pagine, composizione editoriale, direzione crea
 
 ## Fonti autorevoli
 
-[source-specification.md](source-specification.md); Current: [package.json legacy](../../package.json).
+[source-specification.md](source-specification.md); Current: [package.json legacy](../../themes/d11/package.json).
 
 ## Indice proposto
 

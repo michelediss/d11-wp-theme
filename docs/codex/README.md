@@ -14,8 +14,8 @@ Indice e router della documentazione agentica per lo sviluppo del D11 Parent can
 |---|---|---|---|
 | [architecture.md](architecture.md) | Confini e struttura D11 | source specification | Canonical |
 | [parent-child-contract.md](parent-child-contract.md) | Contratto Parent–Child | architecture | Canonical |
-| [coding-standards.md](coding-standards.md) | Qualità implementativa trasversale | source specification | Skeleton — content pending |
-| [gutenberg-development.md](gutenberg-development.md) | Blocchi e sviluppo Gutenberg | parent-child contract | Skeleton — content pending |
+| [coding-standards.md](coding-standards.md) | Qualità implementativa trasversale | source specification, architecture | Canonical |
+| [gutenberg-development.md](gutenberg-development.md) | Blocchi e sviluppo Gutenberg | architecture, parent-child contract, coding standards | Canonical |
 | [content-model.md](content-model.md) | Registry e schema contenuti | architecture | Skeleton — content pending |
 | [frontend-assets.md](frontend-assets.md) | Asset e output visuali | architecture | Skeleton — content pending |
 | [feature-modules.md](feature-modules.md) | Feature condivise Parent | architecture, security | Skeleton — content pending |

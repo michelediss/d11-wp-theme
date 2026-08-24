@@ -16,7 +16,7 @@ Sono inoltre esclusi generazione pagine, composizione editoriale, direzione crea
 
 ## Fonti autorevoli
 
-[source-specification.md](source-specification.md); Current: [content sync legacy](../../inc/content-sync/).
+[source-specification.md](source-specification.md); Current: [content sync legacy](../../themes/d11/inc/content-sync/).
 
 ## Indice proposto
 

@@ -1,5 +1,11 @@
 /*
 !/.gitignore
+
+# Repository-level agent routing and canonical development documentation.
+!/AGENTS.md
+!/docs/
+!/docs/**
+
 !/mu-plugins/
 !/plugins/
 !/themes/

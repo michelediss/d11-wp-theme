@@ -16,7 +16,7 @@ Sono inoltre esclusi generazione pagine, composizione editoriale, direzione crea
 
 ## Fonti autorevoli
 
-[source-specification.md](source-specification.md); Current: [SEO](../../inc/seo/), [maintenance](../../inc/maintenance/) e [privacy](../../inc/privacy/).
+[source-specification.md](source-specification.md); Current: [SEO](../../themes/d11/inc/seo/), [maintenance](../../themes/d11/inc/maintenance/) e [privacy](../../themes/d11/inc/privacy/).
 
 ## Indice proposto
 
