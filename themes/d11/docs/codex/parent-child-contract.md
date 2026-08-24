@@ -96,7 +96,7 @@ La suite prodotto, definita in [testing.md](testing.md), deve coprire:
 
 ## Stato Current e transizione
 
-**Current** — Il repository contiene solo [themes/d11/](../../themes/d11/), il cui [style.css](../../themes/d11/style.css) non dichiara `Template`; non esistono Parent–Child target né `d11-child.json` verificati.
+**Current** — Il repository contiene solo [themes/d11/](../../), il cui [style.css](../../style.css) non dichiara `Template`; non esistono Parent–Child target né `d11-child.json` verificati.
 
 **Legacy** — Il tema attuale è un singolo block theme e non è prova di un contratto Child riusabile.
 

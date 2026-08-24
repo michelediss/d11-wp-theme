@@ -100,11 +100,11 @@ Sono esclusi generazione pagine, composizione editoriale, review visuale, screen
 
 ## Stato Current
 
-**Current** — Il tema monolitico è [themes/d11/](../../themes/d11/). Il bootstrap [themes/d11/functions.php](../../themes/d11/functions.php) carica asset, blocchi, content sync/CF7 sync, SEO, maintenance, privacy e block availability dal tema. [themes/d11/inc/content-sync/](../../themes/d11/inc/content-sync/) è il sync legacy.
+**Current** — Il tema monolitico è [themes/d11/](../../). Il bootstrap [themes/d11/functions.php](../../functions.php) carica asset, blocchi, content sync/CF7 sync, SEO, maintenance, privacy e block availability dal tema. [themes/d11/inc/content-sync/](../../inc/content-sync/) è il sync legacy.
 
 **Current** — Non esistono Parent–Child target, `d11-multilingual`, MU-plugin D11, registry dichiarativo, manifest di distribuzione o pipeline di packaging. Tooling, asset Vite/Tailwind e documentazione legacy sono oggi inclusi nel tema.
 
-**Current** — [themes/d11/style.css](../../themes/d11/style.css) dichiara WordPress `6.6`; il core locale è `7.1` in [../wp-includes/version.php](../../../wp-includes/version.php). Il Target architetturale richiede almeno WordPress `6.9` per Abilities API.
+**Current** — [themes/d11/style.css](../../style.css) dichiara WordPress `6.6`; il core locale è `7.1` in [../wp-includes/version.php](../../../../../wp-includes/version.php). Il Target architetturale richiede almeno WordPress `6.9` per Abilities API.
 
 ## Target e migrazione
 

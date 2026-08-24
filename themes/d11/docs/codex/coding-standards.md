@@ -21,15 +21,15 @@ Questo documento definisce gli standard generali per PHP, WordPress, JavaScript,
 
 **Target** — Il requisito minimo WordPress del Parent è `6.9`. Le API usate devono essere compatibili con tale minimo; polyfill o compatibilità aggiuntiva richiedono decisione esplicita.
 
-**Current** — [themes/d11/style.css](../../themes/d11/style.css) dichiara `Requires at least: 6.6`; il core locale è `7.1` in [../wp-includes/version.php](../../../wp-includes/version.php). Metadati, CI, test e packaging devono convergere sul requisito Target.
+**Current** — [themes/d11/style.css](../../style.css) dichiara `Requires at least: 6.6`; il core locale è `7.1` in [../wp-includes/version.php](../../../../../wp-includes/version.php). Metadati, CI, test e packaging devono convergere sul requisito Target.
 
-**Current** — [themes/d11/style.css](../../themes/d11/style.css) dichiara PHP `8.1`. **Decisione differita** — il requisito PHP Target e la support matrix definitiva non sono ancora approvati. [themes/d11/package.json](../../themes/d11/package.json) verifica Vite `7.1.3`, Tailwind `3.4.17` e toolchain Node, ma non fissa una versione Node Target.
+**Current** — [themes/d11/style.css](../../style.css) dichiara PHP `8.1`. **Decisione differita** — il requisito PHP Target e la support matrix definitiva non sono ancora approvati. [themes/d11/package.json](../../package.json) verifica Vite `7.1.3`, Tailwind `3.4.17` e toolchain Node, ma non fissa una versione Node Target.
 
 ## PHP e WordPress
 
 **Constraint** — Applicare WordPress Coding Standards, type declaration compatibili con il requisito PHP approvato, visibilità minima necessaria e API WordPress prima di global state o SQL diretto. Le API procedurali pubbliche usano il prefix tecnico D11 immutabile; namespace, autoloading e directory Target non sono ancora definiti.
 
-**Current** — [themes/d11/functions.php](../../themes/d11/functions.php) e [themes/d11/inc/blocks.php](../../themes/d11/inc/blocks.php) usano guardia `ABSPATH`, funzioni `d11_` e `declare(strict_types=1)`. **Decisione differita** — mantenere `strict_types` come requisito Target richiede la decisione sul requisito PHP e sulla codebase Parent.
+**Current** — [themes/d11/functions.php](../../functions.php) e [themes/d11/inc/blocks.php](../../inc/blocks.php) usano guardia `ABSPATH`, funzioni `d11_` e `declare(strict_types=1)`. **Decisione differita** — mantenere `strict_types` come requisito Target richiede la decisione sul requisito PHP e sulla codebase Parent.
 
 - Bootstrap esplicito, ordinato e testabile; nessun side effect non documentato all'import.
 - Separare dominio, infrastruttura e integrazione WordPress senza inventare una nuova architettura di directory.
@@ -81,7 +81,7 @@ Le eccezioni restano nei livelli dove sono gestite; build e sviluppo falliscono 
 
 **Constraint** — Text domain tecnico interno immutabile, funzioni i18n WordPress, escaping delle stringhe tradotte, placeholder numerati dove necessario, translator comment per contesto non ovvio e API plurali per quantità.
 
-Le stringhe JavaScript usano le traduzioni associate con `wp_set_script_translations()` quando richiesto. Nessun copy cliente hardcoded vive in componenti condivisi. **Current** — [themes/d11/package.json](../../themes/d11/package.json) definisce gli script `i18n:*` e [themes/d11/inc/blocks.php](../../themes/d11/inc/blocks.php) collega traduzioni degli script; aggiornare gli artefatti quando una modifica lo richiede.
+Le stringhe JavaScript usano le traduzioni associate con `wp_set_script_translations()` quando richiesto. Nessun copy cliente hardcoded vive in componenti condivisi. **Current** — [themes/d11/package.json](../../package.json) definisce gli script `i18n:*` e [themes/d11/inc/blocks.php](../../inc/blocks.php) collega traduzioni degli script; aggiornare gli artefatti quando una modifica lo richiede.
 
 ## JavaScript
 
@@ -124,7 +124,7 @@ Prima: classificare ownership e stato normativo, leggere il contratto pertinente
 
 ## Stato Current e gap
 
-**Current** — Il legacy usa funzioni `d11_`, `strict_types`, Vite/Tailwind e script i18n, ma non presenta un Parent separato, support matrix, static analysis o quality gate PHP verificati. I dettagli visuali in [themes/d11/tailwind.config.js](../../themes/d11/tailwind.config.js) sono **Legacy** e non definiscono token del prodotto.
+**Current** — Il legacy usa funzioni `d11_`, `strict_types`, Vite/Tailwind e script i18n, ma non presenta un Parent separato, support matrix, static analysis o quality gate PHP verificati. I dettagli visuali in [themes/d11/tailwind.config.js](../../tailwind.config.js) sono **Legacy** e non definiscono token del prodotto.
 
 ## Decisioni differite
 

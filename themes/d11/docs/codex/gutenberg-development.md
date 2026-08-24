@@ -21,7 +21,7 @@ Questo documento governa lo sviluppo tecnico di blocchi condivisi, metadata, reg
 
 ## Struttura di un blocco condiviso
 
-**Current** — [themes/d11/inc/blocks.php](../../themes/d11/inc/blocks.php) scopre `themes/d11/blocks/*/block.json`, registra metadata con `register_block_type()` e associa `render.php` quando presente. Usa asset Vite condivisi `src/js/blocks/editor.js`, `src/js/blocks/view.js` e `src/css/blocks.css`.
+**Current** — [themes/d11/inc/blocks.php](../../inc/blocks.php) scopre `themes/d11/blocks/*/block.json`, registra metadata con `register_block_type()` e associa `render.php` quando presente. Usa asset Vite condivisi `src/js/blocks/editor.js`, `src/js/blocks/view.js` e `src/css/blocks.css`.
 
 **Legacy** — La struttura legacy suggerisce `blocks/<slug>/block.json`, `render.php` dinamico e sorgenti per blocco nei tree `src/js/blocks/` e `src/css/blocks/`. È riusabile come evidenza, non come struttura Target obbligatoria.
 
@@ -33,7 +33,7 @@ Questo documento governa lo sviluppo tecnico di blocchi condivisi, metadata, reg
 
 **Constraint** — Il block name è identificatore stabile e non viene rinominato senza percorso di compatibilità. Namespace, slug, handle, classi CSS e text domain rispettano l'identità tecnica D11. I blocchi legacy usano `custom/breadcrumbs` e `custom/social-share`; il namespace Target dei nuovi blocchi condivisi non è ancora approvato tra `d11/*` e `custom/*`.
 
-**Current** — I metadata verificati in [themes/d11/blocks/breadcrumbs/block.json](../../themes/d11/blocks/breadcrumbs/block.json) e [themes/d11/blocks/social-share/block.json](../../themes/d11/blocks/social-share/block.json) usano `apiVersion: 3`, `textdomain: d11`, handle Vite condivisi e metadata come fonte di registrazione.
+**Current** — I metadata verificati in [themes/d11/blocks/breadcrumbs/block.json](../../blocks/breadcrumbs/block.json) e [themes/d11/blocks/social-share/block.json](../../blocks/social-share/block.json) usano `apiVersion: 3`, `textdomain: d11`, handle Vite condivisi e metadata come fonte di registrazione.
 
 ## Statico o dinamico
 
@@ -86,7 +86,7 @@ Regole generali JS/CSS: [coding-standards.md](coding-standards.md). Build/token:
 
 Una configurazione di blocco non registrato non abilita nulla, produce `missing-registration` o equivalente e non causa fatal. La diagnostica deve rendere visibili origine regole, baseline, contributo Child, vincoli, catalogo e policy effettiva.
 
-**Current** — [themes/d11/inc/block-availability/runtime.php](../../themes/d11/inc/block-availability/runtime.php) distingue catalogo, setting normalizzati e allowlist tramite `allowed_block_types_all`; categorie ed export in `themes/d11/docs/block/` sono **Legacy**, non whitelist Target.
+**Current** — [themes/d11/inc/block-availability/runtime.php](../../inc/block-availability/runtime.php) distingue catalogo, setting normalizzati e allowlist tramite `allowed_block_types_all`; categorie ed export in `themes/d11/docs/block/` sono **Legacy**, non whitelist Target.
 
 ## Plugin block, compatibilità e migrazioni
 
@@ -123,7 +123,7 @@ La suite in [testing.md](testing.md) deve coprire metadata/registrazione, insert
 
 ## Stato Current e gap
 
-**Current** — Il legacy ha due blocchi dynamic theme-owned in [themes/d11/blocks/](../../themes/d11/blocks/), registration discovery e asset condivisi; `custom/*` convive con blocchi privacy `d11/*` in [themes/d11/inc/privacy/blocks/](../../themes/d11/inc/privacy/blocks/). Non esistono Parent/Child target, policy per contesto, provenienza regole o diagnostica Target.
+**Current** — Il legacy ha due blocchi dynamic theme-owned in [themes/d11/blocks/](../../blocks/), registration discovery e asset condivisi; `custom/*` convive con blocchi privacy `d11/*` in [themes/d11/inc/privacy/blocks/](../../inc/privacy/blocks/). Non esistono Parent/Child target, policy per contesto, provenienza regole o diagnostica Target.
 
 ## Decisioni differite
 

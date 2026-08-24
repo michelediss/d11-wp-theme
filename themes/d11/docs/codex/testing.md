@@ -16,7 +16,7 @@ Sono inoltre esclusi composizione editoriale, direzione creativa, configurazione
 
 ## Fonti autorevoli
 
-[source-specification.md](source-specification.md); Current: [smoke E2E](../../../../tests/e2e/smoke.spec.js).
+[source-specification.md](source-specification.md); Current: [smoke E2E](../../../../../../tests/e2e/smoke.spec.js).
 
 ## Indice proposto
 

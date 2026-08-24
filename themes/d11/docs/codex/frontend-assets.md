@@ -16,7 +16,7 @@ Sono inoltre esclusi generazione pagine, direzione creativa, configurazione di s
 
 ## Fonti autorevoli
 
-[source-specification.md](source-specification.md); Current: [Vite config](../../themes/d11/vite.config.js), [asset loader](../../themes/d11/inc/assets.php) e [theme.json](../../themes/d11/theme.json).
+[source-specification.md](source-specification.md); Current: [Vite config](../../vite.config.js), [asset loader](../../inc/assets.php) e [theme.json](../../theme.json).
 
 ## Indice proposto
 
