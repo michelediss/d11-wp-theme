@@ -34,6 +34,8 @@ src/js/blocks/view.js
 src/css/blocks.css
 ```
 
+`src/css/blocks.css` must import only namespaced styles for custom blocks. Shared site presentation belongs in `src/css/site-components.css`, which is included by the global `app.css` bundle.
+
 ## How To Add a New Block
 
 1. Create `blocks/<slug>/block.json`.
@@ -61,7 +63,7 @@ src/css/blocks.css
 
 - Automatic registration happens in `inc/blocks.php`.
 - The theme block whitelist automatically includes custom blocks discovered from `block.json`.
-- Do not manually add a new custom block to `partials/block-availability.php` unless there is an explicit exception.
+- Do not manually add a new custom block to `inc/block-availability/bootstrap.php` unless there is an explicit exception.
 - Always update `docs/block/block-composition-guide.md` when adding a new custom block so AI-assisted template generation can use it intentionally.
 - Do not duplicate runtime logic in that file: document availability and usage rules only.
 - External workflow skills should discover custom block availability from runtime exports or whitelist artifacts, then use this document only for implementation standards and usage constraints.

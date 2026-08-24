@@ -6,24 +6,24 @@ It contains only the blocks currently marked as allowed by the theme block avail
 
 ## Source
 
-- Input JSON: `wp-content/themes/d11/docs/block/block-registry.json`
-- Output file: `/home/miche/docker/wp-sites/d11/wp/wp-content/themes/d11/docs/block/whitelisted-blocks.md`
-- Generated at UTC: `2026-03-22T16:49:47+00:00`
-- Whitelisted blocks: `79`
+- Input JSON: `/var/www/html/wp-content/themes/d11/docs/block/block-registry.json`
+- Output file: `/var/www/html/wp-content/themes/d11/docs/block/whitelisted-blocks.md`
+- Generated at UTC: `2026-08-24T13:17:49+00:00`
+- Whitelisted blocks: `54`
 
-## Content (`core/post-content`)
+## Accordion (`core/accordion`)
 
-- `title`: `Content`
-- `description`: `Displays the contents of a post or page.`
+- `title`: `Accordion`
+- `description`: `Displays a foldable layout that groups content in collapsible sections.`
 - `origin`: `core`
-- `category_bucket`: `blog`
+- `category_bucket`: `core`
 - `currently_allowed`: `true`
 - `currently_blacklisted`: `false`
 - `is_dynamic`: `true`
 - `api_version`: `3`
-- `category`: `theme`
+- `category`: `design`
 - `icon`: `null`
-- `render_callback`: `render_block_core_post_content`
+- `render_callback`: `render_block_core_accordion`
 - `has_render_callback`: `true`
 
 ### Keywords
@@ -40,17 +40,17 @@ It contains only the blocks currently marked as allowed by the theme block avail
 
 ### Uses Context
 
-- `postId`
-- `postType`
-- `queryId`
+- None
 
 ### Provides Context
 
-- None
+- `core/accordion-icon-position`: `iconPosition`
+- `core/accordion-show-icon`: `showIcon`
+- `core/accordion-heading-level`: `headingLevel`
 
 ### Supports Summary
 
-- `anchor`: `false`
+- `anchor`: `true`
 - `align`: `true`
 - `spacing`: `true`
 - `color`: `true`
@@ -63,632 +63,63 @@ It contains only the blocks currently marked as allowed by the theme block avail
 
 ```json
 {
+    "anchor": true,
+    "html": false,
     "align": [
         "wide",
         "full"
     ],
-    "html": false,
-    "layout": true,
     "background": {
         "backgroundImage": true,
         "backgroundSize": true,
+        "gradient": true,
         "__experimentalDefaultControls": {
             "backgroundImage": true
         }
     },
-    "dimensions": {
-        "minHeight": true
-    },
-    "spacing": {
-        "blockGap": true,
-        "padding": true,
-        "margin": true,
-        "__experimentalDefaultControls": {
-            "margin": false,
-            "padding": false
-        }
-    },
     "color": {
-        "gradients": true,
-        "heading": true,
-        "link": true,
-        "__experimentalDefaultControls": {
-            "background": false,
-            "text": false
-        }
-    },
-    "typography": {
-        "fontSize": true,
-        "lineHeight": true,
-        "__experimentalFontFamily": true,
-        "__experimentalFontWeight": true,
-        "__experimentalFontStyle": true,
-        "__experimentalTextTransform": true,
-        "__experimentalTextDecoration": true,
-        "__experimentalLetterSpacing": true,
-        "__experimentalDefaultControls": {
-            "fontSize": true
-        }
-    },
-    "interactivity": {
-        "clientNavigation": true
+        "background": true,
+        "gradients": true
     },
     "__experimentalBorder": {
-        "radius": true,
         "color": true,
-        "width": true,
+        "radius": true,
         "style": true,
-        "__experimentalDefaultControls": {
-            "radius": true,
-            "color": true,
-            "width": true,
-            "style": true
-        }
-    }
-}
-```
-
-### Attributes
-
-```json
-{
-    "tagName": {
-        "type": "string",
-        "default": "div"
-    },
-    "lock": {
-        "type": "object"
-    },
-    "metadata": {
-        "type": "object"
-    },
-    "align": {
-        "type": "string",
-        "enum": [
-            "left",
-            "center",
-            "right",
-            "wide",
-            "full",
-            ""
-        ]
-    },
-    "className": {
-        "type": "string"
-    },
-    "style": {
-        "type": "object"
-    },
-    "backgroundColor": {
-        "type": "string"
-    },
-    "textColor": {
-        "type": "string"
-    },
-    "gradient": {
-        "type": "string"
-    },
-    "fontSize": {
-        "type": "string"
-    },
-    "fontFamily": {
-        "type": "string"
-    },
-    "borderColor": {
-        "type": "string"
-    },
-    "layout": {
-        "type": "object"
-    }
-}
-```
-
-### Example
-
-```json
-{
-    "viewportWidth": 350
-}
-```
-
-### Selectors
-
-- None
-
-### Style Handles
-
-- None
-
-### Editor Style Handles
-
-- None
-
-### Script Handles
-
-- None
-
-### Editor Script Handles
-
-- None
-
-### View Script Handles
-
-- None
-
-### View Style Handles
-
-- None
-
-### Custom Metadata
-
-- None
-
-## Date (`core/post-date`)
-
-- `title`: `Date`
-- `description`: `Display a custom date.`
-- `origin`: `core`
-- `category_bucket`: `blog`
-- `currently_allowed`: `true`
-- `currently_blacklisted`: `false`
-- `is_dynamic`: `true`
-- `api_version`: `3`
-- `category`: `theme`
-- `icon`: `null`
-- `render_callback`: `render_block_core_post_date`
-- `has_render_callback`: `true`
-
-### Keywords
-
-- None
-
-### Parent
-
-- None
-
-### Ancestor
-
-- None
-
-### Uses Context
-
-- `postId`
-- `postType`
-- `queryId`
-
-### Provides Context
-
-- None
-
-### Supports Summary
-
-- `anchor`: `false`
-- `align`: `false`
-- `spacing`: `true`
-- `color`: `true`
-- `typography`: `true`
-- `html`: `false`
-- `multiple`: `false`
-- `reusable`: `false`
-
-### Supports
-
-```json
-{
-    "html": false,
-    "color": {
-        "gradients": true,
-        "link": true,
-        "__experimentalDefaultControls": {
-            "background": true,
-            "text": true,
-            "link": true
-        }
-    },
-    "spacing": {
-        "margin": true,
-        "padding": true
-    },
-    "typography": {
-        "fontSize": true,
-        "lineHeight": true,
-        "__experimentalFontFamily": true,
-        "__experimentalFontWeight": true,
-        "__experimentalFontStyle": true,
-        "__experimentalTextTransform": true,
-        "__experimentalTextDecoration": true,
-        "__experimentalLetterSpacing": true,
-        "__experimentalDefaultControls": {
-            "fontSize": true
-        }
-    },
-    "interactivity": {
-        "clientNavigation": true
-    },
-    "__experimentalBorder": {
-        "radius": true,
-        "color": true,
         "width": true,
-        "style": true,
-        "__experimentalDefaultControls": {
-            "radius": true,
-            "color": true,
-            "width": true,
-            "style": true
-        }
-    }
-}
-```
-
-### Attributes
-
-```json
-{
-    "datetime": {
-        "type": "string",
-        "role": "content"
-    },
-    "textAlign": {
-        "type": "string"
-    },
-    "format": {
-        "type": "string"
-    },
-    "isLink": {
-        "type": "boolean",
-        "default": false,
-        "role": "content"
-    },
-    "lock": {
-        "type": "object"
-    },
-    "metadata": {
-        "type": "object"
-    },
-    "className": {
-        "type": "string"
-    },
-    "style": {
-        "type": "object"
-    },
-    "backgroundColor": {
-        "type": "string"
-    },
-    "textColor": {
-        "type": "string"
-    },
-    "gradient": {
-        "type": "string"
-    },
-    "fontSize": {
-        "type": "string"
-    },
-    "fontFamily": {
-        "type": "string"
-    },
-    "borderColor": {
-        "type": "string"
-    }
-}
-```
-
-### Example
-
-```json
-{
-    "viewportWidth": 350
-}
-```
-
-### Selectors
-
-- None
-
-### Style Handles
-
-- None
-
-### Editor Style Handles
-
-- None
-
-### Script Handles
-
-- None
-
-### Editor Script Handles
-
-- None
-
-### View Script Handles
-
-- None
-
-### View Style Handles
-
-- None
-
-### Custom Metadata
-
-- None
-
-## Excerpt (`core/post-excerpt`)
-
-- `title`: `Excerpt`
-- `description`: `Display the excerpt.`
-- `origin`: `core`
-- `category_bucket`: `blog`
-- `currently_allowed`: `true`
-- `currently_blacklisted`: `false`
-- `is_dynamic`: `true`
-- `api_version`: `3`
-- `category`: `theme`
-- `icon`: `null`
-- `render_callback`: `render_block_core_post_excerpt`
-- `has_render_callback`: `true`
-
-### Keywords
-
-- None
-
-### Parent
-
-- None
-
-### Ancestor
-
-- None
-
-### Uses Context
-
-- `postId`
-- `postType`
-- `queryId`
-
-### Provides Context
-
-- None
-
-### Supports Summary
-
-- `anchor`: `false`
-- `align`: `false`
-- `spacing`: `true`
-- `color`: `true`
-- `typography`: `true`
-- `html`: `false`
-- `multiple`: `false`
-- `reusable`: `false`
-
-### Supports
-
-```json
-{
-    "html": false,
-    "color": {
-        "gradients": true,
-        "link": true,
-        "__experimentalDefaultControls": {
-            "background": true,
-            "text": true,
-            "link": true
-        }
-    },
-    "spacing": {
-        "margin": true,
-        "padding": true
-    },
-    "typography": {
-        "fontSize": true,
-        "lineHeight": true,
-        "__experimentalFontFamily": true,
-        "__experimentalFontWeight": true,
-        "__experimentalFontStyle": true,
-        "__experimentalTextTransform": true,
-        "__experimentalTextDecoration": true,
-        "__experimentalLetterSpacing": true,
-        "__experimentalDefaultControls": {
-            "fontSize": true
-        }
-    },
-    "interactivity": {
-        "clientNavigation": true
-    },
-    "__experimentalBorder": {
-        "radius": true,
-        "color": true,
-        "width": true,
-        "style": true,
-        "__experimentalDefaultControls": {
-            "radius": true,
-            "color": true,
-            "width": true,
-            "style": true
-        }
-    }
-}
-```
-
-### Attributes
-
-```json
-{
-    "textAlign": {
-        "type": "string"
-    },
-    "moreText": {
-        "type": "string",
-        "role": "content"
-    },
-    "showMoreOnNewLine": {
-        "type": "boolean",
-        "default": true
-    },
-    "excerptLength": {
-        "type": "number",
-        "default": 55
-    },
-    "lock": {
-        "type": "object"
-    },
-    "metadata": {
-        "type": "object"
-    },
-    "className": {
-        "type": "string"
-    },
-    "style": {
-        "type": "object"
-    },
-    "backgroundColor": {
-        "type": "string"
-    },
-    "textColor": {
-        "type": "string"
-    },
-    "gradient": {
-        "type": "string"
-    },
-    "fontSize": {
-        "type": "string"
-    },
-    "fontFamily": {
-        "type": "string"
-    },
-    "borderColor": {
-        "type": "string"
-    }
-}
-```
-
-### Example
-
-```json
-{
-    "viewportWidth": 350
-}
-```
-
-### Selectors
-
-- None
-
-### Style Handles
-
-- None
-
-### Editor Style Handles
-
-- None
-
-### Script Handles
-
-- None
-
-### Editor Script Handles
-
-- None
-
-### View Script Handles
-
-- None
-
-### View Style Handles
-
-- None
-
-### Custom Metadata
-
-- None
-
-## Featured Image (`core/post-featured-image`)
-
-- `title`: `Featured Image`
-- `description`: `Display a post's featured image.`
-- `origin`: `core`
-- `category_bucket`: `blog`
-- `currently_allowed`: `true`
-- `currently_blacklisted`: `false`
-- `is_dynamic`: `true`
-- `api_version`: `3`
-- `category`: `theme`
-- `icon`: `null`
-- `render_callback`: `render_block_core_post_featured_image`
-- `has_render_callback`: `true`
-
-### Keywords
-
-- None
-
-### Parent
-
-- None
-
-### Ancestor
-
-- None
-
-### Uses Context
-
-- `postId`
-- `postType`
-- `queryId`
-
-### Provides Context
-
-- None
-
-### Supports Summary
-
-- `anchor`: `false`
-- `align`: `true`
-- `spacing`: `true`
-- `color`: `true`
-- `typography`: `false`
-- `html`: `false`
-- `multiple`: `false`
-- `reusable`: `false`
-
-### Supports
-
-```json
-{
-    "align": [
-        "left",
-        "right",
-        "center",
-        "wide",
-        "full"
-    ],
-    "color": {
-        "text": false,
-        "background": false
-    },
-    "__experimentalBorder": {
-        "color": true,
-        "radius": true,
-        "width": true,
-        "__experimentalSkipSerialization": true,
         "__experimentalDefaultControls": {
             "color": true,
             "radius": true,
+            "style": true,
             "width": true
         }
     },
-    "filter": {
-        "duotone": true
-    },
-    "shadow": {
-        "__experimentalSkipSerialization": true
-    },
-    "html": false,
     "spacing": {
-        "margin": true,
-        "padding": true
+        "padding": true,
+        "margin": [
+            "top",
+            "bottom"
+        ],
+        "blockGap": true
     },
-    "interactivity": {
-        "clientNavigation": true
-    }
+    "shadow": true,
+    "layout": true,
+    "ariaLabel": true,
+    "interactivity": true,
+    "typography": {
+        "fontSize": true,
+        "lineHeight": true,
+        "__experimentalFontFamily": true,
+        "__experimentalFontWeight": true,
+        "__experimentalFontStyle": true,
+        "__experimentalTextTransform": true,
+        "__experimentalTextDecoration": true,
+        "__experimentalLetterSpacing": true,
+        "__experimentalDefaultControls": {
+            "fontSize": true
+        }
+    },
+    "contentRole": true,
+    "listView": true
 }
 ```
 
@@ -696,653 +127,25 @@ It contains only the blocks currently marked as allowed by the theme block avail
 
 ```json
 {
-    "isLink": {
+    "iconPosition": {
+        "type": "string",
+        "default": "right"
+    },
+    "showIcon": {
         "type": "boolean",
-        "default": false,
-        "role": "content"
+        "default": true
     },
-    "aspectRatio": {
-        "type": "string"
-    },
-    "width": {
-        "type": "string"
-    },
-    "height": {
-        "type": "string"
-    },
-    "scale": {
-        "type": "string",
-        "default": "cover"
-    },
-    "sizeSlug": {
-        "type": "string"
-    },
-    "rel": {
-        "type": "string",
-        "attribute": "rel",
-        "default": "",
-        "role": "content"
-    },
-    "linkTarget": {
-        "type": "string",
-        "default": "_self",
-        "role": "content"
-    },
-    "overlayColor": {
-        "type": "string"
-    },
-    "customOverlayColor": {
-        "type": "string"
-    },
-    "dimRatio": {
-        "type": "number",
-        "default": 0
-    },
-    "gradient": {
-        "type": "string"
-    },
-    "customGradient": {
-        "type": "string"
-    },
-    "useFirstImageFromPost": {
+    "autoclose": {
         "type": "boolean",
         "default": false
     },
-    "lock": {
-        "type": "object"
-    },
-    "metadata": {
-        "type": "object"
-    },
-    "align": {
-        "type": "string",
-        "enum": [
-            "left",
-            "center",
-            "right",
-            "wide",
-            "full",
-            ""
-        ]
-    },
-    "className": {
-        "type": "string"
-    },
-    "style": {
-        "type": "object"
-    },
-    "borderColor": {
-        "type": "string"
-    }
-}
-```
-
-### Example
-
-```json
-{
-    "viewportWidth": 350
-}
-```
-
-### Selectors
-
-- `border`: `.wp-block-post-featured-image img, .wp-block-post-featured-image .block-editor-media-placeholder, .wp-block-post-featured-image .wp-block-post-featured-image__overlay`
-- `shadow`: `.wp-block-post-featured-image img, .wp-block-post-featured-image .components-placeholder`
-- `filter`:
-```json
-{
-    "duotone": ".wp-block-post-featured-image img, .wp-block-post-featured-image .wp-block-post-featured-image__placeholder, .wp-block-post-featured-image .components-placeholder__illustration, .wp-block-post-featured-image .components-placeholder::before"
-}
-```
-
-### Style Handles
-
-- None
-
-### Editor Style Handles
-
-- None
-
-### Script Handles
-
-- None
-
-### Editor Script Handles
-
-- None
-
-### View Script Handles
-
-- None
-
-### View Style Handles
-
-- None
-
-### Custom Metadata
-
-- None
-
-## Post Template (`core/post-template`)
-
-- `title`: `Post Template`
-- `description`: `Contains the block elements used to render a post, like the title, date, featured image, content or excerpt, and more.`
-- `origin`: `core`
-- `category_bucket`: `blog`
-- `currently_allowed`: `true`
-- `currently_blacklisted`: `false`
-- `is_dynamic`: `true`
-- `api_version`: `3`
-- `category`: `theme`
-- `icon`: `null`
-- `render_callback`: `render_block_core_post_template`
-- `has_render_callback`: `true`
-
-### Keywords
-
-- None
-
-### Parent
-
-- None
-
-### Ancestor
-
-- `core/query`
-
-### Uses Context
-
-- `queryId`
-- `query`
-- `displayLayout`
-- `templateSlug`
-- `previewPostType`
-- `enhancedPagination`
-- `postType`
-
-### Provides Context
-
-- None
-
-### Supports Summary
-
-- `anchor`: `false`
-- `align`: `true`
-- `spacing`: `true`
-- `color`: `true`
-- `typography`: `true`
-- `html`: `false`
-- `multiple`: `false`
-- `reusable`: `false`
-
-### Supports
-
-```json
-{
-    "reusable": false,
-    "html": false,
-    "align": [
-        "wide",
-        "full"
-    ],
-    "layout": true,
-    "color": {
-        "gradients": true,
-        "link": true,
-        "__experimentalDefaultControls": {
-            "background": true,
-            "text": true
-        }
-    },
-    "typography": {
-        "fontSize": true,
-        "lineHeight": true,
-        "__experimentalFontFamily": true,
-        "__experimentalFontWeight": true,
-        "__experimentalFontStyle": true,
-        "__experimentalTextTransform": true,
-        "__experimentalTextDecoration": true,
-        "__experimentalLetterSpacing": true,
-        "__experimentalDefaultControls": {
-            "fontSize": true
-        }
-    },
-    "spacing": {
-        "margin": true,
-        "padding": true,
-        "blockGap": {
-            "__experimentalDefault": "1.25em"
-        },
-        "__experimentalDefaultControls": {
-            "blockGap": true,
-            "padding": false,
-            "margin": false
-        }
-    },
-    "interactivity": {
-        "clientNavigation": true
-    },
-    "__experimentalBorder": {
-        "radius": true,
-        "color": true,
-        "width": true,
-        "style": true
-    }
-}
-```
-
-### Attributes
-
-```json
-{
-    "lock": {
-        "type": "object"
-    },
-    "metadata": {
-        "type": "object"
-    },
-    "align": {
-        "type": "string",
-        "enum": [
-            "left",
-            "center",
-            "right",
-            "wide",
-            "full",
-            ""
-        ]
-    },
-    "className": {
-        "type": "string"
-    },
-    "style": {
-        "type": "object"
-    },
-    "backgroundColor": {
-        "type": "string"
-    },
-    "textColor": {
-        "type": "string"
-    },
-    "gradient": {
-        "type": "string"
-    },
-    "fontSize": {
-        "type": "string"
-    },
-    "fontFamily": {
-        "type": "string"
-    },
-    "borderColor": {
-        "type": "string"
-    },
-    "layout": {
-        "type": "object"
-    }
-}
-```
-
-### Example
-
-- None
-
-### Selectors
-
-- None
-
-### Style Handles
-
-- None
-
-### Editor Style Handles
-
-- None
-
-### Script Handles
-
-- None
-
-### Editor Script Handles
-
-- None
-
-### View Script Handles
-
-- None
-
-### View Style Handles
-
-- None
-
-### Custom Metadata
-
-- None
-
-## Post Terms (`core/post-terms`)
-
-- `title`: `Post Terms`
-- `description`: `Post terms.`
-- `origin`: `core`
-- `category_bucket`: `blog`
-- `currently_allowed`: `true`
-- `currently_blacklisted`: `false`
-- `is_dynamic`: `true`
-- `api_version`: `3`
-- `category`: `theme`
-- `icon`: `null`
-- `render_callback`: `render_block_core_post_terms`
-- `has_render_callback`: `true`
-
-### Keywords
-
-- None
-
-### Parent
-
-- None
-
-### Ancestor
-
-- None
-
-### Uses Context
-
-- `postId`
-- `postType`
-
-### Provides Context
-
-- None
-
-### Supports Summary
-
-- `anchor`: `false`
-- `align`: `false`
-- `spacing`: `true`
-- `color`: `true`
-- `typography`: `true`
-- `html`: `false`
-- `multiple`: `false`
-- `reusable`: `false`
-
-### Supports
-
-```json
-{
-    "html": false,
-    "color": {
-        "gradients": true,
-        "link": true,
-        "__experimentalDefaultControls": {
-            "background": true,
-            "text": true,
-            "link": true
-        }
-    },
-    "spacing": {
-        "margin": true,
-        "padding": true
-    },
-    "typography": {
-        "fontSize": true,
-        "lineHeight": true,
-        "__experimentalFontFamily": true,
-        "__experimentalFontWeight": true,
-        "__experimentalFontStyle": true,
-        "__experimentalTextTransform": true,
-        "__experimentalTextDecoration": true,
-        "__experimentalLetterSpacing": true,
-        "__experimentalDefaultControls": {
-            "fontSize": true
-        }
-    },
-    "interactivity": {
-        "clientNavigation": true
-    },
-    "__experimentalBorder": {
-        "radius": true,
-        "color": true,
-        "width": true,
-        "style": true,
-        "__experimentalDefaultControls": {
-            "radius": true,
-            "color": true,
-            "width": true,
-            "style": true
-        }
-    }
-}
-```
-
-### Attributes
-
-```json
-{
-    "term": {
-        "type": "string"
-    },
-    "textAlign": {
-        "type": "string"
-    },
-    "separator": {
-        "type": "string",
-        "default": ", "
-    },
-    "prefix": {
-        "type": "string",
-        "default": "",
-        "role": "content"
-    },
-    "suffix": {
-        "type": "string",
-        "default": "",
-        "role": "content"
-    },
-    "lock": {
-        "type": "object"
-    },
-    "metadata": {
-        "type": "object"
-    },
-    "className": {
-        "type": "string"
-    },
-    "style": {
-        "type": "object"
-    },
-    "backgroundColor": {
-        "type": "string"
-    },
-    "textColor": {
-        "type": "string"
-    },
-    "gradient": {
-        "type": "string"
-    },
-    "fontSize": {
-        "type": "string"
-    },
-    "fontFamily": {
-        "type": "string"
-    },
-    "borderColor": {
-        "type": "string"
-    }
-}
-```
-
-### Example
-
-```json
-{
-    "viewportWidth": 350
-}
-```
-
-### Selectors
-
-- None
-
-### Style Handles
-
-- None
-
-### Editor Style Handles
-
-- None
-
-### Script Handles
-
-- None
-
-### Editor Script Handles
-
-- None
-
-### View Script Handles
-
-- None
-
-### View Style Handles
-
-- None
-
-### Custom Metadata
-
-- None
-
-## Title (`core/post-title`)
-
-- `title`: `Title`
-- `description`: `Displays the title of a post, page, or any other content-type.`
-- `origin`: `core`
-- `category_bucket`: `blog`
-- `currently_allowed`: `true`
-- `currently_blacklisted`: `false`
-- `is_dynamic`: `true`
-- `api_version`: `3`
-- `category`: `theme`
-- `icon`: `null`
-- `render_callback`: `render_block_core_post_title`
-- `has_render_callback`: `true`
-
-### Keywords
-
-- None
-
-### Parent
-
-- None
-
-### Ancestor
-
-- None
-
-### Uses Context
-
-- `postId`
-- `postType`
-- `queryId`
-
-### Provides Context
-
-- None
-
-### Supports Summary
-
-- `anchor`: `false`
-- `align`: `true`
-- `spacing`: `true`
-- `color`: `true`
-- `typography`: `true`
-- `html`: `false`
-- `multiple`: `false`
-- `reusable`: `false`
-
-### Supports
-
-```json
-{
-    "align": [
-        "wide",
-        "full"
-    ],
-    "html": false,
-    "color": {
-        "gradients": true,
-        "link": true,
-        "__experimentalDefaultControls": {
-            "background": true,
-            "text": true,
-            "link": true
-        }
-    },
-    "spacing": {
-        "margin": true,
-        "padding": true
-    },
-    "typography": {
-        "fontSize": true,
-        "lineHeight": true,
-        "__experimentalFontFamily": true,
-        "__experimentalFontWeight": true,
-        "__experimentalFontStyle": true,
-        "__experimentalTextTransform": true,
-        "__experimentalTextDecoration": true,
-        "__experimentalLetterSpacing": true,
-        "__experimentalDefaultControls": {
-            "fontSize": true
-        }
-    },
-    "interactivity": {
-        "clientNavigation": true
-    },
-    "__experimentalBorder": {
-        "radius": true,
-        "color": true,
-        "width": true,
-        "style": true,
-        "__experimentalDefaultControls": {
-            "radius": true,
-            "color": true,
-            "width": true,
-            "style": true
-        }
-    }
-}
-```
-
-### Attributes
-
-```json
-{
-    "textAlign": {
-        "type": "string"
-    },
-    "level": {
+    "headingLevel": {
         "type": "number",
-        "default": 2
+        "default": 3
     },
     "levelOptions": {
         "type": "array"
     },
-    "isLink": {
-        "type": "boolean",
-        "default": false,
-        "role": "content"
-    },
-    "rel": {
-        "type": "string",
-        "attribute": "rel",
-        "default": "",
-        "role": "content"
-    },
-    "linkTarget": {
-        "type": "string",
-        "default": "_self",
-        "role": "content"
-    },
     "lock": {
         "type": "object"
     },
@@ -1383,334 +186,14 @@ It contains only the blocks currently marked as allowed by the theme block avail
     },
     "borderColor": {
         "type": "string"
-    }
-}
-```
-
-### Example
-
-```json
-{
-    "viewportWidth": 350
-}
-```
-
-### Selectors
-
-- None
-
-### Style Handles
-
-- None
-
-### Editor Style Handles
-
-- None
-
-### Script Handles
-
-- None
-
-### Editor Script Handles
-
-- None
-
-### View Script Handles
-
-- None
-
-### View Style Handles
-
-- None
-
-### Custom Metadata
-
-- None
-
-## Query Loop (`core/query`)
-
-- `title`: `Query Loop`
-- `description`: `An advanced block that allows displaying post types based on different query parameters and visual configurations.`
-- `origin`: `core`
-- `category_bucket`: `blog`
-- `currently_allowed`: `true`
-- `currently_blacklisted`: `false`
-- `is_dynamic`: `true`
-- `api_version`: `3`
-- `category`: `theme`
-- `icon`: `null`
-- `render_callback`: `render_block_core_query`
-- `has_render_callback`: `true`
-
-### Keywords
-
-- `posts`
-- `list`
-- `blog`
-- `blogs`
-- `custom post types`
-
-### Parent
-
-- None
-
-### Ancestor
-
-- None
-
-### Uses Context
-
-- `templateSlug`
-
-### Provides Context
-
-- `queryId`: `queryId`
-- `query`: `query`
-- `displayLayout`: `displayLayout`
-- `enhancedPagination`: `enhancedPagination`
-
-### Supports Summary
-
-- `anchor`: `false`
-- `align`: `true`
-- `spacing`: `false`
-- `color`: `false`
-- `typography`: `false`
-- `html`: `false`
-- `multiple`: `false`
-- `reusable`: `false`
-
-### Supports
-
-```json
-{
-    "align": [
-        "wide",
-        "full"
-    ],
-    "html": false,
-    "layout": true,
-    "interactivity": true,
-    "contentRole": true
-}
-```
-
-### Attributes
-
-```json
-{
-    "queryId": {
-        "type": "number"
-    },
-    "query": {
-        "type": "object",
-        "default": {
-            "perPage": null,
-            "pages": 0,
-            "offset": 0,
-            "postType": "post",
-            "order": "desc",
-            "orderBy": "date",
-            "author": "",
-            "search": "",
-            "exclude": [],
-            "sticky": "",
-            "inherit": true,
-            "taxQuery": null,
-            "parents": [],
-            "format": []
-        }
-    },
-    "tagName": {
-        "type": "string",
-        "default": "div"
-    },
-    "namespace": {
-        "type": "string"
-    },
-    "enhancedPagination": {
-        "type": "boolean",
-        "default": false
-    },
-    "lock": {
-        "type": "object"
-    },
-    "metadata": {
-        "type": "object"
-    },
-    "align": {
-        "type": "string",
-        "enum": [
-            "left",
-            "center",
-            "right",
-            "wide",
-            "full",
-            ""
-        ]
-    },
-    "className": {
-        "type": "string"
     },
     "layout": {
         "type": "object"
-    }
-}
-```
-
-### Example
-
-- None
-
-### Selectors
-
-- None
-
-### Style Handles
-
-- None
-
-### Editor Style Handles
-
-- None
-
-### Script Handles
-
-- None
-
-### Editor Script Handles
-
-- None
-
-### View Script Handles
-
-- None
-
-### View Style Handles
-
-- None
-
-### Custom Metadata
-
-- None
-
-## No Results (`core/query-no-results`)
-
-- `title`: `No Results`
-- `description`: `Contains the block elements used to render content when no query results are found.`
-- `origin`: `core`
-- `category_bucket`: `blog`
-- `currently_allowed`: `true`
-- `currently_blacklisted`: `false`
-- `is_dynamic`: `true`
-- `api_version`: `3`
-- `category`: `theme`
-- `icon`: `null`
-- `render_callback`: `render_block_core_query_no_results`
-- `has_render_callback`: `true`
-
-### Keywords
-
-- None
-
-### Parent
-
-- None
-
-### Ancestor
-
-- `core/query`
-
-### Uses Context
-
-- `queryId`
-- `query`
-
-### Provides Context
-
-- None
-
-### Supports Summary
-
-- `anchor`: `false`
-- `align`: `true`
-- `spacing`: `false`
-- `color`: `true`
-- `typography`: `true`
-- `html`: `false`
-- `multiple`: `false`
-- `reusable`: `false`
-
-### Supports
-
-```json
-{
-    "align": true,
-    "reusable": false,
-    "html": false,
-    "color": {
-        "gradients": true,
-        "link": true
     },
-    "typography": {
-        "fontSize": true,
-        "lineHeight": true,
-        "__experimentalFontFamily": true,
-        "__experimentalFontWeight": true,
-        "__experimentalFontStyle": true,
-        "__experimentalTextTransform": true,
-        "__experimentalTextDecoration": true,
-        "__experimentalLetterSpacing": true,
-        "__experimentalDefaultControls": {
-            "fontSize": true
-        }
-    },
-    "interactivity": {
-        "clientNavigation": true
-    }
-}
-```
-
-### Attributes
-
-```json
-{
-    "lock": {
-        "type": "object"
-    },
-    "metadata": {
-        "type": "object"
-    },
-    "align": {
-        "type": "string",
-        "enum": [
-            "left",
-            "center",
-            "right",
-            "wide",
-            "full",
-            ""
-        ]
-    },
-    "className": {
+    "ariaLabel": {
         "type": "string"
     },
-    "style": {
-        "type": "object"
-    },
-    "backgroundColor": {
-        "type": "string"
-    },
-    "textColor": {
-        "type": "string"
-    },
-    "gradient": {
-        "type": "string"
-    },
-    "fontSize": {
-        "type": "string"
-    },
-    "fontFamily": {
+    "anchor": {
         "type": "string"
     }
 }
@@ -1726,648 +209,12 @@ It contains only the blocks currently marked as allowed by the theme block avail
 
 ### Style Handles
 
-- None
+- `wp-block-accordion`
+- `wp-block-accordion-theme`
 
 ### Editor Style Handles
 
-- None
-
-### Script Handles
-
-- None
-
-### Editor Script Handles
-
-- None
-
-### View Script Handles
-
-- None
-
-### View Style Handles
-
-- None
-
-### Custom Metadata
-
-- None
-
-## Pagination (`core/query-pagination`)
-
-- `title`: `Pagination`
-- `description`: `Displays a paginated navigation to next/previous set of posts, when applicable.`
-- `origin`: `core`
-- `category_bucket`: `blog`
-- `currently_allowed`: `true`
-- `currently_blacklisted`: `false`
-- `is_dynamic`: `true`
-- `api_version`: `3`
-- `category`: `theme`
-- `icon`: `null`
-- `render_callback`: `render_block_core_query_pagination`
-- `has_render_callback`: `true`
-
-### Keywords
-
-- None
-
-### Parent
-
-- None
-
-### Ancestor
-
-- `core/query`
-
-### Uses Context
-
-- `queryId`
-- `query`
-
-### Provides Context
-
-- `paginationArrow`: `paginationArrow`
-- `showLabel`: `showLabel`
-
-### Supports Summary
-
-- `anchor`: `false`
-- `align`: `true`
-- `spacing`: `false`
-- `color`: `true`
-- `typography`: `true`
-- `html`: `false`
-- `multiple`: `false`
-- `reusable`: `false`
-
-### Supports
-
-```json
-{
-    "align": true,
-    "reusable": false,
-    "html": false,
-    "color": {
-        "gradients": true,
-        "link": true,
-        "__experimentalDefaultControls": {
-            "background": true,
-            "text": true,
-            "link": true
-        }
-    },
-    "layout": {
-        "allowSwitching": false,
-        "allowInheriting": false,
-        "default": {
-            "type": "flex"
-        }
-    },
-    "typography": {
-        "fontSize": true,
-        "lineHeight": true,
-        "__experimentalFontFamily": true,
-        "__experimentalFontWeight": true,
-        "__experimentalFontStyle": true,
-        "__experimentalTextTransform": true,
-        "__experimentalTextDecoration": true,
-        "__experimentalLetterSpacing": true,
-        "__experimentalDefaultControls": {
-            "fontSize": true
-        }
-    },
-    "interactivity": {
-        "clientNavigation": true
-    }
-}
-```
-
-### Attributes
-
-```json
-{
-    "paginationArrow": {
-        "type": "string",
-        "default": "none"
-    },
-    "showLabel": {
-        "type": "boolean",
-        "default": true
-    },
-    "lock": {
-        "type": "object"
-    },
-    "metadata": {
-        "type": "object"
-    },
-    "align": {
-        "type": "string",
-        "enum": [
-            "left",
-            "center",
-            "right",
-            "wide",
-            "full",
-            ""
-        ]
-    },
-    "className": {
-        "type": "string"
-    },
-    "style": {
-        "type": "object"
-    },
-    "backgroundColor": {
-        "type": "string"
-    },
-    "textColor": {
-        "type": "string"
-    },
-    "gradient": {
-        "type": "string"
-    },
-    "fontSize": {
-        "type": "string"
-    },
-    "fontFamily": {
-        "type": "string"
-    },
-    "layout": {
-        "type": "object"
-    }
-}
-```
-
-### Example
-
-- None
-
-### Selectors
-
-- None
-
-### Style Handles
-
-- None
-
-### Editor Style Handles
-
-- None
-
-### Script Handles
-
-- None
-
-### Editor Script Handles
-
-- None
-
-### View Script Handles
-
-- None
-
-### View Style Handles
-
-- None
-
-### Custom Metadata
-
-- None
-
-## Next Page (`core/query-pagination-next`)
-
-- `title`: `Next Page`
-- `description`: `Displays the next posts page link.`
-- `origin`: `core`
-- `category_bucket`: `blog`
-- `currently_allowed`: `true`
-- `currently_blacklisted`: `false`
-- `is_dynamic`: `true`
-- `api_version`: `3`
-- `category`: `theme`
-- `icon`: `null`
-- `render_callback`: `render_block_core_query_pagination_next`
-- `has_render_callback`: `true`
-
-### Keywords
-
-- None
-
-### Parent
-
-- `core/query-pagination`
-
-### Ancestor
-
-- None
-
-### Uses Context
-
-- `queryId`
-- `query`
-- `paginationArrow`
-- `showLabel`
-- `enhancedPagination`
-
-### Provides Context
-
-- None
-
-### Supports Summary
-
-- `anchor`: `false`
-- `align`: `false`
-- `spacing`: `false`
-- `color`: `true`
-- `typography`: `true`
-- `html`: `false`
-- `multiple`: `false`
-- `reusable`: `false`
-
-### Supports
-
-```json
-{
-    "reusable": false,
-    "html": false,
-    "color": {
-        "gradients": true,
-        "text": false,
-        "__experimentalDefaultControls": {
-            "background": true
-        }
-    },
-    "typography": {
-        "fontSize": true,
-        "lineHeight": true,
-        "__experimentalFontFamily": true,
-        "__experimentalFontWeight": true,
-        "__experimentalFontStyle": true,
-        "__experimentalTextTransform": true,
-        "__experimentalTextDecoration": true,
-        "__experimentalLetterSpacing": true,
-        "__experimentalDefaultControls": {
-            "fontSize": true
-        }
-    },
-    "interactivity": {
-        "clientNavigation": true
-    }
-}
-```
-
-### Attributes
-
-```json
-{
-    "label": {
-        "type": "string"
-    },
-    "lock": {
-        "type": "object"
-    },
-    "metadata": {
-        "type": "object"
-    },
-    "className": {
-        "type": "string"
-    },
-    "style": {
-        "type": "object"
-    },
-    "backgroundColor": {
-        "type": "string"
-    },
-    "gradient": {
-        "type": "string"
-    },
-    "fontSize": {
-        "type": "string"
-    },
-    "fontFamily": {
-        "type": "string"
-    }
-}
-```
-
-### Example
-
-- None
-
-### Selectors
-
-- None
-
-### Style Handles
-
-- None
-
-### Editor Style Handles
-
-- None
-
-### Script Handles
-
-- None
-
-### Editor Script Handles
-
-- None
-
-### View Script Handles
-
-- None
-
-### View Style Handles
-
-- None
-
-### Custom Metadata
-
-- None
-
-## Page Numbers (`core/query-pagination-numbers`)
-
-- `title`: `Page Numbers`
-- `description`: `Displays a list of page numbers for pagination.`
-- `origin`: `core`
-- `category_bucket`: `blog`
-- `currently_allowed`: `true`
-- `currently_blacklisted`: `false`
-- `is_dynamic`: `true`
-- `api_version`: `3`
-- `category`: `theme`
-- `icon`: `null`
-- `render_callback`: `render_block_core_query_pagination_numbers`
-- `has_render_callback`: `true`
-
-### Keywords
-
-- None
-
-### Parent
-
-- `core/query-pagination`
-
-### Ancestor
-
-- None
-
-### Uses Context
-
-- `queryId`
-- `query`
-- `enhancedPagination`
-
-### Provides Context
-
-- None
-
-### Supports Summary
-
-- `anchor`: `false`
-- `align`: `false`
-- `spacing`: `false`
-- `color`: `true`
-- `typography`: `true`
-- `html`: `false`
-- `multiple`: `false`
-- `reusable`: `false`
-
-### Supports
-
-```json
-{
-    "reusable": false,
-    "html": false,
-    "color": {
-        "gradients": true,
-        "text": false,
-        "__experimentalDefaultControls": {
-            "background": true
-        }
-    },
-    "typography": {
-        "fontSize": true,
-        "lineHeight": true,
-        "__experimentalFontFamily": true,
-        "__experimentalFontWeight": true,
-        "__experimentalFontStyle": true,
-        "__experimentalTextTransform": true,
-        "__experimentalTextDecoration": true,
-        "__experimentalLetterSpacing": true,
-        "__experimentalDefaultControls": {
-            "fontSize": true
-        }
-    },
-    "interactivity": {
-        "clientNavigation": true
-    }
-}
-```
-
-### Attributes
-
-```json
-{
-    "midSize": {
-        "type": "number",
-        "default": 2
-    },
-    "lock": {
-        "type": "object"
-    },
-    "metadata": {
-        "type": "object"
-    },
-    "className": {
-        "type": "string"
-    },
-    "style": {
-        "type": "object"
-    },
-    "backgroundColor": {
-        "type": "string"
-    },
-    "gradient": {
-        "type": "string"
-    },
-    "fontSize": {
-        "type": "string"
-    },
-    "fontFamily": {
-        "type": "string"
-    }
-}
-```
-
-### Example
-
-- None
-
-### Selectors
-
-- None
-
-### Style Handles
-
-- None
-
-### Editor Style Handles
-
-- None
-
-### Script Handles
-
-- None
-
-### Editor Script Handles
-
-- None
-
-### View Script Handles
-
-- None
-
-### View Style Handles
-
-- None
-
-### Custom Metadata
-
-- None
-
-## Previous Page (`core/query-pagination-previous`)
-
-- `title`: `Previous Page`
-- `description`: `Displays the previous posts page link.`
-- `origin`: `core`
-- `category_bucket`: `blog`
-- `currently_allowed`: `true`
-- `currently_blacklisted`: `false`
-- `is_dynamic`: `true`
-- `api_version`: `3`
-- `category`: `theme`
-- `icon`: `null`
-- `render_callback`: `render_block_core_query_pagination_previous`
-- `has_render_callback`: `true`
-
-### Keywords
-
-- None
-
-### Parent
-
-- `core/query-pagination`
-
-### Ancestor
-
-- None
-
-### Uses Context
-
-- `queryId`
-- `query`
-- `paginationArrow`
-- `showLabel`
-- `enhancedPagination`
-
-### Provides Context
-
-- None
-
-### Supports Summary
-
-- `anchor`: `false`
-- `align`: `false`
-- `spacing`: `false`
-- `color`: `true`
-- `typography`: `true`
-- `html`: `false`
-- `multiple`: `false`
-- `reusable`: `false`
-
-### Supports
-
-```json
-{
-    "reusable": false,
-    "html": false,
-    "color": {
-        "gradients": true,
-        "text": false,
-        "__experimentalDefaultControls": {
-            "background": true
-        }
-    },
-    "typography": {
-        "fontSize": true,
-        "lineHeight": true,
-        "__experimentalFontFamily": true,
-        "__experimentalFontWeight": true,
-        "__experimentalFontStyle": true,
-        "__experimentalTextTransform": true,
-        "__experimentalTextDecoration": true,
-        "__experimentalLetterSpacing": true,
-        "__experimentalDefaultControls": {
-            "fontSize": true
-        }
-    },
-    "interactivity": {
-        "clientNavigation": true
-    }
-}
-```
-
-### Attributes
-
-```json
-{
-    "label": {
-        "type": "string"
-    },
-    "lock": {
-        "type": "object"
-    },
-    "metadata": {
-        "type": "object"
-    },
-    "className": {
-        "type": "string"
-    },
-    "style": {
-        "type": "object"
-    },
-    "backgroundColor": {
-        "type": "string"
-    },
-    "gradient": {
-        "type": "string"
-    },
-    "fontSize": {
-        "type": "string"
-    },
-    "fontFamily": {
-        "type": "string"
-    }
-}
-```
-
-### Example
-
-- None
-
-### Selectors
-
-- None
-
-### Style Handles
-
-- None
-
-### Editor Style Handles
-
-- None
+- `wp-block-accordion-editor`
 
 ### Script Handles
 
@@ -2549,6 +396,9 @@ It contains only the blocks currently marked as allowed by the theme block avail
     },
     "borderColor": {
         "type": "string"
+    },
+    "anchor": {
+        "type": "string"
     }
 }
 ```
@@ -2569,11 +419,558 @@ It contains only the blocks currently marked as allowed by the theme block avail
 
 ### Style Handles
 
-- None
+- `wp-block-accordion-heading`
+- `wp-block-accordion-heading-theme`
 
 ### Editor Style Handles
 
+- `wp-block-accordion-heading-editor`
+
+### Script Handles
+
 - None
+
+### Editor Script Handles
+
+- None
+
+### View Script Handles
+
+- None
+
+### View Style Handles
+
+- None
+
+### Custom Metadata
+
+- None
+
+## Accordion Item (`core/accordion-item`)
+
+- `title`: `Accordion Item`
+- `description`: `Wraps the heading and panel in one unit.`
+- `origin`: `core`
+- `category_bucket`: `core`
+- `currently_allowed`: `true`
+- `currently_blacklisted`: `false`
+- `is_dynamic`: `true`
+- `api_version`: `3`
+- `category`: `design`
+- `icon`: `null`
+- `render_callback`: `block_core_accordion_item_render`
+- `has_render_callback`: `true`
+
+### Keywords
+
+- None
+
+### Parent
+
+- `core/accordion`
+
+### Ancestor
+
+- None
+
+### Uses Context
+
+- None
+
+### Provides Context
+
+- `core/accordion-open-by-default`: `openByDefault`
+
+### Supports Summary
+
+- `anchor`: `false`
+- `align`: `false`
+- `spacing`: `true`
+- `color`: `true`
+- `typography`: `true`
+- `html`: `false`
+- `multiple`: `false`
+- `reusable`: `false`
+
+### Supports
+
+```json
+{
+    "html": false,
+    "color": {
+        "background": true,
+        "gradients": true
+    },
+    "interactivity": true,
+    "spacing": {
+        "margin": [
+            "top",
+            "bottom"
+        ],
+        "padding": true,
+        "blockGap": true
+    },
+    "__experimentalBorder": {
+        "color": true,
+        "radius": true,
+        "style": true,
+        "width": true,
+        "__experimentalDefaultControls": {
+            "color": true,
+            "radius": true,
+            "style": true,
+            "width": true
+        }
+    },
+    "shadow": true,
+    "layout": {
+        "allowEditing": false
+    },
+    "typography": {
+        "fontSize": true,
+        "lineHeight": true,
+        "__experimentalFontFamily": true,
+        "__experimentalFontWeight": true,
+        "__experimentalFontStyle": true,
+        "__experimentalTextTransform": true,
+        "__experimentalTextDecoration": true,
+        "__experimentalLetterSpacing": true,
+        "__experimentalDefaultControls": {
+            "fontSize": true
+        }
+    },
+    "contentRole": true
+}
+```
+
+### Attributes
+
+```json
+{
+    "openByDefault": {
+        "type": "boolean",
+        "default": false
+    },
+    "lock": {
+        "type": "object"
+    },
+    "metadata": {
+        "type": "object"
+    },
+    "className": {
+        "type": "string"
+    },
+    "style": {
+        "type": "object"
+    },
+    "backgroundColor": {
+        "type": "string"
+    },
+    "textColor": {
+        "type": "string"
+    },
+    "gradient": {
+        "type": "string"
+    },
+    "fontSize": {
+        "type": "string"
+    },
+    "fontFamily": {
+        "type": "string"
+    },
+    "borderColor": {
+        "type": "string"
+    },
+    "layout": {
+        "type": "object"
+    }
+}
+```
+
+### Example
+
+- None
+
+### Selectors
+
+- None
+
+### Style Handles
+
+- `wp-block-accordion-item`
+- `wp-block-accordion-item-theme`
+
+### Editor Style Handles
+
+- `wp-block-accordion-item-editor`
+
+### Script Handles
+
+- None
+
+### Editor Script Handles
+
+- None
+
+### View Script Handles
+
+- None
+
+### View Style Handles
+
+- None
+
+### Custom Metadata
+
+- None
+
+## Accordion Panel (`core/accordion-panel`)
+
+- `title`: `Accordion Panel`
+- `description`: `Contains the hidden or revealed content beneath the heading.`
+- `origin`: `core`
+- `category_bucket`: `core`
+- `currently_allowed`: `true`
+- `currently_blacklisted`: `false`
+- `is_dynamic`: `false`
+- `api_version`: `3`
+- `category`: `design`
+- `icon`: `null`
+- `render_callback`: `null`
+- `has_render_callback`: `false`
+
+### Keywords
+
+- None
+
+### Parent
+
+- `core/accordion-item`
+
+### Ancestor
+
+- None
+
+### Uses Context
+
+- `core/accordion-open-by-default`
+
+### Provides Context
+
+- None
+
+### Supports Summary
+
+- `anchor`: `false`
+- `align`: `false`
+- `spacing`: `true`
+- `color`: `true`
+- `typography`: `true`
+- `html`: `false`
+- `multiple`: `false`
+- `reusable`: `false`
+
+### Supports
+
+```json
+{
+    "html": false,
+    "color": {
+        "background": true,
+        "gradients": true
+    },
+    "interactivity": true,
+    "spacing": {
+        "padding": true,
+        "blockGap": true,
+        "__experimentalDefaultControls": {
+            "padding": true,
+            "blockGap": true
+        }
+    },
+    "__experimentalBorder": {
+        "color": true,
+        "radius": true,
+        "style": true,
+        "width": true,
+        "__experimentalDefaultControls": {
+            "color": true,
+            "radius": true,
+            "style": true,
+            "width": true
+        }
+    },
+    "typography": {
+        "fontSize": true,
+        "lineHeight": true,
+        "__experimentalFontFamily": true,
+        "__experimentalFontWeight": true,
+        "__experimentalFontStyle": true,
+        "__experimentalTextTransform": true,
+        "__experimentalTextDecoration": true,
+        "__experimentalLetterSpacing": true,
+        "__experimentalDefaultControls": {
+            "fontSize": true
+        }
+    },
+    "shadow": true,
+    "layout": {
+        "allowEditing": false
+    },
+    "visibility": false,
+    "contentRole": true,
+    "allowedBlocks": true,
+    "lock": false
+}
+```
+
+### Attributes
+
+```json
+{
+    "templateLock": {
+        "type": [
+            "string",
+            "boolean"
+        ],
+        "enum": [
+            "all",
+            "insert",
+            "contentOnly",
+            false
+        ],
+        "default": false
+    },
+    "lock": {
+        "type": "object"
+    },
+    "metadata": {
+        "type": "object"
+    },
+    "className": {
+        "type": "string"
+    },
+    "style": {
+        "type": "object"
+    },
+    "backgroundColor": {
+        "type": "string"
+    },
+    "textColor": {
+        "type": "string"
+    },
+    "gradient": {
+        "type": "string"
+    },
+    "fontSize": {
+        "type": "string"
+    },
+    "fontFamily": {
+        "type": "string"
+    },
+    "borderColor": {
+        "type": "string"
+    },
+    "layout": {
+        "type": "object"
+    }
+}
+```
+
+### Example
+
+- None
+
+### Selectors
+
+- None
+
+### Style Handles
+
+- `wp-block-accordion-panel`
+- `wp-block-accordion-panel-theme`
+
+### Editor Style Handles
+
+- `wp-block-accordion-panel-editor`
+
+### Script Handles
+
+- None
+
+### Editor Script Handles
+
+- None
+
+### View Script Handles
+
+- None
+
+### View Style Handles
+
+- None
+
+### Custom Metadata
+
+- None
+
+## Audio (`core/audio`)
+
+- `title`: `Audio`
+- `description`: `Embed a simple audio player.`
+- `origin`: `core`
+- `category_bucket`: `core`
+- `currently_allowed`: `true`
+- `currently_blacklisted`: `false`
+- `is_dynamic`: `false`
+- `api_version`: `3`
+- `category`: `media`
+- `icon`: `null`
+- `render_callback`: `null`
+- `has_render_callback`: `false`
+
+### Keywords
+
+- `music`
+- `sound`
+- `podcast`
+- `recording`
+
+### Parent
+
+- None
+
+### Ancestor
+
+- None
+
+### Uses Context
+
+- None
+
+### Provides Context
+
+- None
+
+### Supports Summary
+
+- `anchor`: `true`
+- `align`: `true`
+- `spacing`: `true`
+- `color`: `false`
+- `typography`: `false`
+- `html`: `false`
+- `multiple`: `false`
+- `reusable`: `false`
+
+### Supports
+
+```json
+{
+    "anchor": true,
+    "align": true,
+    "spacing": {
+        "margin": true,
+        "padding": true,
+        "__experimentalDefaultControls": {
+            "margin": false,
+            "padding": false
+        }
+    },
+    "interactivity": {
+        "clientNavigation": true
+    }
+}
+```
+
+### Attributes
+
+```json
+{
+    "blob": {
+        "type": "string",
+        "role": "local"
+    },
+    "src": {
+        "type": "string",
+        "source": "attribute",
+        "selector": "audio",
+        "attribute": "src",
+        "role": "content"
+    },
+    "caption": {
+        "type": "rich-text",
+        "source": "rich-text",
+        "selector": "figcaption",
+        "role": "content"
+    },
+    "id": {
+        "type": "number",
+        "role": "content"
+    },
+    "autoplay": {
+        "type": "boolean",
+        "source": "attribute",
+        "selector": "audio",
+        "attribute": "autoplay"
+    },
+    "loop": {
+        "type": "boolean",
+        "source": "attribute",
+        "selector": "audio",
+        "attribute": "loop"
+    },
+    "preload": {
+        "type": "string",
+        "source": "attribute",
+        "selector": "audio",
+        "attribute": "preload"
+    },
+    "lock": {
+        "type": "object"
+    },
+    "metadata": {
+        "type": "object"
+    },
+    "align": {
+        "type": "string",
+        "enum": [
+            "left",
+            "center",
+            "right",
+            "wide",
+            "full",
+            ""
+        ]
+    },
+    "className": {
+        "type": "string"
+    },
+    "style": {
+        "type": "object"
+    },
+    "anchor": {
+        "type": "string"
+    }
+}
+```
+
+### Example
+
+- None
+
+### Selectors
+
+- None
+
+### Style Handles
+
+- `wp-block-audio`
+- `wp-block-audio-theme`
+
+### Editor Style Handles
+
+- `wp-block-audio-editor`
 
 ### Script Handles
 
@@ -2657,10 +1054,20 @@ It contains only the blocks currently marked as allowed by the theme block avail
             "text": true
         }
     },
+    "dimensions": {
+        "width": true,
+        "__experimentalSkipSerialization": [
+            "width"
+        ],
+        "__experimentalDefaultControls": {
+            "width": true
+        }
+    },
     "typography": {
         "__experimentalSkipSerialization": [
             "fontSize",
             "lineHeight",
+            "textAlign",
             "fontFamily",
             "fontWeight",
             "fontStyle",
@@ -2670,6 +1077,7 @@ It contains only the blocks currently marked as allowed by the theme block avail
         ],
         "fontSize": true,
         "lineHeight": true,
+        "textAlign": true,
         "__experimentalFontFamily": true,
         "__experimentalFontWeight": true,
         "__experimentalFontStyle": true,
@@ -2730,9 +1138,6 @@ It contains only the blocks currently marked as allowed by the theme block avail
         "type": "string",
         "default": "button"
     },
-    "textAlign": {
-        "type": "string"
-    },
     "url": {
         "type": "string",
         "source": "attribute",
@@ -2779,9 +1184,6 @@ It contains only the blocks currently marked as allowed by the theme block avail
     "gradient": {
         "type": "string"
     },
-    "width": {
-        "type": "number"
-    },
     "lock": {
         "type": "object"
     },
@@ -2802,6 +1204,9 @@ It contains only the blocks currently marked as allowed by the theme block avail
     },
     "borderColor": {
         "type": "string"
+    },
+    "anchor": {
+        "type": "string"
     }
 }
 ```
@@ -2819,14 +1224,22 @@ It contains only the blocks currently marked as allowed by the theme block avail
     "writingMode": ".wp-block-button"
 }
 ```
+- `dimensions`:
+```json
+{
+    "root": ".wp-block-button",
+    "width": ".wp-block-button"
+}
+```
 
 ### Style Handles
 
-- None
+- `wp-block-button`
+- `wp-block-button-theme`
 
 ### Editor Style Handles
 
-- None
+- `wp-block-button-editor`
 
 ### Script Handles
 
@@ -2961,6 +1374,7 @@ It contains only the blocks currently marked as allowed by the theme block avail
     "interactivity": {
         "clientNavigation": true
     },
+    "listView": true,
     "contentRole": true
 }
 ```
@@ -3009,6 +1423,9 @@ It contains only the blocks currently marked as allowed by the theme block avail
     },
     "layout": {
         "type": "object"
+    },
+    "anchor": {
+        "type": "string"
     }
 }
 ```
@@ -3023,11 +1440,210 @@ It contains only the blocks currently marked as allowed by the theme block avail
 
 ### Style Handles
 
-- None
+- `wp-block-buttons`
+- `wp-block-buttons-theme`
 
 ### Editor Style Handles
 
+- `wp-block-buttons-editor`
+
+### Script Handles
+
 - None
+
+### Editor Script Handles
+
+- None
+
+### View Script Handles
+
+- None
+
+### View Style Handles
+
+- None
+
+### Custom Metadata
+
+- None
+
+## Code (`core/code`)
+
+- `title`: `Code`
+- `description`: `Display code snippets that respect your spacing and tabs.`
+- `origin`: `core`
+- `category_bucket`: `core`
+- `currently_allowed`: `true`
+- `currently_blacklisted`: `false`
+- `is_dynamic`: `false`
+- `api_version`: `3`
+- `category`: `text`
+- `icon`: `null`
+- `render_callback`: `null`
+- `has_render_callback`: `false`
+
+### Keywords
+
+- None
+
+### Parent
+
+- None
+
+### Ancestor
+
+- None
+
+### Uses Context
+
+- None
+
+### Provides Context
+
+- None
+
+### Supports Summary
+
+- `anchor`: `true`
+- `align`: `true`
+- `spacing`: `true`
+- `color`: `true`
+- `typography`: `true`
+- `html`: `false`
+- `multiple`: `false`
+- `reusable`: `false`
+
+### Supports
+
+```json
+{
+    "align": [
+        "wide"
+    ],
+    "anchor": true,
+    "typography": {
+        "fontSize": true,
+        "lineHeight": true,
+        "__experimentalFontFamily": true,
+        "__experimentalFontWeight": true,
+        "__experimentalFontStyle": true,
+        "__experimentalTextTransform": true,
+        "__experimentalTextDecoration": true,
+        "__experimentalLetterSpacing": true,
+        "__experimentalDefaultControls": {
+            "fontSize": true
+        }
+    },
+    "spacing": {
+        "margin": [
+            "top",
+            "bottom"
+        ],
+        "padding": true,
+        "__experimentalDefaultControls": {
+            "margin": false,
+            "padding": false
+        }
+    },
+    "__experimentalBorder": {
+        "radius": true,
+        "color": true,
+        "width": true,
+        "style": true,
+        "__experimentalDefaultControls": {
+            "width": true,
+            "color": true
+        }
+    },
+    "color": {
+        "text": true,
+        "background": true,
+        "gradients": true,
+        "__experimentalDefaultControls": {
+            "background": true,
+            "text": true
+        }
+    },
+    "interactivity": {
+        "clientNavigation": true
+    }
+}
+```
+
+### Attributes
+
+```json
+{
+    "content": {
+        "type": "rich-text",
+        "source": "rich-text",
+        "selector": "code",
+        "__unstablePreserveWhiteSpace": true,
+        "role": "content"
+    },
+    "lock": {
+        "type": "object"
+    },
+    "metadata": {
+        "type": "object"
+    },
+    "align": {
+        "type": "string",
+        "enum": [
+            "left",
+            "center",
+            "right",
+            "wide",
+            "full",
+            ""
+        ]
+    },
+    "className": {
+        "type": "string"
+    },
+    "style": {
+        "type": "object"
+    },
+    "backgroundColor": {
+        "type": "string"
+    },
+    "textColor": {
+        "type": "string"
+    },
+    "gradient": {
+        "type": "string"
+    },
+    "fontSize": {
+        "type": "string"
+    },
+    "fontFamily": {
+        "type": "string"
+    },
+    "borderColor": {
+        "type": "string"
+    },
+    "anchor": {
+        "type": "string"
+    }
+}
+```
+
+### Example
+
+- None
+
+### Selectors
+
+- None
+
+### Style Handles
+
+- `wp-block-code`
+- `wp-block-code-theme`
+
+### Editor Style Handles
+
+- `wp-block-code-editor`
 
 ### Script Handles
 
@@ -3209,6 +1825,9 @@ It contains only the blocks currently marked as allowed by the theme block avail
     },
     "layout": {
         "type": "object"
+    },
+    "anchor": {
+        "type": "string"
     }
 }
 ```
@@ -3223,11 +1842,12 @@ It contains only the blocks currently marked as allowed by the theme block avail
 
 ### Style Handles
 
-- None
+- `wp-block-column`
+- `wp-block-column-theme`
 
 ### Editor Style Handles
 
-- None
+- `wp-block-column-editor`
 
 ### Script Handles
 
@@ -3440,6 +2060,9 @@ It contains only the blocks currently marked as allowed by the theme block avail
     },
     "layout": {
         "type": "object"
+    },
+    "anchor": {
+        "type": "string"
     }
 }
 ```
@@ -3454,11 +2077,1113 @@ It contains only the blocks currently marked as allowed by the theme block avail
 
 ### Style Handles
 
-- None
+- `wp-block-columns`
+- `wp-block-columns-theme`
 
 ### Editor Style Handles
 
+- `wp-block-columns-editor`
+
+### Script Handles
+
 - None
+
+### Editor Script Handles
+
+- None
+
+### View Script Handles
+
+- None
+
+### View Style Handles
+
+- None
+
+### Custom Metadata
+
+- None
+
+## Cover (`core/cover`)
+
+- `title`: `Cover`
+- `description`: `Add an image or video with a text overlay.`
+- `origin`: `core`
+- `category_bucket`: `core`
+- `currently_allowed`: `true`
+- `currently_blacklisted`: `false`
+- `is_dynamic`: `true`
+- `api_version`: `3`
+- `category`: `media`
+- `icon`: `null`
+- `render_callback`: `render_block_core_cover`
+- `has_render_callback`: `true`
+
+### Keywords
+
+- None
+
+### Parent
+
+- None
+
+### Ancestor
+
+- None
+
+### Uses Context
+
+- `postId`
+- `postType`
+
+### Provides Context
+
+- None
+
+### Supports Summary
+
+- `anchor`: `true`
+- `align`: `true`
+- `spacing`: `true`
+- `color`: `true`
+- `typography`: `true`
+- `html`: `false`
+- `multiple`: `false`
+- `reusable`: `false`
+
+### Supports
+
+```json
+{
+    "anchor": true,
+    "align": true,
+    "html": false,
+    "shadow": true,
+    "spacing": {
+        "padding": true,
+        "margin": [
+            "top",
+            "bottom"
+        ],
+        "blockGap": true,
+        "__experimentalDefaultControls": {
+            "padding": true,
+            "blockGap": true
+        }
+    },
+    "__experimentalBorder": {
+        "color": true,
+        "radius": true,
+        "style": true,
+        "width": true,
+        "__experimentalDefaultControls": {
+            "color": true,
+            "radius": true,
+            "style": true,
+            "width": true
+        }
+    },
+    "color": {
+        "heading": true,
+        "text": true,
+        "background": false,
+        "__experimentalSkipSerialization": [
+            "gradients"
+        ],
+        "enableContrastChecker": false
+    },
+    "dimensions": {
+        "aspectRatio": true
+    },
+    "typography": {
+        "fontSize": true,
+        "lineHeight": true,
+        "__experimentalFontFamily": true,
+        "__experimentalFontWeight": true,
+        "__experimentalFontStyle": true,
+        "__experimentalTextTransform": true,
+        "__experimentalTextDecoration": true,
+        "__experimentalLetterSpacing": true,
+        "__experimentalDefaultControls": {
+            "fontSize": true
+        }
+    },
+    "layout": {
+        "allowJustification": false
+    },
+    "interactivity": {
+        "clientNavigation": true
+    },
+    "filter": {
+        "duotone": true
+    },
+    "allowedBlocks": true
+}
+```
+
+### Attributes
+
+```json
+{
+    "url": {
+        "type": "string",
+        "role": "content"
+    },
+    "useFeaturedImage": {
+        "type": "boolean",
+        "default": false
+    },
+    "id": {
+        "type": "number"
+    },
+    "alt": {
+        "type": "string",
+        "default": ""
+    },
+    "hasParallax": {
+        "type": "boolean",
+        "default": false
+    },
+    "isRepeated": {
+        "type": "boolean",
+        "default": false
+    },
+    "dimRatio": {
+        "type": "number",
+        "default": 100
+    },
+    "overlayColor": {
+        "type": "string"
+    },
+    "customOverlayColor": {
+        "type": "string"
+    },
+    "isUserOverlayColor": {
+        "type": "boolean"
+    },
+    "backgroundType": {
+        "type": "string",
+        "default": "image"
+    },
+    "focalPoint": {
+        "type": "object"
+    },
+    "minHeight": {
+        "type": "number"
+    },
+    "minHeightUnit": {
+        "type": "string"
+    },
+    "gradient": {
+        "type": "string"
+    },
+    "customGradient": {
+        "type": "string"
+    },
+    "contentPosition": {
+        "type": "string"
+    },
+    "isDark": {
+        "type": "boolean",
+        "default": true
+    },
+    "templateLock": {
+        "type": [
+            "string",
+            "boolean"
+        ],
+        "enum": [
+            "all",
+            "insert",
+            "contentOnly",
+            false
+        ]
+    },
+    "tagName": {
+        "type": "string",
+        "default": "div"
+    },
+    "sizeSlug": {
+        "type": "string"
+    },
+    "poster": {
+        "type": "string",
+        "source": "attribute",
+        "selector": "video",
+        "attribute": "poster"
+    },
+    "allowedVideoProviders": {
+        "type": "array",
+        "default": [
+            "youtube",
+            "vimeo",
+            "videopress",
+            "animoto",
+            "tiktok",
+            "wordpress-tv"
+        ]
+    },
+    "lock": {
+        "type": "object"
+    },
+    "metadata": {
+        "type": "object"
+    },
+    "align": {
+        "type": "string",
+        "enum": [
+            "left",
+            "center",
+            "right",
+            "wide",
+            "full",
+            ""
+        ]
+    },
+    "className": {
+        "type": "string"
+    },
+    "style": {
+        "type": "object"
+    },
+    "textColor": {
+        "type": "string"
+    },
+    "fontSize": {
+        "type": "string"
+    },
+    "fontFamily": {
+        "type": "string"
+    },
+    "borderColor": {
+        "type": "string"
+    },
+    "layout": {
+        "type": "object"
+    },
+    "anchor": {
+        "type": "string"
+    }
+}
+```
+
+### Example
+
+- None
+
+### Selectors
+
+- `filter`:
+```json
+{
+    "duotone": ".wp-block-cover > .wp-block-cover__image-background, .wp-block-cover > .wp-block-cover__video-background"
+}
+```
+
+### Style Handles
+
+- `wp-block-cover`
+- `wp-block-cover-theme`
+
+### Editor Style Handles
+
+- `wp-block-cover-editor`
+
+### Script Handles
+
+- None
+
+### Editor Script Handles
+
+- None
+
+### View Script Handles
+
+- None
+
+### View Style Handles
+
+- None
+
+### Custom Metadata
+
+- None
+
+## Details (`core/details`)
+
+- `title`: `Details`
+- `description`: `Hide and show additional content.`
+- `origin`: `core`
+- `category_bucket`: `core`
+- `currently_allowed`: `true`
+- `currently_blacklisted`: `false`
+- `is_dynamic`: `false`
+- `api_version`: `3`
+- `category`: `text`
+- `icon`: `null`
+- `render_callback`: `null`
+- `has_render_callback`: `false`
+
+### Keywords
+
+- `summary`
+- `toggle`
+- `disclosure`
+
+### Parent
+
+- None
+
+### Ancestor
+
+- None
+
+### Uses Context
+
+- None
+
+### Provides Context
+
+- None
+
+### Supports Summary
+
+- `anchor`: `true`
+- `align`: `true`
+- `spacing`: `true`
+- `color`: `true`
+- `typography`: `true`
+- `html`: `false`
+- `multiple`: `false`
+- `reusable`: `false`
+
+### Supports
+
+```json
+{
+    "__experimentalOnEnter": true,
+    "align": [
+        "wide",
+        "full"
+    ],
+    "anchor": true,
+    "color": {
+        "gradients": true,
+        "link": true,
+        "__experimentalDefaultControls": {
+            "background": true,
+            "text": true
+        }
+    },
+    "__experimentalBorder": {
+        "color": true,
+        "width": true,
+        "style": true
+    },
+    "html": false,
+    "spacing": {
+        "margin": true,
+        "padding": true,
+        "blockGap": true,
+        "__experimentalDefaultControls": {
+            "margin": false,
+            "padding": false
+        }
+    },
+    "typography": {
+        "fontSize": true,
+        "lineHeight": true,
+        "__experimentalFontFamily": true,
+        "__experimentalFontWeight": true,
+        "__experimentalFontStyle": true,
+        "__experimentalTextTransform": true,
+        "__experimentalTextDecoration": true,
+        "__experimentalLetterSpacing": true,
+        "__experimentalDefaultControls": {
+            "fontSize": true
+        }
+    },
+    "layout": {
+        "allowEditing": false
+    },
+    "interactivity": {
+        "clientNavigation": true
+    },
+    "allowedBlocks": true
+}
+```
+
+### Attributes
+
+```json
+{
+    "showContent": {
+        "type": "boolean",
+        "default": false
+    },
+    "summary": {
+        "type": "rich-text",
+        "source": "rich-text",
+        "selector": "summary",
+        "role": "content"
+    },
+    "name": {
+        "type": "string",
+        "source": "attribute",
+        "attribute": "name",
+        "selector": ".wp-block-details"
+    },
+    "placeholder": {
+        "type": "string"
+    },
+    "lock": {
+        "type": "object"
+    },
+    "metadata": {
+        "type": "object"
+    },
+    "align": {
+        "type": "string",
+        "enum": [
+            "left",
+            "center",
+            "right",
+            "wide",
+            "full",
+            ""
+        ]
+    },
+    "className": {
+        "type": "string"
+    },
+    "style": {
+        "type": "object"
+    },
+    "backgroundColor": {
+        "type": "string"
+    },
+    "textColor": {
+        "type": "string"
+    },
+    "gradient": {
+        "type": "string"
+    },
+    "fontSize": {
+        "type": "string"
+    },
+    "fontFamily": {
+        "type": "string"
+    },
+    "borderColor": {
+        "type": "string"
+    },
+    "layout": {
+        "type": "object"
+    },
+    "anchor": {
+        "type": "string"
+    }
+}
+```
+
+### Example
+
+- None
+
+### Selectors
+
+- None
+
+### Style Handles
+
+- `wp-block-details`
+- `wp-block-details-theme`
+
+### Editor Style Handles
+
+- `wp-block-details-editor`
+
+### Script Handles
+
+- None
+
+### Editor Script Handles
+
+- None
+
+### View Script Handles
+
+- None
+
+### View Style Handles
+
+- None
+
+### Custom Metadata
+
+- None
+
+## Embed (`core/embed`)
+
+- `title`: `Embed`
+- `description`: `Add a block that displays content pulled from other sites, like Twitter or YouTube.`
+- `origin`: `core`
+- `category_bucket`: `core`
+- `currently_allowed`: `true`
+- `currently_blacklisted`: `false`
+- `is_dynamic`: `false`
+- `api_version`: `3`
+- `category`: `embed`
+- `icon`: `null`
+- `render_callback`: `null`
+- `has_render_callback`: `false`
+
+### Keywords
+
+- None
+
+### Parent
+
+- None
+
+### Ancestor
+
+- None
+
+### Uses Context
+
+- None
+
+### Provides Context
+
+- None
+
+### Supports Summary
+
+- `anchor`: `true`
+- `align`: `true`
+- `spacing`: `true`
+- `color`: `false`
+- `typography`: `false`
+- `html`: `false`
+- `multiple`: `false`
+- `reusable`: `false`
+
+### Supports
+
+```json
+{
+    "anchor": true,
+    "align": true,
+    "spacing": {
+        "margin": true
+    },
+    "interactivity": {
+        "clientNavigation": true
+    }
+}
+```
+
+### Attributes
+
+```json
+{
+    "url": {
+        "type": "string",
+        "role": "content"
+    },
+    "caption": {
+        "type": "rich-text",
+        "source": "rich-text",
+        "selector": "figcaption",
+        "role": "content"
+    },
+    "type": {
+        "type": "string",
+        "role": "content"
+    },
+    "providerNameSlug": {
+        "type": "string",
+        "role": "content"
+    },
+    "allowResponsive": {
+        "type": "boolean",
+        "default": true
+    },
+    "responsive": {
+        "type": "boolean",
+        "default": false,
+        "role": "content"
+    },
+    "previewable": {
+        "type": "boolean",
+        "default": true,
+        "role": "content"
+    },
+    "lock": {
+        "type": "object"
+    },
+    "metadata": {
+        "type": "object"
+    },
+    "align": {
+        "type": "string",
+        "enum": [
+            "left",
+            "center",
+            "right",
+            "wide",
+            "full",
+            ""
+        ]
+    },
+    "className": {
+        "type": "string"
+    },
+    "style": {
+        "type": "object"
+    },
+    "anchor": {
+        "type": "string"
+    }
+}
+```
+
+### Example
+
+- None
+
+### Selectors
+
+- None
+
+### Style Handles
+
+- `wp-block-embed`
+- `wp-block-embed-theme`
+
+### Editor Style Handles
+
+- `wp-block-embed-editor`
+
+### Script Handles
+
+- None
+
+### Editor Script Handles
+
+- None
+
+### View Script Handles
+
+- None
+
+### View Style Handles
+
+- None
+
+### Custom Metadata
+
+- None
+
+## Classic (`core/freeform`)
+
+- `title`: `Classic`
+- `description`: `Use the classic WordPress editor.`
+- `origin`: `core`
+- `category_bucket`: `core`
+- `currently_allowed`: `true`
+- `currently_blacklisted`: `false`
+- `is_dynamic`: `false`
+- `api_version`: `3`
+- `category`: `text`
+- `icon`: `null`
+- `render_callback`: `null`
+- `has_render_callback`: `false`
+
+### Keywords
+
+- None
+
+### Parent
+
+- None
+
+### Ancestor
+
+- None
+
+### Uses Context
+
+- None
+
+### Provides Context
+
+- None
+
+### Supports Summary
+
+- `anchor`: `false`
+- `align`: `false`
+- `spacing`: `false`
+- `color`: `false`
+- `typography`: `false`
+- `html`: `false`
+- `multiple`: `false`
+- `reusable`: `false`
+
+### Supports
+
+```json
+{
+    "className": false,
+    "customClassName": false,
+    "lock": false,
+    "reusable": false,
+    "renaming": false,
+    "visibility": false,
+    "customCSS": false
+}
+```
+
+### Attributes
+
+```json
+{
+    "content": {
+        "type": "string",
+        "source": "raw"
+    },
+    "lock": {
+        "type": "object"
+    },
+    "metadata": {
+        "type": "object"
+    }
+}
+```
+
+### Example
+
+- None
+
+### Selectors
+
+- None
+
+### Style Handles
+
+- `wp-block-freeform`
+- `wp-block-freeform-theme`
+
+### Editor Style Handles
+
+- `wp-block-freeform-editor`
+
+### Script Handles
+
+- None
+
+### Editor Script Handles
+
+- None
+
+### View Script Handles
+
+- None
+
+### View Style Handles
+
+- None
+
+### Custom Metadata
+
+- None
+
+## Gallery (`core/gallery`)
+
+- `title`: `Gallery`
+- `description`: `Display multiple images in a rich gallery.`
+- `origin`: `core`
+- `category_bucket`: `core`
+- `currently_allowed`: `true`
+- `currently_blacklisted`: `false`
+- `is_dynamic`: `true`
+- `api_version`: `3`
+- `category`: `media`
+- `icon`: `null`
+- `render_callback`: `block_core_gallery_render`
+- `has_render_callback`: `true`
+
+### Keywords
+
+- `images`
+- `photos`
+
+### Parent
+
+- None
+
+### Ancestor
+
+- None
+
+### Uses Context
+
+- `galleryId`
+- `postId`
+- `postType`
+
+### Provides Context
+
+- `allowResize`: `allowResize`
+- `imageCrop`: `imageCrop`
+- `fixedHeight`: `fixedHeight`
+- `navigationButtonType`: `navigationButtonType`
+
+### Supports Summary
+
+- `anchor`: `true`
+- `align`: `true`
+- `spacing`: `true`
+- `color`: `true`
+- `typography`: `false`
+- `html`: `false`
+- `multiple`: `false`
+- `reusable`: `false`
+
+### Supports
+
+```json
+{
+    "anchor": true,
+    "align": true,
+    "__experimentalBorder": {
+        "radius": true,
+        "color": true,
+        "width": true,
+        "style": true,
+        "__experimentalDefaultControls": {
+            "color": true,
+            "radius": true
+        }
+    },
+    "html": false,
+    "units": [
+        "px",
+        "em",
+        "rem",
+        "vh",
+        "vw"
+    ],
+    "spacing": {
+        "margin": true,
+        "padding": true,
+        "blockGap": {
+            "sides": [
+                "horizontal",
+                "vertical"
+            ],
+            "__experimentalDefault": "var( --wp--style--gallery-gap-default, var( --gallery-block--gutter-size, var( --wp--style--block-gap, 0.5em ) ) )"
+        },
+        "__experimentalDefaultControls": {
+            "blockGap": true,
+            "margin": false,
+            "padding": false
+        }
+    },
+    "color": {
+        "text": false,
+        "background": true,
+        "gradients": true
+    },
+    "layout": {
+        "allowSwitching": false,
+        "allowInheriting": false,
+        "allowEditing": false,
+        "default": {
+            "type": "flex"
+        }
+    },
+    "interactivity": {
+        "clientNavigation": true
+    },
+    "listView": true
+}
+```
+
+### Attributes
+
+```json
+{
+    "images": {
+        "type": "array",
+        "default": [],
+        "source": "query",
+        "selector": ".blocks-gallery-item",
+        "query": {
+            "url": {
+                "type": "string",
+                "source": "attribute",
+                "selector": "img",
+                "attribute": "src"
+            },
+            "fullUrl": {
+                "type": "string",
+                "source": "attribute",
+                "selector": "img",
+                "attribute": "data-full-url"
+            },
+            "link": {
+                "type": "string",
+                "source": "attribute",
+                "selector": "img",
+                "attribute": "data-link"
+            },
+            "alt": {
+                "type": "string",
+                "source": "attribute",
+                "selector": "img",
+                "attribute": "alt",
+                "default": ""
+            },
+            "id": {
+                "type": "string",
+                "source": "attribute",
+                "selector": "img",
+                "attribute": "data-id"
+            },
+            "caption": {
+                "type": "rich-text",
+                "source": "rich-text",
+                "selector": ".blocks-gallery-item__caption"
+            }
+        }
+    },
+    "ids": {
+        "type": "array",
+        "items": {
+            "type": "number"
+        },
+        "default": []
+    },
+    "dynamicContent": {
+        "type": "object"
+    },
+    "navigationButtonType": {
+        "type": "string",
+        "default": "icon",
+        "enum": [
+            "icon",
+            "text",
+            "both"
+        ]
+    },
+    "shortCodeTransforms": {
+        "type": "array",
+        "items": {
+            "type": "object"
+        },
+        "default": []
+    },
+    "columns": {
+        "type": "number",
+        "minimum": 1,
+        "maximum": 8
+    },
+    "caption": {
+        "type": "rich-text",
+        "source": "rich-text",
+        "selector": ".blocks-gallery-caption",
+        "role": "content"
+    },
+    "imageCrop": {
+        "type": "boolean",
+        "default": true
+    },
+    "randomOrder": {
+        "type": "boolean",
+        "default": false
+    },
+    "fixedHeight": {
+        "type": "boolean",
+        "default": true
+    },
+    "linkTarget": {
+        "type": "string"
+    },
+    "linkTo": {
+        "type": "string"
+    },
+    "sizeSlug": {
+        "type": "string",
+        "default": "large"
+    },
+    "allowResize": {
+        "type": "boolean",
+        "default": false
+    },
+    "aspectRatio": {
+        "type": "string",
+        "default": "auto"
+    },
+    "lock": {
+        "type": "object"
+    },
+    "metadata": {
+        "type": "object"
+    },
+    "align": {
+        "type": "string",
+        "enum": [
+            "left",
+            "center",
+            "right",
+            "wide",
+            "full",
+            ""
+        ]
+    },
+    "className": {
+        "type": "string"
+    },
+    "style": {
+        "type": "object"
+    },
+    "backgroundColor": {
+        "type": "string"
+    },
+    "gradient": {
+        "type": "string"
+    },
+    "borderColor": {
+        "type": "string"
+    },
+    "layout": {
+        "type": "object"
+    },
+    "anchor": {
+        "type": "string"
+    }
+}
+```
+
+### Example
+
+- None
+
+### Selectors
+
+- None
+
+### Style Handles
+
+- `wp-block-gallery`
+- `wp-block-gallery-theme`
+
+### Editor Style Handles
+
+- `wp-block-gallery-editor`
 
 ### Script Handles
 
@@ -3546,8 +3271,10 @@ It contains only the blocks currently marked as allowed by the theme block avail
     "background": {
         "backgroundImage": true,
         "backgroundSize": true,
+        "gradient": true,
         "__experimentalDefaultControls": {
-            "backgroundImage": true
+            "backgroundImage": true,
+            "gradient": true
         }
     },
     "color": {
@@ -3574,7 +3301,8 @@ It contains only the blocks currently marked as allowed by the theme block avail
         }
     },
     "dimensions": {
-        "minHeight": true
+        "minHeight": true,
+        "minWidth": true
     },
     "__experimentalBorder": {
         "color": true,
@@ -3680,6 +3408,9 @@ It contains only the blocks currently marked as allowed by the theme block avail
     },
     "ariaLabel": {
         "type": "string"
+    },
+    "anchor": {
+        "type": "string"
     }
 }
 ```
@@ -3694,11 +3425,220 @@ It contains only the blocks currently marked as allowed by the theme block avail
 
 ### Style Handles
 
-- None
+- `wp-block-group`
+- `wp-block-group-theme`
 
 ### Editor Style Handles
 
+- `wp-block-group-editor`
+
+### Script Handles
+
 - None
+
+### Editor Script Handles
+
+- None
+
+### View Script Handles
+
+- None
+
+### View Style Handles
+
+- None
+
+### Custom Metadata
+
+- None
+
+## Heading (`core/heading`)
+
+- `title`: `Heading`
+- `description`: `Introduce new sections and organize content to help visitors (and search engines) understand the structure of your content.`
+- `origin`: `core`
+- `category_bucket`: `core`
+- `currently_allowed`: `true`
+- `currently_blacklisted`: `false`
+- `is_dynamic`: `true`
+- `api_version`: `3`
+- `category`: `text`
+- `icon`: `null`
+- `render_callback`: `block_core_heading_render`
+- `has_render_callback`: `true`
+
+### Keywords
+
+- `title`
+- `subtitle`
+
+### Parent
+
+- None
+
+### Ancestor
+
+- None
+
+### Uses Context
+
+- None
+
+### Provides Context
+
+- None
+
+### Supports Summary
+
+- `anchor`: `true`
+- `align`: `true`
+- `spacing`: `true`
+- `color`: `true`
+- `typography`: `true`
+- `html`: `false`
+- `multiple`: `false`
+- `reusable`: `false`
+
+### Supports
+
+```json
+{
+    "align": [
+        "wide",
+        "full"
+    ],
+    "anchor": true,
+    "className": true,
+    "splitting": true,
+    "__experimentalBorder": {
+        "color": true,
+        "radius": true,
+        "style": true,
+        "width": true
+    },
+    "color": {
+        "gradients": true,
+        "link": true,
+        "__experimentalDefaultControls": {
+            "background": true,
+            "text": true
+        }
+    },
+    "spacing": {
+        "margin": true,
+        "padding": true,
+        "__experimentalDefaultControls": {
+            "margin": false,
+            "padding": false
+        }
+    },
+    "typography": {
+        "fontSize": true,
+        "lineHeight": true,
+        "textAlign": true,
+        "__experimentalFontFamily": true,
+        "__experimentalFontStyle": true,
+        "__experimentalFontWeight": true,
+        "__experimentalLetterSpacing": true,
+        "__experimentalTextTransform": true,
+        "__experimentalTextDecoration": true,
+        "__experimentalWritingMode": true,
+        "fitText": true,
+        "__experimentalDefaultControls": {
+            "fontSize": true
+        }
+    },
+    "__unstablePasteTextInline": true,
+    "__experimentalSlashInserter": true,
+    "interactivity": {
+        "clientNavigation": true
+    }
+}
+```
+
+### Attributes
+
+```json
+{
+    "content": {
+        "type": "rich-text",
+        "source": "rich-text",
+        "selector": "h1,h2,h3,h4,h5,h6",
+        "role": "content"
+    },
+    "level": {
+        "type": "number",
+        "default": 2
+    },
+    "levelOptions": {
+        "type": "array"
+    },
+    "placeholder": {
+        "type": "string"
+    },
+    "lock": {
+        "type": "object"
+    },
+    "metadata": {
+        "type": "object"
+    },
+    "align": {
+        "type": "string",
+        "enum": [
+            "left",
+            "center",
+            "right",
+            "wide",
+            "full",
+            ""
+        ]
+    },
+    "className": {
+        "type": "string"
+    },
+    "style": {
+        "type": "object"
+    },
+    "backgroundColor": {
+        "type": "string"
+    },
+    "textColor": {
+        "type": "string"
+    },
+    "gradient": {
+        "type": "string"
+    },
+    "fontSize": {
+        "type": "string"
+    },
+    "fontFamily": {
+        "type": "string"
+    },
+    "borderColor": {
+        "type": "string"
+    },
+    "anchor": {
+        "type": "string"
+    }
+}
+```
+
+### Example
+
+- None
+
+### Selectors
+
+- None
+
+### Style Handles
+
+- `wp-block-heading`
+- `wp-block-heading-theme`
+
+### Editor Style Handles
+
+- `wp-block-heading-editor`
 
 ### Script Handles
 
@@ -3763,7 +3703,7 @@ It contains only the blocks currently marked as allowed by the theme block avail
 
 ### Supports Summary
 
-- `anchor`: `false`
+- `anchor`: `true`
 - `align`: `false`
 - `spacing`: `false`
 - `color`: `false`
@@ -3776,6 +3716,7 @@ It contains only the blocks currently marked as allowed by the theme block avail
 
 ```json
 {
+    "anchor": true,
     "reusable": false,
     "html": false,
     "typography": {
@@ -3805,6 +3746,13 @@ It contains only the blocks currently marked as allowed by the theme block avail
         "type": "string",
         "role": "content"
     },
+    "opensInNewTab": {
+        "type": "boolean",
+        "default": false
+    },
+    "description": {
+        "type": "string"
+    },
     "lock": {
         "type": "object"
     },
@@ -3822,6 +3770,9 @@ It contains only the blocks currently marked as allowed by the theme block avail
     },
     "fontFamily": {
         "type": "string"
+    },
+    "anchor": {
+        "type": "string"
     }
 }
 ```
@@ -3836,11 +3787,597 @@ It contains only the blocks currently marked as allowed by the theme block avail
 
 ### Style Handles
 
-- None
+- `wp-block-home-link`
+- `wp-block-home-link-theme`
 
 ### Editor Style Handles
 
+- `wp-block-home-link-editor`
+
+### Script Handles
+
 - None
+
+### Editor Script Handles
+
+- None
+
+### View Script Handles
+
+- None
+
+### View Style Handles
+
+- None
+
+### Custom Metadata
+
+- None
+
+## Custom HTML (`core/html`)
+
+- `title`: `Custom HTML`
+- `description`: `Add custom HTML code and preview it as you edit.`
+- `origin`: `core`
+- `category_bucket`: `core`
+- `currently_allowed`: `true`
+- `currently_blacklisted`: `false`
+- `is_dynamic`: `false`
+- `api_version`: `3`
+- `category`: `widgets`
+- `icon`: `null`
+- `render_callback`: `null`
+- `has_render_callback`: `false`
+
+### Keywords
+
+- `embed`
+
+### Parent
+
+- None
+
+### Ancestor
+
+- None
+
+### Uses Context
+
+- None
+
+### Provides Context
+
+- None
+
+### Supports Summary
+
+- `anchor`: `false`
+- `align`: `false`
+- `spacing`: `false`
+- `color`: `false`
+- `typography`: `false`
+- `html`: `false`
+- `multiple`: `false`
+- `reusable`: `false`
+
+### Supports
+
+```json
+{
+    "customClassName": false,
+    "className": false,
+    "html": false,
+    "interactivity": {
+        "clientNavigation": true
+    },
+    "listView": true,
+    "customCSS": false,
+    "visibility": false
+}
+```
+
+### Attributes
+
+```json
+{
+    "content": {
+        "type": "string",
+        "role": "local"
+    },
+    "lock": {
+        "type": "object"
+    },
+    "metadata": {
+        "type": "object"
+    }
+}
+```
+
+### Example
+
+- None
+
+### Selectors
+
+- None
+
+### Style Handles
+
+- `wp-block-html`
+- `wp-block-html-theme`
+
+### Editor Style Handles
+
+- `wp-block-html-editor`
+
+### Script Handles
+
+- None
+
+### Editor Script Handles
+
+- None
+
+### View Script Handles
+
+- None
+
+### View Style Handles
+
+- None
+
+### Custom Metadata
+
+- None
+
+## Image (`core/image`)
+
+- `title`: `Image`
+- `description`: `Insert an image to make a visual statement.`
+- `origin`: `core`
+- `category_bucket`: `core`
+- `currently_allowed`: `true`
+- `currently_blacklisted`: `false`
+- `is_dynamic`: `true`
+- `api_version`: `3`
+- `category`: `media`
+- `icon`: `null`
+- `render_callback`: `render_block_core_image`
+- `has_render_callback`: `true`
+
+### Keywords
+
+- `img`
+- `photo`
+- `picture`
+
+### Parent
+
+- None
+
+### Ancestor
+
+- None
+
+### Uses Context
+
+- `allowResize`
+- `imageCrop`
+- `fixedHeight`
+- `navigationButtonType`
+- `postId`
+- `postType`
+- `queryId`
+- `galleryId`
+
+### Provides Context
+
+- None
+
+### Supports Summary
+
+- `anchor`: `true`
+- `align`: `true`
+- `spacing`: `true`
+- `color`: `true`
+- `typography`: `false`
+- `html`: `false`
+- `multiple`: `false`
+- `reusable`: `false`
+
+### Supports
+
+```json
+{
+    "interactivity": true,
+    "align": [
+        "left",
+        "center",
+        "right",
+        "wide",
+        "full"
+    ],
+    "anchor": true,
+    "color": {
+        "text": false,
+        "background": false
+    },
+    "filter": {
+        "duotone": true
+    },
+    "spacing": {
+        "margin": true
+    },
+    "__experimentalBorder": {
+        "color": true,
+        "radius": true,
+        "width": true,
+        "__experimentalSkipSerialization": true,
+        "__experimentalDefaultControls": {
+            "color": true,
+            "radius": true,
+            "width": true
+        }
+    },
+    "shadow": {
+        "__experimentalSkipSerialization": true
+    }
+}
+```
+
+### Attributes
+
+```json
+{
+    "blob": {
+        "type": "string",
+        "role": "local"
+    },
+    "url": {
+        "type": "string",
+        "source": "attribute",
+        "selector": "img",
+        "attribute": "src",
+        "role": "content"
+    },
+    "alt": {
+        "type": "string",
+        "source": "attribute",
+        "selector": "img",
+        "attribute": "alt",
+        "default": "",
+        "role": "content"
+    },
+    "caption": {
+        "type": "rich-text",
+        "source": "rich-text",
+        "selector": "figcaption",
+        "role": "content"
+    },
+    "lightbox": {
+        "type": "object",
+        "enabled": {
+            "type": "boolean"
+        }
+    },
+    "title": {
+        "type": "string",
+        "source": "attribute",
+        "selector": "img",
+        "attribute": "title",
+        "role": "content"
+    },
+    "href": {
+        "type": "string",
+        "source": "attribute",
+        "selector": "figure > a",
+        "attribute": "href",
+        "role": "content"
+    },
+    "rel": {
+        "type": "string",
+        "source": "attribute",
+        "selector": "figure > a",
+        "attribute": "rel"
+    },
+    "linkClass": {
+        "type": "string",
+        "source": "attribute",
+        "selector": "figure > a",
+        "attribute": "class"
+    },
+    "id": {
+        "type": "number",
+        "role": "content"
+    },
+    "width": {
+        "type": "string"
+    },
+    "height": {
+        "type": "string"
+    },
+    "aspectRatio": {
+        "type": "string"
+    },
+    "scale": {
+        "type": "string"
+    },
+    "focalPoint": {
+        "type": "object"
+    },
+    "sizeSlug": {
+        "type": "string"
+    },
+    "linkDestination": {
+        "type": "string"
+    },
+    "linkTarget": {
+        "type": "string",
+        "source": "attribute",
+        "selector": "figure > a",
+        "attribute": "target"
+    },
+    "isDecorative": {
+        "type": "boolean",
+        "default": false
+    },
+    "lock": {
+        "type": "object"
+    },
+    "metadata": {
+        "type": "object"
+    },
+    "align": {
+        "type": "string",
+        "enum": [
+            "left",
+            "center",
+            "right",
+            "wide",
+            "full",
+            ""
+        ]
+    },
+    "className": {
+        "type": "string"
+    },
+    "style": {
+        "type": "object"
+    },
+    "borderColor": {
+        "type": "string"
+    },
+    "anchor": {
+        "type": "string"
+    }
+}
+```
+
+### Example
+
+- None
+
+### Selectors
+
+- `dimensions`: `.wp-block-image img, .wp-block-image .components-placeholder`
+- `border`: `.wp-block-image img, .wp-block-image .wp-block-image__crop-area, .wp-block-image .components-placeholder`
+- `shadow`: `.wp-block-image img, .wp-block-image .wp-block-image__crop-area, .wp-block-image .components-placeholder`
+- `filter`:
+```json
+{
+    "duotone": ".wp-block-image img, .wp-block-image .components-placeholder"
+}
+```
+
+### Style Handles
+
+- `wp-block-image`
+- `wp-block-image-theme`
+
+### Editor Style Handles
+
+- `wp-block-image-editor`
+
+### Script Handles
+
+- None
+
+### Editor Script Handles
+
+- None
+
+### View Script Handles
+
+- None
+
+### View Style Handles
+
+- None
+
+### Custom Metadata
+
+- None
+
+## List (`core/list`)
+
+- `title`: `List`
+- `description`: `An organized collection of items displayed in a specific order.`
+- `origin`: `core`
+- `category_bucket`: `core`
+- `currently_allowed`: `true`
+- `currently_blacklisted`: `false`
+- `is_dynamic`: `true`
+- `api_version`: `3`
+- `category`: `text`
+- `icon`: `null`
+- `render_callback`: `block_core_list_render`
+- `has_render_callback`: `true`
+
+### Keywords
+
+- `bullet list`
+- `ordered list`
+- `numbered list`
+
+### Parent
+
+- None
+
+### Ancestor
+
+- None
+
+### Uses Context
+
+- None
+
+### Provides Context
+
+- None
+
+### Supports Summary
+
+- `anchor`: `true`
+- `align`: `false`
+- `spacing`: `true`
+- `color`: `true`
+- `typography`: `true`
+- `html`: `false`
+- `multiple`: `false`
+- `reusable`: `false`
+
+### Supports
+
+```json
+{
+    "anchor": true,
+    "html": false,
+    "__experimentalBorder": {
+        "color": true,
+        "radius": true,
+        "style": true,
+        "width": true
+    },
+    "typography": {
+        "fontSize": true,
+        "lineHeight": true,
+        "__experimentalFontFamily": true,
+        "__experimentalFontWeight": true,
+        "__experimentalFontStyle": true,
+        "__experimentalTextTransform": true,
+        "__experimentalTextDecoration": true,
+        "__experimentalLetterSpacing": true,
+        "__experimentalDefaultControls": {
+            "fontSize": true
+        }
+    },
+    "color": {
+        "gradients": true,
+        "link": true,
+        "__experimentalDefaultControls": {
+            "background": true,
+            "text": true
+        }
+    },
+    "spacing": {
+        "margin": true,
+        "padding": true,
+        "__experimentalDefaultControls": {
+            "margin": false,
+            "padding": false
+        }
+    },
+    "__unstablePasteTextInline": true,
+    "__experimentalOnMerge": true,
+    "__experimentalSlashInserter": true,
+    "interactivity": {
+        "clientNavigation": true
+    },
+    "listView": true
+}
+```
+
+### Attributes
+
+```json
+{
+    "ordered": {
+        "type": "boolean",
+        "default": false,
+        "role": "content"
+    },
+    "values": {
+        "type": "string",
+        "source": "html",
+        "selector": "ol,ul",
+        "multiline": "li",
+        "default": "",
+        "role": "content"
+    },
+    "type": {
+        "type": "string"
+    },
+    "start": {
+        "type": "number"
+    },
+    "reversed": {
+        "type": "boolean"
+    },
+    "placeholder": {
+        "type": "string"
+    },
+    "lock": {
+        "type": "object"
+    },
+    "metadata": {
+        "type": "object"
+    },
+    "className": {
+        "type": "string"
+    },
+    "style": {
+        "type": "object"
+    },
+    "backgroundColor": {
+        "type": "string"
+    },
+    "textColor": {
+        "type": "string"
+    },
+    "gradient": {
+        "type": "string"
+    },
+    "fontSize": {
+        "type": "string"
+    },
+    "fontFamily": {
+        "type": "string"
+    },
+    "borderColor": {
+        "type": "string"
+    },
+    "anchor": {
+        "type": "string"
+    }
+}
+```
+
+### Example
+
+- None
+
+### Selectors
+
+- `border`: `.wp-block-list:not(.wp-block-list .wp-block-list)`
+
+### Style Handles
+
+- `wp-block-list`
+- `wp-block-list-theme`
+
+### Editor Style Handles
+
+- `wp-block-list-editor`
 
 ### Script Handles
 
@@ -3913,6 +4450,7 @@ It contains only the blocks currently marked as allowed by the theme block avail
 ```json
 {
     "anchor": true,
+    "html": false,
     "className": false,
     "splitting": true,
     "__experimentalBorder": {
@@ -3998,6 +4536,9 @@ It contains only the blocks currently marked as allowed by the theme block avail
     },
     "borderColor": {
         "type": "string"
+    },
+    "anchor": {
+        "type": "string"
     }
 }
 ```
@@ -4013,11 +4554,692 @@ It contains only the blocks currently marked as allowed by the theme block avail
 
 ### Style Handles
 
-- None
+- `wp-block-list-item`
+- `wp-block-list-item-theme`
 
 ### Editor Style Handles
 
+- `wp-block-list-item-editor`
+
+### Script Handles
+
 - None
+
+### Editor Script Handles
+
+- None
+
+### View Script Handles
+
+- None
+
+### View Style Handles
+
+- None
+
+### Custom Metadata
+
+- None
+
+## Math (`core/math`)
+
+- `title`: `Math`
+- `description`: `Display mathematical notation using LaTeX.`
+- `origin`: `core`
+- `category_bucket`: `core`
+- `currently_allowed`: `true`
+- `currently_blacklisted`: `false`
+- `is_dynamic`: `false`
+- `api_version`: `3`
+- `category`: `text`
+- `icon`: `null`
+- `render_callback`: `null`
+- `has_render_callback`: `false`
+
+### Keywords
+
+- `equation`
+- `formula`
+- `latex`
+- `mathematics`
+
+### Parent
+
+- None
+
+### Ancestor
+
+- None
+
+### Uses Context
+
+- None
+
+### Provides Context
+
+- None
+
+### Supports Summary
+
+- `anchor`: `true`
+- `align`: `false`
+- `spacing`: `true`
+- `color`: `true`
+- `typography`: `true`
+- `html`: `false`
+- `multiple`: `false`
+- `reusable`: `false`
+
+### Supports
+
+```json
+{
+    "anchor": true,
+    "html": false,
+    "__experimentalBorder": {
+        "color": true,
+        "radius": true,
+        "style": true,
+        "width": true
+    },
+    "color": {
+        "gradients": true,
+        "__experimentalDefaultControls": {
+            "background": true,
+            "text": true
+        }
+    },
+    "spacing": {
+        "margin": true,
+        "padding": true,
+        "__experimentalDefaultControls": {
+            "margin": false,
+            "padding": false
+        }
+    },
+    "typography": {
+        "fontSize": true,
+        "__experimentalDefaultControls": {
+            "fontSize": true
+        }
+    }
+}
+```
+
+### Attributes
+
+```json
+{
+    "latex": {
+        "type": "string",
+        "role": "content"
+    },
+    "mathML": {
+        "type": "string",
+        "source": "html",
+        "selector": "math"
+    },
+    "lock": {
+        "type": "object"
+    },
+    "metadata": {
+        "type": "object"
+    },
+    "className": {
+        "type": "string"
+    },
+    "style": {
+        "type": "object"
+    },
+    "backgroundColor": {
+        "type": "string"
+    },
+    "textColor": {
+        "type": "string"
+    },
+    "gradient": {
+        "type": "string"
+    },
+    "fontSize": {
+        "type": "string"
+    },
+    "borderColor": {
+        "type": "string"
+    },
+    "anchor": {
+        "type": "string"
+    }
+}
+```
+
+### Example
+
+- None
+
+### Selectors
+
+- None
+
+### Style Handles
+
+- `wp-block-math`
+- `wp-block-math-theme`
+
+### Editor Style Handles
+
+- `wp-block-math-editor`
+
+### Script Handles
+
+- None
+
+### Editor Script Handles
+
+- None
+
+### View Script Handles
+
+- None
+
+### View Style Handles
+
+- None
+
+### Custom Metadata
+
+- None
+
+## Media & Text (`core/media-text`)
+
+- `title`: `Media & Text`
+- `description`: `Set media and words side-by-side for a richer layout.`
+- `origin`: `core`
+- `category_bucket`: `core`
+- `currently_allowed`: `true`
+- `currently_blacklisted`: `false`
+- `is_dynamic`: `true`
+- `api_version`: `3`
+- `category`: `media`
+- `icon`: `null`
+- `render_callback`: `render_block_core_media_text`
+- `has_render_callback`: `true`
+
+### Keywords
+
+- `image`
+- `video`
+
+### Parent
+
+- None
+
+### Ancestor
+
+- None
+
+### Uses Context
+
+- `postId`
+- `postType`
+
+### Provides Context
+
+- None
+
+### Supports Summary
+
+- `anchor`: `true`
+- `align`: `true`
+- `spacing`: `true`
+- `color`: `true`
+- `typography`: `true`
+- `html`: `false`
+- `multiple`: `false`
+- `reusable`: `false`
+
+### Supports
+
+```json
+{
+    "anchor": true,
+    "align": [
+        "wide",
+        "full"
+    ],
+    "html": false,
+    "__experimentalBorder": {
+        "color": true,
+        "radius": true,
+        "style": true,
+        "width": true,
+        "__experimentalDefaultControls": {
+            "color": true,
+            "radius": true,
+            "style": true,
+            "width": true
+        }
+    },
+    "color": {
+        "gradients": true,
+        "heading": true,
+        "link": true,
+        "__experimentalDefaultControls": {
+            "background": true,
+            "text": true
+        }
+    },
+    "spacing": {
+        "margin": true,
+        "padding": true
+    },
+    "typography": {
+        "fontSize": true,
+        "lineHeight": true,
+        "__experimentalFontFamily": true,
+        "__experimentalFontWeight": true,
+        "__experimentalFontStyle": true,
+        "__experimentalTextTransform": true,
+        "__experimentalTextDecoration": true,
+        "__experimentalLetterSpacing": true,
+        "__experimentalDefaultControls": {
+            "fontSize": true
+        }
+    },
+    "interactivity": {
+        "clientNavigation": true
+    },
+    "allowedBlocks": true
+}
+```
+
+### Attributes
+
+```json
+{
+    "align": {
+        "type": "string",
+        "default": "none"
+    },
+    "mediaAlt": {
+        "type": "string",
+        "source": "attribute",
+        "selector": "figure img",
+        "attribute": "alt",
+        "default": "",
+        "role": "content"
+    },
+    "mediaPosition": {
+        "type": "string",
+        "default": "left"
+    },
+    "mediaId": {
+        "type": "number",
+        "role": "content"
+    },
+    "mediaUrl": {
+        "type": "string",
+        "source": "attribute",
+        "selector": "figure video,figure img",
+        "attribute": "src",
+        "role": "content"
+    },
+    "mediaLink": {
+        "type": "string"
+    },
+    "linkDestination": {
+        "type": "string"
+    },
+    "linkTarget": {
+        "type": "string",
+        "source": "attribute",
+        "selector": "figure a",
+        "attribute": "target"
+    },
+    "href": {
+        "type": "string",
+        "source": "attribute",
+        "selector": "figure a",
+        "attribute": "href",
+        "role": "content"
+    },
+    "rel": {
+        "type": "string",
+        "source": "attribute",
+        "selector": "figure a",
+        "attribute": "rel"
+    },
+    "linkClass": {
+        "type": "string",
+        "source": "attribute",
+        "selector": "figure a",
+        "attribute": "class"
+    },
+    "mediaType": {
+        "type": "string",
+        "role": "content"
+    },
+    "mediaWidth": {
+        "type": "number",
+        "default": 50
+    },
+    "mediaSizeSlug": {
+        "type": "string"
+    },
+    "isStackedOnMobile": {
+        "type": "boolean",
+        "default": true
+    },
+    "verticalAlignment": {
+        "type": "string"
+    },
+    "imageFill": {
+        "type": "boolean"
+    },
+    "focalPoint": {
+        "type": "object"
+    },
+    "useFeaturedImage": {
+        "type": "boolean",
+        "default": false
+    },
+    "lock": {
+        "type": "object"
+    },
+    "metadata": {
+        "type": "object"
+    },
+    "className": {
+        "type": "string"
+    },
+    "style": {
+        "type": "object"
+    },
+    "backgroundColor": {
+        "type": "string"
+    },
+    "textColor": {
+        "type": "string"
+    },
+    "gradient": {
+        "type": "string"
+    },
+    "fontSize": {
+        "type": "string"
+    },
+    "fontFamily": {
+        "type": "string"
+    },
+    "borderColor": {
+        "type": "string"
+    },
+    "anchor": {
+        "type": "string"
+    }
+}
+```
+
+### Example
+
+- None
+
+### Selectors
+
+- None
+
+### Style Handles
+
+- `wp-block-media-text`
+- `wp-block-media-text-theme`
+
+### Editor Style Handles
+
+- `wp-block-media-text-editor`
+
+### Script Handles
+
+- None
+
+### Editor Script Handles
+
+- None
+
+### View Script Handles
+
+- None
+
+### View Style Handles
+
+- None
+
+### Custom Metadata
+
+- None
+
+## Unsupported (`core/missing`)
+
+- `title`: `Unsupported`
+- `description`: `Your site doesn’t include support for this block.`
+- `origin`: `core`
+- `category_bucket`: `core`
+- `currently_allowed`: `true`
+- `currently_blacklisted`: `false`
+- `is_dynamic`: `false`
+- `api_version`: `3`
+- `category`: `text`
+- `icon`: `null`
+- `render_callback`: `null`
+- `has_render_callback`: `false`
+
+### Keywords
+
+- None
+
+### Parent
+
+- None
+
+### Ancestor
+
+- None
+
+### Uses Context
+
+- None
+
+### Provides Context
+
+- None
+
+### Supports Summary
+
+- `anchor`: `false`
+- `align`: `false`
+- `spacing`: `false`
+- `color`: `false`
+- `typography`: `false`
+- `html`: `false`
+- `multiple`: `false`
+- `reusable`: `false`
+
+### Supports
+
+```json
+{
+    "className": false,
+    "customClassName": false,
+    "inserter": false,
+    "html": false,
+    "lock": false,
+    "reusable": false,
+    "renaming": false,
+    "visibility": false,
+    "interactivity": {
+        "clientNavigation": true
+    },
+    "customCSS": false
+}
+```
+
+### Attributes
+
+```json
+{
+    "originalName": {
+        "type": "string"
+    },
+    "originalUndelimitedContent": {
+        "type": "string"
+    },
+    "originalContent": {
+        "type": "string",
+        "source": "raw"
+    },
+    "lock": {
+        "type": "object"
+    },
+    "metadata": {
+        "type": "object"
+    }
+}
+```
+
+### Example
+
+- None
+
+### Selectors
+
+- None
+
+### Style Handles
+
+- `wp-block-missing`
+- `wp-block-missing-theme`
+
+### Editor Style Handles
+
+- `wp-block-missing-editor`
+
+### Script Handles
+
+- None
+
+### Editor Script Handles
+
+- None
+
+### View Script Handles
+
+- None
+
+### View Style Handles
+
+- None
+
+### Custom Metadata
+
+- None
+
+## More (`core/more`)
+
+- `title`: `More`
+- `description`: `Content before this block will be shown in the excerpt on your archives page.`
+- `origin`: `core`
+- `category_bucket`: `core`
+- `currently_allowed`: `true`
+- `currently_blacklisted`: `false`
+- `is_dynamic`: `false`
+- `api_version`: `3`
+- `category`: `design`
+- `icon`: `null`
+- `render_callback`: `null`
+- `has_render_callback`: `false`
+
+### Keywords
+
+- `read more`
+
+### Parent
+
+- None
+
+### Ancestor
+
+- None
+
+### Uses Context
+
+- None
+
+### Provides Context
+
+- None
+
+### Supports Summary
+
+- `anchor`: `false`
+- `align`: `false`
+- `spacing`: `false`
+- `color`: `false`
+- `typography`: `false`
+- `html`: `false`
+- `multiple`: `false`
+- `reusable`: `false`
+
+### Supports
+
+```json
+{
+    "customClassName": false,
+    "className": false,
+    "html": false,
+    "multiple": false,
+    "visibility": false,
+    "interactivity": {
+        "clientNavigation": true
+    },
+    "customCSS": false
+}
+```
+
+### Attributes
+
+```json
+{
+    "customText": {
+        "type": "string",
+        "default": "",
+        "role": "content"
+    },
+    "noTeaser": {
+        "type": "boolean",
+        "default": false
+    },
+    "lock": {
+        "type": "object"
+    },
+    "metadata": {
+        "type": "object"
+    }
+}
+```
+
+### Example
+
+- None
+
+### Selectors
+
+- None
+
+### Style Handles
+
+- `wp-block-more`
+- `wp-block-more-theme`
+
+### Editor Style Handles
+
+- `wp-block-more-editor`
 
 ### Script Handles
 
@@ -4085,13 +5307,14 @@ It contains only the blocks currently marked as allowed by the theme block avail
 - `fontSize`: `fontSize`
 - `customFontSize`: `customFontSize`
 - `showSubmenuIcon`: `showSubmenuIcon`
+- `submenuVisibility`: `submenuVisibility`
 - `openSubmenusOnClick`: `openSubmenusOnClick`
 - `style`: `style`
 - `maxNestingLevel`: `maxNestingLevel`
 
 ### Supports Summary
 
-- `anchor`: `false`
+- `anchor`: `true`
 - `align`: `true`
 - `spacing`: `true`
 - `color`: `false`
@@ -4104,11 +5327,13 @@ It contains only the blocks currently marked as allowed by the theme block avail
 
 ```json
 {
+    "anchor": true,
     "align": [
         "wide",
         "full"
     ],
     "ariaLabel": true,
+    "contentRole": true,
     "html": false,
     "inserter": true,
     "typography": {
@@ -4150,8 +5375,7 @@ It contains only the blocks currently marked as allowed by the theme block avail
         }
     },
     "interactivity": true,
-    "renaming": false,
-    "contentRole": true
+    "renaming": false
 }
 ```
 
@@ -4184,13 +5408,21 @@ It contains only the blocks currently marked as allowed by the theme block avail
         "type": "boolean",
         "default": true
     },
-    "openSubmenusOnClick": {
-        "type": "boolean",
-        "default": false
+    "submenuVisibility": {
+        "type": "string",
+        "enum": [
+            "hover",
+            "click",
+            "always"
+        ],
+        "default": "hover"
     },
     "overlayMenu": {
         "type": "string",
         "default": "mobile"
+    },
+    "overlay": {
+        "type": "string"
     },
     "icon": {
         "type": "string",
@@ -4265,6 +5497,9 @@ It contains only the blocks currently marked as allowed by the theme block avail
     },
     "ariaLabel": {
         "type": "string"
+    },
+    "anchor": {
+        "type": "string"
     }
 }
 ```
@@ -4279,11 +5514,12 @@ It contains only the blocks currently marked as allowed by the theme block avail
 
 ### Style Handles
 
-- None
+- `wp-block-navigation`
+- `wp-block-navigation-theme`
 
 ### Editor Style Handles
 
-- None
+- `wp-block-navigation-editor`
 
 ### Script Handles
 
@@ -4354,7 +5590,7 @@ It contains only the blocks currently marked as allowed by the theme block avail
 
 ### Supports Summary
 
-- `anchor`: `false`
+- `anchor`: `true`
 - `align`: `false`
 - `spacing`: `false`
 - `color`: `false`
@@ -4367,6 +5603,7 @@ It contains only the blocks currently marked as allowed by the theme block avail
 
 ```json
 {
+    "anchor": true,
     "reusable": false,
     "html": false,
     "__experimentalSlashInserter": true,
@@ -4415,7 +5652,8 @@ It contains only the blocks currently marked as allowed by the theme block avail
         "default": false
     },
     "url": {
-        "type": "string"
+        "type": "string",
+        "role": "content"
     },
     "title": {
         "type": "string"
@@ -4443,6 +5681,9 @@ It contains only the blocks currently marked as allowed by the theme block avail
     },
     "fontFamily": {
         "type": "string"
+    },
+    "anchor": {
+        "type": "string"
     }
 }
 ```
@@ -4453,15 +5694,21 @@ It contains only the blocks currently marked as allowed by the theme block avail
 
 ### Selectors
 
-- None
+- `states`:
+```json
+{
+    "-current": ".wp-block-navigation .current-menu-item"
+}
+```
 
 ### Style Handles
 
-- None
+- `wp-block-navigation-link`
+- `wp-block-navigation-link-theme`
 
 ### Editor Style Handles
 
-- None
+- `wp-block-navigation-link-editor`
 
 ### Script Handles
 
@@ -4525,15 +5772,16 @@ It contains only the blocks currently marked as allowed by the theme block avail
 - `showSubmenuIcon`
 - `maxNestingLevel`
 - `openSubmenusOnClick`
+- `submenuVisibility`
 - `style`
 
 ### Provides Context
 
-- None
+- `core/isInsideSubmenu`: `isParentSubmenu`
 
 ### Supports Summary
 
-- `anchor`: `false`
+- `anchor`: `true`
 - `align`: `false`
 - `spacing`: `false`
 - `color`: `false`
@@ -4546,6 +5794,7 @@ It contains only the blocks currently marked as allowed by the theme block avail
 
 ```json
 {
+    "anchor": true,
     "reusable": false,
     "html": false,
     "typography": {
@@ -4592,7 +5841,8 @@ It contains only the blocks currently marked as allowed by the theme block avail
         "default": false
     },
     "url": {
-        "type": "string"
+        "type": "string",
+        "role": "content"
     },
     "title": {
         "type": "string"
@@ -4602,6 +5852,10 @@ It contains only the blocks currently marked as allowed by the theme block avail
     },
     "isTopLevelItem": {
         "type": "boolean"
+    },
+    "isParentSubmenu": {
+        "type": "boolean",
+        "default": true
     },
     "lock": {
         "type": "object"
@@ -4620,6 +5874,9 @@ It contains only the blocks currently marked as allowed by the theme block avail
     },
     "fontFamily": {
         "type": "string"
+    },
+    "anchor": {
+        "type": "string"
     }
 }
 ```
@@ -4634,11 +5891,124 @@ It contains only the blocks currently marked as allowed by the theme block avail
 
 ### Style Handles
 
-- None
+- `wp-block-navigation-submenu`
+- `wp-block-navigation-submenu-theme`
 
 ### Editor Style Handles
 
+- `wp-block-navigation-submenu-editor`
+
+### Script Handles
+
 - None
+
+### Editor Script Handles
+
+- None
+
+### View Script Handles
+
+- None
+
+### View Style Handles
+
+- None
+
+### Custom Metadata
+
+- None
+
+## Page Break (`core/nextpage`)
+
+- `title`: `Page Break`
+- `description`: `Separate your content into a multi-page experience.`
+- `origin`: `core`
+- `category_bucket`: `core`
+- `currently_allowed`: `true`
+- `currently_blacklisted`: `false`
+- `is_dynamic`: `false`
+- `api_version`: `3`
+- `category`: `design`
+- `icon`: `null`
+- `render_callback`: `null`
+- `has_render_callback`: `false`
+
+### Keywords
+
+- `next page`
+- `pagination`
+
+### Parent
+
+- `core/post-content`
+
+### Ancestor
+
+- None
+
+### Uses Context
+
+- None
+
+### Provides Context
+
+- None
+
+### Supports Summary
+
+- `anchor`: `false`
+- `align`: `false`
+- `spacing`: `false`
+- `color`: `false`
+- `typography`: `false`
+- `html`: `false`
+- `multiple`: `false`
+- `reusable`: `false`
+
+### Supports
+
+```json
+{
+    "customClassName": false,
+    "className": false,
+    "html": false,
+    "visibility": false,
+    "interactivity": {
+        "clientNavigation": true
+    },
+    "customCSS": false
+}
+```
+
+### Attributes
+
+```json
+{
+    "lock": {
+        "type": "object"
+    },
+    "metadata": {
+        "type": "object"
+    }
+}
+```
+
+### Example
+
+- None
+
+### Selectors
+
+- None
+
+### Style Handles
+
+- `wp-block-nextpage`
+- `wp-block-nextpage-theme`
+
+### Editor Style Handles
+
+- `wp-block-nextpage-editor`
 
 ### Script Handles
 
@@ -4704,6 +6074,7 @@ It contains only the blocks currently marked as allowed by the theme block avail
 - `showSubmenuIcon`
 - `style`
 - `openSubmenusOnClick`
+- `submenuVisibility`
 
 ### Provides Context
 
@@ -4711,7 +6082,7 @@ It contains only the blocks currently marked as allowed by the theme block avail
 
 ### Supports Summary
 
-- `anchor`: `false`
+- `anchor`: `true`
 - `align`: `false`
 - `spacing`: `false`
 - `color`: `false`
@@ -4724,6 +6095,7 @@ It contains only the blocks currently marked as allowed by the theme block avail
 
 ```json
 {
+    "anchor": true,
     "reusable": false,
     "html": false,
     "lock": false,
@@ -4762,6 +6134,12 @@ It contains only the blocks currently marked as allowed by the theme block avail
     },
     "className": {
         "type": "string"
+    },
+    "anchor": {
+        "type": "string"
+    },
+    "style": {
+        "type": "object"
     }
 }
 ```
@@ -4776,11 +6154,12 @@ It contains only the blocks currently marked as allowed by the theme block avail
 
 ### Style Handles
 
-- None
+- `wp-block-page-list-item`
+- `wp-block-page-list-item-theme`
 
 ### Editor Style Handles
 
-- None
+- `wp-block-page-list-item-editor`
 
 ### Script Handles
 
@@ -4840,7 +6219,7 @@ It contains only the blocks currently marked as allowed by the theme block avail
 ### Supports Summary
 
 - `anchor`: `true`
-- `align`: `false`
+- `align`: `true`
 - `spacing`: `true`
 - `color`: `true`
 - `typography`: `true`
@@ -4852,6 +6231,10 @@ It contains only the blocks currently marked as allowed by the theme block avail
 
 ```json
 {
+    "align": [
+        "wide",
+        "full"
+    ],
     "splitting": true,
     "anchor": true,
     "className": false,
@@ -4880,6 +6263,9 @@ It contains only the blocks currently marked as allowed by the theme block avail
     "typography": {
         "fontSize": true,
         "lineHeight": true,
+        "textAlign": true,
+        "textColumns": true,
+        "textIndent": true,
         "__experimentalFontFamily": true,
         "__experimentalTextDecoration": true,
         "__experimentalFontStyle": true,
@@ -4904,9 +6290,6 @@ It contains only the blocks currently marked as allowed by the theme block avail
 
 ```json
 {
-    "align": {
-        "type": "string"
-    },
     "content": {
         "type": "rich-text",
         "source": "rich-text",
@@ -4926,6 +6309,200 @@ It contains only the blocks currently marked as allowed by the theme block avail
             "ltr",
             "rtl"
         ]
+    },
+    "lock": {
+        "type": "object"
+    },
+    "metadata": {
+        "type": "object"
+    },
+    "align": {
+        "type": "string",
+        "enum": [
+            "left",
+            "center",
+            "right",
+            "wide",
+            "full",
+            ""
+        ]
+    },
+    "className": {
+        "type": "string"
+    },
+    "style": {
+        "type": "object"
+    },
+    "backgroundColor": {
+        "type": "string"
+    },
+    "textColor": {
+        "type": "string"
+    },
+    "gradient": {
+        "type": "string"
+    },
+    "fontSize": {
+        "type": "string"
+    },
+    "fontFamily": {
+        "type": "string"
+    },
+    "borderColor": {
+        "type": "string"
+    },
+    "anchor": {
+        "type": "string"
+    }
+}
+```
+
+### Example
+
+- None
+
+### Selectors
+
+- `root`: `p`
+- `typography`:
+```json
+{
+    "textIndent": ".wp-block-paragraph + .wp-block-paragraph"
+}
+```
+
+### Style Handles
+
+- `wp-block-paragraph`
+- `wp-block-paragraph-theme`
+
+### Editor Style Handles
+
+- `wp-block-paragraph-editor`
+
+### Script Handles
+
+- None
+
+### Editor Script Handles
+
+- None
+
+### View Script Handles
+
+- None
+
+### View Style Handles
+
+- None
+
+### Custom Metadata
+
+- None
+
+## Preformatted (`core/preformatted`)
+
+- `title`: `Preformatted`
+- `description`: `Add text that respects your spacing and tabs, and also allows styling.`
+- `origin`: `core`
+- `category_bucket`: `core`
+- `currently_allowed`: `true`
+- `currently_blacklisted`: `false`
+- `is_dynamic`: `false`
+- `api_version`: `3`
+- `category`: `text`
+- `icon`: `null`
+- `render_callback`: `null`
+- `has_render_callback`: `false`
+
+### Keywords
+
+- None
+
+### Parent
+
+- None
+
+### Ancestor
+
+- None
+
+### Uses Context
+
+- None
+
+### Provides Context
+
+- None
+
+### Supports Summary
+
+- `anchor`: `true`
+- `align`: `false`
+- `spacing`: `true`
+- `color`: `true`
+- `typography`: `true`
+- `html`: `false`
+- `multiple`: `false`
+- `reusable`: `false`
+
+### Supports
+
+```json
+{
+    "anchor": true,
+    "color": {
+        "gradients": true,
+        "__experimentalDefaultControls": {
+            "background": true,
+            "text": true
+        }
+    },
+    "spacing": {
+        "padding": true,
+        "margin": true
+    },
+    "typography": {
+        "fontSize": true,
+        "lineHeight": true,
+        "__experimentalFontFamily": true,
+        "__experimentalFontWeight": true,
+        "__experimentalFontStyle": true,
+        "__experimentalTextTransform": true,
+        "__experimentalTextDecoration": true,
+        "__experimentalLetterSpacing": true,
+        "__experimentalDefaultControls": {
+            "fontSize": true
+        }
+    },
+    "interactivity": {
+        "clientNavigation": true
+    },
+    "__experimentalBorder": {
+        "radius": true,
+        "color": true,
+        "width": true,
+        "style": true,
+        "__experimentalDefaultControls": {
+            "radius": true,
+            "color": true,
+            "width": true,
+            "style": true
+        }
+    }
+}
+```
+
+### Attributes
+
+```json
+{
+    "content": {
+        "type": "rich-text",
+        "source": "rich-text",
+        "selector": "pre",
+        "__unstablePreserveWhiteSpace": true,
+        "role": "content"
     },
     "lock": {
         "type": "object"
@@ -4956,6 +6533,9 @@ It contains only the blocks currently marked as allowed by the theme block avail
     },
     "borderColor": {
         "type": "string"
+    },
+    "anchor": {
+        "type": "string"
     }
 }
 ```
@@ -4970,11 +6550,691 @@ It contains only the blocks currently marked as allowed by the theme block avail
 
 ### Style Handles
 
-- None
+- `wp-block-preformatted`
+- `wp-block-preformatted-theme`
 
 ### Editor Style Handles
 
+- `wp-block-preformatted-editor`
+
+### Script Handles
+
 - None
+
+### Editor Script Handles
+
+- None
+
+### View Script Handles
+
+- None
+
+### View Style Handles
+
+- None
+
+### Custom Metadata
+
+- None
+
+## Pullquote (`core/pullquote`)
+
+- `title`: `Pullquote`
+- `description`: `Give special visual emphasis to a quote from your text.`
+- `origin`: `core`
+- `category_bucket`: `core`
+- `currently_allowed`: `true`
+- `currently_blacklisted`: `false`
+- `is_dynamic`: `false`
+- `api_version`: `3`
+- `category`: `text`
+- `icon`: `null`
+- `render_callback`: `null`
+- `has_render_callback`: `false`
+
+### Keywords
+
+- None
+
+### Parent
+
+- None
+
+### Ancestor
+
+- None
+
+### Uses Context
+
+- None
+
+### Provides Context
+
+- None
+
+### Supports Summary
+
+- `anchor`: `true`
+- `align`: `true`
+- `spacing`: `true`
+- `color`: `true`
+- `typography`: `true`
+- `html`: `false`
+- `multiple`: `false`
+- `reusable`: `false`
+
+### Supports
+
+```json
+{
+    "anchor": true,
+    "align": [
+        "left",
+        "right",
+        "wide",
+        "full"
+    ],
+    "background": {
+        "backgroundImage": true,
+        "backgroundSize": true,
+        "gradient": true,
+        "__experimentalDefaultControls": {
+            "backgroundImage": true,
+            "gradient": true
+        }
+    },
+    "color": {
+        "gradients": true,
+        "background": true,
+        "link": true,
+        "__experimentalDefaultControls": {
+            "background": true,
+            "text": true
+        }
+    },
+    "dimensions": {
+        "minHeight": true
+    },
+    "spacing": {
+        "margin": true,
+        "padding": true
+    },
+    "typography": {
+        "fontSize": true,
+        "lineHeight": true,
+        "textAlign": true,
+        "__experimentalFontFamily": true,
+        "__experimentalFontWeight": true,
+        "__experimentalFontStyle": true,
+        "__experimentalTextTransform": true,
+        "__experimentalTextDecoration": true,
+        "__experimentalLetterSpacing": true,
+        "__experimentalDefaultControls": {
+            "fontSize": true
+        }
+    },
+    "__experimentalBorder": {
+        "color": true,
+        "radius": true,
+        "style": true,
+        "width": true,
+        "__experimentalDefaultControls": {
+            "color": true,
+            "radius": true,
+            "style": true,
+            "width": true
+        }
+    },
+    "__experimentalStyle": {
+        "typography": {
+            "fontSize": "1.5em",
+            "lineHeight": "1.6"
+        }
+    },
+    "interactivity": {
+        "clientNavigation": true
+    }
+}
+```
+
+### Attributes
+
+```json
+{
+    "value": {
+        "type": "rich-text",
+        "source": "rich-text",
+        "selector": "p",
+        "role": "content"
+    },
+    "citation": {
+        "type": "rich-text",
+        "source": "rich-text",
+        "selector": "cite",
+        "role": "content"
+    },
+    "lock": {
+        "type": "object"
+    },
+    "metadata": {
+        "type": "object"
+    },
+    "align": {
+        "type": "string",
+        "enum": [
+            "left",
+            "center",
+            "right",
+            "wide",
+            "full",
+            ""
+        ]
+    },
+    "className": {
+        "type": "string"
+    },
+    "style": {
+        "type": "object"
+    },
+    "backgroundColor": {
+        "type": "string"
+    },
+    "textColor": {
+        "type": "string"
+    },
+    "gradient": {
+        "type": "string"
+    },
+    "fontSize": {
+        "type": "string"
+    },
+    "fontFamily": {
+        "type": "string"
+    },
+    "borderColor": {
+        "type": "string"
+    },
+    "anchor": {
+        "type": "string"
+    }
+}
+```
+
+### Example
+
+- None
+
+### Selectors
+
+- None
+
+### Style Handles
+
+- `wp-block-pullquote`
+- `wp-block-pullquote-theme`
+
+### Editor Style Handles
+
+- `wp-block-pullquote-editor`
+
+### Script Handles
+
+- None
+
+### Editor Script Handles
+
+- None
+
+### View Script Handles
+
+- None
+
+### View Style Handles
+
+- None
+
+### Custom Metadata
+
+- None
+
+## Quote (`core/quote`)
+
+- `title`: `Quote`
+- `description`: `Give quoted text visual emphasis. "In quoting others, we cite ourselves." — Julio Cortázar`
+- `origin`: `core`
+- `category_bucket`: `core`
+- `currently_allowed`: `true`
+- `currently_blacklisted`: `false`
+- `is_dynamic`: `false`
+- `api_version`: `3`
+- `category`: `text`
+- `icon`: `null`
+- `render_callback`: `null`
+- `has_render_callback`: `false`
+
+### Keywords
+
+- `blockquote`
+- `cite`
+
+### Parent
+
+- None
+
+### Ancestor
+
+- None
+
+### Uses Context
+
+- None
+
+### Provides Context
+
+- None
+
+### Supports Summary
+
+- `anchor`: `true`
+- `align`: `true`
+- `spacing`: `true`
+- `color`: `true`
+- `typography`: `true`
+- `html`: `false`
+- `multiple`: `false`
+- `reusable`: `false`
+
+### Supports
+
+```json
+{
+    "anchor": true,
+    "align": [
+        "left",
+        "right",
+        "wide",
+        "full"
+    ],
+    "html": false,
+    "background": {
+        "backgroundImage": true,
+        "backgroundSize": true,
+        "gradient": true,
+        "__experimentalDefaultControls": {
+            "backgroundImage": true,
+            "gradient": true
+        }
+    },
+    "__experimentalBorder": {
+        "color": true,
+        "radius": true,
+        "style": true,
+        "width": true,
+        "__experimentalDefaultControls": {
+            "color": true,
+            "radius": true,
+            "style": true,
+            "width": true
+        }
+    },
+    "dimensions": {
+        "minHeight": true,
+        "__experimentalDefaultControls": {
+            "minHeight": false
+        }
+    },
+    "__experimentalOnEnter": true,
+    "__experimentalOnMerge": true,
+    "typography": {
+        "fontSize": true,
+        "lineHeight": true,
+        "__experimentalFontFamily": true,
+        "__experimentalFontWeight": true,
+        "__experimentalFontStyle": true,
+        "__experimentalTextTransform": true,
+        "__experimentalTextDecoration": true,
+        "__experimentalLetterSpacing": true,
+        "__experimentalDefaultControls": {
+            "fontSize": true
+        }
+    },
+    "color": {
+        "gradients": true,
+        "heading": true,
+        "link": true,
+        "__experimentalDefaultControls": {
+            "background": true,
+            "text": true
+        }
+    },
+    "layout": {
+        "allowEditing": false
+    },
+    "spacing": {
+        "blockGap": true,
+        "padding": true,
+        "margin": true
+    },
+    "interactivity": {
+        "clientNavigation": true
+    },
+    "allowedBlocks": true
+}
+```
+
+### Attributes
+
+```json
+{
+    "value": {
+        "type": "string",
+        "source": "html",
+        "selector": "blockquote",
+        "multiline": "p",
+        "default": "",
+        "role": "content"
+    },
+    "citation": {
+        "type": "rich-text",
+        "source": "rich-text",
+        "selector": "cite",
+        "role": "content"
+    },
+    "textAlign": {
+        "type": "string"
+    },
+    "lock": {
+        "type": "object"
+    },
+    "metadata": {
+        "type": "object"
+    },
+    "align": {
+        "type": "string",
+        "enum": [
+            "left",
+            "center",
+            "right",
+            "wide",
+            "full",
+            ""
+        ]
+    },
+    "className": {
+        "type": "string"
+    },
+    "style": {
+        "type": "object"
+    },
+    "backgroundColor": {
+        "type": "string"
+    },
+    "textColor": {
+        "type": "string"
+    },
+    "gradient": {
+        "type": "string"
+    },
+    "fontSize": {
+        "type": "string"
+    },
+    "fontFamily": {
+        "type": "string"
+    },
+    "borderColor": {
+        "type": "string"
+    },
+    "layout": {
+        "type": "object"
+    },
+    "anchor": {
+        "type": "string"
+    }
+}
+```
+
+### Example
+
+- None
+
+### Selectors
+
+- None
+
+### Style Handles
+
+- `wp-block-quote`
+- `wp-block-quote-theme`
+
+### Editor Style Handles
+
+- `wp-block-quote-editor`
+
+### Script Handles
+
+- None
+
+### Editor Script Handles
+
+- None
+
+### View Script Handles
+
+- None
+
+### View Style Handles
+
+- None
+
+### Custom Metadata
+
+- None
+
+## Search (`core/search`)
+
+- `title`: `Search`
+- `description`: `Help visitors find your content.`
+- `origin`: `core`
+- `category_bucket`: `core`
+- `currently_allowed`: `true`
+- `currently_blacklisted`: `false`
+- `is_dynamic`: `true`
+- `api_version`: `3`
+- `category`: `widgets`
+- `icon`: `null`
+- `render_callback`: `render_block_core_search`
+- `has_render_callback`: `true`
+
+### Keywords
+
+- `find`
+
+### Parent
+
+- None
+
+### Ancestor
+
+- None
+
+### Uses Context
+
+- None
+
+### Provides Context
+
+- None
+
+### Supports Summary
+
+- `anchor`: `true`
+- `align`: `true`
+- `spacing`: `true`
+- `color`: `true`
+- `typography`: `true`
+- `html`: `false`
+- `multiple`: `false`
+- `reusable`: `false`
+
+### Supports
+
+```json
+{
+    "anchor": true,
+    "align": [
+        "left",
+        "center",
+        "right"
+    ],
+    "color": {
+        "gradients": true,
+        "__experimentalSkipSerialization": true,
+        "__experimentalDefaultControls": {
+            "background": true,
+            "text": true
+        }
+    },
+    "interactivity": true,
+    "typography": {
+        "__experimentalSkipSerialization": true,
+        "__experimentalSelector": ".wp-block-search__label, .wp-block-search__input, .wp-block-search__button",
+        "fontSize": true,
+        "lineHeight": true,
+        "__experimentalFontFamily": true,
+        "__experimentalFontWeight": true,
+        "__experimentalFontStyle": true,
+        "__experimentalTextTransform": true,
+        "__experimentalTextDecoration": true,
+        "__experimentalLetterSpacing": true,
+        "__experimentalDefaultControls": {
+            "fontSize": true
+        }
+    },
+    "__experimentalBorder": {
+        "color": true,
+        "radius": true,
+        "width": true,
+        "__experimentalSkipSerialization": true,
+        "__experimentalDefaultControls": {
+            "color": true,
+            "radius": true,
+            "width": true
+        }
+    },
+    "spacing": {
+        "margin": true
+    },
+    "html": false
+}
+```
+
+### Attributes
+
+```json
+{
+    "label": {
+        "type": "string",
+        "role": "content"
+    },
+    "showLabel": {
+        "type": "boolean",
+        "default": true
+    },
+    "placeholder": {
+        "type": "string",
+        "default": "",
+        "role": "content"
+    },
+    "width": {
+        "type": "number"
+    },
+    "widthUnit": {
+        "type": "string"
+    },
+    "buttonText": {
+        "type": "string",
+        "role": "content"
+    },
+    "buttonPosition": {
+        "type": "string",
+        "default": "button-outside"
+    },
+    "buttonUseIcon": {
+        "type": "boolean",
+        "default": false
+    },
+    "query": {
+        "type": "object",
+        "default": []
+    },
+    "tagName": {
+        "type": "string",
+        "default": ""
+    },
+    "lock": {
+        "type": "object"
+    },
+    "metadata": {
+        "type": "object"
+    },
+    "align": {
+        "type": "string",
+        "enum": [
+            "left",
+            "center",
+            "right",
+            "wide",
+            "full",
+            ""
+        ]
+    },
+    "className": {
+        "type": "string"
+    },
+    "style": {
+        "type": "object"
+    },
+    "backgroundColor": {
+        "type": "string"
+    },
+    "textColor": {
+        "type": "string"
+    },
+    "gradient": {
+        "type": "string"
+    },
+    "fontSize": {
+        "type": "string"
+    },
+    "fontFamily": {
+        "type": "string"
+    },
+    "borderColor": {
+        "type": "string"
+    },
+    "anchor": {
+        "type": "string"
+    }
+}
+```
+
+### Example
+
+- None
+
+### Selectors
+
+- `color`: `.wp-block-search .wp-block-search__button, .wp-block-search.wp-block-search__no-button .wp-block-search__input`
+- `border`: `.wp-block-search.wp-block-search__button-outside .wp-block-search__input, .wp-block-search.wp-block-search__button-outside .wp-block-search__button, .wp-block-search.wp-block-search__no-button .wp-block-search__input, .wp-block-search.wp-block-search__button-only .wp-block-search__input, .wp-block-search.wp-block-search__button-only .wp-block-search__button, .wp-block-search.wp-block-search__button-inside .wp-block-search__inside-wrapper`
+
+### Style Handles
+
+- `wp-block-search`
+- `wp-block-search-theme`
+
+### Editor Style Handles
+
+- `wp-block-search-editor`
 
 ### Script Handles
 
@@ -5120,6 +7380,9 @@ It contains only the blocks currently marked as allowed by the theme block avail
     },
     "gradient": {
         "type": "string"
+    },
+    "anchor": {
+        "type": "string"
     }
 }
 ```
@@ -5134,11 +7397,12 @@ It contains only the blocks currently marked as allowed by the theme block avail
 
 ### Style Handles
 
-- None
+- `wp-block-separator`
+- `wp-block-separator-theme`
 
 ### Editor Style Handles
 
-- None
+- `wp-block-separator-editor`
 
 ### Script Handles
 
@@ -5197,7 +7461,7 @@ It contains only the blocks currently marked as allowed by the theme block avail
 
 ### Supports Summary
 
-- `anchor`: `false`
+- `anchor`: `true`
 - `align`: `true`
 - `spacing`: `true`
 - `color`: `true`
@@ -5210,6 +7474,7 @@ It contains only the blocks currently marked as allowed by the theme block avail
 
 ```json
 {
+    "anchor": true,
     "html": false,
     "align": true,
     "alignWide": false,
@@ -5276,6 +7541,9 @@ It contains only the blocks currently marked as allowed by the theme block avail
     },
     "style": {
         "type": "object"
+    },
+    "anchor": {
+        "type": "string"
     }
 }
 ```
@@ -5303,11 +7571,12 @@ It contains only the blocks currently marked as allowed by the theme block avail
 
 ### Style Handles
 
-- None
+- `wp-block-site-logo`
+- `wp-block-site-logo-theme`
 
 ### Editor Style Handles
 
-- None
+- `wp-block-site-logo-editor`
 
 ### Script Handles
 
@@ -5366,7 +7635,7 @@ It contains only the blocks currently marked as allowed by the theme block avail
 
 ### Supports Summary
 
-- `anchor`: `false`
+- `anchor`: `true`
 - `align`: `true`
 - `spacing`: `true`
 - `color`: `true`
@@ -5379,6 +7648,7 @@ It contains only the blocks currently marked as allowed by the theme block avail
 
 ```json
 {
+    "anchor": true,
     "align": [
         "wide",
         "full"
@@ -5403,6 +7673,7 @@ It contains only the blocks currently marked as allowed by the theme block avail
     "typography": {
         "fontSize": true,
         "lineHeight": true,
+        "textAlign": true,
         "__experimentalFontFamily": true,
         "__experimentalTextTransform": true,
         "__experimentalTextDecoration": true,
@@ -5430,9 +7701,6 @@ It contains only the blocks currently marked as allowed by the theme block avail
 
 ```json
 {
-    "textAlign": {
-        "type": "string"
-    },
     "level": {
         "type": "number",
         "default": 0
@@ -5489,6 +7757,9 @@ It contains only the blocks currently marked as allowed by the theme block avail
     },
     "borderColor": {
         "type": "string"
+    },
+    "anchor": {
+        "type": "string"
     }
 }
 ```
@@ -5499,7 +7770,11 @@ It contains only the blocks currently marked as allowed by the theme block avail
 {
     "viewportWidth": 350,
     "attributes": {
-        "textAlign": "center"
+        "style": {
+            "typography": {
+                "textAlign": "center"
+            }
+        }
     }
 }
 ```
@@ -5510,11 +7785,12 @@ It contains only the blocks currently marked as allowed by the theme block avail
 
 ### Style Handles
 
-- None
+- `wp-block-site-tagline`
+- `wp-block-site-tagline-theme`
 
 ### Editor Style Handles
 
-- None
+- `wp-block-site-tagline-editor`
 
 ### Script Handles
 
@@ -5573,7 +7849,7 @@ It contains only the blocks currently marked as allowed by the theme block avail
 
 ### Supports Summary
 
-- `anchor`: `false`
+- `anchor`: `true`
 - `align`: `true`
 - `spacing`: `true`
 - `color`: `true`
@@ -5586,6 +7862,7 @@ It contains only the blocks currently marked as allowed by the theme block avail
 
 ```json
 {
+    "anchor": true,
     "align": [
         "wide",
         "full"
@@ -5611,6 +7888,7 @@ It contains only the blocks currently marked as allowed by the theme block avail
     "typography": {
         "fontSize": true,
         "lineHeight": true,
+        "textAlign": true,
         "__experimentalFontFamily": true,
         "__experimentalTextTransform": true,
         "__experimentalTextDecoration": true,
@@ -5653,9 +7931,6 @@ It contains only the blocks currently marked as allowed by the theme block avail
             5,
             6
         ]
-    },
-    "textAlign": {
-        "type": "string"
     },
     "isLink": {
         "type": "boolean",
@@ -5707,6 +7982,9 @@ It contains only the blocks currently marked as allowed by the theme block avail
     },
     "borderColor": {
         "type": "string"
+    },
+    "anchor": {
+        "type": "string"
     }
 }
 ```
@@ -5725,11 +8003,12 @@ It contains only the blocks currently marked as allowed by the theme block avail
 
 ### Style Handles
 
-- None
+- `wp-block-site-title`
+- `wp-block-site-title-theme`
 
 ### Editor Style Handles
 
-- None
+- `wp-block-site-title-editor`
 
 ### Script Handles
 
@@ -5793,7 +8072,7 @@ It contains only the blocks currently marked as allowed by the theme block avail
 
 ### Supports Summary
 
-- `anchor`: `false`
+- `anchor`: `true`
 - `align`: `false`
 - `spacing`: `false`
 - `color`: `false`
@@ -5806,6 +8085,7 @@ It contains only the blocks currently marked as allowed by the theme block avail
 
 ```json
 {
+    "anchor": true,
     "reusable": false,
     "html": false,
     "interactivity": {
@@ -5840,6 +8120,12 @@ It contains only the blocks currently marked as allowed by the theme block avail
     },
     "className": {
         "type": "string"
+    },
+    "anchor": {
+        "type": "string"
+    },
+    "style": {
+        "type": "object"
     }
 }
 ```
@@ -5854,11 +8140,12 @@ It contains only the blocks currently marked as allowed by the theme block avail
 
 ### Style Handles
 
-- None
+- `wp-block-social-link`
+- `wp-block-social-link-theme`
 
 ### Editor Style Handles
 
-- None
+- `wp-block-social-link-editor`
 
 ### Script Handles
 
@@ -5995,7 +8282,8 @@ It contains only the blocks currently marked as allowed by the theme block avail
             "style": true
         }
     },
-    "contentRole": true
+    "contentRole": true,
+    "listView": true
 }
 ```
 
@@ -6066,6 +8354,9 @@ It contains only the blocks currently marked as allowed by the theme block avail
     },
     "layout": {
         "type": "object"
+    },
+    "anchor": {
+        "type": "string"
     }
 }
 ```
@@ -6080,11 +8371,12 @@ It contains only the blocks currently marked as allowed by the theme block avail
 
 ### Style Handles
 
-- None
+- `wp-block-social-links`
+- `wp-block-social-links-theme`
 
 ### Editor Style Handles
 
-- None
+- `wp-block-social-links-editor`
 
 ### Script Handles
 
@@ -6194,6 +8486,9 @@ It contains only the blocks currently marked as allowed by the theme block avail
     },
     "style": {
         "type": "object"
+    },
+    "anchor": {
+        "type": "string"
     }
 }
 ```
@@ -6208,11 +8503,497 @@ It contains only the blocks currently marked as allowed by the theme block avail
 
 ### Style Handles
 
-- None
+- `wp-block-spacer`
+- `wp-block-spacer-theme`
 
 ### Editor Style Handles
 
+- `wp-block-spacer-editor`
+
+### Script Handles
+
 - None
+
+### Editor Script Handles
+
+- None
+
+### View Script Handles
+
+- None
+
+### View Style Handles
+
+- None
+
+### Custom Metadata
+
+- None
+
+## Tab Panels (`core/tab-panels`)
+
+- `title`: `Tab Panels`
+- `description`: `Container for tab panel content in a tabbed interface.`
+- `origin`: `core`
+- `category_bucket`: `core`
+- `currently_allowed`: `true`
+- `currently_blacklisted`: `false`
+- `is_dynamic`: `false`
+- `api_version`: `3`
+- `category`: `design`
+- `icon`: `null`
+- `render_callback`: `null`
+- `has_render_callback`: `false`
+
+### Keywords
+
+- None
+
+### Parent
+
+- `core/tabs`
+
+### Ancestor
+
+- None
+
+### Uses Context
+
+- None
+
+### Provides Context
+
+- None
+
+### Supports Summary
+
+- `anchor`: `false`
+- `align`: `false`
+- `spacing`: `true`
+- `color`: `true`
+- `typography`: `true`
+- `html`: `false`
+- `multiple`: `false`
+- `reusable`: `false`
+
+### Supports
+
+```json
+{
+    "html": false,
+    "visibility": false,
+    "lock": false,
+    "color": {
+        "background": true,
+        "text": true,
+        "heading": true,
+        "link": true,
+        "__experimentalDefaultControls": {
+            "background": true,
+            "text": true
+        }
+    },
+    "spacing": {
+        "padding": true
+    },
+    "typography": {
+        "fontSize": true,
+        "__experimentalFontFamily": true
+    },
+    "__experimentalBorder": {
+        "radius": true,
+        "color": true,
+        "width": true,
+        "style": true
+    }
+}
+```
+
+### Attributes
+
+```json
+{
+    "lock": {
+        "type": "object"
+    },
+    "metadata": {
+        "type": "object"
+    },
+    "className": {
+        "type": "string"
+    },
+    "style": {
+        "type": "object"
+    },
+    "backgroundColor": {
+        "type": "string"
+    },
+    "textColor": {
+        "type": "string"
+    },
+    "fontSize": {
+        "type": "string"
+    },
+    "fontFamily": {
+        "type": "string"
+    },
+    "borderColor": {
+        "type": "string"
+    }
+}
+```
+
+### Example
+
+- None
+
+### Selectors
+
+- None
+
+### Style Handles
+
+- `wp-block-tab-panels`
+- `wp-block-tab-panels-theme`
+
+### Editor Style Handles
+
+- `wp-block-tab-panels-editor`
+
+### Script Handles
+
+- None
+
+### Editor Script Handles
+
+- None
+
+### View Script Handles
+
+- None
+
+### View Style Handles
+
+- None
+
+### Custom Metadata
+
+- None
+
+## Table (`core/table`)
+
+- `title`: `Table`
+- `description`: `Create structured content in rows and columns to display information.`
+- `origin`: `core`
+- `category_bucket`: `core`
+- `currently_allowed`: `true`
+- `currently_blacklisted`: `false`
+- `is_dynamic`: `false`
+- `api_version`: `3`
+- `category`: `text`
+- `icon`: `null`
+- `render_callback`: `null`
+- `has_render_callback`: `false`
+
+### Keywords
+
+- None
+
+### Parent
+
+- None
+
+### Ancestor
+
+- None
+
+### Uses Context
+
+- None
+
+### Provides Context
+
+- None
+
+### Supports Summary
+
+- `anchor`: `true`
+- `align`: `true`
+- `spacing`: `true`
+- `color`: `true`
+- `typography`: `true`
+- `html`: `false`
+- `multiple`: `false`
+- `reusable`: `false`
+
+### Supports
+
+```json
+{
+    "anchor": true,
+    "align": true,
+    "color": {
+        "__experimentalSkipSerialization": true,
+        "gradients": true,
+        "__experimentalDefaultControls": {
+            "background": true,
+            "text": true
+        }
+    },
+    "spacing": {
+        "margin": true,
+        "padding": true,
+        "__experimentalDefaultControls": {
+            "margin": false,
+            "padding": false
+        }
+    },
+    "typography": {
+        "fontSize": true,
+        "lineHeight": true,
+        "__experimentalFontFamily": true,
+        "__experimentalFontStyle": true,
+        "__experimentalFontWeight": true,
+        "__experimentalLetterSpacing": true,
+        "__experimentalTextTransform": true,
+        "__experimentalTextDecoration": true,
+        "__experimentalDefaultControls": {
+            "fontSize": true
+        }
+    },
+    "__experimentalBorder": {
+        "__experimentalSkipSerialization": true,
+        "color": true,
+        "style": true,
+        "width": true,
+        "__experimentalDefaultControls": {
+            "color": true,
+            "style": true,
+            "width": true
+        }
+    },
+    "interactivity": {
+        "clientNavigation": true
+    }
+}
+```
+
+### Attributes
+
+```json
+{
+    "hasFixedLayout": {
+        "type": "boolean",
+        "default": true
+    },
+    "caption": {
+        "type": "rich-text",
+        "source": "rich-text",
+        "selector": "figcaption",
+        "role": "content"
+    },
+    "head": {
+        "type": "array",
+        "default": [],
+        "source": "query",
+        "selector": "thead tr",
+        "query": {
+            "cells": {
+                "type": "array",
+                "default": [],
+                "source": "query",
+                "selector": "td,th",
+                "query": {
+                    "content": {
+                        "type": "rich-text",
+                        "source": "rich-text",
+                        "role": "content"
+                    },
+                    "tag": {
+                        "type": "string",
+                        "default": "td",
+                        "source": "tag"
+                    },
+                    "scope": {
+                        "type": "string",
+                        "source": "attribute",
+                        "attribute": "scope"
+                    },
+                    "align": {
+                        "type": "string",
+                        "source": "attribute",
+                        "attribute": "data-align"
+                    },
+                    "colspan": {
+                        "type": "string",
+                        "source": "attribute",
+                        "attribute": "colspan"
+                    },
+                    "rowspan": {
+                        "type": "string",
+                        "source": "attribute",
+                        "attribute": "rowspan"
+                    }
+                }
+            }
+        }
+    },
+    "body": {
+        "type": "array",
+        "default": [],
+        "source": "query",
+        "selector": "tbody tr",
+        "query": {
+            "cells": {
+                "type": "array",
+                "default": [],
+                "source": "query",
+                "selector": "td,th",
+                "query": {
+                    "content": {
+                        "type": "rich-text",
+                        "source": "rich-text",
+                        "role": "content"
+                    },
+                    "tag": {
+                        "type": "string",
+                        "default": "td",
+                        "source": "tag"
+                    },
+                    "scope": {
+                        "type": "string",
+                        "source": "attribute",
+                        "attribute": "scope"
+                    },
+                    "align": {
+                        "type": "string",
+                        "source": "attribute",
+                        "attribute": "data-align"
+                    },
+                    "colspan": {
+                        "type": "string",
+                        "source": "attribute",
+                        "attribute": "colspan"
+                    },
+                    "rowspan": {
+                        "type": "string",
+                        "source": "attribute",
+                        "attribute": "rowspan"
+                    }
+                }
+            }
+        }
+    },
+    "foot": {
+        "type": "array",
+        "default": [],
+        "source": "query",
+        "selector": "tfoot tr",
+        "query": {
+            "cells": {
+                "type": "array",
+                "default": [],
+                "source": "query",
+                "selector": "td,th",
+                "query": {
+                    "content": {
+                        "type": "rich-text",
+                        "source": "rich-text",
+                        "role": "content"
+                    },
+                    "tag": {
+                        "type": "string",
+                        "default": "td",
+                        "source": "tag"
+                    },
+                    "scope": {
+                        "type": "string",
+                        "source": "attribute",
+                        "attribute": "scope"
+                    },
+                    "align": {
+                        "type": "string",
+                        "source": "attribute",
+                        "attribute": "data-align"
+                    },
+                    "colspan": {
+                        "type": "string",
+                        "source": "attribute",
+                        "attribute": "colspan"
+                    },
+                    "rowspan": {
+                        "type": "string",
+                        "source": "attribute",
+                        "attribute": "rowspan"
+                    }
+                }
+            }
+        }
+    },
+    "lock": {
+        "type": "object"
+    },
+    "metadata": {
+        "type": "object"
+    },
+    "align": {
+        "type": "string",
+        "enum": [
+            "left",
+            "center",
+            "right",
+            "wide",
+            "full",
+            ""
+        ]
+    },
+    "className": {
+        "type": "string"
+    },
+    "style": {
+        "type": "object"
+    },
+    "backgroundColor": {
+        "type": "string"
+    },
+    "textColor": {
+        "type": "string"
+    },
+    "gradient": {
+        "type": "string"
+    },
+    "fontSize": {
+        "type": "string"
+    },
+    "fontFamily": {
+        "type": "string"
+    },
+    "borderColor": {
+        "type": "string"
+    },
+    "anchor": {
+        "type": "string"
+    }
+}
+```
+
+### Example
+
+- None
+
+### Selectors
+
+- `root`: `.wp-block-table > table`
+- `spacing`: `.wp-block-table`
+
+### Style Handles
+
+- `wp-block-table`
+- `wp-block-table-theme`
+
+### Editor Style Handles
+
+- `wp-block-table-editor`
 
 ### Script Handles
 
@@ -6246,7 +9027,7 @@ It contains only the blocks currently marked as allowed by the theme block avail
 - `api_version`: `3`
 - `category`: `theme`
 - `icon`: `null`
-- `render_callback`: `Automattic\WooCommerce\Blocks\BlockTemplatesController::render_woocommerce_template_part`
+- `render_callback`: `render_block_core_template_part`
 - `has_render_callback`: `true`
 
 ### Keywords
@@ -6329,6 +9110,9 @@ It contains only the blocks currently marked as allowed by the theme block avail
     },
     "className": {
         "type": "string"
+    },
+    "style": {
+        "type": "object"
     }
 }
 ```
@@ -6343,11 +9127,500 @@ It contains only the blocks currently marked as allowed by the theme block avail
 
 ### Style Handles
 
-- None
+- `wp-block-template-part`
+- `wp-block-template-part-theme`
 
 ### Editor Style Handles
 
+- `wp-block-template-part-editor`
+
+### Script Handles
+
 - None
+
+### Editor Script Handles
+
+- None
+
+### View Script Handles
+
+- None
+
+### View Style Handles
+
+- None
+
+### Custom Metadata
+
+- None
+
+## Terms Query (`core/terms-query`)
+
+- `title`: `Terms Query`
+- `description`: `An advanced block that allows displaying taxonomy terms based on different query parameters and visual configurations.`
+- `origin`: `core`
+- `category_bucket`: `core`
+- `currently_allowed`: `true`
+- `currently_blacklisted`: `false`
+- `is_dynamic`: `false`
+- `api_version`: `3`
+- `category`: `theme`
+- `icon`: `null`
+- `render_callback`: `null`
+- `has_render_callback`: `false`
+
+### Keywords
+
+- `terms`
+- `taxonomy`
+- `categories`
+- `tags`
+- `list`
+
+### Parent
+
+- None
+
+### Ancestor
+
+- None
+
+### Uses Context
+
+- `templateSlug`
+
+### Provides Context
+
+- `termQuery`: `termQuery`
+
+### Supports Summary
+
+- `anchor`: `true`
+- `align`: `true`
+- `spacing`: `false`
+- `color`: `false`
+- `typography`: `false`
+- `html`: `false`
+- `multiple`: `false`
+- `reusable`: `false`
+
+### Supports
+
+```json
+{
+    "anchor": true,
+    "align": [
+        "wide",
+        "full"
+    ],
+    "html": false,
+    "layout": true,
+    "interactivity": true
+}
+```
+
+### Attributes
+
+```json
+{
+    "termQuery": {
+        "type": "object",
+        "default": {
+            "perPage": 10,
+            "taxonomy": "category",
+            "order": "asc",
+            "orderBy": "name",
+            "include": [],
+            "hideEmpty": true,
+            "showNested": false,
+            "inherit": false
+        }
+    },
+    "tagName": {
+        "type": "string",
+        "default": "div"
+    },
+    "lock": {
+        "type": "object"
+    },
+    "metadata": {
+        "type": "object"
+    },
+    "align": {
+        "type": "string",
+        "enum": [
+            "left",
+            "center",
+            "right",
+            "wide",
+            "full",
+            ""
+        ]
+    },
+    "className": {
+        "type": "string"
+    },
+    "layout": {
+        "type": "object"
+    },
+    "anchor": {
+        "type": "string"
+    },
+    "style": {
+        "type": "object"
+    }
+}
+```
+
+### Example
+
+- None
+
+### Selectors
+
+- None
+
+### Style Handles
+
+- `wp-block-terms-query`
+- `wp-block-terms-query-theme`
+
+### Editor Style Handles
+
+- `wp-block-terms-query-editor`
+
+### Script Handles
+
+- None
+
+### Editor Script Handles
+
+- None
+
+### View Script Handles
+
+- None
+
+### View Style Handles
+
+- None
+
+### Custom Metadata
+
+- None
+
+## Text Columns (deprecated) (`core/text-columns`)
+
+- `title`: `Text Columns (deprecated)`
+- `description`: `This block is deprecated. Please use the Columns block instead.`
+- `origin`: `core`
+- `category_bucket`: `core`
+- `currently_allowed`: `true`
+- `currently_blacklisted`: `false`
+- `is_dynamic`: `false`
+- `api_version`: `3`
+- `category`: `design`
+- `icon`: `columns`
+- `render_callback`: `null`
+- `has_render_callback`: `false`
+
+### Keywords
+
+- None
+
+### Parent
+
+- None
+
+### Ancestor
+
+- None
+
+### Uses Context
+
+- None
+
+### Provides Context
+
+- None
+
+### Supports Summary
+
+- `anchor`: `false`
+- `align`: `false`
+- `spacing`: `false`
+- `color`: `false`
+- `typography`: `false`
+- `html`: `false`
+- `multiple`: `false`
+- `reusable`: `false`
+
+### Supports
+
+```json
+{
+    "inserter": false,
+    "interactivity": {
+        "clientNavigation": true
+    }
+}
+```
+
+### Attributes
+
+```json
+{
+    "content": {
+        "type": "array",
+        "source": "query",
+        "selector": "p",
+        "query": {
+            "children": {
+                "type": "string",
+                "source": "html"
+            }
+        },
+        "default": [
+            [],
+            []
+        ]
+    },
+    "columns": {
+        "type": "number",
+        "default": 2
+    },
+    "width": {
+        "type": "string"
+    },
+    "lock": {
+        "type": "object"
+    },
+    "metadata": {
+        "type": "object"
+    },
+    "className": {
+        "type": "string"
+    },
+    "style": {
+        "type": "object"
+    }
+}
+```
+
+### Example
+
+- None
+
+### Selectors
+
+- None
+
+### Style Handles
+
+- `wp-block-text-columns`
+- `wp-block-text-columns-theme`
+
+### Editor Style Handles
+
+- `wp-block-text-columns-editor`
+
+### Script Handles
+
+- None
+
+### Editor Script Handles
+
+- None
+
+### View Script Handles
+
+- None
+
+### View Style Handles
+
+- None
+
+### Custom Metadata
+
+- None
+
+## Poetry (`core/verse`)
+
+- `title`: `Poetry`
+- `description`: `Insert poetry. Use special spacing formats. Or quote song lyrics.`
+- `origin`: `core`
+- `category_bucket`: `core`
+- `currently_allowed`: `true`
+- `currently_blacklisted`: `false`
+- `is_dynamic`: `false`
+- `api_version`: `3`
+- `category`: `text`
+- `icon`: `null`
+- `render_callback`: `null`
+- `has_render_callback`: `false`
+
+### Keywords
+
+- `poetry`
+- `poem`
+- `verse`
+- `stanza`
+- `song`
+- `lyrics`
+
+### Parent
+
+- None
+
+### Ancestor
+
+- None
+
+### Uses Context
+
+- None
+
+### Provides Context
+
+- None
+
+### Supports Summary
+
+- `anchor`: `true`
+- `align`: `false`
+- `spacing`: `true`
+- `color`: `true`
+- `typography`: `true`
+- `html`: `false`
+- `multiple`: `false`
+- `reusable`: `false`
+
+### Supports
+
+```json
+{
+    "anchor": true,
+    "background": {
+        "backgroundImage": true,
+        "backgroundSize": true,
+        "gradient": true,
+        "__experimentalDefaultControls": {
+            "backgroundImage": true,
+            "gradient": true
+        }
+    },
+    "color": {
+        "gradients": true,
+        "link": true,
+        "__experimentalDefaultControls": {
+            "background": true,
+            "text": true
+        }
+    },
+    "dimensions": {
+        "minHeight": true,
+        "__experimentalDefaultControls": {
+            "minHeight": false
+        }
+    },
+    "typography": {
+        "fontSize": true,
+        "__experimentalFontFamily": true,
+        "lineHeight": true,
+        "textAlign": true,
+        "__experimentalFontStyle": true,
+        "__experimentalFontWeight": true,
+        "__experimentalLetterSpacing": true,
+        "__experimentalTextTransform": true,
+        "__experimentalTextDecoration": true,
+        "__experimentalWritingMode": true,
+        "__experimentalDefaultControls": {
+            "fontSize": true
+        }
+    },
+    "spacing": {
+        "margin": true,
+        "padding": true,
+        "__experimentalDefaultControls": {
+            "margin": false,
+            "padding": false
+        }
+    },
+    "__experimentalBorder": {
+        "radius": true,
+        "width": true,
+        "color": true,
+        "style": true
+    },
+    "interactivity": {
+        "clientNavigation": true
+    }
+}
+```
+
+### Attributes
+
+```json
+{
+    "content": {
+        "type": "rich-text",
+        "source": "rich-text",
+        "selector": "pre",
+        "__unstablePreserveWhiteSpace": true,
+        "role": "content"
+    },
+    "lock": {
+        "type": "object"
+    },
+    "metadata": {
+        "type": "object"
+    },
+    "className": {
+        "type": "string"
+    },
+    "style": {
+        "type": "object"
+    },
+    "backgroundColor": {
+        "type": "string"
+    },
+    "textColor": {
+        "type": "string"
+    },
+    "gradient": {
+        "type": "string"
+    },
+    "fontSize": {
+        "type": "string"
+    },
+    "fontFamily": {
+        "type": "string"
+    },
+    "borderColor": {
+        "type": "string"
+    },
+    "anchor": {
+        "type": "string"
+    }
+}
+```
+
+### Example
+
+- None
+
+### Selectors
+
+- None
+
+### Style Handles
+
+- `wp-block-verse`
+- `wp-block-verse-theme`
+
+### Editor Style Handles
+
+- `wp-block-verse-editor`
 
 ### Script Handles
 
@@ -6443,6 +9716,9 @@ It contains only the blocks currently marked as allowed by the theme block avail
     },
     "className": {
         "type": "string"
+    },
+    "style": {
+        "type": "object"
     }
 }
 ```
@@ -6571,10 +9847,6 @@ It contains only the blocks currently marked as allowed by the theme block avail
 
 ```json
 {
-    "color": {
-        "type": "string",
-        "default": ""
-    },
     "lock": {
         "type": "object"
     },
@@ -6583,6 +9855,9 @@ It contains only the blocks currently marked as allowed by the theme block avail
     },
     "className": {
         "type": "string"
+    },
+    "style": {
+        "type": "object"
     }
 }
 ```
@@ -6634,12 +9909,6 @@ It contains only the blocks currently marked as allowed by the theme block avail
         "icon": "share",
         "description": "Social sharing buttons for the current content.",
         "textdomain": "d11",
-        "attributes": {
-            "color": {
-                "type": "string",
-                "default": ""
-            }
-        },
         "supports": {
             "html": false
         },
@@ -6740,6 +10009,9 @@ It contains only the blocks currently marked as allowed by the theme block avail
     },
     "className": {
         "type": "string"
+    },
+    "style": {
+        "type": "object"
     }
 }
 ```
@@ -6781,10 +10053,10 @@ It contains only the blocks currently marked as allowed by the theme block avail
 
 - None
 
-## Cookie Banner (`simple-cookie-consent/banner`)
+## Cookie Banner (`d11/privacy-banner`)
 
 - `title`: `Cookie Banner`
-- `description`: `Displays the cookie consent banner managed by the plugin.`
+- `description`: `Displays the theme-managed cookie consent banner.`
 - `origin`: `third_party`
 - `category_bucket`: `third_party`
 - `currently_allowed`: `true`
@@ -6793,7 +10065,7 @@ It contains only the blocks currently marked as allowed by the theme block avail
 - `api_version`: `3`
 - `category`: `widgets`
 - `icon`: `shield`
-- `render_callback`: `Simple_Cookie_Consent_Plugin::render_banner_block`
+- `render_callback`: `D11_Privacy::render_banner_block`
 - `has_render_callback`: `true`
 
 ### Keywords
@@ -6850,6 +10122,9 @@ It contains only the blocks currently marked as allowed by the theme block avail
     },
     "className": {
         "type": "string"
+    },
+    "style": {
+        "type": "object"
     }
 }
 ```
@@ -6864,7 +10139,7 @@ It contains only the blocks currently marked as allowed by the theme block avail
 
 ### Style Handles
 
-- `simple-cookie-consent`
+- `d11-privacy`
 
 ### Editor Style Handles
 
@@ -6876,7 +10151,7 @@ It contains only the blocks currently marked as allowed by the theme block avail
 
 ### Editor Script Handles
 
-- `simple-cookie-consent-editor`
+- `d11-privacy-editor`
 
 ### View Script Handles
 
@@ -6890,7 +10165,7 @@ It contains only the blocks currently marked as allowed by the theme block avail
 
 - None
 
-## Cookie Table (`simple-cookie-consent/cookie-table`)
+## Cookie Table (`d11/privacy-cookie-table`)
 
 - `title`: `Cookie Table`
 - `description`: `Displays the registered cookies as a table or card list.`
@@ -6902,7 +10177,7 @@ It contains only the blocks currently marked as allowed by the theme block avail
 - `api_version`: `3`
 - `category`: `widgets`
 - `icon`: `table-col-after`
-- `render_callback`: `Simple_Cookie_Consent_Plugin::render_cookie_table_block`
+- `render_callback`: `D11_Privacy::render_cookie_table_block`
 - `has_render_callback`: `true`
 
 ### Keywords
@@ -6974,136 +10249,9 @@ It contains only the blocks currently marked as allowed by the theme block avail
     },
     "className": {
         "type": "string"
-    }
-}
-```
-
-### Example
-
-- None
-
-### Selectors
-
-- None
-
-### Style Handles
-
-- `simple-cookie-consent`
-
-### Editor Style Handles
-
-- None
-
-### Script Handles
-
-- None
-
-### Editor Script Handles
-
-- `simple-cookie-consent-editor`
-
-### View Script Handles
-
-- None
-
-### View Style Handles
-
-- None
-
-### Custom Metadata
-
-- None
-
-## Active Filters Controls (`woocommerce/active-filters`)
-
-- `title`: `Active Filters Controls`
-- `description`: `Display the currently active filters.`
-- `origin`: `woocommerce`
-- `category_bucket`: `woocommerce`
-- `currently_allowed`: `true`
-- `currently_blacklisted`: `false`
-- `is_dynamic`: `true`
-- `api_version`: `3`
-- `category`: `woocommerce`
-- `icon`: `null`
-- `render_callback`: `Automattic\WooCommerce\Blocks\BlockTypes\ActiveFilters::render_callback`
-- `has_render_callback`: `true`
-
-### Keywords
-
-- `WooCommerce`
-
-### Parent
-
-- None
-
-### Ancestor
-
-- None
-
-### Uses Context
-
-- None
-
-### Provides Context
-
-- None
-
-### Supports Summary
-
-- `anchor`: `false`
-- `align`: `false`
-- `spacing`: `false`
-- `color`: `true`
-- `typography`: `false`
-- `html`: `false`
-- `multiple`: `false`
-- `reusable`: `false`
-
-### Supports
-
-```json
-{
-    "interactivity": {
-        "clientNavigation": false
-    },
-    "html": false,
-    "multiple": false,
-    "inserter": false,
-    "color": {
-        "text": true,
-        "background": false
-    },
-    "lock": false
-}
-```
-
-### Attributes
-
-```json
-{
-    "displayStyle": {
-        "type": "string",
-        "default": "list"
-    },
-    "headingLevel": {
-        "type": "number",
-        "default": 3
-    },
-    "lock": {
-        "type": "object"
-    },
-    "metadata": {
-        "type": "object"
-    },
-    "className": {
-        "type": "string"
     },
     "style": {
         "type": "object"
-    },
-    "textColor": {
-        "type": "string"
     }
 }
 ```
@@ -7118,2782 +10266,7 @@ It contains only the blocks currently marked as allowed by the theme block avail
 
 ### Style Handles
 
-- `wc-blocks-style`
-- `wc-blocks-style-active-filters`
-
-### Editor Style Handles
-
-- `wc-blocks-editor-style`
-
-### Script Handles
-
-- None
-
-### Editor Script Handles
-
-- `wc-active-filters-block`
-
-### View Script Handles
-
-- None
-
-### View Style Handles
-
-- None
-
-### Custom Metadata
-
-- None
-
-## All Reviews (`woocommerce/all-reviews`)
-
-- `title`: `All Reviews`
-- `description`: `Show a list of all product reviews.`
-- `origin`: `woocommerce`
-- `category_bucket`: `woocommerce`
-- `currently_allowed`: `true`
-- `currently_blacklisted`: `false`
-- `is_dynamic`: `true`
-- `api_version`: `3`
-- `category`: `woocommerce`
-- `icon`: `null`
-- `render_callback`: `Automattic\WooCommerce\Blocks\BlockTypes\AllReviews::render_callback`
-- `has_render_callback`: `true`
-
-### Keywords
-
-- `WooCommerce`
-
-### Parent
-
-- None
-
-### Ancestor
-
-- None
-
-### Uses Context
-
-- None
-
-### Provides Context
-
-- None
-
-### Supports Summary
-
-- `anchor`: `false`
-- `align`: `false`
-- `spacing`: `false`
-- `color`: `true`
-- `typography`: `true`
-- `html`: `false`
-- `multiple`: `false`
-- `reusable`: `false`
-
-### Supports
-
-```json
-{
-    "html": false,
-    "interactivity": {
-        "clientNavigation": true
-    },
-    "color": {
-        "background": false
-    },
-    "typography": {
-        "fontSize": true
-    }
-}
-```
-
-### Attributes
-
-```json
-{
-    "lock": {
-        "type": "object"
-    },
-    "metadata": {
-        "type": "object"
-    },
-    "className": {
-        "type": "string"
-    },
-    "style": {
-        "type": "object"
-    },
-    "textColor": {
-        "type": "string"
-    },
-    "fontSize": {
-        "type": "string"
-    }
-}
-```
-
-### Example
-
-- None
-
-### Selectors
-
-- None
-
-### Style Handles
-
-- `wc-blocks-style`
-- `wc-blocks-style-all-reviews`
-
-### Editor Style Handles
-
-- `wc-blocks-editor-style`
-
-### Script Handles
-
-- None
-
-### Editor Script Handles
-
-- `wc-all-reviews-block`
-
-### View Script Handles
-
-- None
-
-### View Style Handles
-
-- None
-
-### Custom Metadata
-
-- None
-
-## Filter by Attribute Controls (`woocommerce/attribute-filter`)
-
-- `title`: `Filter by Attribute Controls`
-- `description`: `Enable customers to filter the product grid by selecting one or more attributes, such as color.`
-- `origin`: `woocommerce`
-- `category_bucket`: `woocommerce`
-- `currently_allowed`: `true`
-- `currently_blacklisted`: `false`
-- `is_dynamic`: `true`
-- `api_version`: `3`
-- `category`: `woocommerce`
-- `icon`: `null`
-- `render_callback`: `Automattic\WooCommerce\Blocks\BlockTypes\AttributeFilter::render_callback`
-- `has_render_callback`: `true`
-
-### Keywords
-
-- `WooCommerce`
-
-### Parent
-
-- None
-
-### Ancestor
-
-- None
-
-### Uses Context
-
-- None
-
-### Provides Context
-
-- None
-
-### Supports Summary
-
-- `anchor`: `false`
-- `align`: `false`
-- `spacing`: `false`
-- `color`: `true`
-- `typography`: `false`
-- `html`: `false`
-- `multiple`: `false`
-- `reusable`: `false`
-
-### Supports
-
-```json
-{
-    "html": false,
-    "color": {
-        "text": true,
-        "background": false
-    },
-    "inserter": false,
-    "lock": false,
-    "interactivity": false
-}
-```
-
-### Attributes
-
-```json
-{
-    "className": {
-        "type": "string",
-        "default": ""
-    },
-    "attributeId": {
-        "type": "number",
-        "default": 0
-    },
-    "showCounts": {
-        "type": "boolean",
-        "default": false
-    },
-    "queryType": {
-        "type": "string",
-        "default": "or"
-    },
-    "headingLevel": {
-        "type": "number",
-        "default": 3
-    },
-    "displayStyle": {
-        "type": "string",
-        "default": "list"
-    },
-    "showFilterButton": {
-        "type": "boolean",
-        "default": false
-    },
-    "selectType": {
-        "type": "string",
-        "default": "multiple"
-    },
-    "isPreview": {
-        "type": "boolean",
-        "default": false
-    },
-    "lock": {
-        "type": "object"
-    },
-    "metadata": {
-        "type": "object"
-    },
-    "style": {
-        "type": "object"
-    },
-    "textColor": {
-        "type": "string"
-    }
-}
-```
-
-### Example
-
-- None
-
-### Selectors
-
-- None
-
-### Style Handles
-
-- `wc-blocks-style`
-- `wc-blocks-style-attribute-filter`
-- `wc-blocks-packages-style`
-
-### Editor Style Handles
-
-- `wc-blocks-editor-style`
-
-### Script Handles
-
-- None
-
-### Editor Script Handles
-
-- `wc-attribute-filter-block`
-
-### View Script Handles
-
-- None
-
-### View Style Handles
-
-- None
-
-### Custom Metadata
-
-- None
-
-## Store Breadcrumbs (`woocommerce/breadcrumbs`)
-
-- `title`: `Store Breadcrumbs`
-- `description`: `Enable customers to keep track of their location within the store and navigate back to parent pages.`
-- `origin`: `woocommerce`
-- `category_bucket`: `woocommerce`
-- `currently_allowed`: `true`
-- `currently_blacklisted`: `false`
-- `is_dynamic`: `true`
-- `api_version`: `3`
-- `category`: `woocommerce`
-- `icon`: `null`
-- `render_callback`: `Automattic\WooCommerce\Blocks\BlockTypes\Breadcrumbs::render_callback`
-- `has_render_callback`: `true`
-
-### Keywords
-
-- `WooCommerce`
-
-### Parent
-
-- None
-
-### Ancestor
-
-- None
-
-### Uses Context
-
-- None
-
-### Provides Context
-
-- None
-
-### Supports Summary
-
-- `anchor`: `false`
-- `align`: `true`
-- `spacing`: `false`
-- `color`: `true`
-- `typography`: `true`
-- `html`: `false`
-- `multiple`: `false`
-- `reusable`: `false`
-
-### Supports
-
-```json
-{
-    "interactivity": {
-        "clientNavigation": true
-    },
-    "align": [
-        "wide",
-        "full"
-    ],
-    "color": {
-        "background": false,
-        "link": true
-    },
-    "html": false,
-    "typography": {
-        "fontSize": true,
-        "lineHeight": true,
-        "__experimentalFontFamily": true,
-        "__experimentalFontStyle": true,
-        "__experimentalFontWeight": true,
-        "__experimentalTextTransform": true,
-        "__experimentalDefaultControls": {
-            "fontSize": true
-        }
-    }
-}
-```
-
-### Attributes
-
-```json
-{
-    "contentJustification": {
-        "type": "string"
-    },
-    "fontSize": {
-        "type": "string",
-        "default": "small"
-    },
-    "align": {
-        "type": "string",
-        "default": "wide"
-    },
-    "lock": {
-        "type": "object"
-    },
-    "metadata": {
-        "type": "object"
-    },
-    "className": {
-        "type": "string"
-    },
-    "style": {
-        "type": "object"
-    },
-    "textColor": {
-        "type": "string"
-    },
-    "fontFamily": {
-        "type": "string"
-    }
-}
-```
-
-### Example
-
-- None
-
-### Selectors
-
-- None
-
-### Style Handles
-
-- `wc-blocks-style`
-- `wc-blocks-style-breadcrumbs`
-
-### Editor Style Handles
-
-- `wc-blocks-editor-style`
-
-### Script Handles
-
-- None
-
-### Editor Script Handles
-
-- `wc-breadcrumbs-block`
-
-### View Script Handles
-
-- None
-
-### View Style Handles
-
-- None
-
-### Custom Metadata
-
-- None
-
-## Cart Link (`woocommerce/cart-link`)
-
-- `title`: `Cart Link`
-- `description`: `Display a link to the cart.`
-- `origin`: `woocommerce`
-- `category_bucket`: `woocommerce`
-- `currently_allowed`: `true`
-- `currently_blacklisted`: `false`
-- `is_dynamic`: `true`
-- `api_version`: `3`
-- `category`: `woocommerce`
-- `icon`: `cart`
-- `render_callback`: `Automattic\WooCommerce\Blocks\BlockTypes\CartLink::render_callback`
-- `has_render_callback`: `true`
-
-### Keywords
-
-- `WooCommerce`
-
-### Parent
-
-- None
-
-### Ancestor
-
-- None
-
-### Uses Context
-
-- None
-
-### Provides Context
-
-- None
-
-### Supports Summary
-
-- `anchor`: `false`
-- `align`: `false`
-- `spacing`: `true`
-- `color`: `true`
-- `typography`: `true`
-- `html`: `false`
-- `multiple`: `false`
-- `reusable`: `false`
-
-### Supports
-
-```json
-{
-    "interactivity": {
-        "clientNavigation": true
-    },
-    "html": false,
-    "multiple": false,
-    "typography": {
-        "fontSize": true
-    },
-    "color": {
-        "text": false,
-        "link": true
-    },
-    "spacing": {
-        "padding": true
-    }
-}
-```
-
-### Attributes
-
-```json
-{
-    "isPreview": {
-        "type": "boolean",
-        "default": false
-    },
-    "cartIcon": {
-        "type": "string",
-        "default": "cart"
-    },
-    "content": {
-        "type": "string",
-        "default": null
-    },
-    "lock": {
-        "type": "object"
-    },
-    "metadata": {
-        "type": "object"
-    },
-    "className": {
-        "type": "string"
-    },
-    "style": {
-        "type": "object"
-    },
-    "backgroundColor": {
-        "type": "string"
-    },
-    "fontSize": {
-        "type": "string"
-    }
-}
-```
-
-### Example
-
-```json
-{
-    "attributes": {
-        "isPreview": true,
-        "cartIcon": "cart",
-        "content": "Cart"
-    }
-}
-```
-
-### Selectors
-
-- None
-
-### Style Handles
-
-- `wc-blocks-style`
-- `wc-blocks-style-cart-link`
-
-### Editor Style Handles
-
-- `wc-blocks-editor-style`
-
-### Script Handles
-
-- None
-
-### Editor Script Handles
-
-- `wc-cart-link-block`
-
-### View Script Handles
-
-- None
-
-### View Style Handles
-
-- None
-
-### Custom Metadata
-
-- None
-
-## Catalog Sorting (`woocommerce/catalog-sorting`)
-
-- `title`: `Catalog Sorting`
-- `description`: `Enable customers to change the sorting order of the products.`
-- `origin`: `woocommerce`
-- `category_bucket`: `woocommerce`
-- `currently_allowed`: `true`
-- `currently_blacklisted`: `false`
-- `is_dynamic`: `true`
-- `api_version`: `3`
-- `category`: `woocommerce`
-- `icon`: `null`
-- `render_callback`: `Automattic\WooCommerce\Blocks\BlockTypes\CatalogSorting::render_callback`
-- `has_render_callback`: `true`
-
-### Keywords
-
-- `WooCommerce`
-
-### Parent
-
-- None
-
-### Ancestor
-
-- None
-
-### Uses Context
-
-- None
-
-### Provides Context
-
-- None
-
-### Supports Summary
-
-- `anchor`: `false`
-- `align`: `false`
-- `spacing`: `false`
-- `color`: `true`
-- `typography`: `true`
-- `html`: `false`
-- `multiple`: `false`
-- `reusable`: `false`
-
-### Supports
-
-```json
-{
-    "interactivity": {
-        "clientNavigation": true
-    },
-    "color": {
-        "text": true,
-        "background": false
-    },
-    "typography": {
-        "fontSize": true
-    }
-}
-```
-
-### Attributes
-
-```json
-{
-    "fontSize": {
-        "type": "string",
-        "default": "small"
-    },
-    "useLabel": {
-        "type": "boolean",
-        "default": false
-    },
-    "lock": {
-        "type": "object"
-    },
-    "metadata": {
-        "type": "object"
-    },
-    "className": {
-        "type": "string"
-    },
-    "style": {
-        "type": "object"
-    },
-    "textColor": {
-        "type": "string"
-    }
-}
-```
-
-### Example
-
-- None
-
-### Selectors
-
-- None
-
-### Style Handles
-
-- `wc-blocks-style`
-- `wc-blocks-style-catalog-sorting`
-
-### Editor Style Handles
-
-- `wc-blocks-editor-style`
-
-### Script Handles
-
-- None
-
-### Editor Script Handles
-
-- `wc-catalog-sorting-block`
-
-### View Script Handles
-
-- None
-
-### View Style Handles
-
-- None
-
-### Custom Metadata
-
-- None
-
-## Classic Shortcode (`woocommerce/classic-shortcode`)
-
-- `title`: `Classic Shortcode`
-- `description`: `Renders classic WooCommerce shortcodes.`
-- `origin`: `woocommerce`
-- `category_bucket`: `woocommerce`
-- `currently_allowed`: `true`
-- `currently_blacklisted`: `false`
-- `is_dynamic`: `true`
-- `api_version`: `3`
-- `category`: `woocommerce`
-- `icon`: `null`
-- `render_callback`: `Automattic\WooCommerce\Blocks\BlockTypes\ClassicShortcode::render_callback`
-- `has_render_callback`: `true`
-
-### Keywords
-
-- `WooCommerce`
-
-### Parent
-
-- None
-
-### Ancestor
-
-- None
-
-### Uses Context
-
-- None
-
-### Provides Context
-
-- None
-
-### Supports Summary
-
-- `anchor`: `false`
-- `align`: `true`
-- `spacing`: `false`
-- `color`: `false`
-- `typography`: `false`
-- `html`: `false`
-- `multiple`: `false`
-- `reusable`: `false`
-
-### Supports
-
-```json
-{
-    "interactivity": {
-        "clientNavigation": false
-    },
-    "align": true,
-    "html": false,
-    "multiple": false,
-    "reusable": false,
-    "inserter": true
-}
-```
-
-### Attributes
-
-```json
-{
-    "shortcode": {
-        "type": "string",
-        "default": "cart",
-        "enum": [
-            "cart",
-            "checkout"
-        ]
-    },
-    "align": {
-        "type": "string",
-        "default": "wide"
-    },
-    "lock": {
-        "type": "object"
-    },
-    "metadata": {
-        "type": "object"
-    },
-    "className": {
-        "type": "string"
-    }
-}
-```
-
-### Example
-
-- None
-
-### Selectors
-
-- None
-
-### Style Handles
-
-- None
-
-### Editor Style Handles
-
-- `wc-blocks-editor-style`
-
-### Script Handles
-
-- None
-
-### Editor Script Handles
-
-- `wc-classic-shortcode-block`
-
-### View Script Handles
-
-- None
-
-### View Style Handles
-
-- None
-
-### Custom Metadata
-
-- None
-
-## Customer account (`woocommerce/customer-account`)
-
-- `title`: `Customer account`
-- `description`: `A block that allows your customers to log in and out of their accounts in your store.`
-- `origin`: `woocommerce`
-- `category_bucket`: `woocommerce`
-- `currently_allowed`: `true`
-- `currently_blacklisted`: `false`
-- `is_dynamic`: `true`
-- `api_version`: `3`
-- `category`: `woocommerce`
-- `icon`: `null`
-- `render_callback`: `Automattic\WooCommerce\Blocks\BlockTypes\CustomerAccount::render_callback`
-- `has_render_callback`: `true`
-
-### Keywords
-
-- `WooCommerce`
-- `My Account`
-
-### Parent
-
-- None
-
-### Ancestor
-
-- None
-
-### Uses Context
-
-- None
-
-### Provides Context
-
-- None
-
-### Supports Summary
-
-- `anchor`: `false`
-- `align`: `true`
-- `spacing`: `true`
-- `color`: `true`
-- `typography`: `true`
-- `html`: `false`
-- `multiple`: `false`
-- `reusable`: `false`
-
-### Supports
-
-```json
-{
-    "interactivity": {
-        "clientNavigation": true
-    },
-    "align": true,
-    "color": {
-        "text": true
-    },
-    "typography": {
-        "fontSize": true,
-        "__experimentalFontFamily": true
-    },
-    "spacing": {
-        "margin": true,
-        "padding": true
-    }
-}
-```
-
-### Attributes
-
-```json
-{
-    "displayStyle": {
-        "type": "string",
-        "default": "icon_and_text"
-    },
-    "iconStyle": {
-        "type": "string",
-        "default": "default"
-    },
-    "iconClass": {
-        "type": "string",
-        "default": "icon"
-    },
-    "lock": {
-        "type": "object"
-    },
-    "metadata": {
-        "type": "object"
-    },
-    "align": {
-        "type": "string",
-        "enum": [
-            "left",
-            "center",
-            "right",
-            "wide",
-            "full",
-            ""
-        ]
-    },
-    "className": {
-        "type": "string"
-    },
-    "style": {
-        "type": "object"
-    },
-    "backgroundColor": {
-        "type": "string"
-    },
-    "textColor": {
-        "type": "string"
-    },
-    "fontSize": {
-        "type": "string"
-    },
-    "fontFamily": {
-        "type": "string"
-    }
-}
-```
-
-### Example
-
-- None
-
-### Selectors
-
-- None
-
-### Style Handles
-
-- `wc-blocks-style`
-- `wc-blocks-style-customer-account`
-
-### Editor Style Handles
-
-- `wc-blocks-editor-style`
-
-### Script Handles
-
-- None
-
-### Editor Script Handles
-
-- `wc-customer-account-block`
-
-### View Script Handles
-
-- None
-
-### View Style Handles
-
-- None
-
-### Custom Metadata
-
-- None
-
-## Featured Category (`woocommerce/featured-category`)
-
-- `title`: `Featured Category`
-- `description`: `Visually highlight a product category and encourage prompt action.`
-- `origin`: `woocommerce`
-- `category_bucket`: `woocommerce`
-- `currently_allowed`: `true`
-- `currently_blacklisted`: `false`
-- `is_dynamic`: `true`
-- `api_version`: `3`
-- `category`: `woocommerce`
-- `icon`: `null`
-- `render_callback`: `Automattic\WooCommerce\Blocks\BlockTypes\FeaturedCategory::render_callback`
-- `has_render_callback`: `true`
-
-### Keywords
-
-- `WooCommerce`
-
-### Parent
-
-- None
-
-### Ancestor
-
-- None
-
-### Uses Context
-
-- `termId`
-- `termTaxonomy`
-
-### Provides Context
-
-- `termId`: `categoryId`
-- `termTaxonomy`: `termTaxonomy`
-
-### Supports Summary
-
-- `anchor`: `false`
-- `align`: `true`
-- `spacing`: `true`
-- `color`: `true`
-- `typography`: `false`
-- `html`: `false`
-- `multiple`: `false`
-- `reusable`: `false`
-
-### Supports
-
-```json
-{
-    "interactivity": {
-        "clientNavigation": true
-    },
-    "align": [
-        "wide",
-        "full"
-    ],
-    "ariaLabel": true,
-    "color": {
-        "background": true,
-        "text": true
-    },
-    "html": false,
-    "filter": {
-        "duotone": true
-    },
-    "spacing": {
-        "padding": true,
-        "__experimentalDefaultControls": {
-            "padding": true
-        },
-        "__experimentalSkipSerialization": true
-    },
-    "__experimentalBorder": {
-        "color": true,
-        "radius": true,
-        "width": true,
-        "__experimentalDefaultControls": {
-            "color": true,
-            "radius": true,
-            "width": true
-        },
-        "__experimentalSkipSerialization": true
-    }
-}
-```
-
-### Attributes
-
-```json
-{
-    "alt": {
-        "type": "string",
-        "default": ""
-    },
-    "contentAlign": {
-        "type": "string",
-        "default": "center"
-    },
-    "dimRatio": {
-        "type": "number",
-        "default": 50
-    },
-    "focalPoint": {
-        "type": "object",
-        "default": {
-            "x": 0.5,
-            "y": 0.5
-        }
-    },
-    "imageFit": {
-        "type": "string",
-        "default": "none"
-    },
-    "hasParallax": {
-        "type": "boolean",
-        "default": false
-    },
-    "isRepeated": {
-        "type": "boolean",
-        "default": false
-    },
-    "mediaId": {
-        "type": "number",
-        "default": 0
-    },
-    "mediaSrc": {
-        "type": "string",
-        "default": ""
-    },
-    "minHeight": {
-        "type": "number",
-        "default": 500
-    },
-    "linkText": {
-        "default": "Shop now",
-        "type": "string"
-    },
-    "categoryId": {
-        "type": "number"
-    },
-    "overlayColor": {
-        "type": "string",
-        "default": "#000000"
-    },
-    "overlayGradient": {
-        "type": "string"
-    },
-    "previewCategory": {
-        "type": "object",
-        "default": null
-    },
-    "lock": {
-        "type": "object"
-    },
-    "metadata": {
-        "type": "object"
-    },
-    "align": {
-        "type": "string",
-        "enum": [
-            "left",
-            "center",
-            "right",
-            "wide",
-            "full",
-            ""
-        ]
-    },
-    "className": {
-        "type": "string"
-    },
-    "style": {
-        "type": "object"
-    },
-    "backgroundColor": {
-        "type": "string"
-    },
-    "textColor": {
-        "type": "string"
-    },
-    "borderColor": {
-        "type": "string"
-    },
-    "ariaLabel": {
-        "type": "string"
-    }
-}
-```
-
-### Example
-
-- None
-
-### Selectors
-
-- `filter`:
-```json
-{
-    "duotone": ".wp-block-woocommerce-featured-category .wc-block-featured-category__background-image"
-}
-```
-
-### Style Handles
-
-- `wc-blocks-style`
-- `wc-blocks-style-featured-category`
-
-### Editor Style Handles
-
-- `wc-blocks-editor-style`
-
-### Script Handles
-
-- None
-
-### Editor Script Handles
-
-- `wc-featured-category-block`
-
-### View Script Handles
-
-- None
-
-### View Style Handles
-
-- None
-
-### Custom Metadata
-
-- None
-
-## Featured Product (`woocommerce/featured-product`)
-
-- `title`: `Featured Product`
-- `description`: `Highlight a product or variation.`
-- `origin`: `woocommerce`
-- `category_bucket`: `woocommerce`
-- `currently_allowed`: `true`
-- `currently_blacklisted`: `false`
-- `is_dynamic`: `true`
-- `api_version`: `3`
-- `category`: `woocommerce`
-- `icon`: `null`
-- `render_callback`: `Automattic\WooCommerce\Blocks\BlockTypes\FeaturedProduct::render_callback`
-- `has_render_callback`: `true`
-
-### Keywords
-
-- `WooCommerce`
-
-### Parent
-
-- None
-
-### Ancestor
-
-- None
-
-### Uses Context
-
-- None
-
-### Provides Context
-
-- None
-
-### Supports Summary
-
-- `anchor`: `false`
-- `align`: `true`
-- `spacing`: `true`
-- `color`: `true`
-- `typography`: `false`
-- `html`: `false`
-- `multiple`: `true`
-- `reusable`: `false`
-
-### Supports
-
-```json
-{
-    "interactivity": {
-        "clientNavigation": true
-    },
-    "align": [
-        "wide",
-        "full"
-    ],
-    "ariaLabel": true,
-    "html": false,
-    "filter": {
-        "duotone": true
-    },
-    "color": {
-        "background": true,
-        "text": true
-    },
-    "spacing": {
-        "padding": true,
-        "__experimentalDefaultControls": {
-            "padding": true
-        },
-        "__experimentalSkipSerialization": true
-    },
-    "__experimentalBorder": {
-        "color": true,
-        "radius": true,
-        "width": true,
-        "__experimentalDefaultControls": {
-            "color": true,
-            "radius": true,
-            "width": true
-        },
-        "__experimentalSkipSerialization": true
-    },
-    "multiple": true
-}
-```
-
-### Attributes
-
-```json
-{
-    "alt": {
-        "type": "string",
-        "default": ""
-    },
-    "contentAlign": {
-        "type": "string",
-        "default": "center"
-    },
-    "dimRatio": {
-        "type": "number",
-        "default": 50
-    },
-    "focalPoint": {
-        "type": "object",
-        "default": {
-            "x": 0.5,
-            "y": 0.5
-        }
-    },
-    "imageFit": {
-        "type": "string",
-        "default": "none"
-    },
-    "hasParallax": {
-        "type": "boolean",
-        "default": false
-    },
-    "isRepeated": {
-        "type": "boolean",
-        "default": false
-    },
-    "mediaId": {
-        "type": "number",
-        "default": 0
-    },
-    "mediaSrc": {
-        "type": "string",
-        "default": ""
-    },
-    "minHeight": {
-        "type": "number",
-        "default": 500
-    },
-    "linkText": {
-        "type": "string",
-        "default": "Shop now"
-    },
-    "overlayColor": {
-        "type": "string",
-        "default": "#000000"
-    },
-    "overlayGradient": {
-        "type": "string"
-    },
-    "productId": {
-        "type": "number"
-    },
-    "previewProduct": {
-        "type": "object",
-        "default": null
-    },
-    "lock": {
-        "type": "object"
-    },
-    "metadata": {
-        "type": "object"
-    },
-    "align": {
-        "type": "string",
-        "enum": [
-            "left",
-            "center",
-            "right",
-            "wide",
-            "full",
-            ""
-        ]
-    },
-    "className": {
-        "type": "string"
-    },
-    "style": {
-        "type": "object"
-    },
-    "backgroundColor": {
-        "type": "string"
-    },
-    "textColor": {
-        "type": "string"
-    },
-    "borderColor": {
-        "type": "string"
-    },
-    "ariaLabel": {
-        "type": "string"
-    }
-}
-```
-
-### Example
-
-- None
-
-### Selectors
-
-- `filter`:
-```json
-{
-    "duotone": ".wp-block-woocommerce-featured-product .wc-block-featured-product__background-image"
-}
-```
-
-### Style Handles
-
-- `wc-blocks-style`
-- `wc-blocks-style-featured-product`
-
-### Editor Style Handles
-
-- `wc-blocks-editor-style`
-
-### Script Handles
-
-- None
-
-### Editor Script Handles
-
-- `wc-featured-product-block`
-
-### View Script Handles
-
-- None
-
-### View Style Handles
-
-- None
-
-### Custom Metadata
-
-- None
-
-## Filter Block (`woocommerce/filter-wrapper`)
-
-- `title`: `Filter Block`
-- `description`: `null`
-- `origin`: `woocommerce`
-- `category_bucket`: `woocommerce`
-- `currently_allowed`: `true`
-- `currently_blacklisted`: `false`
-- `is_dynamic`: `true`
-- `api_version`: `3`
-- `category`: `woocommerce`
-- `icon`: `null`
-- `render_callback`: `Automattic\WooCommerce\Blocks\BlockTypes\FilterWrapper::render_callback`
-- `has_render_callback`: `true`
-
-### Keywords
-
-- `WooCommerce`
-
-### Parent
-
-- None
-
-### Ancestor
-
-- None
-
-### Uses Context
-
-- None
-
-### Provides Context
-
-- None
-
-### Supports Summary
-
-- `anchor`: `false`
-- `align`: `false`
-- `spacing`: `false`
-- `color`: `false`
-- `typography`: `false`
-- `html`: `false`
-- `multiple`: `false`
-- `reusable`: `false`
-
-### Supports
-
-```json
-{
-    "interactivity": {
-        "clientNavigation": false
-    },
-    "inserter": false
-}
-```
-
-### Attributes
-
-```json
-{
-    "filterType": {
-        "type": "string"
-    },
-    "heading": {
-        "type": "string"
-    },
-    "lock": {
-        "type": "object"
-    },
-    "metadata": {
-        "type": "object"
-    },
-    "className": {
-        "type": "string"
-    }
-}
-```
-
-### Example
-
-- None
-
-### Selectors
-
-- None
-
-### Style Handles
-
-- None
-
-### Editor Style Handles
-
-- `wc-blocks-editor-style`
-
-### Script Handles
-
-- None
-
-### Editor Script Handles
-
-- `wc-filter-wrapper-block`
-
-### View Script Handles
-
-- None
-
-### View Style Handles
-
-- None
-
-### Custom Metadata
-
-- None
-
-## Hand-picked Products (`woocommerce/handpicked-products`)
-
-- `title`: `Hand-picked Products`
-- `description`: `Display a selection of hand-picked products in a grid.`
-- `origin`: `woocommerce`
-- `category_bucket`: `woocommerce`
-- `currently_allowed`: `true`
-- `currently_blacklisted`: `false`
-- `is_dynamic`: `true`
-- `api_version`: `3`
-- `category`: `woocommerce`
-- `icon`: `null`
-- `render_callback`: `Automattic\WooCommerce\Blocks\BlockTypes\HandpickedProducts::render_callback`
-- `has_render_callback`: `true`
-
-### Keywords
-
-- `Handpicked Products`
-- `WooCommerce`
-
-### Parent
-
-- None
-
-### Ancestor
-
-- None
-
-### Uses Context
-
-- None
-
-### Provides Context
-
-- None
-
-### Supports Summary
-
-- `anchor`: `false`
-- `align`: `true`
-- `spacing`: `false`
-- `color`: `false`
-- `typography`: `false`
-- `html`: `false`
-- `multiple`: `false`
-- `reusable`: `false`
-
-### Supports
-
-```json
-{
-    "interactivity": {
-        "clientNavigation": false
-    },
-    "align": [
-        "wide",
-        "full"
-    ],
-    "html": false,
-    "inserter": false
-}
-```
-
-### Attributes
-
-```json
-{
-    "align": {
-        "type": "string"
-    },
-    "columns": {
-        "type": "number",
-        "default": 3
-    },
-    "contentVisibility": {
-        "type": "object",
-        "default": {
-            "image": true,
-            "title": true,
-            "price": true,
-            "rating": true,
-            "button": true
-        },
-        "properties": {
-            "image": {
-                "type": "boolean",
-                "image": true
-            },
-            "title": {
-                "type": "boolean",
-                "title": true
-            },
-            "price": {
-                "type": "boolean",
-                "price": true
-            },
-            "rating": {
-                "type": "boolean",
-                "rating": true
-            },
-            "button": {
-                "type": "boolean",
-                "button": true
-            }
-        }
-    },
-    "orderby": {
-        "type": "string",
-        "enum": [
-            "date",
-            "popularity",
-            "price_asc",
-            "price_desc",
-            "rating",
-            "title",
-            "menu_order"
-        ],
-        "default": "date"
-    },
-    "products": {
-        "type": "array",
-        "default": []
-    },
-    "alignButtons": {
-        "type": "boolean",
-        "default": false
-    },
-    "isPreview": {
-        "type": "boolean",
-        "default": false
-    },
-    "lock": {
-        "type": "object"
-    },
-    "metadata": {
-        "type": "object"
-    },
-    "className": {
-        "type": "string"
-    }
-}
-```
-
-### Example
-
-- None
-
-### Selectors
-
-- None
-
-### Style Handles
-
-- `wc-blocks-style`
-- `wc-blocks-style-all-products`
-
-### Editor Style Handles
-
-- `wc-blocks-editor-style`
-
-### Script Handles
-
-- None
-
-### Editor Script Handles
-
-- `wc-handpicked-products-block`
-
-### View Script Handles
-
-- None
-
-### View Style Handles
-
-- None
-
-### Custom Metadata
-
-- None
-
-## Mini-Cart (`woocommerce/mini-cart`)
-
-- `title`: `Mini-Cart`
-- `description`: `Display a button for shoppers to quickly view their cart.`
-- `origin`: `woocommerce`
-- `category_bucket`: `woocommerce`
-- `currently_allowed`: `true`
-- `currently_blacklisted`: `false`
-- `is_dynamic`: `true`
-- `api_version`: `3`
-- `category`: `woocommerce`
-- `icon`: `miniCartAlt`
-- `render_callback`: `Automattic\WooCommerce\Blocks\BlockTypes\MiniCart::render_callback`
-- `has_render_callback`: `true`
-
-### Keywords
-
-- `WooCommerce`
-
-### Parent
-
-- None
-
-### Ancestor
-
-- None
-
-### Uses Context
-
-- None
-
-### Provides Context
-
-- None
-
-### Supports Summary
-
-- `anchor`: `false`
-- `align`: `false`
-- `spacing`: `true`
-- `color`: `false`
-- `typography`: `true`
-- `html`: `false`
-- `multiple`: `false`
-- `reusable`: `false`
-
-### Supports
-
-```json
-{
-    "html": false,
-    "multiple": false,
-    "typography": {
-        "fontSize": true
-    },
-    "spacing": {
-        "margin": true,
-        "padding": true
-    },
-    "interactivity": true
-}
-```
-
-### Attributes
-
-```json
-{
-    "isPreview": {
-        "type": "boolean",
-        "default": false
-    },
-    "miniCartIcon": {
-        "type": "string",
-        "default": "cart"
-    },
-    "addToCartBehaviour": {
-        "type": "string",
-        "default": "none"
-    },
-    "onCartClickBehaviour": {
-        "type": "string",
-        "default": "open_drawer"
-    },
-    "hasHiddenPrice": {
-        "type": "boolean",
-        "default": true
-    },
-    "cartAndCheckoutRenderStyle": {
-        "type": "string",
-        "default": "hidden"
-    },
-    "priceColor": {
-        "type": "object"
-    },
-    "priceColorValue": {
-        "type": "string"
-    },
-    "iconColor": {
-        "type": "object"
-    },
-    "iconColorValue": {
-        "type": "string"
-    },
-    "productCountColor": {
-        "type": "object"
-    },
-    "productCountColorValue": {
-        "type": "string"
-    },
-    "productCountVisibility": {
-        "type": "string",
-        "default": "greater_than_zero"
-    },
-    "lock": {
-        "type": "object"
-    },
-    "metadata": {
-        "type": "object"
-    },
-    "className": {
-        "type": "string"
-    },
-    "style": {
-        "type": "object"
-    },
-    "fontSize": {
-        "type": "string"
-    }
-}
-```
-
-### Example
-
-```json
-{
-    "attributes": {
-        "isPreview": true,
-        "className": "wc-block-mini-cart--preview"
-    }
-}
-```
-
-### Selectors
-
-- None
-
-### Style Handles
-
-- `wc-blocks-style`
-- `wc-blocks-style-mini-cart`
-- `wc-blocks-packages-style`
-
-### Editor Style Handles
-
-- `wc-blocks-editor-style`
-
-### Script Handles
-
-- None
-
-### Editor Script Handles
-
-- `wc-mini-cart-block`
-
-### View Script Handles
-
-- None
-
-### View Style Handles
-
-- None
-
-### Custom Metadata
-
-- None
-
-## Filter by Price Controls (`woocommerce/price-filter`)
-
-- `title`: `Filter by Price Controls`
-- `description`: `Enable customers to filter the product grid by choosing a price range.`
-- `origin`: `woocommerce`
-- `category_bucket`: `woocommerce`
-- `currently_allowed`: `true`
-- `currently_blacklisted`: `false`
-- `is_dynamic`: `true`
-- `api_version`: `3`
-- `category`: `woocommerce`
-- `icon`: `null`
-- `render_callback`: `Automattic\WooCommerce\Blocks\BlockTypes\PriceFilter::render_callback`
-- `has_render_callback`: `true`
-
-### Keywords
-
-- `WooCommerce`
-
-### Parent
-
-- None
-
-### Ancestor
-
-- None
-
-### Uses Context
-
-- None
-
-### Provides Context
-
-- None
-
-### Supports Summary
-
-- `anchor`: `false`
-- `align`: `false`
-- `spacing`: `false`
-- `color`: `true`
-- `typography`: `false`
-- `html`: `false`
-- `multiple`: `false`
-- `reusable`: `false`
-
-### Supports
-
-```json
-{
-    "interactivity": {
-        "clientNavigation": false
-    },
-    "html": false,
-    "multiple": false,
-    "color": {
-        "text": true,
-        "background": false
-    },
-    "inserter": false,
-    "lock": false
-}
-```
-
-### Attributes
-
-```json
-{
-    "className": {
-        "type": "string",
-        "default": ""
-    },
-    "showInputFields": {
-        "type": "boolean",
-        "default": true
-    },
-    "inlineInput": {
-        "type": "boolean",
-        "default": false
-    },
-    "showFilterButton": {
-        "type": "boolean",
-        "default": false
-    },
-    "headingLevel": {
-        "type": "number",
-        "default": 3
-    },
-    "lock": {
-        "type": "object"
-    },
-    "metadata": {
-        "type": "object"
-    },
-    "style": {
-        "type": "object"
-    },
-    "textColor": {
-        "type": "string"
-    }
-}
-```
-
-### Example
-
-- None
-
-### Selectors
-
-- None
-
-### Style Handles
-
-- `wc-blocks-style`
-- `wc-blocks-style-price-filter`
-
-### Editor Style Handles
-
-- `wc-blocks-editor-style`
-
-### Script Handles
-
-- None
-
-### Editor Script Handles
-
-- `wc-price-filter-block`
-
-### View Script Handles
-
-- None
-
-### View Style Handles
-
-- None
-
-### Custom Metadata
-
-- None
-
-## Best Selling Products (`woocommerce/product-best-sellers`)
-
-- `title`: `Best Selling Products`
-- `description`: `Display a grid of your all-time best selling products.`
-- `origin`: `woocommerce`
-- `category_bucket`: `woocommerce`
-- `currently_allowed`: `true`
-- `currently_blacklisted`: `false`
-- `is_dynamic`: `true`
-- `api_version`: `3`
-- `category`: `woocommerce`
-- `icon`: `null`
-- `render_callback`: `Automattic\WooCommerce\Blocks\BlockTypes\ProductBestSellers::render_callback`
-- `has_render_callback`: `true`
-
-### Keywords
-
-- `WooCommerce`
-
-### Parent
-
-- None
-
-### Ancestor
-
-- None
-
-### Uses Context
-
-- None
-
-### Provides Context
-
-- None
-
-### Supports Summary
-
-- `anchor`: `false`
-- `align`: `true`
-- `spacing`: `false`
-- `color`: `false`
-- `typography`: `false`
-- `html`: `false`
-- `multiple`: `false`
-- `reusable`: `false`
-
-### Supports
-
-```json
-{
-    "interactivity": {
-        "clientNavigation": false
-    },
-    "align": [
-        "wide",
-        "full"
-    ],
-    "html": false,
-    "inserter": false
-}
-```
-
-### Attributes
-
-```json
-{
-    "columns": {
-        "type": "number",
-        "default": 3
-    },
-    "rows": {
-        "type": "number",
-        "default": 3
-    },
-    "alignButtons": {
-        "type": "boolean",
-        "default": false
-    },
-    "contentVisibility": {
-        "type": "object",
-        "default": {
-            "image": true,
-            "title": true,
-            "price": true,
-            "rating": true,
-            "button": true
-        },
-        "properties": {
-            "image": {
-                "type": "boolean",
-                "default": true
-            },
-            "title": {
-                "type": "boolean",
-                "default": true
-            },
-            "price": {
-                "type": "boolean",
-                "default": true
-            },
-            "rating": {
-                "type": "boolean",
-                "default": true
-            },
-            "button": {
-                "type": "boolean",
-                "default": true
-            }
-        }
-    },
-    "categories": {
-        "type": "array",
-        "default": []
-    },
-    "catOperator": {
-        "type": "string",
-        "default": "any"
-    },
-    "isPreview": {
-        "type": "boolean",
-        "default": false
-    },
-    "stockStatus": {
-        "type": "array"
-    },
-    "editMode": {
-        "type": "boolean",
-        "default": true
-    },
-    "orderby": {
-        "type": "string",
-        "enum": [
-            "date",
-            "popularity",
-            "price_asc",
-            "price_desc",
-            "rating",
-            "title",
-            "menu_order"
-        ],
-        "default": "popularity"
-    },
-    "lock": {
-        "type": "object"
-    },
-    "metadata": {
-        "type": "object"
-    },
-    "align": {
-        "type": "string",
-        "enum": [
-            "left",
-            "center",
-            "right",
-            "wide",
-            "full",
-            ""
-        ]
-    },
-    "className": {
-        "type": "string"
-    }
-}
-```
-
-### Example
-
-- None
-
-### Selectors
-
-- None
-
-### Style Handles
-
-- `wc-blocks-style`
-- `wc-blocks-style-all-products`
-
-### Editor Style Handles
-
-- `wc-blocks-editor-style`
-
-### Script Handles
-
-- None
-
-### Editor Script Handles
-
-- `wc-product-best-sellers-block`
-
-### View Script Handles
-
-- None
-
-### View Style Handles
-
-- None
-
-### Custom Metadata
-
-- None
-
-## Product Categories List (`woocommerce/product-categories`)
-
-- `title`: `Product Categories List`
-- `description`: `Show all product categories as a list or dropdown.`
-- `origin`: `woocommerce`
-- `category_bucket`: `woocommerce`
-- `currently_allowed`: `true`
-- `currently_blacklisted`: `false`
-- `is_dynamic`: `true`
-- `api_version`: `3`
-- `category`: `woocommerce`
-- `icon`: `null`
-- `render_callback`: `Automattic\WooCommerce\Blocks\BlockTypes\ProductCategories::render_callback`
-- `has_render_callback`: `true`
-
-### Keywords
-
-- `WooCommerce`
-
-### Parent
-
-- None
-
-### Ancestor
-
-- None
-
-### Uses Context
-
-- None
-
-### Provides Context
-
-- None
-
-### Supports Summary
-
-- `anchor`: `false`
-- `align`: `true`
-- `spacing`: `false`
-- `color`: `true`
-- `typography`: `true`
-- `html`: `false`
-- `multiple`: `false`
-- `reusable`: `false`
-
-### Supports
-
-```json
-{
-    "interactivity": {
-        "clientNavigation": true
-    },
-    "align": [
-        "wide",
-        "full"
-    ],
-    "html": false,
-    "color": {
-        "background": false,
-        "link": true
-    },
-    "typography": {
-        "fontSize": true,
-        "lineHeight": true
-    }
-}
-```
-
-### Attributes
-
-```json
-{
-    "align": {
-        "type": "string"
-    },
-    "hasCount": {
-        "type": "boolean",
-        "default": true
-    },
-    "hasImage": {
-        "type": "boolean",
-        "default": false
-    },
-    "hasEmpty": {
-        "type": "boolean",
-        "default": false
-    },
-    "isDropdown": {
-        "type": "boolean",
-        "default": false
-    },
-    "isHierarchical": {
-        "type": "boolean",
-        "default": true
-    },
-    "showChildrenOnly": {
-        "type": "boolean",
-        "default": false
-    },
-    "lock": {
-        "type": "object"
-    },
-    "metadata": {
-        "type": "object"
-    },
-    "className": {
-        "type": "string"
-    },
-    "style": {
-        "type": "object"
-    },
-    "textColor": {
-        "type": "string"
-    },
-    "fontSize": {
-        "type": "string"
-    }
-}
-```
-
-### Example
-
-```json
-{
-    "attributes": {
-        "hasCount": true,
-        "hasImage": false
-    }
-}
-```
-
-### Selectors
-
-- None
-
-### Style Handles
-
-- `wc-blocks-style`
-- `wc-blocks-style-product-categories`
-
-### Editor Style Handles
-
-- `wc-blocks-editor-style`
-
-### Script Handles
-
-- None
-
-### Editor Script Handles
-
-- `wc-product-categories-block`
-
-### View Script Handles
-
-- None
-
-### View Style Handles
-
-- None
-
-### Custom Metadata
-
-- None
-
-## Products by Category (`woocommerce/product-category`)
-
-- `title`: `Products by Category`
-- `description`: `Display a grid of products from your selected categories.`
-- `origin`: `woocommerce`
-- `category_bucket`: `woocommerce`
-- `currently_allowed`: `true`
-- `currently_blacklisted`: `false`
-- `is_dynamic`: `true`
-- `api_version`: `3`
-- `category`: `woocommerce`
-- `icon`: `null`
-- `render_callback`: `Automattic\WooCommerce\Blocks\BlockTypes\ProductCategory::render_callback`
-- `has_render_callback`: `true`
-
-### Keywords
-
-- `WooCommerce`
-
-### Parent
-
-- None
-
-### Ancestor
-
-- None
-
-### Uses Context
-
-- None
-
-### Provides Context
-
-- None
-
-### Supports Summary
-
-- `anchor`: `false`
-- `align`: `true`
-- `spacing`: `false`
-- `color`: `false`
-- `typography`: `false`
-- `html`: `false`
-- `multiple`: `false`
-- `reusable`: `false`
-
-### Supports
-
-```json
-{
-    "interactivity": {
-        "clientNavigation": false
-    },
-    "align": [
-        "wide",
-        "full"
-    ],
-    "html": false,
-    "inserter": false
-}
-```
-
-### Attributes
-
-```json
-{
-    "columns": {
-        "type": "number",
-        "default": 3
-    },
-    "rows": {
-        "type": "number",
-        "default": 3
-    },
-    "alignButtons": {
-        "type": "boolean",
-        "default": false
-    },
-    "contentVisibility": {
-        "type": "object",
-        "default": {
-            "image": true,
-            "title": true,
-            "price": true,
-            "rating": true,
-            "button": true
-        },
-        "properties": {
-            "image": {
-                "type": "boolean",
-                "default": true
-            },
-            "title": {
-                "type": "boolean",
-                "default": true
-            },
-            "price": {
-                "type": "boolean",
-                "default": true
-            },
-            "rating": {
-                "type": "boolean",
-                "default": true
-            },
-            "button": {
-                "type": "boolean",
-                "default": true
-            }
-        }
-    },
-    "categories": {
-        "type": "array",
-        "default": []
-    },
-    "catOperator": {
-        "type": "string",
-        "default": "any"
-    },
-    "isPreview": {
-        "type": "boolean",
-        "default": false
-    },
-    "stockStatus": {
-        "type": "array"
-    },
-    "editMode": {
-        "type": "boolean",
-        "default": true
-    },
-    "orderby": {
-        "type": "string",
-        "enum": [
-            "date",
-            "popularity",
-            "price_asc",
-            "price_desc",
-            "rating",
-            "title",
-            "menu_order"
-        ],
-        "default": "date"
-    },
-    "lock": {
-        "type": "object"
-    },
-    "metadata": {
-        "type": "object"
-    },
-    "align": {
-        "type": "string",
-        "enum": [
-            "left",
-            "center",
-            "right",
-            "wide",
-            "full",
-            ""
-        ]
-    },
-    "className": {
-        "type": "string"
-    }
-}
-```
-
-### Example
-
-- None
-
-### Selectors
-
-- None
-
-### Style Handles
-
-- `wc-blocks-style`
-- `wc-blocks-style-all-products`
-
-### Editor Style Handles
-
-- `wc-blocks-editor-style`
-
-### Script Handles
-
-- None
-
-### Editor Script Handles
-
-- `wc-product-category-block`
-
-### View Script Handles
-
-- None
-
-### View Style Handles
-
-- None
-
-### Custom Metadata
-
-- None
-
-## Active Filters (`woocommerce/product-filter-active`)
-
-- `title`: `Active Filters`
-- `description`: `Display the currently active filters.`
-- `origin`: `woocommerce`
-- `category_bucket`: `woocommerce`
-- `currently_allowed`: `true`
-- `currently_blacklisted`: `false`
-- `is_dynamic`: `true`
-- `api_version`: `3`
-- `category`: `woocommerce`
-- `icon`: `null`
-- `render_callback`: `Automattic\WooCommerce\Blocks\BlockTypes\ProductFilterActive::render_callback`
-- `has_render_callback`: `true`
-
-### Keywords
-
-- `WooCommerce`
-
-### Parent
-
-- None
-
-### Ancestor
-
-- `woocommerce/product-filters`
-
-### Uses Context
-
-- `activeFilters`
-
-### Provides Context
-
-- None
-
-### Supports Summary
-
-- `anchor`: `false`
-- `align`: `false`
-- `spacing`: `true`
-- `color`: `false`
-- `typography`: `false`
-- `html`: `false`
-- `multiple`: `false`
-- `reusable`: `false`
-
-### Supports
-
-```json
-{
-    "interactivity": true,
-    "__experimentalBorder": {
-        "color": true,
-        "radius": true,
-        "style": true,
-        "width": true,
-        "__experimentalDefaultControls": {
-            "color": false,
-            "radius": false,
-            "style": false,
-            "width": false
-        }
-    },
-    "spacing": {
-        "margin": true,
-        "padding": true,
-        "blockGap": false,
-        "__experimentalDefaultControls": {
-            "margin": false,
-            "padding": false,
-            "blockGap": false
-        }
-    }
-}
-```
-
-### Attributes
-
-```json
-{
-    "lock": {
-        "type": "object"
-    },
-    "metadata": {
-        "type": "object"
-    },
-    "className": {
-        "type": "string"
-    },
-    "style": {
-        "type": "object"
-    },
-    "borderColor": {
-        "type": "string"
-    }
-}
-```
-
-### Example
-
-- None
-
-### Selectors
-
-- None
-
-### Style Handles
-
-- None
+- `d11-privacy`
 
 ### Editor Style Handles
 
@@ -9905,3439 +10278,7 @@ It contains only the blocks currently marked as allowed by the theme block avail
 
 ### Editor Script Handles
 
-- `wc-product-filter-active-block`
-
-### View Script Handles
-
-- None
-
-### View Style Handles
-
-- None
-
-### Custom Metadata
-
-- None
-
-## Attribute Filter (`woocommerce/product-filter-attribute`)
-
-- `title`: `Attribute Filter`
-- `description`: `Enable customers to filter the product grid by selecting one or more attributes, such as color.`
-- `origin`: `woocommerce`
-- `category_bucket`: `woocommerce`
-- `currently_allowed`: `true`
-- `currently_blacklisted`: `false`
-- `is_dynamic`: `true`
-- `api_version`: `3`
-- `category`: `woocommerce`
-- `icon`: `null`
-- `render_callback`: `Automattic\WooCommerce\Blocks\BlockTypes\ProductFilterAttribute::render_callback`
-- `has_render_callback`: `true`
-
-### Keywords
-
-- `WooCommerce`
-
-### Parent
-
-- None
-
-### Ancestor
-
-- `woocommerce/product-filters`
-
-### Uses Context
-
-- `query`
-- `filterParams`
-
-### Provides Context
-
-- None
-
-### Supports Summary
-
-- `anchor`: `false`
-- `align`: `false`
-- `spacing`: `true`
-- `color`: `true`
-- `typography`: `true`
-- `html`: `false`
-- `multiple`: `false`
-- `reusable`: `false`
-
-### Supports
-
-```json
-{
-    "interactivity": true,
-    "color": {
-        "text": true,
-        "background": false,
-        "__experimentalDefaultControls": {
-            "text": false
-        }
-    },
-    "typography": {
-        "fontSize": true,
-        "lineHeight": true,
-        "__experimentalFontWeight": true,
-        "__experimentalFontFamily": true,
-        "__experimentalFontStyle": true,
-        "__experimentalTextTransform": true,
-        "__experimentalTextDecoration": true,
-        "__experimentalLetterSpacing": true,
-        "__experimentalDefaultControls": {
-            "fontSize": false
-        }
-    },
-    "spacing": {
-        "margin": true,
-        "padding": true,
-        "blockGap": true,
-        "__experimentalDefaultControls": {
-            "margin": false,
-            "padding": false,
-            "blockGap": false
-        }
-    },
-    "__experimentalBorder": {
-        "color": true,
-        "radius": true,
-        "style": true,
-        "width": true,
-        "__experimentalDefaultControls": {
-            "color": false,
-            "radius": false,
-            "style": false,
-            "width": false
-        }
-    }
-}
-```
-
-### Attributes
-
-```json
-{
-    "attributeId": {
-        "type": "number",
-        "default": 0
-    },
-    "showCounts": {
-        "type": "boolean",
-        "default": false
-    },
-    "queryType": {
-        "type": "string",
-        "default": "or"
-    },
-    "displayStyle": {
-        "type": "string",
-        "default": "woocommerce/product-filter-checkbox-list"
-    },
-    "selectType": {
-        "type": "string",
-        "default": "multiple"
-    },
-    "isPreview": {
-        "type": "boolean",
-        "default": false
-    },
-    "sortOrder": {
-        "type": "string",
-        "default": "count-desc"
-    },
-    "hideEmpty": {
-        "type": "boolean",
-        "default": true
-    },
-    "lock": {
-        "type": "object"
-    },
-    "metadata": {
-        "type": "object"
-    },
-    "className": {
-        "type": "string"
-    },
-    "style": {
-        "type": "object"
-    },
-    "textColor": {
-        "type": "string"
-    },
-    "fontSize": {
-        "type": "string"
-    },
-    "fontFamily": {
-        "type": "string"
-    },
-    "borderColor": {
-        "type": "string"
-    }
-}
-```
-
-### Example
-
-```json
-{
-    "attributes": {
-        "isPreview": true
-    }
-}
-```
-
-### Selectors
-
-- None
-
-### Style Handles
-
-- `wc-blocks-style`
-- `wc-blocks-style-product-filter-attribute`
-
-### Editor Style Handles
-
-- None
-
-### Script Handles
-
-- None
-
-### Editor Script Handles
-
-- `wc-product-filter-attribute-block`
-
-### View Script Handles
-
-- None
-
-### View Style Handles
-
-- None
-
-### Custom Metadata
-
-- None
-
-## List (`woocommerce/product-filter-checkbox-list`)
-
-- `title`: `List`
-- `description`: `Display a list of filter options.`
-- `origin`: `woocommerce`
-- `category_bucket`: `woocommerce`
-- `currently_allowed`: `true`
-- `currently_blacklisted`: `false`
-- `is_dynamic`: `true`
-- `api_version`: `3`
-- `category`: `woocommerce`
-- `icon`: `null`
-- `render_callback`: `Automattic\WooCommerce\Blocks\BlockTypes\ProductFilterCheckboxList::render_callback`
-- `has_render_callback`: `true`
-
-### Keywords
-
-- `WooCommerce`
-
-### Parent
-
-- None
-
-### Ancestor
-
-- `woocommerce/product-filter-attribute`
-- `woocommerce/product-filter-status`
-- `woocommerce/product-filter-taxonomy`
-- `woocommerce/product-filter-rating`
-
-### Uses Context
-
-- `filterData`
-
-### Provides Context
-
-- None
-
-### Supports Summary
-
-- `anchor`: `false`
-- `align`: `false`
-- `spacing`: `false`
-- `color`: `false`
-- `typography`: `false`
-- `html`: `false`
-- `multiple`: `false`
-- `reusable`: `false`
-
-### Supports
-
-```json
-{
-    "interactivity": true
-}
-```
-
-### Attributes
-
-```json
-{
-    "optionElementBorder": {
-        "type": "string",
-        "default": ""
-    },
-    "customOptionElementBorder": {
-        "type": "string",
-        "default": ""
-    },
-    "optionElementSelected": {
-        "type": "string",
-        "default": ""
-    },
-    "customOptionElementSelected": {
-        "type": "string",
-        "default": ""
-    },
-    "optionElement": {
-        "type": "string",
-        "default": ""
-    },
-    "customOptionElement": {
-        "type": "string",
-        "default": ""
-    },
-    "labelElement": {
-        "type": "string",
-        "default": ""
-    },
-    "customLabelElement": {
-        "type": "string",
-        "default": ""
-    },
-    "lock": {
-        "type": "object"
-    },
-    "metadata": {
-        "type": "object"
-    },
-    "className": {
-        "type": "string"
-    }
-}
-```
-
-### Example
-
-- None
-
-### Selectors
-
-- None
-
-### Style Handles
-
-- `woocommerce-product-filter-checkbox-list-style`
-
-### Editor Style Handles
-
-- `woocommerce-product-filter-checkbox-list-editor-style`
-
-### Script Handles
-
-- None
-
-### Editor Script Handles
-
-- `wc-product-filter-checkbox-list-block`
-
-### View Script Handles
-
-- None
-
-### View Style Handles
-
-- None
-
-### Custom Metadata
-
-- None
-
-## Chips (`woocommerce/product-filter-chips`)
-
-- `title`: `Chips`
-- `description`: `Display filter options as chips.`
-- `origin`: `woocommerce`
-- `category_bucket`: `woocommerce`
-- `currently_allowed`: `true`
-- `currently_blacklisted`: `false`
-- `is_dynamic`: `true`
-- `api_version`: `3`
-- `category`: `woocommerce`
-- `icon`: `null`
-- `render_callback`: `Automattic\WooCommerce\Blocks\BlockTypes\ProductFilterChips::render_callback`
-- `has_render_callback`: `true`
-
-### Keywords
-
-- `WooCommerce`
-
-### Parent
-
-- None
-
-### Ancestor
-
-- `woocommerce/product-filter-attribute`
-- `woocommerce/product-filter-taxonomy`
-- `woocommerce/product-filter-status`
-
-### Uses Context
-
-- `filterData`
-
-### Provides Context
-
-- None
-
-### Supports Summary
-
-- `anchor`: `false`
-- `align`: `false`
-- `spacing`: `false`
-- `color`: `false`
-- `typography`: `false`
-- `html`: `false`
-- `multiple`: `false`
-- `reusable`: `false`
-
-### Supports
-
-```json
-{
-    "interactivity": true
-}
-```
-
-### Attributes
-
-```json
-{
-    "chipText": {
-        "type": "string"
-    },
-    "customChipText": {
-        "type": "string"
-    },
-    "chipBackground": {
-        "type": "string"
-    },
-    "customChipBackground": {
-        "type": "string"
-    },
-    "chipBorder": {
-        "type": "string"
-    },
-    "customChipBorder": {
-        "type": "string"
-    },
-    "selectedChipText": {
-        "type": "string"
-    },
-    "customSelectedChipText": {
-        "type": "string"
-    },
-    "selectedChipBackground": {
-        "type": "string"
-    },
-    "customSelectedChipBackground": {
-        "type": "string"
-    },
-    "selectedChipBorder": {
-        "type": "string"
-    },
-    "customSelectedChipBorder": {
-        "type": "string"
-    },
-    "lock": {
-        "type": "object"
-    },
-    "metadata": {
-        "type": "object"
-    },
-    "className": {
-        "type": "string"
-    }
-}
-```
-
-### Example
-
-- None
-
-### Selectors
-
-- None
-
-### Style Handles
-
-- `woocommerce-product-filter-chips-style`
-
-### Editor Style Handles
-
-- `woocommerce-product-filter-chips-editor-style`
-
-### Script Handles
-
-- None
-
-### Editor Script Handles
-
-- `wc-product-filter-chips-block`
-
-### View Script Handles
-
-- None
-
-### View Style Handles
-
-- None
-
-### Custom Metadata
-
-- None
-
-## Clear filters (`woocommerce/product-filter-clear-button`)
-
-- `title`: `Clear filters`
-- `description`: `Allows shoppers to clear active filters.`
-- `origin`: `woocommerce`
-- `category_bucket`: `woocommerce`
-- `currently_allowed`: `true`
-- `currently_blacklisted`: `false`
-- `is_dynamic`: `true`
-- `api_version`: `3`
-- `category`: `woocommerce`
-- `icon`: `null`
-- `render_callback`: `Automattic\WooCommerce\Blocks\BlockTypes\ProductFilterClearButton::render_callback`
-- `has_render_callback`: `true`
-
-### Keywords
-
-- `WooCommerce`
-- `clear filters`
-
-### Parent
-
-- None
-
-### Ancestor
-
-- `woocommerce/product-filter-active`
-
-### Uses Context
-
-- `filterData`
-
-### Provides Context
-
-- None
-
-### Supports Summary
-
-- `anchor`: `false`
-- `align`: `false`
-- `spacing`: `false`
-- `color`: `false`
-- `typography`: `false`
-- `html`: `false`
-- `multiple`: `false`
-- `reusable`: `false`
-
-### Supports
-
-```json
-{
-    "interactivity": true,
-    "inserter": true
-}
-```
-
-### Attributes
-
-```json
-{
-    "lock": {
-        "type": "object"
-    },
-    "metadata": {
-        "type": "object"
-    },
-    "className": {
-        "type": "string"
-    }
-}
-```
-
-### Example
-
-- None
-
-### Selectors
-
-- None
-
-### Style Handles
-
-- `wc-blocks-style`
-- `wc-blocks-style-product-filter-clear-button`
-
-### Editor Style Handles
-
-- `wc-blocks-editor-style`
-
-### Script Handles
-
-- None
-
-### Editor Script Handles
-
-- `wc-product-filter-clear-button-block`
-
-### View Script Handles
-
-- None
-
-### View Style Handles
-
-- None
-
-### Custom Metadata
-
-- None
-
-## Price Filter (`woocommerce/product-filter-price`)
-
-- `title`: `Price Filter`
-- `description`: `Let shoppers filter products by choosing a price range.`
-- `origin`: `woocommerce`
-- `category_bucket`: `woocommerce`
-- `currently_allowed`: `true`
-- `currently_blacklisted`: `false`
-- `is_dynamic`: `true`
-- `api_version`: `3`
-- `category`: `woocommerce`
-- `icon`: `null`
-- `render_callback`: `Automattic\WooCommerce\Blocks\BlockTypes\ProductFilterPrice::render_callback`
-- `has_render_callback`: `true`
-
-### Keywords
-
-- `WooCommerce`
-
-### Parent
-
-- None
-
-### Ancestor
-
-- `woocommerce/product-filters`
-
-### Uses Context
-
-- `query`
-- `filterParams`
-
-### Provides Context
-
-- None
-
-### Supports Summary
-
-- `anchor`: `false`
-- `align`: `false`
-- `spacing`: `false`
-- `color`: `false`
-- `typography`: `false`
-- `html`: `false`
-- `multiple`: `false`
-- `reusable`: `false`
-
-### Supports
-
-```json
-{
-    "interactivity": true,
-    "html": false
-}
-```
-
-### Attributes
-
-```json
-{
-    "lock": {
-        "type": "object"
-    },
-    "metadata": {
-        "type": "object"
-    },
-    "className": {
-        "type": "string"
-    }
-}
-```
-
-### Example
-
-- None
-
-### Selectors
-
-- None
-
-### Style Handles
-
-- None
-
-### Editor Style Handles
-
-- None
-
-### Script Handles
-
-- None
-
-### Editor Script Handles
-
-- `wc-product-filter-price-block`
-
-### View Script Handles
-
-- None
-
-### View Style Handles
-
-- None
-
-### Custom Metadata
-
-- None
-
-## Price Slider (`woocommerce/product-filter-price-slider`)
-
-- `title`: `Price Slider`
-- `description`: `A slider helps shopper choose a price range.`
-- `origin`: `woocommerce`
-- `category_bucket`: `woocommerce`
-- `currently_allowed`: `true`
-- `currently_blacklisted`: `false`
-- `is_dynamic`: `true`
-- `api_version`: `3`
-- `category`: `woocommerce`
-- `icon`: `null`
-- `render_callback`: `Automattic\WooCommerce\Blocks\BlockTypes\ProductFilterPriceSlider::render_callback`
-- `has_render_callback`: `true`
-
-### Keywords
-
-- `WooCommerce`
-
-### Parent
-
-- None
-
-### Ancestor
-
-- `woocommerce/product-filter-price`
-
-### Uses Context
-
-- `filterData`
-
-### Provides Context
-
-- None
-
-### Supports Summary
-
-- `anchor`: `false`
-- `align`: `false`
-- `spacing`: `false`
-- `color`: `true`
-- `typography`: `false`
-- `html`: `false`
-- `multiple`: `false`
-- `reusable`: `false`
-
-### Supports
-
-```json
-{
-    "html": false,
-    "color": {
-        "enableContrastChecker": false,
-        "background": false,
-        "text": false
-    },
-    "interactivity": true
-}
-```
-
-### Attributes
-
-```json
-{
-    "showInputFields": {
-        "type": "boolean",
-        "default": true
-    },
-    "inlineInput": {
-        "type": "boolean",
-        "default": false
-    },
-    "sliderHandle": {
-        "type": "string",
-        "default": ""
-    },
-    "customSliderHandle": {
-        "type": "string",
-        "default": ""
-    },
-    "sliderHandleBorder": {
-        "type": "string",
-        "default": ""
-    },
-    "customSliderHandleBorder": {
-        "type": "string",
-        "default": ""
-    },
-    "slider": {
-        "type": "string",
-        "default": ""
-    },
-    "customSlider": {
-        "type": "string",
-        "default": ""
-    },
-    "lock": {
-        "type": "object"
-    },
-    "metadata": {
-        "type": "object"
-    },
-    "className": {
-        "type": "string"
-    }
-}
-```
-
-### Example
-
-- None
-
-### Selectors
-
-- None
-
-### Style Handles
-
-- `woocommerce-product-filter-price-slider-style`
-
-### Editor Style Handles
-
-- None
-
-### Script Handles
-
-- None
-
-### Editor Script Handles
-
-- `wc-product-filter-price-slider-block`
-
-### View Script Handles
-
-- None
-
-### View Style Handles
-
-- None
-
-### Custom Metadata
-
-- None
-
-## Rating Filter (`woocommerce/product-filter-rating`)
-
-- `title`: `Rating Filter`
-- `description`: `Enable customers to filter the product collection by rating.`
-- `origin`: `woocommerce`
-- `category_bucket`: `woocommerce`
-- `currently_allowed`: `true`
-- `currently_blacklisted`: `false`
-- `is_dynamic`: `true`
-- `api_version`: `3`
-- `category`: `woocommerce`
-- `icon`: `null`
-- `render_callback`: `Automattic\WooCommerce\Blocks\BlockTypes\ProductFilterRating::render_callback`
-- `has_render_callback`: `true`
-
-### Keywords
-
-- None
-
-### Parent
-
-- None
-
-### Ancestor
-
-- `woocommerce/product-filters`
-
-### Uses Context
-
-- `query`
-- `filterParams`
-
-### Provides Context
-
-- None
-
-### Supports Summary
-
-- `anchor`: `false`
-- `align`: `false`
-- `spacing`: `false`
-- `color`: `true`
-- `typography`: `false`
-- `html`: `false`
-- `multiple`: `false`
-- `reusable`: `false`
-
-### Supports
-
-```json
-{
-    "interactivity": true,
-    "color": {
-        "background": false,
-        "text": true
-    }
-}
-```
-
-### Attributes
-
-```json
-{
-    "className": {
-        "type": "string",
-        "default": ""
-    },
-    "showCounts": {
-        "type": "boolean",
-        "default": false
-    },
-    "minRating": {
-        "type": "string",
-        "default": "0"
-    },
-    "isPreview": {
-        "type": "boolean",
-        "default": false
-    },
-    "lock": {
-        "type": "object"
-    },
-    "metadata": {
-        "type": "object"
-    },
-    "style": {
-        "type": "object"
-    },
-    "textColor": {
-        "type": "string"
-    }
-}
-```
-
-### Example
-
-- None
-
-### Selectors
-
-- None
-
-### Style Handles
-
-- `wc-blocks-style`
-- `wc-blocks-style-product-filter-rating`
-
-### Editor Style Handles
-
-- None
-
-### Script Handles
-
-- None
-
-### Editor Script Handles
-
-- `wc-product-filter-rating-block`
-
-### View Script Handles
-
-- None
-
-### View Style Handles
-
-- None
-
-### Custom Metadata
-
-- None
-
-## Chips (`woocommerce/product-filter-removable-chips`)
-
-- `title`: `Chips`
-- `description`: `Display removable active filters as chips.`
-- `origin`: `woocommerce`
-- `category_bucket`: `woocommerce`
-- `currently_allowed`: `true`
-- `currently_blacklisted`: `false`
-- `is_dynamic`: `true`
-- `api_version`: `3`
-- `category`: `woocommerce`
-- `icon`: `null`
-- `render_callback`: `Automattic\WooCommerce\Blocks\BlockTypes\ProductFilterRemovableChips::render_callback`
-- `has_render_callback`: `true`
-
-### Keywords
-
-- `WooCommerce`
-
-### Parent
-
-- None
-
-### Ancestor
-
-- `woocommerce/product-filter-active`
-
-### Uses Context
-
-- `queryId`
-- `filterData`
-
-### Provides Context
-
-- None
-
-### Supports Summary
-
-- `anchor`: `false`
-- `align`: `false`
-- `spacing`: `false`
-- `color`: `false`
-- `typography`: `false`
-- `html`: `false`
-- `multiple`: `false`
-- `reusable`: `false`
-
-### Supports
-
-```json
-{
-    "layout": {
-        "allowSwitching": false,
-        "allowInheriting": false,
-        "allowVerticalAlignment": false,
-        "default": {
-            "type": "flex"
-        }
-    },
-    "interactivity": true
-}
-```
-
-### Attributes
-
-```json
-{
-    "chipText": {
-        "type": "string"
-    },
-    "customChipText": {
-        "type": "string"
-    },
-    "chipBackground": {
-        "type": "string"
-    },
-    "customChipBackground": {
-        "type": "string"
-    },
-    "chipBorder": {
-        "type": "string"
-    },
-    "customChipBorder": {
-        "type": "string"
-    },
-    "lock": {
-        "type": "object"
-    },
-    "metadata": {
-        "type": "object"
-    },
-    "className": {
-        "type": "string"
-    },
-    "layout": {
-        "type": "object"
-    }
-}
-```
-
-### Example
-
-- None
-
-### Selectors
-
-- None
-
-### Style Handles
-
-- `woocommerce-product-filter-removable-chips-style`
-
-### Editor Style Handles
-
-- None
-
-### Script Handles
-
-- None
-
-### Editor Script Handles
-
-- `wc-product-filter-removable-chips-block`
-
-### View Script Handles
-
-- None
-
-### View Style Handles
-
-- None
-
-### Custom Metadata
-
-- None
-
-## Status Filter (`woocommerce/product-filter-status`)
-
-- `title`: `Status Filter`
-- `description`: `Let shoppers filter products by choosing stock status.`
-- `origin`: `woocommerce`
-- `category_bucket`: `woocommerce`
-- `currently_allowed`: `true`
-- `currently_blacklisted`: `false`
-- `is_dynamic`: `true`
-- `api_version`: `3`
-- `category`: `woocommerce`
-- `icon`: `null`
-- `render_callback`: `Automattic\WooCommerce\Blocks\BlockTypes\ProductFilterStatus::render_callback`
-- `has_render_callback`: `true`
-
-### Keywords
-
-- `WooCommerce`
-
-### Parent
-
-- None
-
-### Ancestor
-
-- `woocommerce/product-filters`
-
-### Uses Context
-
-- `query`
-- `filterParams`
-
-### Provides Context
-
-- None
-
-### Supports Summary
-
-- `anchor`: `false`
-- `align`: `false`
-- `spacing`: `true`
-- `color`: `true`
-- `typography`: `true`
-- `html`: `false`
-- `multiple`: `false`
-- `reusable`: `false`
-
-### Supports
-
-```json
-{
-    "interactivity": true,
-    "html": false,
-    "color": {
-        "text": true,
-        "background": false,
-        "__experimentalDefaultControls": {
-            "text": false
-        }
-    },
-    "typography": {
-        "fontSize": true,
-        "lineHeight": true,
-        "__experimentalFontWeight": true,
-        "__experimentalFontFamily": true,
-        "__experimentalFontStyle": true,
-        "__experimentalTextTransform": true,
-        "__experimentalTextDecoration": true,
-        "__experimentalLetterSpacing": true,
-        "__experimentalDefaultControls": {
-            "fontSize": false
-        }
-    },
-    "spacing": {
-        "margin": true,
-        "padding": true,
-        "blockGap": true,
-        "__experimentalDefaultControls": {
-            "margin": false,
-            "padding": false,
-            "blockGap": false
-        }
-    },
-    "__experimentalBorder": {
-        "color": true,
-        "radius": true,
-        "style": true,
-        "width": true,
-        "__experimentalDefaultControls": {
-            "color": false,
-            "radius": false,
-            "style": false,
-            "width": false
-        }
-    }
-}
-```
-
-### Attributes
-
-```json
-{
-    "showCounts": {
-        "type": "boolean",
-        "default": false
-    },
-    "displayStyle": {
-        "type": "string",
-        "default": "woocommerce/product-filter-checkbox-list"
-    },
-    "isPreview": {
-        "type": "boolean",
-        "default": false
-    },
-    "hideEmpty": {
-        "type": "boolean",
-        "default": true
-    },
-    "lock": {
-        "type": "object"
-    },
-    "metadata": {
-        "type": "object"
-    },
-    "className": {
-        "type": "string"
-    },
-    "style": {
-        "type": "object"
-    },
-    "textColor": {
-        "type": "string"
-    },
-    "fontSize": {
-        "type": "string"
-    },
-    "fontFamily": {
-        "type": "string"
-    },
-    "borderColor": {
-        "type": "string"
-    }
-}
-```
-
-### Example
-
-```json
-{
-    "attributes": {
-        "isPreview": true
-    }
-}
-```
-
-### Selectors
-
-- None
-
-### Style Handles
-
-- `wc-blocks-style`
-- `wc-blocks-style-product-filter-status`
-
-### Editor Style Handles
-
-- None
-
-### Script Handles
-
-- None
-
-### Editor Script Handles
-
-- `wc-product-filter-status-block`
-
-### View Script Handles
-
-- None
-
-### View Style Handles
-
-- None
-
-### Custom Metadata
-
-- None
-
-## Taxonomy Filter (`woocommerce/product-filter-taxonomy`)
-
-- `title`: `Taxonomy Filter`
-- `description`: `Enable customers to filter the product collection by selecting one or more taxonomy terms, such as categories, brands, or tags.`
-- `origin`: `woocommerce`
-- `category_bucket`: `woocommerce`
-- `currently_allowed`: `true`
-- `currently_blacklisted`: `false`
-- `is_dynamic`: `true`
-- `api_version`: `3`
-- `category`: `woocommerce`
-- `icon`: `null`
-- `render_callback`: `Automattic\WooCommerce\Blocks\BlockTypes\ProductFilterTaxonomy::render_callback`
-- `has_render_callback`: `true`
-
-### Keywords
-
-- `WooCommerce`
-
-### Parent
-
-- None
-
-### Ancestor
-
-- `woocommerce/product-filters`
-
-### Uses Context
-
-- `query`
-- `filterParams`
-
-### Provides Context
-
-- None
-
-### Supports Summary
-
-- `anchor`: `false`
-- `align`: `false`
-- `spacing`: `true`
-- `color`: `true`
-- `typography`: `true`
-- `html`: `false`
-- `multiple`: `false`
-- `reusable`: `false`
-
-### Supports
-
-```json
-{
-    "interactivity": true,
-    "color": {
-        "text": true,
-        "background": false,
-        "__experimentalDefaultControls": {
-            "text": false
-        }
-    },
-    "typography": {
-        "fontSize": true,
-        "lineHeight": true,
-        "__experimentalFontWeight": true,
-        "__experimentalFontFamily": true,
-        "__experimentalFontStyle": true,
-        "__experimentalTextTransform": true,
-        "__experimentalTextDecoration": true,
-        "__experimentalLetterSpacing": true,
-        "__experimentalDefaultControls": {
-            "fontSize": false
-        }
-    },
-    "spacing": {
-        "margin": true,
-        "padding": true,
-        "blockGap": true,
-        "__experimentalDefaultControls": {
-            "margin": false,
-            "padding": false,
-            "blockGap": false
-        }
-    },
-    "__experimentalBorder": {
-        "color": true,
-        "radius": true,
-        "style": true,
-        "width": true,
-        "__experimentalDefaultControls": {
-            "color": false,
-            "radius": false,
-            "style": false,
-            "width": false
-        }
-    }
-}
-```
-
-### Attributes
-
-```json
-{
-    "taxonomy": {
-        "type": "string",
-        "default": "product_cat"
-    },
-    "showCounts": {
-        "type": "boolean",
-        "default": false
-    },
-    "displayStyle": {
-        "type": "string",
-        "default": "woocommerce/product-filter-checkbox-list"
-    },
-    "isPreview": {
-        "type": "boolean",
-        "default": false
-    },
-    "sortOrder": {
-        "type": "string",
-        "default": "count-desc"
-    },
-    "hideEmpty": {
-        "type": "boolean",
-        "default": true
-    },
-    "lock": {
-        "type": "object"
-    },
-    "metadata": {
-        "type": "object"
-    },
-    "className": {
-        "type": "string"
-    },
-    "style": {
-        "type": "object"
-    },
-    "textColor": {
-        "type": "string"
-    },
-    "fontSize": {
-        "type": "string"
-    },
-    "fontFamily": {
-        "type": "string"
-    },
-    "borderColor": {
-        "type": "string"
-    }
-}
-```
-
-### Example
-
-```json
-{
-    "attributes": {
-        "isPreview": true
-    }
-}
-```
-
-### Selectors
-
-- None
-
-### Style Handles
-
-- `wc-blocks-style`
-- `wc-blocks-style-product-filter-taxonomy`
-
-### Editor Style Handles
-
-- `wc-blocks-editor-style`
-
-### Script Handles
-
-- None
-
-### Editor Script Handles
-
-- `wc-product-filter-taxonomy-block`
-
-### View Script Handles
-
-- None
-
-### View Style Handles
-
-- None
-
-### Custom Metadata
-
-- None
-
-## Product Filters (`woocommerce/product-filters`)
-
-- `title`: `Product Filters`
-- `description`: `Let shoppers filter products displayed on the page.`
-- `origin`: `woocommerce`
-- `category_bucket`: `woocommerce`
-- `currently_allowed`: `true`
-- `currently_blacklisted`: `false`
-- `is_dynamic`: `true`
-- `api_version`: `3`
-- `category`: `woocommerce`
-- `icon`: `null`
-- `render_callback`: `Automattic\WooCommerce\Blocks\BlockTypes\ProductFilters::render_callback`
-- `has_render_callback`: `true`
-
-### Keywords
-
-- `WooCommerce`
-
-### Parent
-
-- None
-
-### Ancestor
-
-- None
-
-### Uses Context
-
-- `postId`
-- `query`
-- `queryId`
-
-### Provides Context
-
-- None
-
-### Supports Summary
-
-- `anchor`: `false`
-- `align`: `true`
-- `spacing`: `true`
-- `color`: `true`
-- `typography`: `true`
-- `html`: `false`
-- `multiple`: `true`
-- `reusable`: `false`
-
-### Supports
-
-```json
-{
-    "align": true,
-    "color": {
-        "background": true,
-        "text": true,
-        "heading": true,
-        "enableContrastChecker": false,
-        "button": true
-    },
-    "multiple": true,
-    "inserter": true,
-    "interactivity": true,
-    "typography": {
-        "fontSize": true
-    },
-    "layout": {
-        "default": {
-            "type": "flex",
-            "orientation": "vertical",
-            "flexWrap": "nowrap",
-            "justifyContent": "stretch"
-        },
-        "allowEditing": false
-    },
-    "spacing": {
-        "blockGap": true
-    }
-}
-```
-
-### Attributes
-
-```json
-{
-    "isPreview": {
-        "type": "boolean",
-        "default": false
-    },
-    "lock": {
-        "type": "object"
-    },
-    "metadata": {
-        "type": "object"
-    },
-    "align": {
-        "type": "string",
-        "enum": [
-            "left",
-            "center",
-            "right",
-            "wide",
-            "full",
-            ""
-        ]
-    },
-    "className": {
-        "type": "string"
-    },
-    "style": {
-        "type": "object"
-    },
-    "backgroundColor": {
-        "type": "string"
-    },
-    "textColor": {
-        "type": "string"
-    },
-    "fontSize": {
-        "type": "string"
-    },
-    "layout": {
-        "type": "object"
-    }
-}
-```
-
-### Example
-
-```json
-{
-    "attributes": {
-        "isPreview": true
-    }
-}
-```
-
-### Selectors
-
-- None
-
-### Style Handles
-
-- `woocommerce-product-filters-style`
-
-### Editor Style Handles
-
-- `woocommerce-product-filters-editor-style`
-
-### Script Handles
-
-- None
-
-### Editor Script Handles
-
-- `wc-product-filters-block`
-
-### View Script Handles
-
-- None
-
-### View Style Handles
-
-- None
-
-### Custom Metadata
-
-- None
-
-## Newest Products (`woocommerce/product-new`)
-
-- `title`: `Newest Products`
-- `description`: `Display a grid of your newest products.`
-- `origin`: `woocommerce`
-- `category_bucket`: `woocommerce`
-- `currently_allowed`: `true`
-- `currently_blacklisted`: `false`
-- `is_dynamic`: `true`
-- `api_version`: `3`
-- `category`: `woocommerce`
-- `icon`: `null`
-- `render_callback`: `Automattic\WooCommerce\Blocks\BlockTypes\ProductNew::render_callback`
-- `has_render_callback`: `true`
-
-### Keywords
-
-- `WooCommerce`
-
-### Parent
-
-- None
-
-### Ancestor
-
-- None
-
-### Uses Context
-
-- None
-
-### Provides Context
-
-- None
-
-### Supports Summary
-
-- `anchor`: `false`
-- `align`: `true`
-- `spacing`: `false`
-- `color`: `false`
-- `typography`: `false`
-- `html`: `false`
-- `multiple`: `false`
-- `reusable`: `false`
-
-### Supports
-
-```json
-{
-    "interactivity": {
-        "clientNavigation": false
-    },
-    "align": [
-        "wide",
-        "full"
-    ],
-    "html": false,
-    "inserter": false
-}
-```
-
-### Attributes
-
-```json
-{
-    "columns": {
-        "type": "number",
-        "default": 3
-    },
-    "rows": {
-        "type": "number",
-        "default": 3
-    },
-    "alignButtons": {
-        "type": "boolean",
-        "default": false
-    },
-    "contentVisibility": {
-        "type": "object",
-        "default": {
-            "image": true,
-            "title": true,
-            "price": true,
-            "rating": true,
-            "button": true
-        },
-        "properties": {
-            "image": {
-                "type": "boolean",
-                "default": true
-            },
-            "title": {
-                "type": "boolean",
-                "default": true
-            },
-            "price": {
-                "type": "boolean",
-                "default": true
-            },
-            "rating": {
-                "type": "boolean",
-                "default": true
-            },
-            "button": {
-                "type": "boolean",
-                "default": true
-            }
-        }
-    },
-    "categories": {
-        "type": "array",
-        "default": []
-    },
-    "catOperator": {
-        "type": "string",
-        "default": "any"
-    },
-    "isPreview": {
-        "type": "boolean",
-        "default": false
-    },
-    "stockStatus": {
-        "type": "array"
-    },
-    "editMode": {
-        "type": "boolean",
-        "default": true
-    },
-    "orderby": {
-        "type": "string",
-        "enum": [
-            "date",
-            "popularity",
-            "price_asc",
-            "price_desc",
-            "rating",
-            "title",
-            "menu_order"
-        ],
-        "default": "date"
-    },
-    "lock": {
-        "type": "object"
-    },
-    "metadata": {
-        "type": "object"
-    },
-    "align": {
-        "type": "string",
-        "enum": [
-            "left",
-            "center",
-            "right",
-            "wide",
-            "full",
-            ""
-        ]
-    },
-    "className": {
-        "type": "string"
-    }
-}
-```
-
-### Example
-
-- None
-
-### Selectors
-
-- None
-
-### Style Handles
-
-- `wc-blocks-style`
-- `wc-blocks-style-all-products`
-
-### Editor Style Handles
-
-- `wc-blocks-editor-style`
-
-### Script Handles
-
-- None
-
-### Editor Script Handles
-
-- `wc-product-new-block`
-
-### View Script Handles
-
-- None
-
-### View Style Handles
-
-- None
-
-### Custom Metadata
-
-- None
-
-## On Sale Products (`woocommerce/product-on-sale`)
-
-- `title`: `On Sale Products`
-- `description`: `Display a grid of products currently on sale.`
-- `origin`: `woocommerce`
-- `category_bucket`: `woocommerce`
-- `currently_allowed`: `true`
-- `currently_blacklisted`: `false`
-- `is_dynamic`: `true`
-- `api_version`: `3`
-- `category`: `woocommerce`
-- `icon`: `null`
-- `render_callback`: `Automattic\WooCommerce\Blocks\BlockTypes\ProductOnSale::render_callback`
-- `has_render_callback`: `true`
-
-### Keywords
-
-- `WooCommerce`
-
-### Parent
-
-- None
-
-### Ancestor
-
-- None
-
-### Uses Context
-
-- None
-
-### Provides Context
-
-- None
-
-### Supports Summary
-
-- `anchor`: `false`
-- `align`: `true`
-- `spacing`: `false`
-- `color`: `false`
-- `typography`: `false`
-- `html`: `false`
-- `multiple`: `false`
-- `reusable`: `false`
-
-### Supports
-
-```json
-{
-    "interactivity": {
-        "clientNavigation": false
-    },
-    "align": [
-        "wide",
-        "full"
-    ],
-    "html": false,
-    "inserter": false
-}
-```
-
-### Attributes
-
-```json
-{
-    "columns": {
-        "type": "number",
-        "default": 3
-    },
-    "rows": {
-        "type": "number",
-        "default": 3
-    },
-    "alignButtons": {
-        "type": "boolean",
-        "default": false
-    },
-    "categories": {
-        "type": "array",
-        "default": []
-    },
-    "catOperator": {
-        "type": "string",
-        "default": "any"
-    },
-    "contentVisibility": {
-        "type": "object",
-        "default": {
-            "image": true,
-            "title": true,
-            "price": true,
-            "rating": true,
-            "button": true
-        },
-        "properties": {
-            "image": {
-                "type": "boolean",
-                "default": true
-            },
-            "title": {
-                "type": "boolean",
-                "default": true
-            },
-            "price": {
-                "type": "boolean",
-                "default": true
-            },
-            "rating": {
-                "type": "boolean",
-                "default": true
-            },
-            "button": {
-                "type": "boolean",
-                "default": true
-            }
-        }
-    },
-    "isPreview": {
-        "type": "boolean",
-        "default": false
-    },
-    "stockStatus": {
-        "type": "array"
-    },
-    "orderby": {
-        "type": "string",
-        "default": "date"
-    },
-    "lock": {
-        "type": "object"
-    },
-    "metadata": {
-        "type": "object"
-    },
-    "align": {
-        "type": "string",
-        "enum": [
-            "left",
-            "center",
-            "right",
-            "wide",
-            "full",
-            ""
-        ]
-    },
-    "className": {
-        "type": "string"
-    }
-}
-```
-
-### Example
-
-- None
-
-### Selectors
-
-- None
-
-### Style Handles
-
-- `wc-blocks-style`
-- `wc-blocks-style-all-products`
-
-### Editor Style Handles
-
-- `wc-blocks-editor-style`
-
-### Script Handles
-
-- None
-
-### Editor Script Handles
-
-- `wc-product-on-sale-block`
-
-### View Script Handles
-
-- None
-
-### View Style Handles
-
-- None
-
-### Custom Metadata
-
-- None
-
-## Product Results Count (`woocommerce/product-results-count`)
-
-- `title`: `Product Results Count`
-- `description`: `Display the number of products on the archive page or search result page.`
-- `origin`: `woocommerce`
-- `category_bucket`: `woocommerce`
-- `currently_allowed`: `true`
-- `currently_blacklisted`: `false`
-- `is_dynamic`: `true`
-- `api_version`: `3`
-- `category`: `woocommerce`
-- `icon`: `null`
-- `render_callback`: `Automattic\WooCommerce\Blocks\BlockTypes\ProductResultsCount::render_callback`
-- `has_render_callback`: `true`
-
-### Keywords
-
-- `WooCommerce`
-
-### Parent
-
-- None
-
-### Ancestor
-
-- None
-
-### Uses Context
-
-- `queryId`
-
-### Provides Context
-
-- None
-
-### Supports Summary
-
-- `anchor`: `false`
-- `align`: `false`
-- `spacing`: `false`
-- `color`: `true`
-- `typography`: `true`
-- `html`: `false`
-- `multiple`: `false`
-- `reusable`: `false`
-
-### Supports
-
-```json
-{
-    "interactivity": {
-        "clientNavigation": true
-    },
-    "color": {
-        "text": true,
-        "background": false
-    },
-    "typography": {
-        "fontSize": true
-    }
-}
-```
-
-### Attributes
-
-```json
-{
-    "lock": {
-        "type": "object"
-    },
-    "metadata": {
-        "type": "object"
-    },
-    "className": {
-        "type": "string"
-    },
-    "style": {
-        "type": "object"
-    },
-    "textColor": {
-        "type": "string"
-    },
-    "fontSize": {
-        "type": "string"
-    }
-}
-```
-
-### Example
-
-- None
-
-### Selectors
-
-- None
-
-### Style Handles
-
-- `wc-blocks-style`
-- `wc-blocks-style-product-results-count`
-
-### Editor Style Handles
-
-- `wc-blocks-editor-style`
-
-### Script Handles
-
-- None
-
-### Editor Script Handles
-
-- `wc-product-results-count-block`
-
-### View Script Handles
-
-- None
-
-### View Style Handles
-
-- None
-
-### Custom Metadata
-
-- None
-
-## Untitled (`woocommerce/product-search`)
-
-- `title`: `null`
-- `description`: `null`
-- `origin`: `woocommerce`
-- `category_bucket`: `woocommerce`
-- `currently_allowed`: `true`
-- `currently_blacklisted`: `false`
-- `is_dynamic`: `true`
-- `api_version`: `1`
-- `category`: `null`
-- `icon`: `null`
-- `render_callback`: `Automattic\WooCommerce\Blocks\BlockTypes\ProductSearch::render_callback`
-- `has_render_callback`: `true`
-
-### Keywords
-
-- None
-
-### Parent
-
-- None
-
-### Ancestor
-
-- None
-
-### Uses Context
-
-- None
-
-### Provides Context
-
-- None
-
-### Supports Summary
-
-- `anchor`: `false`
-- `align`: `false`
-- `spacing`: `false`
-- `color`: `false`
-- `typography`: `false`
-- `html`: `false`
-- `multiple`: `false`
-- `reusable`: `false`
-
-### Supports
-
-- None
-
-### Attributes
-
-```json
-{
-    "lock": {
-        "type": "object"
-    },
-    "metadata": {
-        "type": "object"
-    },
-    "className": {
-        "type": "string"
-    }
-}
-```
-
-### Example
-
-- None
-
-### Selectors
-
-- None
-
-### Style Handles
-
-- `wc-blocks-style`
-- `wc-blocks-style-product-search`
-
-### Editor Style Handles
-
-- `wc-blocks-editor-style`
-
-### Script Handles
-
-- None
-
-### Editor Script Handles
-
-- `wc-product-search-block`
-
-### View Script Handles
-
-- None
-
-### View Style Handles
-
-- None
-
-### Custom Metadata
-
-- None
-
-## Products by Tag (`woocommerce/product-tag`)
-
-- `title`: `Products by Tag`
-- `description`: `Display a grid of products with selected tags.`
-- `origin`: `woocommerce`
-- `category_bucket`: `woocommerce`
-- `currently_allowed`: `true`
-- `currently_blacklisted`: `false`
-- `is_dynamic`: `true`
-- `api_version`: `3`
-- `category`: `woocommerce`
-- `icon`: `null`
-- `render_callback`: `Automattic\WooCommerce\Blocks\BlockTypes\ProductTag::render_callback`
-- `has_render_callback`: `true`
-
-### Keywords
-
-- `WooCommerce`
-
-### Parent
-
-- None
-
-### Ancestor
-
-- None
-
-### Uses Context
-
-- None
-
-### Provides Context
-
-- None
-
-### Supports Summary
-
-- `anchor`: `false`
-- `align`: `true`
-- `spacing`: `false`
-- `color`: `false`
-- `typography`: `false`
-- `html`: `false`
-- `multiple`: `false`
-- `reusable`: `false`
-
-### Supports
-
-```json
-{
-    "interactivity": {
-        "clientNavigation": false
-    },
-    "align": [
-        "wide",
-        "full"
-    ],
-    "html": false,
-    "inserter": false
-}
-```
-
-### Attributes
-
-```json
-{
-    "columns": {
-        "type": "number",
-        "default": 3
-    },
-    "rows": {
-        "type": "number",
-        "default": 3
-    },
-    "alignButtons": {
-        "type": "boolean",
-        "default": false
-    },
-    "contentVisibility": {
-        "type": "object",
-        "default": {
-            "image": true,
-            "title": true,
-            "price": true,
-            "rating": true,
-            "button": true
-        },
-        "properties": {
-            "image": {
-                "type": "boolean",
-                "default": true
-            },
-            "title": {
-                "type": "boolean",
-                "default": true
-            },
-            "price": {
-                "type": "boolean",
-                "default": true
-            },
-            "rating": {
-                "type": "boolean",
-                "default": true
-            },
-            "button": {
-                "type": "boolean",
-                "default": true
-            }
-        }
-    },
-    "tags": {
-        "type": "array",
-        "default": []
-    },
-    "tagOperator": {
-        "type": "string",
-        "default": "any"
-    },
-    "orderby": {
-        "type": "string",
-        "default": "date"
-    },
-    "isPreview": {
-        "type": "boolean",
-        "default": false
-    },
-    "stockStatus": {
-        "type": "array"
-    },
-    "lock": {
-        "type": "object"
-    },
-    "metadata": {
-        "type": "object"
-    },
-    "align": {
-        "type": "string",
-        "enum": [
-            "left",
-            "center",
-            "right",
-            "wide",
-            "full",
-            ""
-        ]
-    },
-    "className": {
-        "type": "string"
-    }
-}
-```
-
-### Example
-
-- None
-
-### Selectors
-
-- None
-
-### Style Handles
-
-- `wc-blocks-style`
-- `wc-blocks-style-all-products`
-
-### Editor Style Handles
-
-- `wc-blocks-editor-style`
-
-### Script Handles
-
-- None
-
-### Editor Script Handles
-
-- `wc-product-tag-block`
-
-### View Script Handles
-
-- None
-
-### View Style Handles
-
-- None
-
-### Custom Metadata
-
-- None
-
-## Top Rated Products (`woocommerce/product-top-rated`)
-
-- `title`: `Top Rated Products`
-- `description`: `Display a grid of your top rated products.`
-- `origin`: `woocommerce`
-- `category_bucket`: `woocommerce`
-- `currently_allowed`: `true`
-- `currently_blacklisted`: `false`
-- `is_dynamic`: `true`
-- `api_version`: `3`
-- `category`: `woocommerce`
-- `icon`: `null`
-- `render_callback`: `Automattic\WooCommerce\Blocks\BlockTypes\ProductTopRated::render_callback`
-- `has_render_callback`: `true`
-
-### Keywords
-
-- `WooCommerce`
-
-### Parent
-
-- None
-
-### Ancestor
-
-- None
-
-### Uses Context
-
-- None
-
-### Provides Context
-
-- None
-
-### Supports Summary
-
-- `anchor`: `false`
-- `align`: `true`
-- `spacing`: `false`
-- `color`: `false`
-- `typography`: `false`
-- `html`: `false`
-- `multiple`: `false`
-- `reusable`: `false`
-
-### Supports
-
-```json
-{
-    "interactivity": {
-        "clientNavigation": false
-    },
-    "align": [
-        "wide",
-        "full"
-    ],
-    "html": false,
-    "inserter": false
-}
-```
-
-### Attributes
-
-```json
-{
-    "columns": {
-        "type": "number",
-        "default": 3
-    },
-    "rows": {
-        "type": "number",
-        "default": 3
-    },
-    "alignButtons": {
-        "type": "boolean",
-        "default": false
-    },
-    "contentVisibility": {
-        "type": "object",
-        "default": {
-            "image": true,
-            "title": true,
-            "price": true,
-            "rating": true,
-            "button": true
-        },
-        "properties": {
-            "image": {
-                "type": "boolean",
-                "default": true
-            },
-            "title": {
-                "type": "boolean",
-                "default": true
-            },
-            "price": {
-                "type": "boolean",
-                "default": true
-            },
-            "rating": {
-                "type": "boolean",
-                "default": true
-            },
-            "button": {
-                "type": "boolean",
-                "default": true
-            }
-        }
-    },
-    "categories": {
-        "type": "array",
-        "default": []
-    },
-    "catOperator": {
-        "type": "string",
-        "default": "any"
-    },
-    "isPreview": {
-        "type": "boolean",
-        "default": false
-    },
-    "stockStatus": {
-        "type": "array"
-    },
-    "editMode": {
-        "type": "boolean",
-        "default": true
-    },
-    "orderby": {
-        "type": "string",
-        "enum": [
-            "date",
-            "popularity",
-            "price_asc",
-            "price_desc",
-            "rating",
-            "title",
-            "menu_order"
-        ],
-        "default": "rating"
-    },
-    "lock": {
-        "type": "object"
-    },
-    "metadata": {
-        "type": "object"
-    },
-    "align": {
-        "type": "string",
-        "enum": [
-            "left",
-            "center",
-            "right",
-            "wide",
-            "full",
-            ""
-        ]
-    },
-    "className": {
-        "type": "string"
-    }
-}
-```
-
-### Example
-
-- None
-
-### Selectors
-
-- None
-
-### Style Handles
-
-- `wc-blocks-style`
-- `wc-blocks-style-all-products`
-
-### Editor Style Handles
-
-- `wc-blocks-editor-style`
-
-### Script Handles
-
-- None
-
-### Editor Script Handles
-
-- `wc-product-top-rated-block`
-
-### View Script Handles
-
-- None
-
-### View Style Handles
-
-- None
-
-### Custom Metadata
-
-- None
-
-## Products by Attribute (`woocommerce/products-by-attribute`)
-
-- `title`: `Products by Attribute`
-- `description`: `Display a grid of products with selected attributes.`
-- `origin`: `woocommerce`
-- `category_bucket`: `woocommerce`
-- `currently_allowed`: `true`
-- `currently_blacklisted`: `false`
-- `is_dynamic`: `true`
-- `api_version`: `3`
-- `category`: `woocommerce`
-- `icon`: `null`
-- `render_callback`: `Automattic\WooCommerce\Blocks\BlockTypes\ProductsByAttribute::render_callback`
-- `has_render_callback`: `true`
-
-### Keywords
-
-- `WooCommerce`
-
-### Parent
-
-- None
-
-### Ancestor
-
-- None
-
-### Uses Context
-
-- None
-
-### Provides Context
-
-- None
-
-### Supports Summary
-
-- `anchor`: `false`
-- `align`: `true`
-- `spacing`: `false`
-- `color`: `false`
-- `typography`: `false`
-- `html`: `false`
-- `multiple`: `false`
-- `reusable`: `false`
-
-### Supports
-
-```json
-{
-    "interactivity": {
-        "clientNavigation": false
-    },
-    "align": [
-        "wide",
-        "full"
-    ],
-    "html": false,
-    "inserter": false
-}
-```
-
-### Attributes
-
-```json
-{
-    "attributes": {
-        "type": "array",
-        "default": []
-    },
-    "attrOperator": {
-        "type": "string",
-        "enum": [
-            "all",
-            "any"
-        ],
-        "default": "any"
-    },
-    "columns": {
-        "type": "number",
-        "default": 3
-    },
-    "contentVisibility": {
-        "type": "object",
-        "default": {
-            "image": true,
-            "title": true,
-            "price": true,
-            "rating": true,
-            "button": true
-        },
-        "properties": {
-            "image": {
-                "type": "boolean",
-                "default": true
-            },
-            "title": {
-                "type": "boolean",
-                "default": true
-            },
-            "price": {
-                "type": "boolean",
-                "default": true
-            },
-            "rating": {
-                "type": "boolean",
-                "default": true
-            },
-            "button": {
-                "type": "boolean",
-                "default": true
-            }
-        }
-    },
-    "orderby": {
-        "type": "string",
-        "enum": [
-            "date",
-            "popularity",
-            "price_asc",
-            "price_desc",
-            "rating",
-            "title",
-            "menu_order"
-        ],
-        "default": "date"
-    },
-    "rows": {
-        "type": "number",
-        "default": 3
-    },
-    "alignButtons": {
-        "type": "boolean",
-        "default": false
-    },
-    "isPreview": {
-        "type": "boolean",
-        "default": false
-    },
-    "stockStatus": {
-        "type": "array"
-    },
-    "lock": {
-        "type": "object"
-    },
-    "metadata": {
-        "type": "object"
-    },
-    "align": {
-        "type": "string",
-        "enum": [
-            "left",
-            "center",
-            "right",
-            "wide",
-            "full",
-            ""
-        ]
-    },
-    "className": {
-        "type": "string"
-    }
-}
-```
-
-### Example
-
-- None
-
-### Selectors
-
-- None
-
-### Style Handles
-
-- `wc-blocks-style`
-- `wc-blocks-style-all-products`
-
-### Editor Style Handles
-
-- `wc-blocks-editor-style`
-
-### Script Handles
-
-- None
-
-### Editor Script Handles
-
-- `wc-products-by-attribute-block`
-
-### View Script Handles
-
-- None
-
-### View Style Handles
-
-- None
-
-### Custom Metadata
-
-- None
-
-## Filter by Rating Controls (`woocommerce/rating-filter`)
-
-- `title`: `Filter by Rating Controls`
-- `description`: `Enable customers to filter the product grid by rating.`
-- `origin`: `woocommerce`
-- `category_bucket`: `woocommerce`
-- `currently_allowed`: `true`
-- `currently_blacklisted`: `false`
-- `is_dynamic`: `true`
-- `api_version`: `3`
-- `category`: `woocommerce`
-- `icon`: `null`
-- `render_callback`: `Automattic\WooCommerce\Blocks\BlockTypes\RatingFilter::render_callback`
-- `has_render_callback`: `true`
-
-### Keywords
-
-- `WooCommerce`
-
-### Parent
-
-- None
-
-### Ancestor
-
-- None
-
-### Uses Context
-
-- None
-
-### Provides Context
-
-- None
-
-### Supports Summary
-
-- `anchor`: `false`
-- `align`: `false`
-- `spacing`: `false`
-- `color`: `true`
-- `typography`: `false`
-- `html`: `false`
-- `multiple`: `false`
-- `reusable`: `false`
-
-### Supports
-
-```json
-{
-    "interactivity": {
-        "clientNavigation": false
-    },
-    "html": false,
-    "multiple": false,
-    "color": {
-        "background": true,
-        "text": true,
-        "button": true
-    },
-    "inserter": false,
-    "lock": false
-}
-```
-
-### Attributes
-
-```json
-{
-    "className": {
-        "type": "string",
-        "default": ""
-    },
-    "showCounts": {
-        "type": "boolean",
-        "default": false
-    },
-    "displayStyle": {
-        "type": "string",
-        "default": "list"
-    },
-    "showFilterButton": {
-        "type": "boolean",
-        "default": false
-    },
-    "selectType": {
-        "type": "string",
-        "default": "multiple"
-    },
-    "isPreview": {
-        "type": "boolean",
-        "default": false
-    },
-    "lock": {
-        "type": "object"
-    },
-    "metadata": {
-        "type": "object"
-    },
-    "style": {
-        "type": "object"
-    },
-    "backgroundColor": {
-        "type": "string"
-    },
-    "textColor": {
-        "type": "string"
-    }
-}
-```
-
-### Example
-
-- None
-
-### Selectors
-
-- None
-
-### Style Handles
-
-- `wc-blocks-style`
-- `wc-blocks-style-rating-filter`
-- `wc-blocks-packages-style`
-
-### Editor Style Handles
-
-- `wc-blocks-editor-style`
-
-### Script Handles
-
-- None
-
-### Editor Script Handles
-
-- `wc-rating-filter-block`
-
-### View Script Handles
-
-- None
-
-### View Style Handles
-
-- None
-
-### Custom Metadata
-
-- None
-
-## Reviews by Category (`woocommerce/reviews-by-category`)
-
-- `title`: `Reviews by Category`
-- `description`: `Show product reviews from specific categories.`
-- `origin`: `woocommerce`
-- `category_bucket`: `woocommerce`
-- `currently_allowed`: `true`
-- `currently_blacklisted`: `false`
-- `is_dynamic`: `true`
-- `api_version`: `3`
-- `category`: `woocommerce`
-- `icon`: `null`
-- `render_callback`: `Automattic\WooCommerce\Blocks\BlockTypes\ReviewsByCategory::render_callback`
-- `has_render_callback`: `true`
-
-### Keywords
-
-- `WooCommerce`
-
-### Parent
-
-- None
-
-### Ancestor
-
-- None
-
-### Uses Context
-
-- None
-
-### Provides Context
-
-- None
-
-### Supports Summary
-
-- `anchor`: `false`
-- `align`: `false`
-- `spacing`: `false`
-- `color`: `true`
-- `typography`: `true`
-- `html`: `false`
-- `multiple`: `false`
-- `reusable`: `false`
-
-### Supports
-
-```json
-{
-    "html": false,
-    "interactivity": {
-        "clientNavigation": true
-    },
-    "color": {
-        "background": false
-    },
-    "typography": {
-        "fontSize": true
-    }
-}
-```
-
-### Attributes
-
-```json
-{
-    "lock": {
-        "type": "object"
-    },
-    "metadata": {
-        "type": "object"
-    },
-    "className": {
-        "type": "string"
-    },
-    "style": {
-        "type": "object"
-    },
-    "textColor": {
-        "type": "string"
-    },
-    "fontSize": {
-        "type": "string"
-    }
-}
-```
-
-### Example
-
-- None
-
-### Selectors
-
-- None
-
-### Style Handles
-
-- `wc-blocks-style`
-- `wc-blocks-style-reviews-by-category`
-
-### Editor Style Handles
-
-- `wc-blocks-editor-style`
-
-### Script Handles
-
-- None
-
-### Editor Script Handles
-
-- `wc-reviews-by-category-block`
-
-### View Script Handles
-
-- None
-
-### View Style Handles
-
-- None
-
-### Custom Metadata
-
-- None
-
-## Reviews by Product (`woocommerce/reviews-by-product`)
-
-- `title`: `Reviews by Product`
-- `description`: `Display reviews for your products.`
-- `origin`: `woocommerce`
-- `category_bucket`: `woocommerce`
-- `currently_allowed`: `true`
-- `currently_blacklisted`: `false`
-- `is_dynamic`: `true`
-- `api_version`: `3`
-- `category`: `woocommerce`
-- `icon`: `null`
-- `render_callback`: `Automattic\WooCommerce\Blocks\BlockTypes\ReviewsByProduct::render_callback`
-- `has_render_callback`: `true`
-
-### Keywords
-
-- `WooCommerce`
-
-### Parent
-
-- None
-
-### Ancestor
-
-- None
-
-### Uses Context
-
-- None
-
-### Provides Context
-
-- None
-
-### Supports Summary
-
-- `anchor`: `false`
-- `align`: `false`
-- `spacing`: `false`
-- `color`: `true`
-- `typography`: `true`
-- `html`: `false`
-- `multiple`: `false`
-- `reusable`: `false`
-
-### Supports
-
-```json
-{
-    "html": false,
-    "interactivity": {
-        "clientNavigation": true
-    },
-    "color": {
-        "background": false
-    },
-    "typography": {
-        "fontSize": true
-    }
-}
-```
-
-### Attributes
-
-```json
-{
-    "lock": {
-        "type": "object"
-    },
-    "metadata": {
-        "type": "object"
-    },
-    "className": {
-        "type": "string"
-    },
-    "style": {
-        "type": "object"
-    },
-    "textColor": {
-        "type": "string"
-    },
-    "fontSize": {
-        "type": "string"
-    }
-}
-```
-
-### Example
-
-- None
-
-### Selectors
-
-- None
-
-### Style Handles
-
-- `wc-blocks-style`
-- `wc-blocks-style-reviews-by-product`
-
-### Editor Style Handles
-
-- `wc-blocks-editor-style`
-
-### Script Handles
-
-- None
-
-### Editor Script Handles
-
-- `wc-reviews-by-product-block`
-
-### View Script Handles
-
-- None
-
-### View Style Handles
-
-- None
-
-### Custom Metadata
-
-- None
-
-## Filter by Stock Controls (`woocommerce/stock-filter`)
-
-- `title`: `Filter by Stock Controls`
-- `description`: `Enable customers to filter the product grid by stock status.`
-- `origin`: `woocommerce`
-- `category_bucket`: `woocommerce`
-- `currently_allowed`: `true`
-- `currently_blacklisted`: `false`
-- `is_dynamic`: `true`
-- `api_version`: `3`
-- `category`: `woocommerce`
-- `icon`: `null`
-- `render_callback`: `Automattic\WooCommerce\Blocks\BlockTypes\StockFilter::render_callback`
-- `has_render_callback`: `true`
-
-### Keywords
-
-- `WooCommerce`
-
-### Parent
-
-- None
-
-### Ancestor
-
-- None
-
-### Uses Context
-
-- None
-
-### Provides Context
-
-- None
-
-### Supports Summary
-
-- `anchor`: `false`
-- `align`: `false`
-- `spacing`: `false`
-- `color`: `true`
-- `typography`: `false`
-- `html`: `false`
-- `multiple`: `false`
-- `reusable`: `false`
-
-### Supports
-
-```json
-{
-    "interactivity": {
-        "clientNavigation": false
-    },
-    "html": false,
-    "multiple": false,
-    "color": {
-        "background": true,
-        "text": true,
-        "button": true
-    },
-    "inserter": false,
-    "lock": false
-}
-```
-
-### Attributes
-
-```json
-{
-    "className": {
-        "type": "string",
-        "default": ""
-    },
-    "headingLevel": {
-        "type": "number",
-        "default": 3
-    },
-    "showCounts": {
-        "type": "boolean",
-        "default": false
-    },
-    "showFilterButton": {
-        "type": "boolean",
-        "default": false
-    },
-    "displayStyle": {
-        "type": "string",
-        "default": "list"
-    },
-    "selectType": {
-        "type": "string",
-        "default": "multiple"
-    },
-    "isPreview": {
-        "type": "boolean",
-        "default": false
-    },
-    "lock": {
-        "type": "object"
-    },
-    "metadata": {
-        "type": "object"
-    },
-    "style": {
-        "type": "object"
-    },
-    "backgroundColor": {
-        "type": "string"
-    },
-    "textColor": {
-        "type": "string"
-    }
-}
-```
-
-### Example
-
-- None
-
-### Selectors
-
-- None
-
-### Style Handles
-
-- `wc-blocks-style`
-- `wc-blocks-style-stock-filter`
-- `wc-blocks-packages-style`
-
-### Editor Style Handles
-
-- `wc-blocks-editor-style`
-
-### Script Handles
-
-- None
-
-### Editor Script Handles
-
-- `wc-stock-filter-block`
+- `d11-privacy-editor`
 
 ### View Script Handles
 

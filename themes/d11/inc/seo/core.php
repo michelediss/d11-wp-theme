@@ -47,11 +47,11 @@ function d11_seo_register_post_meta(): void
         ],
         '_seo_noindex' => [
             'type' => 'boolean',
-            'sanitize_callback' => static fn ($value): bool => (bool) $value,
+            'sanitize_callback' => 'rest_sanitize_boolean',
         ],
         '_seo_nofollow' => [
             'type' => 'boolean',
-            'sanitize_callback' => static fn ($value): bool => (bool) $value,
+            'sanitize_callback' => 'rest_sanitize_boolean',
         ],
     ];
 
@@ -66,13 +66,8 @@ function d11_seo_register_post_meta(): void
                     'type' => $meta_args['type'],
                     'default' => $meta_args['type'] === 'boolean' ? false : '',
                     'sanitize_callback' => $meta_args['sanitize_callback'],
-                    'auth_callback' => static function () use ($post_type): bool {
-                        $post_type_object = get_post_type_object($post_type);
-                        $capability = $post_type_object instanceof WP_Post_Type
-                            ? $post_type_object->cap->edit_posts
-                            : 'edit_posts';
-
-                        return current_user_can($capability);
+                    'auth_callback' => static function (bool $allowed, string $meta_key, int $post_id): bool {
+                        return current_user_can('edit_post', $post_id);
                     },
                 ]
             );
@@ -142,8 +137,8 @@ function d11_seo_resolve_robots(): array
 {
     $target = d11_seo_target_post();
 
-    $noindex = get_option('minimal_seo_noindex', '0') === '1';
-    $nofollow = get_option('minimal_seo_nofollow', '0') === '1';
+    $noindex = false;
+    $nofollow = false;
 
     if ($target instanceof WP_Post) {
         $noindex = $noindex || rest_sanitize_boolean(get_post_meta($target->ID, '_seo_noindex', true));
@@ -181,6 +176,60 @@ function d11_seo_filter_wp_robots(array $robots): array
 add_filter('wp_robots', 'd11_seo_filter_wp_robots');
 
 /**
+ * Uses a custom SEO title as the full document title when one is set.
+ */
+function d11_seo_filter_document_title(string $title): string
+{
+    $target = d11_seo_target_post();
+
+    if (! $target instanceof WP_Post) {
+        return $title;
+    }
+
+    $custom_title = trim((string) get_post_meta($target->ID, '_seo_title', true));
+
+    return $custom_title !== '' ? $custom_title : $title;
+}
+add_filter('pre_get_document_title', 'd11_seo_filter_document_title');
+
+/**
+ * Excludes individually noindexed posts from the core XML sitemap.
+ *
+ * @param array<string, mixed> $args
+ * @return array<string, mixed>
+ */
+function d11_seo_filter_sitemap_posts_query_args(array $args, string $post_type): array
+{
+    $noindex_query = [
+        'relation' => 'OR',
+        [
+            'key' => '_seo_noindex',
+            'compare' => 'NOT EXISTS',
+        ],
+        [
+            'key' => '_seo_noindex',
+            'value' => '1',
+            'compare' => '!=',
+        ],
+    ];
+
+    if (isset($args['meta_query']) && is_array($args['meta_query'])) {
+        $args['meta_query'] = [
+            'relation' => 'AND',
+            $args['meta_query'],
+            $noindex_query,
+        ];
+
+        return $args;
+    }
+
+    $args['meta_query'] = $noindex_query;
+
+    return $args;
+}
+add_filter('wp_sitemaps_posts_query_args', 'd11_seo_filter_sitemap_posts_query_args', 10, 2);
+
+/**
  * Returns the preferred image URL for social previews.
  */
 function d11_seo_resolve_image_url(?WP_Post $post = null): string
@@ -204,7 +253,7 @@ function d11_seo_resolve_image_url(?WP_Post $post = null): string
 }
 
 /**
- * Outputs canonical, description, Open Graph, and Twitter tags.
+ * Outputs description, Open Graph, and Twitter tags.
  */
 function d11_seo_output_head_tags(): void
 {
@@ -225,12 +274,11 @@ function d11_seo_output_head_tags(): void
 
     $meta = d11_seo_resolve_meta($target);
     $permalink = (string) get_permalink($target);
-
-    if (! is_singular()) {
-        echo '<link rel="canonical" href="' . esc_url($permalink) . '" />' . "\n";
-    }
+    $og_type = is_singular('post') ? 'article' : 'website';
 
     echo '<meta name="description" content="' . esc_attr($meta['description']) . '" />' . "\n";
+    echo '<meta property="og:type" content="' . esc_attr($og_type) . '" />' . "\n";
+    echo '<meta property="og:site_name" content="' . esc_attr((string) get_bloginfo('name')) . '" />' . "\n";
     echo '<meta property="og:title" content="' . esc_attr($meta['title']) . '" />' . "\n";
     echo '<meta property="og:description" content="' . esc_attr($meta['description']) . '" />' . "\n";
     echo '<meta property="og:url" content="' . esc_url($permalink) . '" />' . "\n";
@@ -240,126 +288,7 @@ function d11_seo_output_head_tags(): void
 
     if ($image_url !== '') {
         echo '<meta property="og:image" content="' . esc_url($image_url) . '" />' . "\n";
-        echo '<meta property="og:image:width" content="1200" />' . "\n";
-        echo '<meta property="og:image:height" content="630" />' . "\n";
         echo '<meta name="twitter:image" content="' . esc_url($image_url) . '" />' . "\n";
     }
 }
 add_action('wp_head', 'd11_seo_output_head_tags', 5);
-
-/**
- * Returns whether a root-level SEO file can be written safely.
- */
-function d11_seo_can_write_root_file(string $path): bool
-{
-    $directory = dirname($path);
-
-    if (! is_dir($directory) || ! is_writable($directory)) {
-        return false;
-    }
-
-    if (file_exists($path) && ! is_writable($path)) {
-        return false;
-    }
-
-    return true;
-}
-
-/**
- * Writes SEO file contents without emitting PHP warnings to the response.
- */
-function d11_seo_write_root_file(string $path, string $contents): bool
-{
-    if (! d11_seo_can_write_root_file($path)) {
-        error_log(sprintf('D11 SEO could not write "%s": path is not writable.', $path));
-
-        return false;
-    }
-
-    $bytes = @file_put_contents($path, $contents, LOCK_EX);
-
-    if ($bytes === false) {
-        error_log(sprintf('D11 SEO failed to write "%s".', $path));
-
-        return false;
-    }
-
-    return true;
-}
-
-/**
- * Generates the sitemap.xml file in the WordPress root.
- */
-function d11_seo_generate_sitemap(): void
-{
-    $posts = get_posts([
-        'post_type' => d11_seo_supported_post_types(),
-        'posts_per_page' => -1,
-        'post_status' => 'publish',
-    ]);
-
-    $xml = new SimpleXMLElement('<?xml version="1.0" encoding="UTF-8"?><urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"></urlset>');
-
-    foreach ($posts as $post) {
-        $url = $xml->addChild('url');
-        $url->addChild('loc', (string) get_permalink($post));
-        $url->addChild('lastmod', get_the_modified_time('Y-m-d', $post));
-        $url->addChild('changefreq', 'monthly');
-        $url->addChild('priority', '0.8');
-    }
-
-    $sitemap_contents = $xml->asXML();
-
-    if ($sitemap_contents === false) {
-        error_log('D11 SEO failed to generate sitemap XML contents.');
-
-        return;
-    }
-
-    d11_seo_write_root_file(ABSPATH . 'sitemap.xml', $sitemap_contents);
-}
-
-/**
- * Regenerates the sitemap when supported posts change publishing state.
- */
-function d11_seo_maybe_regenerate_sitemap(string $new_status, string $old_status, WP_Post $post): void
-{
-    if (! d11_seo_is_supported_post_type($post->post_type)) {
-        return;
-    }
-
-    if ($new_status !== 'publish' && $old_status !== 'publish') {
-        return;
-    }
-
-    d11_seo_generate_sitemap();
-}
-add_action('transition_post_status', 'd11_seo_maybe_regenerate_sitemap', 10, 3);
-
-/**
- * Regenerates the sitemap when a published supported post is deleted.
- */
-function d11_seo_regenerate_sitemap_on_delete(int $post_id): void
-{
-    $post = get_post($post_id);
-
-    if (! $post instanceof WP_Post || $post->post_status !== 'publish') {
-        return;
-    }
-
-    if (! d11_seo_is_supported_post_type($post->post_type)) {
-        return;
-    }
-
-    d11_seo_generate_sitemap();
-}
-add_action('before_delete_post', 'd11_seo_regenerate_sitemap_on_delete');
-
-/**
- * Regenerates the sitemap when the theme is activated.
- */
-function d11_seo_generate_sitemap_on_switch(): void
-{
-    d11_seo_generate_sitemap();
-}
-add_action('after_switch_theme', 'd11_seo_generate_sitemap_on_switch');

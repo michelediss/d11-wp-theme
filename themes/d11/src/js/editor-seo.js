@@ -165,12 +165,21 @@
               marginTop: '12px',
             },
           },
-          __('Global robots and sitemap settings remain available in Settings > SEO.', 'd11')
+          __('Global search visibility is configured in Settings > Reading.', 'd11')
         ),
         el(
           ExternalLink,
-          { href: `${config.homeUrl.replace(/\/$/, '')}/wp-admin/options-general.php?page=d11-seo` },
-          __('Open SEO settings', 'd11')
+          { href: config.readingSettingsUrl },
+          __('Open Reading settings', 'd11')
+        ),
+        el(
+          'p',
+          null,
+          el(
+            ExternalLink,
+            { href: config.sitemapUrl },
+            __('View XML sitemap', 'd11')
+          )
         )
       )
     );

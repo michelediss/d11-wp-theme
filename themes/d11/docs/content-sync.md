@@ -16,6 +16,8 @@ This file documents the theme-owned content sync subsystem used to synchronize G
 - `inc/content-sync/class-content-sync-config.php`: config normalization and filter boundary
 - `inc/content-sync/class-content-sync-service.php`: sync service, validation, hashing, runtime override
 - `inc/content-sync/class-content-sync-cli.php`: `content:export` and `content:import`
+- `inc/content-sync/class-cf7-sync-cli.php`: Contact Form 7 manifest synchronization
+- `inc/content-sync/cf7-forms/`: default directory for one JSON manifest per Contact Form 7 form
 - `content/`: versioned JSON payloads managed by the theme
 
 ## Runtime Model
@@ -36,6 +38,10 @@ This file documents the theme-owned content sync subsystem used to synchronize G
 - Theme architecture and block composition rules remain documented under `docs/`.
 - Visual review of rendered page results is documented separately in `docs/screenshot-validation.md`; use that workflow after synced content changes affect front-end output.
 - The content sync subsystem is theme-owned, but must remain conceptually separate from `.agents/` tooling.
+
+## Contact Form 7 manifests
+
+Use `wp content:cf7-sync [--dir=<path>] [--slug=<slug>] [--dry-run]` to apply the manifests in `inc/content-sync/cf7-forms/`. Contact Form 7 must be active; `--dry-run` reports intended creates and updates without changing the database.
 
 ## Maintenance Rules
 

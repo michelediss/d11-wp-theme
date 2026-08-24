@@ -5,6 +5,9 @@
 
 import { defineConfig } from 'vite';
 import path from 'node:path';
+import { fileURLToPath } from 'node:url';
+
+const dirname = path.dirname(fileURLToPath(import.meta.url));
 
 export default defineConfig({
   base: './',
@@ -17,20 +20,21 @@ export default defineConfig({
   build: {
     manifest: true,
     outDir: 'assets',
-    emptyOutDir: false,
+    emptyOutDir: true,
     rollupOptions: {
       input: {
-        app: path.resolve(__dirname, 'src/js/app.js'),
-        blockEditor: path.resolve(__dirname, 'src/js/blocks/editor.js'),
-        blockView: path.resolve(__dirname, 'src/js/blocks/view.js'),
-        blockAvailabilityAdmin: path.resolve(__dirname, 'src/js/admin/block-availability-admin.js'),
-        blockAvailabilityAdminStyle: path.resolve(__dirname, 'src/css/admin/block-availability-admin.css'),
-        blocksStyle: path.resolve(__dirname, 'src/css/blocks.css'),
-        defaultFeaturedImageAdmin: path.resolve(__dirname, 'src/js/admin/default-featured-image-admin.js'),
-        defaultFeaturedImageAdminStyle: path.resolve(__dirname, 'src/css/admin/default-featured-image-admin.css'),
-        editorStyle: path.resolve(__dirname, 'src/css/editor.css'),
-        editorSeo: path.resolve(__dirname, 'src/js/editor-seo.js'),
-        style: path.resolve(__dirname, 'src/css/app.css'),
+        app: path.resolve(dirname, 'src/js/app.js'),
+        blockEditor: path.resolve(dirname, 'src/js/blocks/editor.js'),
+        blockView: path.resolve(dirname, 'src/js/blocks/view.js'),
+        blockAvailabilityAdmin: path.resolve(dirname, 'src/js/admin/block-availability-admin.js'),
+        blockAvailabilityAdminStyle: path.resolve(dirname, 'src/css/admin/block-availability-admin.css'),
+        blocksStyle: path.resolve(dirname, 'src/css/blocks.css'),
+        defaultFeaturedImageAdmin: path.resolve(dirname, 'src/js/admin/default-featured-image-admin.js'),
+        defaultFeaturedImageAdminStyle: path.resolve(dirname, 'src/css/admin/default-featured-image-admin.css'),
+        editorStyle: path.resolve(dirname, 'src/css/editor.css'),
+        editorSeo: path.resolve(dirname, 'src/js/editor-seo.js'),
+        privacyStyle: path.resolve(dirname, 'src/css/privacy.css'),
+        style: path.resolve(dirname, 'src/css/app.css'),
       },
       output: {
         entryFileNames: 'js/[name].js',

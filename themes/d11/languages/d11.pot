@@ -9,7 +9,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2026-03-22T04:12:04+00:00\n"
+"POT-Creation-Date: 2026-08-24T14:44:22+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.12.0\n"
 "X-Domain: d11\n"
@@ -41,7 +41,7 @@ msgid "Home"
 msgstr ""
 
 #: blocks/breadcrumbs/render.php:50
-#: partials/block-availability/runtime.php:62
+#: inc/block-availability/runtime.php:62
 msgid "Blog"
 msgstr ""
 
@@ -95,439 +95,777 @@ msgstr ""
 
 #: blocks/social-share/render.php:101
 #: blocks/social-share/render.php:102
+#: inc/maintenance/class-d11-maintenance.php:330
 msgid "Copy link"
 msgstr ""
 
-#: functions.php:39
+#: functions.php:41
 msgid "Primary Navigation"
 msgstr ""
 
-#: functions.php:40
+#: functions.php:42
 msgid "Footer Navigation"
 msgstr ""
 
-#: inc/seo/admin.php:15
-#: inc/seo/admin.php:106
-msgid "SEO Settings"
-msgstr ""
-
-#: inc/seo/admin.php:16
-#: src/js/editor-seo.js:73
-msgid "SEO"
-msgstr ""
-
-#: inc/seo/admin.php:79
-msgid "SEO settings saved."
-msgstr ""
-
-#: inc/seo/admin.php:109
-msgid "Robots.txt"
-msgstr ""
-
-#: inc/seo/admin.php:112
-msgid "Global Robots Meta"
-msgstr ""
-
-#: inc/seo/admin.php:114
-msgid "Set entire site to noindex"
-msgstr ""
-
-#: inc/seo/admin.php:117
-msgid "Set entire site to nofollow"
-msgstr ""
-
-#: inc/seo/admin.php:120
-msgid "XML Sitemap"
-msgstr ""
-
-#: inc/seo/admin.php:123
-msgid "Sitemap available at:"
-msgstr ""
-
-#: inc/seo/admin.php:127
-msgid "Sitemap not generated yet."
-msgstr ""
-
-#: inc/seo/admin.php:130
-msgid "Regenerate sitemap now"
-msgstr ""
-
-#: inc/seo/admin.php:134
-msgid "Save SEO Settings"
-msgstr ""
-
-#: partials/block-availability/admin.php:35
-#: partials/block-availability/admin.php:36
+#: inc/block-availability/admin.php:35
+#: inc/block-availability/admin.php:36
 msgid "Block Availability"
 msgstr ""
 
-#: partials/block-availability/admin.php:64
+#: inc/block-availability/admin.php:64
 msgid "active"
 msgstr ""
 
 #. translators: 1: active blocks count, 2: total blocks count
-#: partials/block-availability/admin.php:199
+#: inc/block-availability/admin.php:199
 #, php-format
 msgid "%1$d / %2$d active"
 msgstr ""
 
-#: partials/block-availability/admin.php:214
+#: inc/block-availability/admin.php:214
 msgid "Enable category"
 msgstr ""
 
-#: partials/block-availability/admin.php:217
+#: inc/block-availability/admin.php:217
 msgid "Always on"
 msgstr ""
 
-#: partials/block-availability/admin.php:219
+#: inc/block-availability/admin.php:219
 msgid "Plugin detected"
 msgstr ""
 
-#: partials/block-availability/admin.php:221
+#: inc/block-availability/admin.php:221
 msgid "Plugin blocks"
 msgstr ""
 
-#: partials/block-availability/admin.php:223
+#: inc/block-availability/admin.php:223
 msgid "Separate area"
 msgstr ""
 
 #. translators: %s: category label
-#: partials/block-availability/admin.php:234
+#: inc/block-availability/admin.php:234
 #, php-format
 msgid "Filter %s blocks"
 msgstr ""
 
-#: partials/block-availability/admin.php:241
+#: inc/block-availability/admin.php:241
 msgid "Filter blocks…"
 msgstr ""
 
-#: partials/block-availability/admin.php:268
+#: inc/block-availability/admin.php:268
 msgid "No blocks match this filter."
 msgstr ""
 
-#: partials/block-availability/admin.php:291
+#: inc/block-availability/admin.php:291
 msgid "Block availability updated."
 msgstr ""
 
 #. translators: %s: export error message
-#: partials/block-availability/admin.php:304
+#: inc/block-availability/admin.php:304
 #, php-format
 msgid "Block export failed: %s"
 msgstr ""
 
-#: partials/block-availability/admin.php:319
+#: inc/block-availability/admin.php:319
 msgid "Block availability"
 msgstr ""
 
-#: partials/block-availability/admin.php:321
+#: inc/block-availability/admin.php:321
 msgid "Control which core, blog, WooCommerce, third-party, and custom blocks remain available in the editor without mixing categories."
 msgstr ""
 
-#: partials/block-availability/admin.php:323
+#: inc/block-availability/admin.php:323
 msgid "Save block availability"
 msgstr ""
 
-#: partials/block-availability/admin.php:326
+#: inc/block-availability/admin.php:326
 msgid "Core always enabled"
 msgstr ""
 
-#: partials/block-availability/admin.php:328
+#: inc/block-availability/admin.php:328
 msgid "WooCommerce not installed"
 msgstr ""
 
-#: partials/block-availability/runtime.php:24
+#: inc/block-availability/runtime.php:24
 msgid "Core"
 msgstr ""
 
-#: partials/block-availability/runtime.php:25
+#: inc/block-availability/runtime.php:25
 msgid "Content and theme structure blocks always available to the theme."
 msgstr ""
 
-#: partials/block-availability/runtime.php:63
+#: inc/block-availability/runtime.php:63
 msgid "Dynamic post and query blocks used for editorial content."
 msgstr ""
 
-#: partials/block-availability/runtime.php:84
+#: inc/block-availability/runtime.php:84
 msgid "WooCommerce"
 msgstr ""
 
-#: partials/block-availability/runtime.php:85
+#: inc/block-availability/runtime.php:85
 msgid "Commerce-specific blocks available only when WooCommerce is active."
 msgstr ""
 
-#: partials/block-availability/runtime.php:89
+#: inc/block-availability/runtime.php:89
 msgid "Third-Party"
 msgstr ""
 
-#: partials/block-availability/runtime.php:90
+#: inc/block-availability/runtime.php:90
 msgid "Blocks registered by installed plugins or external code outside the theme-managed categories."
 msgstr ""
 
-#: partials/block-availability/runtime.php:94
+#: inc/block-availability/runtime.php:94
 msgid "Custom"
 msgstr ""
 
-#: partials/block-availability/runtime.php:95
+#: inc/block-availability/runtime.php:95
 msgid "Theme custom blocks managed separately from the curated core categories."
 msgstr ""
 
-#: partials/default-featured-image.php:85
-#: partials/default-featured-image.php:86
-msgid "Default Featured Image"
+#: inc/content-sync/class-cf7-sync-cli.php:73
+msgid "Contact Form 7 must be installed and active before using this command."
 msgstr ""
 
-#: partials/default-featured-image.php:117
-msgid "Select the default featured image"
+#: inc/content-sync/class-cf7-sync-cli.php:88
+#, php-format
+msgid "Manifest directory not found: %s"
 msgstr ""
 
-#: partials/default-featured-image.php:118
-msgid "Use this image"
+#: inc/content-sync/class-cf7-sync-cli.php:107
+#, php-format
+msgid "No JSON manifests found in %s"
 msgstr ""
 
-#: partials/default-featured-image.php:119
-msgid "Remove the default featured image?"
+#: inc/content-sync/class-cf7-sync-cli.php:125
+#, php-format
+msgid "Duplicate slug \"%1$s\" found in %2$s and %3$s"
 msgstr ""
 
-#: partials/default-featured-image.php:120
-#: partials/default-featured-image.php:152
-msgid "No image selected"
+#: inc/content-sync/class-cf7-sync-cli.php:138
+#, php-format
+msgid "No manifest found for slug \"%s\""
 msgstr ""
 
-#: partials/default-featured-image.php:140
-msgid "Default featured image"
+#: inc/content-sync/class-cf7-sync-cli.php:147
+#, php-format
+msgid "Unable to read manifest file: %s"
 msgstr ""
 
-#: partials/default-featured-image.php:141
-msgid "Used automatically for posts and pages that are saved without a featured image."
+#: inc/content-sync/class-cf7-sync-cli.php:152
+#, php-format
+msgid "Invalid JSON in %1$s: %2$s"
 msgstr ""
 
-#: partials/default-featured-image.php:168
-msgid "Choose from media library"
+#: inc/content-sync/class-cf7-sync-cli.php:156
+#, php-format
+msgid "Manifest must decode to an object: %s"
 msgstr ""
 
-#: partials/default-featured-image.php:171
-msgid "Remove"
+#: inc/content-sync/class-cf7-sync-cli.php:173
+#, php-format
+msgid "Missing or invalid \"slug\" in %s"
 msgstr ""
 
-#: partials/default-featured-image.php:177
-msgid "Save image"
+#: inc/content-sync/class-cf7-sync-cli.php:177
+#, php-format
+msgid "Missing \"title\" in %s"
 msgstr ""
 
-#: partials/privacy-controller-data.php:26
+#: inc/content-sync/class-cf7-sync-cli.php:181
+#, php-format
+msgid "Missing \"form\" in %s"
+msgstr ""
+
+#: inc/content-sync/class-cf7-sync-cli.php:190
+#, php-format
+msgid "Missing \"%1$s\" in %2$s"
+msgstr ""
+
+#: inc/content-sync/class-cf7-sync-cli.php:197
+#, php-format
+msgid "\"%1$s\" must be an object in %2$s"
+msgstr ""
+
+#: inc/content-sync/class-cf7-sync-cli.php:216
+#, php-format
+msgid "Missing \"%1$s.%2$s\" in %3$s"
+msgstr ""
+
+#: inc/content-sync/class-cf7-sync-cli.php:269
+#, php-format
+msgid "Multiple CF7 forms found for slug \"%s\""
+msgstr ""
+
+#: inc/content-sync/class-cf7-sync-cli.php:299
+#, php-format
+msgid "Unable to create form \"%1$s\": %2$s"
+msgstr ""
+
+#: inc/content-sync/class-cf7-sync-cli.php:304
+#, php-format
+msgid "Unable to bootstrap CF7 form instance for \"%s\""
+msgstr ""
+
+#: inc/content-sync/class-cf7-sync-cli.php:377
+#, php-format
+msgid "CF7 failed to save form \"%s\""
+msgstr ""
+
+#: inc/content-sync/class-cf7-sync-cli.php:481
+#, php-format
+msgid "CF7 sync complete%s. Created: %d, Updated: %d, Unchanged: %d"
+msgstr ""
+
+#: inc/content-sync/class-cf7-sync-cli.php:482
+msgid "(dry-run)"
+msgstr ""
+
+#: inc/maintenance/class-d11-maintenance.php:88
+#: inc/maintenance/class-d11-maintenance.php:89
+#: inc/maintenance/class-d11-maintenance.php:278
+msgid "Maintenance"
+msgstr ""
+
+#: inc/maintenance/class-d11-maintenance.php:99
+#: inc/maintenance/class-d11-maintenance.php:116
+msgid "You are not allowed to manage maintenance settings."
+msgstr ""
+
+#: inc/maintenance/class-d11-maintenance.php:279
+msgid "Enable a site-wide maintenance response powered by the Gutenberg content of the fixed Maintenance page."
+msgstr ""
+
+#: inc/maintenance/class-d11-maintenance.php:290
+msgid "Status"
+msgstr ""
+
+#: inc/maintenance/class-d11-maintenance.php:300
+msgid "Enable maintenance mode"
+msgstr ""
+
+#: inc/maintenance/class-d11-maintenance.php:303
+msgid "When enabled, public frontend HTML requests are replaced with the Maintenance page and return HTTP 503."
+msgstr ""
+
+#: inc/maintenance/class-d11-maintenance.php:308
+msgid "Source page"
+msgstr ""
+
+#: inc/maintenance/class-d11-maintenance.php:314
+msgid "The required page was not found or is not published."
+msgstr ""
+
+#: inc/maintenance/class-d11-maintenance.php:316
+msgid "The plugin always uses the page with slug Maintenance / maintenance. No page selector is exposed here."
+msgstr ""
+
+#: inc/maintenance/class-d11-maintenance.php:320
+msgid "Bypass link"
+msgstr ""
+
+#. translators: %d: number of days.
+#: inc/maintenance/class-d11-maintenance.php:336
+#, php-format
+msgid "Visitors using this link receive a bypass cookie valid for %d days."
+msgstr ""
+
+#: inc/maintenance/class-d11-maintenance.php:344
+msgid "Automatic access"
+msgstr ""
+
+#: inc/maintenance/class-d11-maintenance.php:346
+msgid "Administrators bypass maintenance automatically when logged in. External users can access the site only through the bypass link."
+msgstr ""
+
+#: inc/maintenance/class-d11-maintenance.php:352
+msgid "Save Maintenance Settings"
+msgstr ""
+
+#: inc/maintenance/class-d11-maintenance.php:358
+msgid "Regenerate bypass token"
+msgstr ""
+
+#: inc/maintenance/class-d11-maintenance.php:391
+msgid "Maintenance settings saved."
+msgstr ""
+
+#: inc/maintenance/class-d11-maintenance.php:395
+msgid "Bypass token regenerated."
+msgstr ""
+
+#: inc/maintenance/class-d11-maintenance.php:400
+msgid "The required page with slug \"maintenance\" is missing or not published. Maintenance mode will not block the site until that page exists."
+msgstr ""
+
+#: inc/maintenance/template.php:34
+msgid "Maintenance page unavailable"
+msgstr ""
+
+#: inc/maintenance/template.php:35
+msgid "Create and publish the page with slug \"maintenance\" to use this plugin."
+msgstr ""
+
+#: inc/privacy/class-d11-privacy.php:242
+msgid "Simple Cookie Consent"
+msgstr ""
+
+#: inc/privacy/class-d11-privacy.php:243
+#: inc/privacy/class-d11-privacy.php:343
+msgid "Cookie Registry"
+msgstr ""
+
+#: inc/privacy/class-d11-privacy.php:253
+#: inc/privacy/class-d11-privacy.php:275
+#: inc/privacy/class-d11-privacy.php:311
+msgid "Insufficient permissions."
+msgstr ""
+
+#: inc/privacy/class-d11-privacy.php:344
+msgid "Cookie definitions are stored in WordPress options and exposed to Gutenberg blocks and the consent API integration."
+msgstr ""
+
+#: inc/privacy/class-d11-privacy.php:347
+msgid "Cookie added."
+msgstr ""
+
+#: inc/privacy/class-d11-privacy.php:349
+msgid "Cookie updated."
+msgstr ""
+
+#: inc/privacy/class-d11-privacy.php:351
+msgid "Cookie deleted."
+msgstr ""
+
+#: inc/privacy/class-d11-privacy.php:353
+msgid "Operation failed. Check required fields and try again."
+msgstr ""
+
+#: inc/privacy/class-d11-privacy.php:356
+msgid "Registered Cookies"
+msgstr ""
+
+#: inc/privacy/class-d11-privacy.php:360
+msgid "Name"
+msgstr ""
+
+#: inc/privacy/class-d11-privacy.php:361
+#: inc/privacy/class-d11-privacy.php:433
+#: inc/privacy/class-d11-privacy.php:582
+#: inc/privacy/class-d11-privacy.php:602
+msgid "Service"
+msgstr ""
+
+#: inc/privacy/class-d11-privacy.php:362
+#: inc/privacy/class-d11-privacy.php:437
+#: inc/privacy/class-d11-privacy.php:584
+#: inc/privacy/class-d11-privacy.php:604
+msgid "Category"
+msgstr ""
+
+#: inc/privacy/class-d11-privacy.php:363
+#: inc/privacy/class-d11-privacy.php:447
+#: inc/privacy/class-d11-privacy.php:587
+#: inc/privacy/class-d11-privacy.php:607
+msgid "Duration"
+msgstr ""
+
+#: inc/privacy/class-d11-privacy.php:364
+#: inc/privacy/class-d11-privacy.php:451
+#: inc/privacy/class-d11-privacy.php:609
+msgid "Description"
+msgstr ""
+
+#: inc/privacy/class-d11-privacy.php:365
+#: inc/privacy/class-d11-privacy.php:455
+msgid "First party"
+msgstr ""
+
+#: inc/privacy/class-d11-privacy.php:366
+msgid "Actions"
+msgstr ""
+
+#: inc/privacy/class-d11-privacy.php:371
+#: inc/privacy/class-d11-privacy.php:570
+msgid "No cookies registered."
+msgstr ""
+
+#: inc/privacy/class-d11-privacy.php:383
+msgid "Edit"
+msgstr ""
+
+#: inc/privacy/class-d11-privacy.php:389
+msgid "Delete"
+msgstr ""
+
+#: inc/privacy/class-d11-privacy.php:399
+msgid "Edit Cookie"
+msgstr ""
+
+#: inc/privacy/class-d11-privacy.php:405
+msgid "Save changes"
+msgstr ""
+
+#: inc/privacy/class-d11-privacy.php:406
+msgid "Cancel"
+msgstr ""
+
+#: inc/privacy/class-d11-privacy.php:410
+msgid "Add Cookie"
+msgstr ""
+
+#: inc/privacy/class-d11-privacy.php:415
+msgid "Add cookie"
+msgstr ""
+
+#: inc/privacy/class-d11-privacy.php:429
+msgid "Cookie name"
+msgstr ""
+
+#: inc/privacy/class-d11-privacy.php:456
+msgid "First-party cookie"
+msgstr ""
+
+#: inc/privacy/class-d11-privacy.php:468
+msgid "Necessary"
+msgstr ""
+
+#: inc/privacy/class-d11-privacy.php:469
+msgid "Preferences"
+msgstr ""
+
+#: inc/privacy/class-d11-privacy.php:470
+msgid "Anonymous analytics"
+msgstr ""
+
+#: inc/privacy/class-d11-privacy.php:471
+msgid "Analytics"
+msgstr ""
+
+#: inc/privacy/class-d11-privacy.php:472
+msgid "Marketing"
+msgstr ""
+
+#: inc/privacy/class-d11-privacy.php:480
+msgid "Privacy"
+msgstr ""
+
+#: inc/privacy/class-d11-privacy.php:481
+msgid "Cookie preferences"
+msgstr ""
+
+#: inc/privacy/class-d11-privacy.php:486
+msgid "We use necessary cookies and, with your consent, optional cookies for preferences, analytics, and embedded third-party media."
+msgstr ""
+
+#: inc/privacy/class-d11-privacy.php:489
+msgid "Read the cookie policy"
+msgstr ""
+
+#: inc/privacy/class-d11-privacy.php:496
+msgid "Necessary cookies are always active. You can opt in to the other categories below."
+msgstr ""
+
+#: inc/privacy/class-d11-privacy.php:501
+#, php-format
+msgid "Show cookies for %s"
+msgstr ""
+
+#: inc/privacy/class-d11-privacy.php:508
+msgid "Optional category"
+msgstr ""
+
+#: inc/privacy/class-d11-privacy.php:508
+msgid "Always enabled"
+msgstr ""
+
+#: inc/privacy/class-d11-privacy.php:512
+#, php-format
+msgid "Enable %s cookies"
+msgstr ""
+
+#: inc/privacy/class-d11-privacy.php:514
+#, php-format
+msgid "%s cookies are required"
+msgstr ""
+
+#: inc/privacy/class-d11-privacy.php:525
+msgid "Save preferences"
+msgstr ""
+
+#: inc/privacy/class-d11-privacy.php:533
+msgid "Accept all"
+msgstr ""
+
+#: inc/privacy/class-d11-privacy.php:534
+msgid "Reject all"
+msgstr ""
+
+#: inc/privacy/class-d11-privacy.php:535
+#: src/js/blocks/breadcrumbs/editor.js:37
+msgid "Settings"
+msgstr ""
+
+#: inc/privacy/class-d11-privacy.php:601
+msgid "Cookie"
+msgstr ""
+
+#: inc/privacy/controller-data.php:26
 msgid "Identity"
 msgstr ""
 
-#: partials/privacy-controller-data.php:28
+#: inc/privacy/controller-data.php:28
 msgid "Display name"
 msgstr ""
 
-#: partials/privacy-controller-data.php:29
+#: inc/privacy/controller-data.php:29
 msgid "First name"
 msgstr ""
 
-#: partials/privacy-controller-data.php:30
+#: inc/privacy/controller-data.php:30
 msgid "Last name"
 msgstr ""
 
-#: partials/privacy-controller-data.php:31
+#: inc/privacy/controller-data.php:31
 msgid "Company name"
 msgstr ""
 
-#: partials/privacy-controller-data.php:32
+#: inc/privacy/controller-data.php:32
 msgid "VAT number"
 msgstr ""
 
-#: partials/privacy-controller-data.php:33
+#: inc/privacy/controller-data.php:33
 msgid "Tax code"
 msgstr ""
 
-#: partials/privacy-controller-data.php:37
+#: inc/privacy/controller-data.php:37
 msgid "Contacts"
 msgstr ""
 
-#: partials/privacy-controller-data.php:39
+#: inc/privacy/controller-data.php:39
 msgid "Email"
 msgstr ""
 
-#: partials/privacy-controller-data.php:40
+#: inc/privacy/controller-data.php:40
 msgid "PEC"
 msgstr ""
 
-#: partials/privacy-controller-data.php:41
+#: inc/privacy/controller-data.php:41
 msgid "Phone"
 msgstr ""
 
-#: partials/privacy-controller-data.php:45
+#: inc/privacy/controller-data.php:45
 msgid "Address"
 msgstr ""
 
-#: partials/privacy-controller-data.php:47
+#: inc/privacy/controller-data.php:47
 msgid "Street address"
 msgstr ""
 
-#: partials/privacy-controller-data.php:48
+#: inc/privacy/controller-data.php:48
 msgid "City"
 msgstr ""
 
-#: partials/privacy-controller-data.php:49
+#: inc/privacy/controller-data.php:49
 msgid "Province"
 msgstr ""
 
-#: partials/privacy-controller-data.php:50
+#: inc/privacy/controller-data.php:50
 msgid "Postal code"
 msgstr ""
 
-#: partials/privacy-controller-data.php:51
+#: inc/privacy/controller-data.php:51
 msgid "Country"
 msgstr ""
 
-#: partials/privacy-controller-data.php:55
+#: inc/privacy/controller-data.php:55
 msgid "DPO"
 msgstr ""
 
-#: partials/privacy-controller-data.php:57
+#: inc/privacy/controller-data.php:57
 msgid "DPO name"
 msgstr ""
 
-#: partials/privacy-controller-data.php:58
+#: inc/privacy/controller-data.php:58
 msgid "DPO email"
 msgstr ""
 
-#: partials/privacy-controller-data.php:185
-#: partials/privacy-controller-data.php:240
+#: inc/privacy/controller-data.php:185
+#: inc/privacy/controller-data.php:240
 msgid "Data Controller Details"
 msgstr ""
 
-#: partials/privacy-controller-data.php:186
+#: inc/privacy/controller-data.php:186
 msgid "Privacy Data"
 msgstr ""
 
-#: partials/privacy-controller-data.php:242
+#: inc/privacy/controller-data.php:242
 msgid "Fill in the site-wide privacy details and reuse them in pages with the shortcode [privacy key=\"...\"]."
 msgstr ""
 
-#: partials/privacy-controller-data.php:261
+#: inc/privacy/controller-data.php:261
 msgid "Save Privacy Data"
 msgstr ""
 
-#: partials/theme-options.php:26
+#: inc/theme-admin/default-featured-image.php:85
+#: inc/theme-admin/default-featured-image.php:86
+msgid "Default Featured Image"
+msgstr ""
+
+#: inc/theme-admin/default-featured-image.php:117
+msgid "Select the default featured image"
+msgstr ""
+
+#: inc/theme-admin/default-featured-image.php:118
+msgid "Use this image"
+msgstr ""
+
+#: inc/theme-admin/default-featured-image.php:119
+msgid "Remove the default featured image?"
+msgstr ""
+
+#: inc/theme-admin/default-featured-image.php:120
+#: inc/theme-admin/default-featured-image.php:152
+msgid "No image selected"
+msgstr ""
+
+#: inc/theme-admin/default-featured-image.php:140
+msgid "Default featured image"
+msgstr ""
+
+#: inc/theme-admin/default-featured-image.php:141
+msgid "Used automatically for posts and pages that are saved without a featured image."
+msgstr ""
+
+#: inc/theme-admin/default-featured-image.php:168
+msgid "Choose from media library"
+msgstr ""
+
+#: inc/theme-admin/default-featured-image.php:171
+msgid "Remove"
+msgstr ""
+
+#: inc/theme-admin/default-featured-image.php:177
+msgid "Save image"
+msgstr ""
+
+#: inc/theme-admin/theme-options.php:26
 msgid "JPG"
 msgstr ""
 
-#: partials/theme-options.php:31
+#: inc/theme-admin/theme-options.php:31
 msgid "PNG"
 msgstr ""
 
-#: partials/theme-options.php:36
+#: inc/theme-admin/theme-options.php:36
 msgid "WebP"
 msgstr ""
 
 #. translators: %s: MIME label.
-#: partials/theme-options.php:193
+#: inc/theme-admin/theme-options.php:193
 #, php-format
 msgid "The maximum upload size for %s must be greater than zero."
 msgstr ""
 
-#: partials/theme-options.php:205
+#: inc/theme-admin/theme-options.php:205
 msgid "Select at least one image format when upload image limits are enabled."
 msgstr ""
 
-#: partials/theme-options.php:220
-#: partials/theme-options.php:221
-#: partials/theme-options.php:315
+#: inc/theme-admin/theme-options.php:220
+#: inc/theme-admin/theme-options.php:221
+#: inc/theme-admin/theme-options.php:315
 msgid "Theme Options"
 msgstr ""
 
 #. translators: %s: MIME label.
-#: partials/theme-options.php:261
+#: inc/theme-admin/theme-options.php:261
 #, php-format
 msgid "Allow %s uploads"
 msgstr ""
 
 #. translators: 1: MIME type, 2: extension list.
-#: partials/theme-options.php:270
+#: inc/theme-admin/theme-options.php:270
 #, php-format
 msgid "MIME: %1$s. Extensions: %2$s."
 msgstr ""
 
 #. translators: %s: MIME label.
-#: partials/theme-options.php:281
+#: inc/theme-admin/theme-options.php:281
 #, php-format
 msgid "Maximum upload size for %s in KB"
 msgstr ""
 
-#: partials/theme-options.php:294
+#: inc/theme-admin/theme-options.php:294
 msgid "KB max size"
 msgstr ""
 
-#: partials/theme-options.php:317
+#: inc/theme-admin/theme-options.php:317
 msgid "Control global theme behaviors for frontend dependencies, comments, and image upload rules."
 msgstr ""
 
-#: partials/theme-options.php:328
+#: inc/theme-admin/theme-options.php:328
 msgid "Disable jQuery"
 msgstr ""
 
-#: partials/theme-options.php:337
+#: inc/theme-admin/theme-options.php:337
 msgid "Disable WordPress jQuery on the public frontend."
 msgstr ""
 
-#: partials/theme-options.php:340
+#: inc/theme-admin/theme-options.php:340
 msgid "This leaves wp-admin and other administrative screens untouched."
 msgstr ""
 
-#: partials/theme-options.php:345
+#: inc/theme-admin/theme-options.php:345
 msgid "Disable comments"
 msgstr ""
 
-#: partials/theme-options.php:354
+#: inc/theme-admin/theme-options.php:354
 msgid "Disable comments and pingbacks site-wide."
 msgstr ""
 
-#: partials/theme-options.php:357
+#: inc/theme-admin/theme-options.php:357
 msgid "This closes comments on the frontend, blocks new submissions, and hides comment management entrypoints in admin."
 msgstr ""
 
-#: partials/theme-options.php:364
+#: inc/theme-admin/theme-options.php:364
 msgid "Upload image limits"
 msgstr ""
 
-#: partials/theme-options.php:365
+#: inc/theme-admin/theme-options.php:365
 msgid "Enable custom limits for JPG, PNG, and WebP uploads. Size values are stored per format."
 msgstr ""
 
-#: partials/theme-options.php:370
+#: inc/theme-admin/theme-options.php:370
 msgid "Enable upload image limits"
 msgstr ""
 
-#: partials/theme-options.php:379
+#: inc/theme-admin/theme-options.php:379
 msgid "Restrict allowed image formats and enforce per-format file size limits."
 msgstr ""
 
-#: partials/theme-options.php:382
+#: inc/theme-admin/theme-options.php:382
 msgid "When disabled, WordPress falls back to its normal upload rules."
 msgstr ""
 
-#: partials/theme-options.php:392
+#: inc/theme-admin/theme-options.php:392
 msgid "Save Theme Options"
 msgstr ""
 
-#: partials/theme-options.php:504
+#: inc/theme-admin/theme-options.php:504
 msgid "Comments are disabled by Theme Options."
 msgstr ""
 
-#: partials/theme-options.php:505
+#: inc/theme-admin/theme-options.php:505
 msgid "Comments disabled"
 msgstr ""
 
 #. translators: %s: MIME label.
-#: partials/theme-options.php:663
+#: inc/theme-admin/theme-options.php:663
 #, php-format
 msgid "%s uploads are disabled by Theme Options."
 msgstr ""
 
 #. translators: 1: MIME label, 2: maximum size, 3: helper service URL.
-#: partials/theme-options.php:683
+#: inc/theme-admin/theme-options.php:683
 #, php-format
 msgid "%1$s files must not exceed %2$s. Use this service to reduce the image size: %3$s"
 msgstr ""
@@ -554,11 +892,11 @@ msgstr ""
 msgid "D11 nasce per impostare limiti utili: design tokens chiari, blocchi governati, pattern riusabili e una homepage che può essere adattata senza ripartire ogni volta da zero."
 msgstr ""
 
-#: patterns/cta-band.php:33
+#: patterns/cta-band.php:34
 msgid "Rivedi il sistema"
 msgstr ""
 
-#: patterns/cta-band.php:38
+#: patterns/cta-band.php:40
 msgid "Usa questa homepage come base del sito di presentazione del tema e poi rifinisci menu, logo e contenuti nel Site Editor."
 msgstr ""
 
@@ -580,30 +918,30 @@ msgstr ""
 msgid "Domande tipiche prima di adottare D11."
 msgstr ""
 
-#: patterns/faq-section.php:27
 #: patterns/faq-section.php:28
+#: patterns/faq-section.php:29
 msgid "D11 è un tema generalista?"
 msgstr ""
 
-#: patterns/faq-section.php:29
+#: patterns/faq-section.php:30
 msgid "No. È un tema opinionated: limita le opzioni dell’editor per aumentare la qualità media del risultato e la prevedibilità del lavoro."
 msgstr ""
 
-#: patterns/faq-section.php:33
 #: patterns/faq-section.php:34
+#: patterns/faq-section.php:35
 msgid "Perché usare Tailwind invece delle preset Gutenberg?"
 msgstr ""
 
-#: patterns/faq-section.php:35
+#: patterns/faq-section.php:36
 msgid "Perché i token vivono in un’unica sorgente di verità e il front-end resta consistente tra template, pattern, blocchi custom e stili editoriali."
 msgstr ""
 
-#: patterns/faq-section.php:39
 #: patterns/faq-section.php:40
+#: patterns/faq-section.php:41
 msgid "L’AI può generare pagine senza rompere il tema?"
 msgstr ""
 
-#: patterns/faq-section.php:41
+#: patterns/faq-section.php:42
 msgid "Sì, se segue whitelist blocchi, guide di composizione e pattern registrati. Il tema è stato impostato proprio per ridurre le libertà che producono markup fragile."
 msgstr ""
 
@@ -629,51 +967,51 @@ msgstr ""
 msgid "D11 non lascia il design all’editor casuale: imposta direzione, restringe le scelte e rende il risultato più coerente per designer, editor e sviluppatori."
 msgstr ""
 
-#: patterns/feature-grid.php:31
+#: patterns/feature-grid.php:32
 msgid "Colori"
 msgstr ""
 
-#: patterns/feature-grid.php:34
+#: patterns/feature-grid.php:35
 msgid "Palette editoriale calda"
 msgstr ""
 
-#: patterns/feature-grid.php:37
+#: patterns/feature-grid.php:38
 msgid "Superfici carta, testo inchiostro, accenti ember e sun: pochi token forti invece di decine di varianti deboli."
 msgstr ""
 
-#: patterns/feature-grid.php:47
+#: patterns/feature-grid.php:50
 msgid "Tipografia"
 msgstr ""
 
-#: patterns/feature-grid.php:50
+#: patterns/feature-grid.php:53
 msgid "Gerarchie compatte e leggibili"
 msgstr ""
 
-#: patterns/feature-grid.php:53
+#: patterns/feature-grid.php:56
 msgid "Headings geometrici, corpo chiaro e label monospaziate permettono di distinguere subito struttura, contenuto e metadata."
 msgstr ""
 
-#: patterns/feature-grid.php:63
+#: patterns/feature-grid.php:68
 msgid "Composizione"
 msgstr ""
 
-#: patterns/feature-grid.php:66
+#: patterns/feature-grid.php:71
 msgid "Pattern prima, template dopo"
 msgstr ""
 
-#: patterns/feature-grid.php:69
+#: patterns/feature-grid.php:74
 msgid "La homepage vive in pattern PHP traducibili, mentre i template HTML assemblano struttura condivisa senza copy hardcoded."
 msgstr ""
 
-#: patterns/feature-grid.php:79
+#: patterns/feature-grid.php:86
 msgid "Workflow"
 msgstr ""
 
-#: patterns/feature-grid.php:82
+#: patterns/feature-grid.php:89
 msgid "AI guidata da regole concrete"
 msgstr ""
 
-#: patterns/feature-grid.php:85
+#: patterns/feature-grid.php:92
 msgid "Whitelist runtime, docs canoniche e componenti limitati riducono rumore, regressioni visive e HTML improvvisato."
 msgstr ""
 
@@ -707,23 +1045,23 @@ msgstr ""
 msgid "Guarda la homepage"
 msgstr ""
 
-#: patterns/hero-home.php:56
+#: patterns/hero-home.php:58
 msgid "Design system"
 msgstr ""
 
-#: patterns/hero-home.php:62
+#: patterns/hero-home.php:64
 msgid "Palette calda, tipografia netta e componenti composti per pattern, non per override occasionali."
 msgstr ""
 
-#: patterns/hero-home.php:69
+#: patterns/hero-home.php:72
 msgid "Whitelist blocchi"
 msgstr ""
 
-#: patterns/hero-home.php:72
+#: patterns/hero-home.php:75
 msgid "Pattern PHP traducibili"
 msgstr ""
 
-#: patterns/hero-home.php:75
+#: patterns/hero-home.php:78
 msgid "Vite + Tailwind"
 msgstr ""
 
@@ -745,27 +1083,27 @@ msgstr ""
 msgid "Costruito per scenari reali, non per demo astratte."
 msgstr ""
 
-#: patterns/logo-cloud.php:24
+#: patterns/logo-cloud.php:25
 msgid "Landing page di prodotto"
 msgstr ""
 
-#: patterns/logo-cloud.php:27
+#: patterns/logo-cloud.php:28
 msgid "Siti editoriali"
 msgstr ""
 
-#: patterns/logo-cloud.php:30
+#: patterns/logo-cloud.php:31
 msgid "Micrositi di campagna"
 msgstr ""
 
-#: patterns/logo-cloud.php:33
+#: patterns/logo-cloud.php:34
 msgid "Pattern library gestite"
 msgstr ""
 
-#: patterns/logo-cloud.php:36
+#: patterns/logo-cloud.php:37
 msgid "Workflow AI assistiti"
 msgstr ""
 
-#: patterns/logo-cloud.php:39
+#: patterns/logo-cloud.php:40
 msgid "Governance editoriale"
 msgstr ""
 
@@ -791,23 +1129,23 @@ msgstr ""
 msgid "D11 elimina l’illusione del “tutto è possibile” e sostituisce la libertà caotica con una griglia di scelte intenzionali: blocchi permessi, pattern composti, spacing controllato e styling centralizzato in Tailwind."
 msgstr ""
 
-#: patterns/media-content.php:34
+#: patterns/media-content.php:36
 msgid "Principi"
 msgstr ""
 
-#: patterns/media-content.php:38
+#: patterns/media-content.php:40
 msgid "Il design system vive nei token, non nei settaggi occasionali del singolo blocco."
 msgstr ""
 
-#: patterns/media-content.php:39
+#: patterns/media-content.php:41
 msgid "Le sezioni riusabili devono diventare pattern, non markup duplicato in più template."
 msgstr ""
 
-#: patterns/media-content.php:40
+#: patterns/media-content.php:42
 msgid "L’AI compone meglio quando i vincoli sono espliciti e i blocchi consentiti sono pochi ma sufficienti."
 msgstr ""
 
-#: patterns/media-content.php:41
+#: patterns/media-content.php:43
 msgid "Il front-end resta leggero perché la struttura è nativa Gutenberg e il polish visuale è nel layer Tailwind."
 msgstr ""
 
@@ -817,10 +1155,6 @@ msgstr ""
 
 #: src/js/blocks/breadcrumbs/editor.js:12
 msgid "Contextual navigation trail for the current view."
-msgstr ""
-
-#: src/js/blocks/breadcrumbs/editor.js:37
-msgid "Settings"
 msgstr ""
 
 #: src/js/blocks/breadcrumbs/editor.js:41
@@ -851,6 +1185,10 @@ msgstr ""
 msgid "Copy manually:"
 msgstr ""
 
+#: src/js/editor-seo.js:73
+msgid "SEO"
+msgstr ""
+
 #: src/js/editor-seo.js:135
 msgid "SEO title"
 msgstr ""
@@ -876,11 +1214,15 @@ msgid "Nofollow"
 msgstr ""
 
 #: src/js/editor-seo.js:168
-msgid "Global robots and sitemap settings remain available in Settings > SEO."
+msgid "Global search visibility is configured in Settings > Reading."
 msgstr ""
 
 #: src/js/editor-seo.js:173
-msgid "Open SEO settings"
+msgid "Open Reading settings"
+msgstr ""
+
+#: src/js/editor-seo.js:181
+msgid "View XML sitemap"
 msgstr ""
 
 #: blocks/breadcrumbs/block.json
@@ -901,6 +1243,48 @@ msgstr ""
 #: blocks/social-share/block.json
 msgctxt "block description"
 msgid "Social sharing buttons for the current content."
+msgstr ""
+
+#: inc/privacy/blocks/banner/block.json
+msgctxt "block title"
+msgid "Cookie Banner"
+msgstr ""
+
+#: inc/privacy/blocks/banner/block.json
+msgctxt "block description"
+msgid "Displays the theme-managed cookie consent banner."
+msgstr ""
+
+#: inc/privacy/blocks/banner/block.json
+#: inc/privacy/blocks/cookie-table/block.json
+msgctxt "block keyword"
+msgid "cookie"
+msgstr ""
+
+#: inc/privacy/blocks/banner/block.json
+#: inc/privacy/blocks/cookie-table/block.json
+msgctxt "block keyword"
+msgid "privacy"
+msgstr ""
+
+#: inc/privacy/blocks/banner/block.json
+msgctxt "block keyword"
+msgid "consent"
+msgstr ""
+
+#: inc/privacy/blocks/cookie-table/block.json
+msgctxt "block title"
+msgid "Cookie Table"
+msgstr ""
+
+#: inc/privacy/blocks/cookie-table/block.json
+msgctxt "block description"
+msgid "Displays the registered cookies as a table or card list."
+msgstr ""
+
+#: inc/privacy/blocks/cookie-table/block.json
+msgctxt "block keyword"
+msgid "table"
 msgstr ""
 
 #: theme.json

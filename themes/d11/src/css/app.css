@@ -1,6 +1,5 @@
 @import './base.css';
-@import './blocks.css';
-@import './blocks/simple-cookie-consent-banner.css';
+@import './site-components.css';
 @import './utilities.css';
 
 @tailwind base;

@@ -1,0 +1,15 @@
+{
+  "apiVersion": 3,
+  "name": "d11/privacy-banner",
+  "title": "Cookie Banner",
+  "textdomain": "d11",
+  "category": "widgets",
+  "icon": "shield",
+  "description": "Displays the theme-managed cookie consent banner.",
+  "keywords": ["cookie", "privacy", "consent"],
+  "supports": {
+    "html": false,
+    "multiple": false
+  },
+  "attributes": {}
+}

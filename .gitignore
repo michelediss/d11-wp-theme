@@ -8,10 +8,18 @@
 !/mu-plugins/.gitkeep
 
 /plugins/*
+!/plugins/all-in-one-wp-security-and-firewall/
 !/plugins/cf7-sync/
+!/plugins/contact-form-7/
+!/plugins/simple-cloudflare-turnstile/
 !/plugins/simple-cookie-consent/
 !/plugins/site-maintenance/
+!/plugins/wp-statistics/
 /plugins/undraw-wp/
+
+# AIOS creates these logs at runtime; keep plugin sources tracked without
+# making the worktree dirty after security events.
+/plugins/all-in-one-wp-security-and-firewall/logs/*.txt
 
 /themes/*
 !/themes/d11/

@@ -37,10 +37,10 @@ function bootstrap() {
     });
   }
 
-  if (document.getElementById('simple-cookie-consent-banner')) {
+  if (document.getElementById('d11-privacy-banner')) {
     scheduleNonCriticalTask(async () => {
-      const { initSimpleCookieConsentBanner } = await import('./modules/simple-cookie-consent-banner');
-      initSimpleCookieConsentBanner();
+      const { initD11PrivacyBanner } = await import('./modules/d11-privacy-banner');
+      initD11PrivacyBanner();
     });
   }
 

@@ -67,7 +67,7 @@ Hide transient UI when needed:
 ```bash
 npm run screenshots -- https://example.test/page-slug \
   --out-dir=../../uploads/dev-screenshots/page-slug-review \
-  --exclude=.simple-cookie-consent,.chat-widget
+  --exclude=.d11-privacy,.chat-widget
 ```
 
 Useful flags:

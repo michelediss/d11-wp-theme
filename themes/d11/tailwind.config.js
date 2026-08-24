@@ -1,13 +1,14 @@
 export default {
   content: [
-    './*.php',
-    './*.html',
-    './content/**/*.json',
-    './templates/**/*.html',
-    './parts/**/*.html',
+    './*.{php,html}',
+    './content/**/*.{json,php,html}',
+    './templates/**/*.{php,html}',
+    './parts/**/*.{php,html}',
     './patterns/**/*.{php,html}',
+    './partials/**/*.{php,html}',
     './inc/**/*.php',
-    './src/js/**/*.js',
+    './blocks/**/*.{php,html,json}',
+    './src/js/**/*.{js,jsx,ts,tsx}',
   ],
   theme: {
     extend: {

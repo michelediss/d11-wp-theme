@@ -53,6 +53,8 @@ function d11_seo_enqueue_editor_assets(): void
             'siteName' => get_bloginfo('name'),
             'siteDescription' => get_bloginfo('description', 'display'),
             'homeUrl' => home_url('/'),
+            'readingSettingsUrl' => admin_url('options-reading.php'),
+            'sitemapUrl' => home_url('/wp-sitemap.xml'),
         ]) . ';',
         'before'
     );

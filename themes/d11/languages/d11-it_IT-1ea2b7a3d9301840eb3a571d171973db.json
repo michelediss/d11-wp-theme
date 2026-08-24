@@ -31,11 +31,14 @@
             "Nofollow": [
                 "Nofollow"
             ],
-            "Global robots and sitemap settings remain available in Settings > SEO.": [
-                "Le impostazioni globali di robots e sitemap restano disponibili in Impostazioni > SEO."
+            "Global search visibility is configured in Settings > Reading.": [
+                ""
             ],
-            "Open SEO settings": [
-                "Apri impostazioni SEO"
+            "Open Reading settings": [
+                ""
+            ],
+            "View XML sitemap": [
+                ""
             ]
         }
     }

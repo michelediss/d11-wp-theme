@@ -6,10 +6,10 @@ It is the conceptual reference for the availability system. The runtime source o
 
 ## Runtime Sources Of Truth
 
-- `partials/block-availability/runtime.php` defines curated categories, runtime catalog building, default enabled categories, and block availability normalization.
-- `partials/block-availability.php` is the theme bootstrap entrypoint for the availability system.
-- `partials/block-availability/utility/export-block-registry.php` exports the full registered block registry enriched with current allowlist state.
-- `partials/block-availability/utility/export-whitelisted-blocks-md.php` generates both a compact Markdown reference and an extended Markdown reference for the blocks currently in whitelist.
+- `inc/block-availability/runtime.php` defines curated categories, runtime catalog building, default enabled categories, and block availability normalization.
+- `inc/block-availability/bootstrap.php` is the theme bootstrap entrypoint for the availability system.
+- `inc/block-availability/utility/export-block-registry.php` exports the full registered block registry enriched with current allowlist state.
+- `inc/block-availability/utility/export-whitelisted-blocks-md.php` generates both a compact Markdown reference and an extended Markdown reference for the blocks currently in whitelist.
 - `inc/blocks.php` discovers custom theme blocks from `blocks/*/block.json`.
 - External generation, review, and optimization skills should consume the exported whitelist artifacts plus runtime outputs instead of maintaining their own block catalog.
 
@@ -83,7 +83,7 @@ For AI or agent workflows, this export answers:
 - which blocks are grouped under each category
 - which blocks are effectively allowed right now
 
-The utility export under `partials/block-availability/utility/` adds a second layer:
+The utility export under `inc/block-availability/utility/` adds a second layer:
 
 - full registered block metadata from `WP_Block_Type_Registry`
 - current allowlist state for each registered block
